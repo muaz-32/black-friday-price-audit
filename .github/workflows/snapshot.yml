@@ -30,7 +30,7 @@ jobs:
         env:
           BF_VANTAGE: github-actions
           BF_USER_AGENT: "bf-price-audit/0.1 (+https://github.com/${{ github.repository }})"
-        run: python -m collector.snapshot --status status/latest.json
+        run: python -m collector.snapshot --catalog auto --status status/latest.json
 
       # Runs even when the snapshot step failed its coverage check: a partial
       # snapshot plus its runs file is still valid data.
@@ -43,7 +43,7 @@ jobs:
           gh release view "$tag" >/dev/null 2>&1 || gh release create "$tag" \
             --title "Snapshots $(date -u +%Y-%m)" \
             --notes "Raw snapshot files. See the README for the schema."
-          gh release upload "$tag" data/snap-*.parquet data/runs-*.parquet
+          gh release upload "$tag" data/prices-*.parquet data/catalog-*.parquet data/runs-*.parquet
 
       # The commit doubles as a heartbeat: GitHub disables scheduled workflows
       # in repositories with no activity for 60 days.

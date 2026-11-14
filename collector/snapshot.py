@@ -2,10 +2,16 @@
 
     python -m collector.snapshot
 
-Writes two Parquet files per run into data/:
-  snap-<run_id>.parquet   one row per product variant: price, compare-at price, stock
-  runs-<run_id>.parquet   one row per store: did the fetch work, how much it covered
+Writes three Parquet files per run into data/:
+  prices-<run_id>.parquet    one row per product variant: price, compare-at price, stock
+  catalog-<run_id>.parquet   what each variant is: title, handle, vendor, tags, sku
+  runs-<run_id>.parquet      one row per store: did the fetch work, how much it covered
 and latest.json, a small summary of the run.
+
+Prices and catalogue are separate because the descriptive text is about 80% of
+the bytes and barely changes between runs. The scheduled job writes the whole
+catalogue once a day and, in its other runs, only products created or published
+in the last 48 hours, so short-lived sale products are still described.
 
 The runs file matters as much as the prices: a variant missing from a snapshot
 only means "removed from the store" if that store's fetch succeeded in that run.
@@ -17,10 +23,9 @@ import argparse
 import json
 import os
 import sys
-import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import pyarrow as pa
@@ -31,12 +36,23 @@ from .http import LIMITER
 from .shopify import StoreResult, fetch_store
 
 TS = pa.timestamp("s", tz="UTC")
-SNAP_SCHEMA = pa.schema(
+PRICES_SCHEMA = pa.schema(
     [
         ("run_id", pa.string()),
         ("fetched_at", TS),
         ("store", pa.string()),
         ("currency", pa.string()),
+        ("product_id", pa.int64()),
+        ("variant_id", pa.int64()),
+        ("price", pa.float64()),
+        ("compare_at_price", pa.float64()),
+        ("available", pa.bool_()),
+    ]
+)
+CATALOG_SCHEMA = pa.schema(
+    [
+        ("run_id", pa.string()),
+        ("store", pa.string()),
         ("product_id", pa.int64()),
         ("variant_id", pa.int64()),
         ("handle", pa.string()),
@@ -46,9 +62,6 @@ SNAP_SCHEMA = pa.schema(
         ("product_type", pa.string()),
         ("tags", pa.string()),
         ("sku", pa.string()),
-        ("price", pa.float64()),
-        ("compare_at_price", pa.float64()),
-        ("available", pa.bool_()),
         ("product_created_at", TS),
         ("product_published_at", TS),
     ]
@@ -57,6 +70,7 @@ RUNS_SCHEMA = pa.schema(
     [
         ("run_id", pa.string()),
         ("vantage", pa.string()),
+        ("catalog", pa.string()),
         ("store", pa.string()),
         ("market", pa.string()),
         ("currency", pa.string()),
@@ -72,6 +86,12 @@ RUNS_SCHEMA = pa.schema(
         ("seconds", pa.float64()),
     ]
 )
+RECENT = timedelta(hours=48)
+
+
+def is_recent(row: dict, cutoff: datetime) -> bool:
+    created, published = row["product_created_at"], row["product_published_at"]
+    return bool((created and created >= cutoff) or (published and published >= cutoff))
 
 
 def main() -> int:
@@ -79,6 +99,13 @@ def main() -> int:
     ap.add_argument("--stores", type=Path, default=Path("stores/stores.csv"))
     ap.add_argument("--out", type=Path, default=Path("data"))
     ap.add_argument("--status", type=Path, default=Path("data/latest.json"), help="where to write the run summary")
+    ap.add_argument(
+        "--catalog",
+        choices=("full", "recent", "auto"),
+        default="full",
+        help="full: describe every variant; recent: only products new in the last 48h; "
+        "auto: full in the first run of the UTC day (before 06:00), recent otherwise",
+    )
     ap.add_argument("--workers", type=int, default=8, help="stores fetched in parallel")
     ap.add_argument("--max-pages", type=int, default=100, help="cap per store (250 products a page)")
     ap.add_argument("--limit", type=int, default=0, help="only the first N stores (for testing)")
@@ -91,33 +118,43 @@ def main() -> int:
     if not stores:
         print(f"no stores in {args.stores}; run `python -m collector.discover` first", file=sys.stderr)
         return 2
-    run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    now = datetime.now(timezone.utc)
+    run_id = now.strftime("%Y%m%dT%H%M%SZ")
     vantage = os.environ.get("BF_VANTAGE", "local")
+    catalog_mode = args.catalog
+    if catalog_mode == "auto":
+        catalog_mode = "full" if now.hour < 6 else "recent"
+    cutoff = now - RECENT
+
     args.out.mkdir(parents=True, exist_ok=True)
-    snap_path = args.out / f"snap-{run_id}.parquet"
-    runs_path = args.out / f"runs-{run_id}.parquet"
-    tmp_path = snap_path.with_suffix(".parquet.tmp")
+    paths = {kind: args.out / f"{kind}-{run_id}.parquet" for kind in ("prices", "catalog", "runs")}
+    tmp = {kind: paths[kind].with_suffix(".parquet.tmp") for kind in ("prices", "catalog")}
+    writers = {
+        "prices": pq.ParquetWriter(tmp["prices"], PRICES_SCHEMA, compression="zstd", compression_level=9),
+        "catalog": pq.ParquetWriter(tmp["catalog"], CATALOG_SCHEMA, compression="zstd", compression_level=9),
+    }
 
     t0 = time.monotonic()
     results: list[StoreResult] = []
-    lock = threading.Lock()
-    total_rows = 0
-    writer = pq.ParquetWriter(tmp_path, SNAP_SCHEMA, compression="zstd", compression_level=9)
+    counts = {"prices": 0, "catalog": 0}
 
     def run_batch(batch: list, label: str) -> None:
-        nonlocal total_rows
         with ThreadPoolExecutor(args.workers) as pool:
             futures = [pool.submit(fetch_store, s, max_pages=args.max_pages) for s in batch]
-            for done, fut in enumerate(as_completed(futures), 1):
+            for done, fut in enumerate(as_completed(futures), 1):  # results are written on this thread only
                 res = fut.result()
                 n = len(res.rows)
                 if n:
                     res.rows.sort(key=lambda r: (r["product_id"] or 0, r["variant_id"]))
                     for row in res.rows:
                         row["run_id"] = run_id
-                    with lock:
-                        writer.write_table(pa.Table.from_pylist(res.rows, schema=SNAP_SCHEMA))  # one row group per store
-                    total_rows += n
+                    described = res.rows if catalog_mode == "full" else [r for r in res.rows if is_recent(r, cutoff)]
+                    # One row group per store, so readers can skip to a store.
+                    writers["prices"].write_table(pa.Table.from_pylist(res.rows, schema=PRICES_SCHEMA))
+                    if described:
+                        writers["catalog"].write_table(pa.Table.from_pylist(described, schema=CATALOG_SCHEMA))
+                    counts["prices"] += n
+                    counts["catalog"] += len(described)
                 res.rows = []  # free memory; only the count is needed from here on
                 res.variants = n  # type: ignore[attr-defined]
                 results.append(res)
@@ -135,8 +172,10 @@ def main() -> int:
             print(f"retrying {len(throttled)} throttled stores", flush=True)
             run_batch([r.store for r in throttled], "pass 2")
     finally:
-        writer.close()
-    tmp_path.rename(snap_path)  # readers never see a half-written file
+        for w in writers.values():
+            w.close()
+    for kind in tmp:
+        tmp[kind].rename(paths[kind])  # readers never see a half-written file
 
     results.sort(key=lambda r: r.store.domain)
     pq.write_table(
@@ -145,6 +184,7 @@ def main() -> int:
                 {
                     "run_id": run_id,
                     "vantage": vantage,
+                    "catalog": catalog_mode,
                     "store": r.store.domain,
                     "market": r.store.country,
                     "currency": r.currency,
@@ -163,7 +203,7 @@ def main() -> int:
             ],
             schema=RUNS_SCHEMA,
         ),
-        runs_path,
+        paths["runs"],
         compression="zstd",
     )
 
@@ -172,14 +212,17 @@ def main() -> int:
     summary = {
         "run_id": run_id,
         "vantage": vantage,
+        "catalog": catalog_mode,
         "stores_ok": len(ok),
         "stores_failed": len(failed),
         "stores_truncated": sum(r.truncated for r in ok),
         "products": sum(r.products for r in ok),
-        "variants": total_rows,
+        "variants": counts["prices"],
+        "catalog_rows": counts["catalog"],
         "seconds": round(time.monotonic() - t0),
         "throttle_pauses": LIMITER.cooldowns,
-        "snapshot_bytes": snap_path.stat().st_size,
+        "prices_bytes": paths["prices"].stat().st_size,
+        "catalog_bytes": paths["catalog"].stat().st_size,
         "failures": {r.store.domain: r.error for r in failed},
     }
     args.status.parent.mkdir(parents=True, exist_ok=True)

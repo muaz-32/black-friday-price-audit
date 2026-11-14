@@ -11,25 +11,39 @@ open so anyone can re-run the analysis.
 ## What is collected
 
 Each run reads the public product feed (`/products.json`) of every store in
-[stores/stores.csv](stores/stores.csv) and writes two Parquet files:
+[stores/stores.csv](stores/stores.csv) and writes three Parquet files.
 
-**`snap-<run_id>.parquet`** has one row per product variant:
+**`prices-<run_id>.parquet`** has one row per product variant, every run:
 
 | column | meaning |
 |---|---|
 | `run_id`, `fetched_at` | which run, and when this store's page was read (UTC) |
 | `store`, `currency` | store domain and the currency its prices are in |
 | `product_id`, `variant_id` | the store's own stable ids |
-| `handle`, `title`, `variant_title`, `vendor`, `product_type`, `tags`, `sku` | catalogue details (`tags` joined with `\|`) |
 | `price` | the price a shopper pays |
 | `compare_at_price` | the strikethrough "was" price the store claims, if any |
 | `available` | in stock or not |
+
+**`catalog-<run_id>.parquet`** says what each variant is. Join it to prices on
+`(store, variant_id)`:
+
+| column | meaning |
+|---|---|
+| `handle`, `title`, `variant_title` | product page slug and names |
+| `vendor`, `product_type`, `tags`, `sku` | catalogue details (`tags` joined with `\|`) |
 | `product_created_at`, `product_published_at` | the store's own timestamps |
 
+The descriptive text is about 80% of the bytes and rarely changes, so the
+scheduled job writes the whole catalogue once a day (the run that starts just
+after 00:00 UTC) and, in its other runs, only products created or published in
+the last 48 hours. Use the latest catalogue row for a variant at or before the
+price row you are describing.
+
 **`runs-<run_id>.parquet`** has one row per store: whether the fetch worked,
-how many products it covered, how many the store says it has, and whether the
-walk was cut off at the page cap. A variant missing from a snapshot only means
-"removed" if that store's row says `ok` for that run.
+how many products it covered, how many the store says it has, whether the walk
+was cut off at the page cap, and which catalogue mode the run used. A variant
+missing from a prices file only means "removed" if that store's row says `ok`
+for that run.
 
 Sales figures are not public anywhere. The proxies here are stock-outs
 (`available` flipping to false) and how often a variant's price changes.
@@ -63,20 +77,27 @@ gh release download data-2026-11 --repo muaz-32/black-friday-price-audit --dir d
 
 ```sql
 -- DuckDB: variants whose claimed "was" price went up while the selling price did not drop
-WITH s AS (SELECT * FROM read_parquet('data/snap-*.parquet'))
-SELECT store, title, variant_title,
-       min(compare_at_price) AS was_before, max(compare_at_price) AS was_after,
-       min(price) AS lowest_price, max(price) AS highest_price
-FROM s
-GROUP BY ALL
-HAVING max(compare_at_price) > min(compare_at_price)
+WITH moved AS (
+  SELECT store, variant_id,
+         min(compare_at_price) AS was_before, max(compare_at_price) AS was_after,
+         min(price) AS lowest_price, max(price) AS highest_price
+  FROM read_parquet('data/prices-*.parquet')
+  GROUP BY ALL
+  HAVING max(compare_at_price) > min(compare_at_price)
+), names AS (
+  SELECT store, variant_id, arg_max(title, run_id) AS title, arg_max(variant_title, run_id) AS variant_title
+  FROM read_parquet('data/catalog-*.parquet')
+  GROUP BY ALL
+)
+SELECT store, title, variant_title, was_before, was_after, lowest_price, highest_price
+FROM moved JOIN names USING (store, variant_id)
 ORDER BY was_after / was_before DESC;
 ```
 
 ## Scheduled collection
 
 [.github/workflows/snapshot.yml](.github/workflows/snapshot.yml) runs the
-snapshot every 6 hours on GitHub Actions, uploads both files to a monthly
+snapshot every 6 hours on GitHub Actions, uploads the files to a monthly
 release (`data-YYYY-MM`), and commits [status/latest.json](status/latest.json)
 as a heartbeat.
 
@@ -102,7 +123,8 @@ as a heartbeat.
   99.4% of 1.04 million shared prices. At least one store (`www.pdpaola.com`)
   still priced by the visitor's IP address. Compare prices only between runs
   with the same `vantage` in the runs file; the scheduled runs are all
-  `github-actions`, and the single `local` run is kept as an early reference.
+  `github-actions`, and the single `local` run (`20261114T042558Z`) is kept
+  as an early reference.
 - **Store selection is not random.** The list is hand-picked brand stores that
   run Shopify and leave the feed open. Findings describe these stores, not
   e-commerce as a whole, and not marketplaces such as Amazon.
