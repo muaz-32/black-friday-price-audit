@@ -97,6 +97,12 @@ as a heartbeat.
   Every request pins the store's home country, so numbers are comparable
   between runs, but they describe that one market only. The home country,
   currency and listed product count are read once, when a store is added.
+- **Pinning the market is not perfect.** Two snapshots taken 4.5 hours apart
+  on 2026-11-14, one from Bangladesh and one from GitHub's servers, agreed on
+  99.4% of 1.04 million shared prices. At least one store (`www.pdpaola.com`)
+  still priced by the visitor's IP address. Compare prices only between runs
+  with the same `vantage` in the runs file; the scheduled runs are all
+  `github-actions`, and the single `local` run is kept as an early reference.
 - **Store selection is not random.** The list is hand-picked brand stores that
   run Shopify and leave the feed open. Findings describe these stores, not
   e-commerce as a whole, and not marketplaces such as Amazon.
