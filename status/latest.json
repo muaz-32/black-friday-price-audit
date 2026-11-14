@@ -1,15 +1,20 @@
 {
-  "run_id": "20261114T090046Z",
+  "run_id": "20261114T161241Z",
   "vantage": "github-actions",
-  "stores_ok": 466,
-  "stores_failed": 2,
-  "stores_truncated": 5,
-  "products": 492903,
-  "variants": 1993021,
-  "seconds": 3184,
+  "catalog": "full",
+  "stores_ok": 1415,
+  "stores_failed": 3,
+  "stores_skipped": 0,
+  "stores_truncated": 14,
+  "products": 1600198,
+  "variants": 7609146,
+  "catalog_rows": 7609146,
+  "seconds": 10037,
   "throttle_pauses": 0,
-  "snapshot_bytes": 49013081,
+  "prices_bytes": 39791933,
+  "catalog_bytes": 168116475,
   "failures": {
+    "www.awakenyclothing.com": "HTTP 401 on page 1",
     "www.bonobos.com": "gave up after 4 tries: HTTP 500",
     "www.nobullproject.com": "robots.txt disallows the feed"
   }
