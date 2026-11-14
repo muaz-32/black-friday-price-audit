@@ -1,0 +1,16 @@
+{
+  "run_id": "20261114T090046Z",
+  "vantage": "github-actions",
+  "stores_ok": 466,
+  "stores_failed": 2,
+  "stores_truncated": 5,
+  "products": 492903,
+  "variants": 1993021,
+  "seconds": 3184,
+  "throttle_pauses": 0,
+  "snapshot_bytes": 49013081,
+  "failures": {
+    "www.bonobos.com": "gave up after 4 tries: HTTP 500",
+    "www.nobullproject.com": "robots.txt disallows the feed"
+  }
+}
