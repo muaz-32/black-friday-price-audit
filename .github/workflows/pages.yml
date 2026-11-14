@@ -1,0 +1,47 @@
+name: pages
+
+# Rebuilds the dashboard from the committed summary and trends files and
+# publishes it with GitHub Pages.
+on:
+  workflow_run:
+    workflows: [snapshot, trends]
+    types: [completed]
+  push:
+    branches: [main]
+    paths: ["dashboard/**", "summary/**", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main # a workflow_run event may carry an older commit
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      # The build uses only the standard library, so nothing to install.
+      - run: python -m dashboard.build --repo "${{ github.repository }}"
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4

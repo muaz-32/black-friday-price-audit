@@ -121,6 +121,9 @@ ORDER BY was_after / was_before DESC;
 
 ## Dashboard
 
+**https://muaz-32.github.io/black-friday-price-audit/** (rebuilt after every
+snapshot and trends run by [pages.yml](.github/workflows/pages.yml))
+
 A static page for exploring the data: how much of each store is marked down,
 how prices move from snapshot to snapshot, a table of every store with its
 history, and the search-interest signals.
