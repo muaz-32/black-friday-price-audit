@@ -131,6 +131,14 @@ Three GitHub Actions workflows do the work:
 - [discover.yml](.github/workflows/discover.yml), by hand: probes
   `stores/candidates.txt` and commits the updated store list.
 
+GitHub's own scheduler did not start a single run in this repository's first
+hours, so the timed runs are started from outside: a free cron service calls
+the `workflow_dispatch` endpoint of the snapshot workflow at minute 17 of
+every sixth hour (UTC) and of the trends workflow at minute 37 of every hour.
+The `schedule` triggers remain as a backup 15 minutes later; a run that finds
+its slot already covered (a snapshot in the last 4 hours, a trending read in
+the last 30 minutes) stops without fetching anything.
+
 ## How it behaves towards stores
 
 - Identifies itself with a descriptive user agent that links to this repository.

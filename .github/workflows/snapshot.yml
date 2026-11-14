@@ -1,8 +1,10 @@
 name: snapshot
 
 on:
+  # Backup only: GitHub's scheduler has proved unreliable for this repository,
+  # so an external cron service starts the runs through workflow_dispatch.
   schedule:
-    - cron: "17 */6 * * *" # every 6 hours, off the hour to dodge the scheduler rush
+    - cron: "32 */6 * * *" # 15 minutes after the external trigger's slot
   workflow_dispatch:
     inputs:
       catalog:
@@ -10,6 +12,10 @@ on:
         type: choice
         options: [auto, full, recent]
         default: auto
+      force:
+        description: "Run even if a snapshot was taken in the last 4 hours"
+        type: boolean
+        default: false
 
 permissions:
   contents: write # upload release assets, commit status/latest.json
@@ -32,7 +38,27 @@ jobs:
 
       - run: pip install -r requirements.txt
 
+      # Runs are started both by an external cron service and by GitHub's own
+      # (unreliable) scheduler. Whichever comes second finds a recent snapshot
+      # and stops here, so stores are not fetched twice for one slot.
+      - name: Skip if this slot already has a snapshot
+        id: fresh
+        if: ${{ !inputs.force }}
+        run: |
+          python - <<'EOF' >> "$GITHUB_OUTPUT"
+          import json
+          from datetime import datetime, timezone
+          try:
+              run_id = json.load(open("status/latest.json"))["run_id"]
+              last = datetime.strptime(run_id, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc)
+              hours = (datetime.now(timezone.utc) - last).total_seconds() / 3600
+          except (OSError, KeyError, ValueError):
+              hours = 99
+          print(f"skip={'true' if hours < 4 else 'false'}")
+          EOF
+
       - name: Take snapshot
+        if: steps.fresh.outputs.skip != 'true'
         env:
           BF_VANTAGE: github-actions
           BF_USER_AGENT: "bf-price-audit/0.1 (+https://github.com/${{ github.repository }})"
@@ -44,7 +70,7 @@ jobs:
       # Runs even when the snapshot step failed its coverage check: a partial
       # snapshot plus its runs file is still valid data.
       - name: Upload to this month's data release
-        if: always()
+        if: always() && steps.fresh.outputs.skip != 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -57,7 +83,7 @@ jobs:
       # The commit doubles as a heartbeat: GitHub disables scheduled workflows
       # in repositories with no activity for 60 days.
       - name: Commit run status
-        if: always()
+        if: always() && steps.fresh.outputs.skip != 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

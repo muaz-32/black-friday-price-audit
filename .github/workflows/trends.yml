@@ -1,9 +1,16 @@
 name: trends
 
 on:
+  # Backup only: an external cron service starts the hourly runs through
+  # workflow_dispatch, because GitHub's scheduler has proved unreliable here.
   schedule:
-    - cron: "37 * * * *" # hourly; the trending feed only shows what is rising right now
+    - cron: "52 * * * *" # 15 minutes after the external trigger's slot
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Run even if the trending feed was read in the last 30 minutes"
+        type: boolean
+        default: false
 
 permissions:
   contents: write # commits the CSVs under trends/
@@ -29,7 +36,8 @@ jobs:
       - name: Collect search trends
         env:
           BF_USER_AGENT: "bf-price-audit/0.1 (+https://github.com/${{ github.repository }})"
-        run: python -m collector.trends
+          MIN_GAP: ${{ inputs.force && '0' || '30' }}
+        run: python -m collector.trends --min-gap-minutes "$MIN_GAP"
 
       # Other workflows push to main too, so rebase and retry rather than fail.
       - name: Commit trends

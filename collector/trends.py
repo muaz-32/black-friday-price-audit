@@ -128,10 +128,20 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--dir", type=Path, default=Path("trends"))
     ap.add_argument("--force", action="store_true", help="fetch autocomplete and page views even if recently done")
+    ap.add_argument(
+        "--min-gap-minutes",
+        type=float,
+        default=0,
+        help="do nothing if the trending feed was read more recently than this (two triggers, one slot)",
+    )
     args = ap.parse_args()
 
     cfg = json.loads((args.dir / "config.json").read_text())
     now = datetime.now(timezone.utc)
+    newest = last_fetch(args.dir / "trending")
+    if args.min_gap_minutes and newest and now - newest < timedelta(minutes=args.min_gap_minutes):
+        print(json.dumps({"skipped": f"trending feed already read at {iso(newest)}"}))
+        return 0
     today = now.date()
     session = http.new_session()
     failures: list[str] = []
