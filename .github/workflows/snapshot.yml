@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: "17 */6 * * *" # every 6 hours, off the hour to dodge the scheduler rush
   workflow_dispatch:
+    inputs:
+      catalog:
+        description: "Catalogue rows to write (auto: full in the first run of the UTC day)"
+        type: choice
+        options: [auto, full, recent]
+        default: auto
 
 permissions:
   contents: write # upload release assets, commit status/latest.json
@@ -30,7 +36,10 @@ jobs:
         env:
           BF_VANTAGE: github-actions
           BF_USER_AGENT: "bf-price-audit/0.1 (+https://github.com/${{ github.repository }})"
-        run: python -m collector.snapshot --catalog auto --status status/latest.json
+          CATALOG: ${{ inputs.catalog || 'auto' }}
+        # The budget leaves an hour before the job timeout for stores already
+        # in flight, so a slow run ends with complete files, not a killed job.
+        run: python -m collector.snapshot --catalog "$CATALOG" --budget-minutes 240 --status status/latest.json
 
       # Runs even when the snapshot step failed its coverage check: a partial
       # snapshot plus its runs file is still valid data.

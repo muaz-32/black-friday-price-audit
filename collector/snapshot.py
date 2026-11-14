@@ -109,6 +109,12 @@ def main() -> int:
     ap.add_argument("--workers", type=int, default=8, help="stores fetched in parallel")
     ap.add_argument("--max-pages", type=int, default=100, help="cap per store (250 products a page)")
     ap.add_argument("--limit", type=int, default=0, help="only the first N stores (for testing)")
+    ap.add_argument(
+        "--budget-minutes",
+        type=float,
+        default=0,
+        help="stop starting new stores after this long, so the files are finished before a job timeout (0: no limit)",
+    )
     ap.add_argument("--min-ok", type=float, default=0.5, help="fail the run below this share of stores")
     args = ap.parse_args()
 
@@ -135,12 +141,20 @@ def main() -> int:
     }
 
     t0 = time.monotonic()
+    deadline = t0 + args.budget_minutes * 60 if args.budget_minutes else None
     results: list[StoreResult] = []
     counts = {"prices": 0, "catalog": 0}
 
+    def fetch(store) -> StoreResult:
+        # A run killed by the job timeout loses everything it fetched, so past
+        # the budget the remaining stores are recorded as skipped instead.
+        if deadline and time.monotonic() > deadline:
+            return StoreResult(store=store, error="skipped: run time budget used up", started_at=datetime.now(timezone.utc))
+        return fetch_store(store, max_pages=args.max_pages)
+
     def run_batch(batch: list, label: str) -> None:
         with ThreadPoolExecutor(args.workers) as pool:
-            futures = [pool.submit(fetch_store, s, max_pages=args.max_pages) for s in batch]
+            futures = [pool.submit(fetch, s) for s in batch]
             for done, fut in enumerate(as_completed(futures), 1):  # results are written on this thread only
                 res = fut.result()
                 n = len(res.rows)
@@ -215,6 +229,7 @@ def main() -> int:
         "catalog": catalog_mode,
         "stores_ok": len(ok),
         "stores_failed": len(failed),
+        "stores_skipped": sum(r.error.startswith("skipped") for r in failed),
         "stores_truncated": sum(r.truncated for r in ok),
         "products": sum(r.products for r in ok),
         "variants": counts["prices"],
