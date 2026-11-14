@@ -29,7 +29,7 @@ jobs:
           # The tip of the branch, not the commit at the moment the run was
           # requested: a run that waited in the queue must see what the run
           # before it committed, or the duplicate check reads stale files.
-          ref: ${{ github.event.repository.default_branch }}
+          ref: main
 
       - uses: actions/setup-python@v6
         with:
