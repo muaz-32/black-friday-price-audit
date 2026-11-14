@@ -48,6 +48,25 @@ for that run.
 Sales figures are not public anywhere. The proxies here are stock-outs
 (`available` flipping to false) and how often a variant's price changes.
 
+## Search interest
+
+A second job records what people are searching for, hourly, into CSV files
+under [trends/](trends/) (committed to this repository, not to a release):
+
+| file | what it is |
+|---|---|
+| `trends/trending/<date>.csv` | Google's "trending now" feed for 14 countries: the ten searches rising fastest at that moment, with Google's rough volume (`approx_traffic`, a floor such as 1000) and the lead news story |
+| `trends/suggest/<date>.csv` | Google autocomplete for seed phrases such as `black friday ` and `black friday a`…`z`, in four English-speaking markets, every 6 hours. `rank` is the position Google showed the suggestion in |
+| `trends/pageviews.csv` | daily Wikipedia page views since 2026-10-01 for a panel of shopping-related articles, rebuilt once a day |
+
+Countries, seed phrases and articles are listed in
+[trends/config.json](trends/config.json).
+
+These are indirect measures. Google's own 0–100 "interest over time" figures
+for a chosen keyword are not collected, because the only sanctioned source is
+the official Google Trends API, which is invite-only. The trending feed covers
+all searches, not just shopping; most rows are sport and news.
+
 ## Run it yourself
 
 ```bash
@@ -63,6 +82,12 @@ and running the probe, which keeps the ones that serve a feed:
 
 ```bash
 .venv/bin/python -m collector.discover
+```
+
+The search-interest collector runs the same way:
+
+```bash
+.venv/bin/python -m collector.trends
 ```
 
 ## Get the data
@@ -96,10 +121,15 @@ ORDER BY was_after / was_before DESC;
 
 ## Scheduled collection
 
-[.github/workflows/snapshot.yml](.github/workflows/snapshot.yml) runs the
-snapshot every 6 hours on GitHub Actions, uploads the files to a monthly
-release (`data-YYYY-MM`), and commits [status/latest.json](status/latest.json)
-as a heartbeat.
+Three GitHub Actions workflows do the work:
+
+- [snapshot.yml](.github/workflows/snapshot.yml), every 6 hours: takes the
+  price snapshot, uploads the files to a monthly release (`data-YYYY-MM`), and
+  commits [status/latest.json](status/latest.json) as a heartbeat.
+- [trends.yml](.github/workflows/trends.yml), hourly: appends to the CSVs
+  under `trends/`.
+- [discover.yml](.github/workflows/discover.yml), by hand: probes
+  `stores/candidates.txt` and commits the updated store list.
 
 ## How it behaves towards stores
 
