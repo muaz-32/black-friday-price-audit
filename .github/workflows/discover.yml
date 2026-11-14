@@ -1,0 +1,51 @@
+name: discover
+
+# Probes stores/candidates.txt for domains that serve a public product feed and
+# commits the updated store list. Run by hand after adding candidates.
+on:
+  workflow_dispatch:
+    inputs:
+      retry:
+        description: "Also re-probe rejected domains whose reason contains this text"
+        default: "429"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: discover
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Probe candidates
+        env:
+          BF_USER_AGENT: "bf-price-audit/0.1 (+https://github.com/${{ github.repository }})"
+          RETRY: ${{ inputs.retry }}
+        run: |
+          if [ -n "$RETRY" ]; then
+            python -m collector.discover --retry "$RETRY"
+          else
+            python -m collector.discover
+          fi
+
+      - name: Commit store list
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stores/stores.csv stores/rejected.csv
+          git diff --cached --quiet || git commit -m "stores: discovery run $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase
+          git push

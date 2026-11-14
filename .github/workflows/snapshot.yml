@@ -15,7 +15,7 @@ concurrency:
 jobs:
   snapshot:
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v5
 
@@ -54,4 +54,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add status/latest.json
           git diff --cached --quiet || git commit -m "status: snapshot $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase
           git push
