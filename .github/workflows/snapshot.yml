@@ -104,6 +104,35 @@ jobs:
           fi
           python -m collector.summarize --run "$run" ${PREV:+--prev "$PREV"}
 
+      # Folds this snapshot into the per-product change log kept in the "state"
+      # release. If the existing state cannot be fetched the step stops rather
+      # than start a new history; the state can be rebuilt from the snapshots.
+      - name: Update product price histories
+        if: always() && steps.fresh.outputs.skip != 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          run=$(ls data/prices-*.parquet | sed 's/.*prices-\(.*\)\.parquet/\1/' | sort | tail -1)
+          gh release view state >/dev/null 2>&1 || gh release create state --latest=false \
+            --title "Product price histories" \
+            --notes "Rolling state files, rebuilt from the snapshots after every run. See the README."
+          mkdir -p state
+          names=$(gh release view state --json assets --jq '.assets[].name')
+          for kind in history info; do
+            newest=$(echo "$names" | grep "^product-$kind-" | sort | tail -1 || true)
+            if [ -n "$newest" ]; then gh release download state --dir state -p "$newest"; fi
+          done
+          python -m collector.products --run "$run"
+          if [ -f "state/product-history-$run.parquet" ]; then
+            gh release upload state "state/product-history-$run.parquet" "state/product-info-$run.parquet"
+            for kind in history info; do # keep the two newest of each
+              echo "$names" | { grep "^product-$kind-" || true; } | sort | head -n -1 | while read -r old; do
+                gh release delete-asset state "$old" -y
+              done
+            done
+          fi
+
       # The commit doubles as a heartbeat: GitHub disables scheduled workflows
       # in repositories with no activity for 60 days.
       - name: Commit run status

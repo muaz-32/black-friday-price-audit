@@ -36,7 +36,21 @@ jobs:
         with:
           python-version: "3.13"
 
-      # The build uses only the standard library, so nothing to install.
+      # The product pages are built from the newest state files; without them
+      # the rest of the dashboard still builds.
+      - name: Fetch product price histories
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p state
+          names=$(gh release view state --json assets --jq '.assets[].name' 2>/dev/null || true)
+          for kind in history info; do
+            newest=$(echo "$names" | grep "^product-$kind-" | sort | tail -1 || true)
+            if [ -n "$newest" ]; then gh release download state --dir state -p "$newest"; fi
+          done
+
+      - run: pip install duckdb
+
       - run: python -m dashboard.build --repo "${{ github.repository }}"
 
       - uses: actions/configure-pages@v5

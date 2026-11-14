@@ -2,8 +2,9 @@
 
     python -m dashboard.build
 
-Reads only small committed files (summary/, trends/, stores/stores.csv) and
-writes _site/index.html plus JSON under _site/data/. No snapshot files needed.
+Reads small committed files (summary/, trends/, stores/stores.csv) and, for the
+product pages, the product history in state/ if it is there. Writes
+_site/index.html plus JSON under _site/data/. No snapshot files are needed.
 
 Charts over time use a fixed panel of stores, so that adding stores to the list
 does not look like a change in prices: the panel is every store fetched
@@ -197,21 +198,109 @@ def build_trends(trends: Path) -> dict:
     }
 
 
+MOVERS = """
+WITH ends AS (
+    SELECT store, product_id,
+        arg_min(price_min, run_id) FILTER (price_min IS NOT NULL) AS p0,
+        arg_min(greatest(coalesce(compare_at, 0), price_max), run_id) FILTER (price_min IS NOT NULL) AS ref0,
+        arg_max(price_min, run_id) AS p1, arg_max(compare_at, run_id) AS c1,
+        min(run_id) AS first_run, max(run_id) AS last_run
+    FROM history GROUP BY store, product_id HAVING count(*) > 1
+), scored AS (
+    SELECT e.*, i.title, i.handle, p1 / p0 AS ratio, c1 / ref0 AS ref_ratio
+    FROM ends e LEFT JOIN info i USING (store, product_id)
+    WHERE p1 IS NOT NULL AND p0 >= 5
+)
+SELECT kind, store, product_id, title, handle, p0, p1, ref0, c1 FROM (
+    SELECT 'cuts' AS kind, *, ratio AS score FROM scored WHERE ratio BETWEEN 0.05 AND 0.97
+    UNION ALL SELECT 'rises', *, -ratio FROM scored WHERE ratio BETWEEN 1.03 AND 20
+    UNION ALL SELECT 'inflated', *, -ref_ratio FROM scored WHERE c1 > p1 AND p1 >= p0 - 0.005 AND ref_ratio BETWEEN 1.03 AND 20
+)
+QUALIFY row_number() OVER (PARTITION BY kind, store ORDER BY score) <= 3
+ORDER BY kind, score
+"""
+
+
+def build_products(state: Path, out: Path) -> dict | None:
+    """Per-store product files and the lists of biggest moves, from the newest state files.
+
+    Product row: [id, title, handle, [[run index, lowest price, highest price or
+    null if the same, compare-at or null], ...]]; a removal is [run index, null].
+    """
+    history = sorted(state.glob("product-history-*.parquet"))
+    info = sorted(state.glob("product-info-*.parquet"))
+    if not history or not info:
+        return None
+    import duckdb  # only needed for this part, so the rest builds without it
+
+    db = duckdb.connect()
+    db.execute(f"CREATE VIEW history AS SELECT * FROM read_parquet('{history[-1]}')")
+    db.execute(f"CREATE VIEW info AS SELECT * FROM read_parquet('{info[-1]}')")
+    runs = [r for (r,) in db.execute("SELECT DISTINCT run_id FROM history ORDER BY 1").fetchall()]
+    index = {r: i for i, r in enumerate(runs)}
+    directory = out / "data" / "products"
+    if directory.exists():
+        shutil.rmtree(directory)
+    directory.mkdir(parents=True)
+
+    cur = db.execute(
+        """
+        SELECT h.store, h.product_id, i.title, i.handle, h.run_id, h.price_min, h.price_max, h.compare_at
+        FROM history h LEFT JOIN info i USING (store, product_id)
+        ORDER BY h.store, h.product_id, h.run_id
+        """
+    )
+    counts: dict[str, int] = {}
+    store, products, product = None, [], None
+
+    def flush() -> None:
+        if store is not None:
+            (directory / f"{store}.json").write_text(json.dumps({"runs": runs, "products": products}, separators=(",", ":")))
+            counts[store] = len(products)
+
+    while batch := cur.fetchmany(200_000):
+        for s_, pid, title, handle, run_id, lo, hi, cmp_ in batch:
+            if s_ != store:
+                flush()
+                store, products, product = s_, [], None
+            if product is None or product[0] != pid:
+                product = [pid, title or handle or str(pid), handle or "", []]
+                products.append(product)
+            if lo is None:
+                product[3].append([index[run_id], None])
+            else:
+                product[3].append([index[run_id], lo, None if hi is None or abs(hi - lo) < 0.005 else hi, cmp_])
+    flush()
+
+    movers: dict[str, list] = {"cuts": [], "rises": [], "inflated": []}
+    for kind, s_, pid, title, handle, p0, p1, ref0, c1 in db.execute(MOVERS).fetchall():
+        if len(movers[kind]) < 150:
+            movers[kind].append([s_, pid, title or handle or str(pid), p0, p1, ref0, c1])
+    (out / "data" / "movers.json").write_text(json.dumps(movers, separators=(",", ":")))
+    size = sum(f.stat().st_size for f in directory.iterdir())
+    print(f"products: {sum(counts.values())} in {len(counts)} stores, {size // 1_000_000} MB, through {runs[-1]}")
+    return {"runs": len(runs), "last_run": runs[-1], "stores": counts}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--summary", type=Path, default=Path("summary"))
     ap.add_argument("--trends", type=Path, default=Path("trends"))
     ap.add_argument("--stores", type=Path, default=Path("stores/stores.csv"))
+    ap.add_argument("--state", type=Path, default=Path("state"), help="product history files; skipped if absent")
     ap.add_argument("--out", type=Path, default=Path("_site"))
     ap.add_argument("--repo", default="muaz-32/black-friday-price-audit")
     args = ap.parse_args()
 
     prices, details = build_prices(args.summary, args.stores)
+    args.out.mkdir(parents=True, exist_ok=True)
+    (args.out / "data").mkdir(exist_ok=True)
     data = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "repo": args.repo,
         "prices": prices,
         "trends": build_trends(args.trends),
+        "products": build_products(args.state, args.out),
     }
     store_dir = args.out / "data" / "store"
     if store_dir.exists():

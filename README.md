@@ -142,6 +142,22 @@ because the compare-at price went up while the selling price did not go down.
 The price index chains the average price change of the same items from one
 snapshot to the next (a geometric mean, first snapshot = 100).
 
+### Product price histories
+
+The dashboard's product view needs each product's history without loading
+every snapshot. After each snapshot `collector.products` folds it into two
+small files kept in the `state` release:
+
+- `product-history-<run>.parquet`: one row each time a product's lowest price,
+  highest price or compare-at price changes, and when it disappears from a
+  store that was read successfully (`store`, `product_id`, `run_id`,
+  `price_min`, `price_max`, `compare_at`, `discount`, `variants`, `available`).
+- `product-info-<run>.parquet`: handle, title, vendor and type per product.
+
+A product is one listing; its variants (sizes, colours) are summarised by the
+cheapest and dearest. The variant-level detail stays in the snapshots, and the
+state can be rebuilt from them by applying the runs in order.
+
 ## Scheduled collection
 
 Three GitHub Actions workflows do the work:

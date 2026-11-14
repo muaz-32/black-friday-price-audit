@@ -105,6 +105,30 @@ footer { margin-top: 48px; color: var(--muted); font-size: 13px; }
     <div class="pager"><button id="prev">Previous</button><span id="page"></span><button id="next">Next</button></div>
   </div>
 
+  <h2>Products</h2>
+  <p class="note">The price history of individual products. A product is one listing; where its sizes or colours cost different amounts, "price" is the cheapest of them.</p>
+  <div class="card" id="p-card">
+    <h3>Look up a product</h3>
+    <div class="controls">
+      <input type="search" id="pstore" list="pstores" placeholder="Type a store, e.g. kith.com" aria-label="Store">
+      <datalist id="pstores"></datalist>
+      <input type="search" id="pq" placeholder="Search this store's products" aria-label="Search products" disabled>
+      <select id="psort" aria-label="Sort products" disabled>
+        <option value="cut">Biggest price cut</option><option value="rise">Biggest price rise</option>
+        <option value="was">"Was" price raised most</option><option value="changes">Most changes</option><option value="name">Name</option>
+      </select>
+      <span class="note" id="pcount">Choose a store to list its products.</span>
+    </div>
+    <div class="tablewrap"><table id="products"><thead></thead><tbody></tbody></table></div>
+    <div class="pager" id="ppager" hidden><button id="pprev">Previous</button><span id="ppage"></span><button id="pnext">Next</button></div>
+  </div>
+  <div class="card" style="margin-top:12px">
+    <h3>Biggest moves since each product was first recorded</h3>
+    <p class="note">Products first recorded at 5 or more in the store's currency; at most three per store, so one large store cannot fill the list.</p>
+    <div class="chips" id="mkinds"></div>
+    <div class="tablewrap"><table id="movers"><thead></thead><tbody></tbody></table></div>
+  </div>
+
   <h2>What people are searching for</h2>
   <p class="note">Three public signals. None of them is Google's 0–100 "interest over time" figure, which is not openly available.</p>
   <div class="card">
@@ -170,14 +194,14 @@ function ticks(min, max, n) {
 
 // Line chart. series: [{name, color, points: [[ms, y], ...]}]
 function lineChart(el, o) {
-  const series = o.series.map((s) => ({ ...s, points: s.points.filter((p) => p[1] != null) })).filter((s) => s.points.length);
+  const series = o.series.map((s) => ({ ...s, points: o.step ? s.points : s.points.filter((p) => p[1] != null) })).filter((s) => s.points.some((p) => p[1] != null));
   const n = Math.max(0, ...series.map((s) => s.points.length));
   if (n < (o.min || 2)) { el.innerHTML = `<div class="empty">${esc(o.empty || "Not enough data yet.")}</div>`; return; }
   const multi = series.length > 1, W = el.clientWidth || 600, H = o.height || 210;
   const m = { l: 46, r: multi && series.length <= 4 ? 118 : 14, t: 10, b: 24 };
   const xs = [...new Set(series.flatMap((s) => s.points.map((p) => p[0])))].sort((a, b) => a - b);
   let x0 = xs[0], x1 = xs[xs.length - 1]; if (x0 === x1) { x0 -= 36e5; x1 += 36e5; }
-  const ys = series.flatMap((s) => s.points.map((p) => p[1]));
+  const ys = series.flatMap((s) => s.points.map((p) => p[1])).filter((v) => v != null);
   let y0 = o.zero ? 0 : Math.min(...ys), y1 = Math.max(...ys);
   if (y0 === y1) { y0 -= Math.abs(y0) * 0.02 || 1; y1 += Math.abs(y1) * 0.02 || 1; }
   const pad = (y1 - y0) * 0.08; y1 += pad; if (!o.zero) y0 -= pad;
@@ -189,9 +213,11 @@ function lineChart(el, o) {
   for (let i = 0; i < nx; i++) { const v = x0 + ((x1 - x0) * i) / (nx - 1); g += `<text x="${X(v)}" y="${H - 6}" text-anchor="${i === 0 ? "start" : i === nx - 1 ? "end" : "middle"}">${esc(xf(v))}</text>`; }
   const ends = [];
   for (const s of series) {
-    g += `<path d="${s.points.map((p, i) => (i ? "L" : "M") + X(p[0]).toFixed(1) + " " + Y(p[1]).toFixed(1)).join("")}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
-    if (s.points.length <= 40) for (const p of s.points) g += `<circle cx="${X(p[0])}" cy="${Y(p[1])}" r="${s.points.length <= 12 ? 4 : 2.5}" fill="${s.color}" stroke="var(--surface)" stroke-width="2"/>`;
-    const last = s.points[s.points.length - 1]; ends.push({ y: Y(last[1]), name: s.name });
+    let d = "", pen = false;  // a null value lifts the pen; step charts hold a value until the next point
+    for (const p of s.points) { if (p[1] == null) { pen = false; continue; } const x = X(p[0]).toFixed(1), y = Y(p[1]).toFixed(1); d += !pen ? `M${x} ${y}` : o.step ? `H${x}V${y}` : `L${x} ${y}`; pen = true; }
+    g += `<path d="${d}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"${s.dash ? ' stroke-dasharray="5 4"' : ""}/>`;
+    if (s.points.length <= 40) for (const p of s.points) if (p[1] != null) g += `<circle cx="${X(p[0])}" cy="${Y(p[1])}" r="${s.points.length <= 12 ? 4 : 2.5}" fill="${s.color}" stroke="var(--surface)" stroke-width="2"/>`;
+    const last = [...s.points].reverse().find((p) => p[1] != null); ends.push({ y: Y(last[1]), name: s.name });
   }
   if (m.r > 20) { ends.sort((a, b) => a.y - b.y); for (let i = 1; i < ends.length; i++) ends[i].y = Math.max(ends[i].y, ends[i - 1].y + 14); for (const e of ends) g += `<text class="endlabel" x="${W - m.r + 8}" y="${e.y + 4}">${esc(e.name.length > 17 ? e.name.slice(0, 16) + "…" : e.name)}</text>`; }
   g += `<line id="x" y1="${m.t}" y2="${H - m.b}" stroke="var(--muted)" stroke-dasharray="3 3" visibility="hidden"/><rect x="${m.l}" y="${m.t}" width="${W - m.l - m.r}" height="${H - m.t - m.b}" fill="transparent"/>`;
@@ -201,7 +227,7 @@ function lineChart(el, o) {
     const box = svg.getBoundingClientRect(), v = x0 + ((((ev.clientX - box.left) / box.width) * W - m.l) / (W - m.l - m.r)) * (x1 - x0);
     const near = xs.reduce((a, b) => (Math.abs(b - v) < Math.abs(a - v) ? b : a));
     cross.setAttribute("x1", X(near)); cross.setAttribute("x2", X(near)); cross.setAttribute("visibility", "visible");
-    const rows = series.map((s) => { const p = s.points.find((p) => p[0] === near); return p ? `<div><i style="background:${s.color}"></i>${multi ? esc(s.name) + ": " : ""}<b>${esc((o.tipFmt || fmt)(p[1]))}</b></div>` : ""; }).join("");
+    const rows = series.map((s) => { const p = o.step ? [...s.points].reverse().find((p) => p[0] <= near) : s.points.find((p) => p[0] === near); return p && p[1] != null ? `<div><i style="background:${s.color}"></i>${multi ? esc(s.name) + ": " : ""}<b>${esc((o.tipFmt || fmt)(p[1]))}</b></div>` : ""; }).join("");
     showTip(`<div>${esc(xf(near))}</div>${rows}`, ev);
   });
   hit.addEventListener("mouseleave", () => { cross.setAttribute("visibility", "hidden"); hideTip(); });
@@ -268,6 +294,7 @@ function init(data) {
   redraw.push(() => barChart($("c-hist"), { bars: bins, label: "Stores by share of catalogue marked down" }));
 
   initStores(P.stores);
+  initProducts(data.products, P.stores);
   initTrends(data.trends);
   draw();
   let timer; window.addEventListener("resize", () => { clearTimeout(timer); timer = setTimeout(draw, 150); });
@@ -324,6 +351,83 @@ function openStore(s) {
     lineChart($("d3"), { series: [{ name: "Items", color: "var(--s1)", points: col(1) }], empty, height: 180 });
     lineChart($("d4"), { series: [{ name: "Price cuts", color: "var(--s1)", points: col(4) }, { name: "Price rises", color: "var(--s2)", points: col(5) }], zero: true, min: 1, empty, height: 180 });
   }).catch(() => { $("d-body").innerHTML = '<div class="empty">Could not load this store\'s history.</div>'; });
+}
+
+const money = (v) => (v == null ? "–" : v.toLocaleString("en-GB", { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+const change = (r) => (r == null ? "–" : (r > 0 ? "+" : "") + (r * 100).toFixed(Math.abs(r) < 0.1 ? 1 : 0) + "%");
+const FILES = {};
+function loadProducts(store) {
+  return (FILES[store] ||= fetch("data/products/" + encodeURIComponent(store) + ".json").then((r) => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); }));
+}
+// p: [id, title, handle, [[run index, lowest, highest or null, "was" or null], ...]]
+function productStats(p) {
+  const ev = p[3], first = ev.find((e) => e[1] != null), last = ev[ev.length - 1], ref0 = first ? Math.max(first[3] ?? 0, first[2] ?? first[1]) : null;
+  return { p, name: p[1], first: first ? first[1] : null, now: last[1], was: last[3] ?? null, changes: ev.length - 1, cut: last[1] != null && first ? last[1] / first[1] - 1 : null, wasUp: last[3] != null && ref0 ? last[3] / ref0 - 1 : null };
+}
+function initProducts(info, stores) {
+  const currency = Object.fromEntries(stores.map((s) => [s.d, s.c]));
+  const KINDS = [["cuts", "Price cuts"], ["rises", "Price rises"], ["inflated", '"Was" price raised, price not cut']];
+  if (!info) { $("pcount").textContent = "Product histories have not been built yet."; $("pstore").disabled = true; return; }
+  $("pstores").innerHTML = Object.keys(info.stores).sort().map((d) => `<option value="${esc(d)}">`).join("");
+  const state = { store: "", runs: [], rows: [], page: 0, per: 25 };
+  const head = $("products").querySelector("thead"), body = $("products").querySelector("tbody");
+  const SORT = { cut: (a, b) => (a.cut ?? 9) - (b.cut ?? 9), rise: (a, b) => (b.cut ?? -9) - (a.cut ?? -9), was: (a, b) => (b.wasUp ?? -9) - (a.wasUp ?? -9), changes: (a, b) => b.changes - a.changes, name: () => 0 };
+  function render() {
+    const q = $("pq").value.trim().toLowerCase(), by = SORT[$("psort").value];
+    const rows = state.rows.filter((r) => !q || r.name.toLowerCase().includes(q)).sort((a, b) => by(a, b) || a.name.localeCompare(b.name));
+    const pages = Math.max(1, Math.ceil(rows.length / state.per)); state.page = Math.min(state.page, pages - 1);
+    head.innerHTML = `<tr><th>Product</th><th>Price now (${esc(currency[state.store] || "")})</th><th>First recorded</th><th>Change</th><th>"Was" price now</th><th>Price changes</th></tr>`;
+    state.shown = rows.slice(state.page * state.per, (state.page + 1) * state.per);
+    body.innerHTML = state.shown.map((r, i) => `<tr data-i="${i}"><td class="l" style="white-space:normal;min-width:220px">${esc(r.name)}</td><td>${r.now == null ? "no longer listed" : money(r.now)}</td><td>${money(r.first)}</td><td>${change(r.cut)}</td><td>${money(r.was)}</td><td>${int(r.changes)}</td></tr>`).join("");
+    $("pcount").textContent = `${int(rows.length)} products`;
+    $("ppager").hidden = false; $("ppage").textContent = `Page ${state.page + 1} of ${pages}`;
+    $("pprev").disabled = state.page === 0; $("pnext").disabled = state.page >= pages - 1;
+  }
+  function choose() {
+    const store = $("pstore").value.trim().toLowerCase();
+    if (!(store in info.stores) || store === state.store) return;
+    $("pcount").textContent = "Loading…";
+    loadProducts(store).then((file) => {
+      state.store = store; state.runs = file.runs; state.rows = file.products.map(productStats); state.page = 0;
+      $("pq").disabled = $("psort").disabled = false; $("pq").value = ""; render();
+    }).catch((e) => { $("pcount").textContent = "Could not load this store's products (" + e.message + ")."; });
+  }
+  $("pstore").addEventListener("change", choose); $("pstore").addEventListener("input", choose);
+  $("pq").addEventListener("input", () => { state.page = 0; render(); });
+  $("psort").addEventListener("change", () => { state.page = 0; render(); });
+  $("pprev").addEventListener("click", () => { state.page--; render(); });
+  $("pnext").addEventListener("click", () => { state.page++; render(); });
+  body.addEventListener("click", (ev) => { const tr = ev.target.closest("tr"); if (tr) openProduct(state.store, state.shown[+tr.dataset.i].p, state.runs, currency[state.store]); });
+
+  fetch("data/movers.json").then((r) => r.json()).then((M) => {
+    let kind = "cuts";
+    const mh = $("movers").querySelector("thead"), mb = $("movers").querySelector("tbody");
+    function show() {
+      $("mkinds").innerHTML = KINDS.map(([k, t]) => `<button class="chip" data-k="${k}" aria-pressed="${k === kind}">${esc(t)} (${M[k].length})</button>`).join("");
+      const was = kind === "inflated";
+      mh.innerHTML = `<tr><th>Product</th><th class="l">Store</th><th>${was ? '"Was" or top price at first' : "First recorded"}</th><th>${was ? '"Was" price now' : "Price now"}</th><th>Change</th>${was ? "<th>Price first → now</th>" : ""}</tr>`;
+      mb.innerHTML = M[kind].map((m, i) => { const [store, , name, p0, p1, ref0, c1] = m, a = was ? ref0 : p0, b = was ? c1 : p1; return `<tr data-i="${i}"><td class="l" style="white-space:normal;min-width:220px">${esc(name)}</td><td class="l">${esc(store)}</td><td>${money(a)}</td><td>${money(b)}</td><td>${change(b / a - 1)}</td>${was ? `<td>${money(p0)} → ${money(p1)}</td>` : ""}</tr>`; }).join("") || `<tr><td class="l note" colspan="6" style="cursor:default">Nothing yet. Moves appear once a product's price has changed between two snapshots.</td></tr>`;
+    }
+    $("mkinds").addEventListener("click", (ev) => { if (ev.target.dataset.k) { kind = ev.target.dataset.k; show(); } });
+    mb.addEventListener("click", (ev) => {
+      const tr = ev.target.closest("tr"); if (!tr || tr.dataset.i == null) return;
+      const [store, id] = M[kind][+tr.dataset.i];
+      loadProducts(store).then((file) => { const p = file.products.find((p) => p[0] === id); if (p) openProduct(store, p, file.runs, currency[store]); });
+    });
+    show();
+  }).catch(() => {});
+}
+function openProduct(store, p, runs, cur) {
+  const ev = p[3], end = runMs(runs[runs.length - 1]), at = (e) => runMs(runs[e[0]]);
+  const line = (pick) => { const pts = ev.map((e) => [at(e), e[1] == null ? null : pick(e)]); const last = pts[pts.length - 1]; if (last[0] < end && ev[ev.length - 1][1] != null) pts.push([end, last[1]]); return pts; };
+  const st = productStats(p), series = [{ name: "Price", color: "var(--s1)", points: line((e) => e[1]) }];
+  if (ev.some((e) => e[2] != null)) series.push({ name: "Dearest option", color: "var(--s3)", points: line((e) => e[2] ?? e[1]) });
+  if (ev.some((e) => e[3] != null)) series.push({ name: '"Was" price', color: "var(--s2)", dash: true, points: line((e) => e[3] ?? null) });
+  $("d-title").textContent = p[1];
+  $("d-sub").innerHTML = `${esc(store)} · ${st.now == null ? "no longer listed" : "now " + money(st.now) + " " + esc(cur || "")} · first recorded ${esc(day(at(ev[0])))} at ${money(st.first)}` + (p[2] ? ` · <a href="https://${esc(store)}/products/${encodeURIComponent(p[2])}" target="_blank" rel="noopener">see it on the store</a>` : "");
+  $("d-body").innerHTML = `<div class="chart" id="pc"></div><div class="tablewrap" style="margin-top:12px"><table><thead><tr><th>Recorded</th><th>Price</th><th>Dearest option</th><th>"Was" price</th></tr></thead><tbody>${ev.map((e) => `<tr style="cursor:default"><td class="l">${esc(dayTime(at(e)))}</td>${e[1] == null ? '<td colspan="3">no longer listed</td>' : `<td>${money(e[1])}</td><td>${money(e[2] ?? e[1])}</td><td>${money(e[3])}</td>`}</tr>`).join("")}</tbody></table></div>`;
+  $("detail").showModal();
+  lineChart($("pc"), { series, step: true, fmt: money, height: 260, empty: "Only one snapshot of this product so far, so there is no line to draw yet. Each later change adds a row below.", label: "Price history" });
 }
 
 function initTrends(T) {
