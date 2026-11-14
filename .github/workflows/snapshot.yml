@@ -1,0 +1,57 @@
+name: snapshot
+
+on:
+  schedule:
+    - cron: "17 */6 * * *" # every 6 hours, off the hour to dodge the scheduler rush
+  workflow_dispatch:
+
+permissions:
+  contents: write # upload release assets, commit status/latest.json
+
+concurrency:
+  group: snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Take snapshot
+        env:
+          BF_VANTAGE: github-actions
+          BF_USER_AGENT: "bf-price-audit/0.1 (+https://github.com/${{ github.repository }})"
+        run: python -m collector.snapshot --status status/latest.json
+
+      # Runs even when the snapshot step failed its coverage check: a partial
+      # snapshot plus its runs file is still valid data.
+      - name: Upload to this month's data release
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="data-$(date -u +%Y-%m)"
+          gh release view "$tag" >/dev/null 2>&1 || gh release create "$tag" \
+            --title "Snapshots $(date -u +%Y-%m)" \
+            --notes "Raw snapshot files. See the README for the schema."
+          gh release upload "$tag" data/snap-*.parquet data/runs-*.parquet
+
+      # The commit doubles as a heartbeat: GitHub disables scheduled workflows
+      # in repositories with no activity for 60 days.
+      - name: Commit run status
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add status/latest.json
+          git diff --cached --quiet || git commit -m "status: snapshot $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push

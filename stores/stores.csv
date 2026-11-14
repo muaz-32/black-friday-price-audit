@@ -1,0 +1,469 @@
+domain,base_url,country,currency,shop_id,name
+creations.mattel.com,https://creations.mattel.com,US,USD,prod-collectorshub.myshopify.com,Mattel Creations
+diptyqueparis.com,https://diptyqueparis.com/fr-fr,FR,EUR,diptyque-xborder.myshopify.com,Diptyque
+drinkghia.com,https://drinkghia.com,US,USD,drinkghia.myshopify.com,Ghia
+eatfishwife.com,https://eatfishwife.com,US,USD,eat-fishwife.myshopify.com,Fishwife
+flipper.net,https://flipper.net,US,USD,flipper-zero.myshopify.com,Flipper
+global.rokid.com,https://global.rokid.com,CN,USD,store-rokid.myshopify.com,Rokid
+heatonist.com,https://heatonist.com,US,USD,heatonist-llc.myshopify.com,HEATONIST
+hidratespark.com,https://hidratespark.com,US,USD,hidrateme-shop.myshopify.com,HidrateSpark
+kith.com,https://kith.com,US,USD,kithnyc.myshopify.com,Kith
+ledergames.com,https://ledergames.com,US,USD,leder-games.myshopify.com,Leder Games
+pelacase.com,https://pelacase.com,US,USD,pelacase.myshopify.com,Pela Case
+shop.boox.com,https://shop.boox.com,HK,USD,boox-global.myshopify.com,The Official BOOX Store
+shop.critrole.com,https://shop.critrole.com,US,USD,criticalrole.myshopify.com,Critical Role
+shop.mattel.com,https://shop.mattel.com,US,USD,prod-mattel.myshopify.com,Mattel Shop
+shop.momofuku.com,https://shop.momofuku.com,US,USD,momofuku-online-store.myshopify.com,Momofuku Goods
+shop.pimoroni.com,https://shop.pimoroni.com,GB,GBP,pimoroni-2.myshopify.com,Pimoroni Ltd
+shopus.furbo.com,https://shopus.furbo.com,US,USD,furbo-dog-camera.myshopify.com,Furbo Dog Camera 
+store.anycubic.com,https://store.anycubic.com,HK,USD,anycubic3d-printer.myshopify.com,ANYCUBIC-STORE
+store.dropout.tv,https://store.dropout.tv,US,USD,dropout-store.myshopify.com,Dropout Store
+store.minisforum.com,https://store.minisforum.com,HK,USD,minisforum.myshopify.com,Minisforum
+thenecastore.com,https://thenecastore.com,US,USD,necaonline.myshopify.com,NECA
+theyamazakihome.com,https://theyamazakihome.com,US,USD,yamazakihome.myshopify.com,Yamazaki Home
+us.amazfit.com,https://us.amazfit.com,US,USD,amazfit-usa.myshopify.com,Amazfit
+us.ecoflow.com,https://us.ecoflow.com,US,USD,ecoflow-tech.myshopify.com,EcoFlow
+us.elegoo.com,https://us.elegoo.com,US,USD,i0nasn-mz.myshopify.com,ELEGOO US
+us.foursigmatic.com,https://us.foursigmatic.com,US,USD,foursigmastore-us.myshopify.com, Four Sigmatic
+us.gozney.com,https://us.gozney.com,US,USD,gozney-us.myshopify.com,Gozney US
+us.shop.xreal.com,https://us.shop.xreal.com,US,USD,xreal-us-store.myshopify.com,XREAL US Shop
+us.switch-bot.com,https://us.switch-bot.com,US,USD,switchbot-us.myshopify.com,SwitchBot US
+us.tonies.com,https://us.tonies.com,US,USD,tonies-us.myshopify.com,tonies®
+www.100percentpure.com,https://www.100percentpure.com,US,USD,100-pure.myshopify.com,100% PURE
+www.1stphorm.com,https://www.1stphorm.com,US,USD,1p-ecomm.myshopify.com,1st Phorm
+www.2pood.com,https://www.2pood.com,US,USD,2pstrength.myshopify.com,2POOD
+www.686.com,https://www.686.com,US,USD,686store.myshopify.com,686.com
+www.aeropress.com,https://www.aeropress.com,US,USD,aeropress-coffee.myshopify.com,AeroPress
+www.aersf.com,https://www.aersf.com,US,USD,aer-sf.myshopify.com,Aer 
+www.aimeleondore.com,https://www.aimeleondore.com,US,USD,aime-leon-dore.myshopify.com,Aimé Leon Dore
+www.alaninu.com,https://www.alaninu.com,US,USD,alani-nu.myshopify.com,Alani Nu
+www.albanypark.com,https://www.albanypark.com,US,USD,albany-park.myshopify.com,Albany Park
+www.alexandani.com,https://www.alexandani.com,US,USD,alexandani-us.myshopify.com,ALEX AND ANI
+www.allbirds.com,https://www.allbirds.com,US,USD,weareallbirds.myshopify.com,Allbirds
+www.aloyoga.com,https://www.aloyoga.com,US,USD,alo-yoga.myshopify.com,Alo Yoga
+www.alphaleteathletics.com,https://www.alphaleteathletics.com,US,USD,alphaleteathletics.myshopify.com,Alphalete Athletics
+www.amazfit.com,https://www.amazfit.com,US,USD,amazfit-global-store.myshopify.com,amazfit-global-store
+www.andar.com,https://www.andar.com,US,USD,andar-wallets.myshopify.com,Andar
+www.andieswim.com,https://www.andieswim.com,US,USD,andie-swim-1.myshopify.com,Andie Co.
+www.appointed.co,https://www.appointed.co,US,USD,appointed.myshopify.com,Appointed
+www.archerandolive.com,https://www.archerandolive.com,US,USD,archer-and-olive.myshopify.com,Archer and Olive
+www.areaware.com,https://www.areaware.com,US,USD,areaware.myshopify.com,Areaware Retail
+www.artofplay.com,https://www.artofplay.com,US,USD,artofplay.myshopify.com,Art of Play
+www.artoftea.com,https://www.artoftea.com,US,USD,aoteas.myshopify.com,Art of Tea
+www.astridandmiyu.com,https://www.astridandmiyu.com,GB,GBP,astridandmiyu.myshopify.com,Astrid & Miyu
+www.athleticbrewing.com,https://www.athleticbrewing.com,US,USD,athletic-brewing-company.myshopify.com,Athletic Brewing Company
+www.atlaspetcompany.com,https://www.atlaspetcompany.com,US,USD,atlas-pet-company.myshopify.com,Atlas Pet Company
+www.attaquercycling.com,https://www.attaquercycling.com,AU,AUD,attaquer-cycling.myshopify.com,Attaquer
+www.aventon.com,https://www.aventon.com,US,USD,aventonbikes.myshopify.com,Aventon Bikes
+www.avocadogreenmattress.com,https://www.avocadogreenmattress.com,US,USD,avocadomattress.myshopify.com,Avocado Green Mattress
+www.awaytravel.com,https://www.awaytravel.com,US,USD,766ad1-ab.myshopify.com,Away: Built for modern travel
+www.badbirdiegolf.com,https://www.badbirdiegolf.com,US,USD,bad-birdie.myshopify.com,Bad Birdie
+www.bagsmart.com,https://www.bagsmart.com,US,USD,bagsmartbags-com.myshopify.com,BAGSMART
+www.ban.do,https://www.ban.do,US,USD,ban-do.myshopify.com,ban.do
+www.banditrunning.com,https://www.banditrunning.com,US,USD,bandit-run-club.myshopify.com,Bandit Running
+www.baronfig.com,https://www.baronfig.com,US,USD,baron-fig.myshopify.com,Baronfig
+www.baublebar.com,https://www.baublebar.com,US,USD,baublebar.myshopify.com,BaubleBar
+www.bearkomplex.com,https://www.bearkomplex.com,US,USD,bear-komplex.myshopify.com,Bear KompleX
+www.bee-link.com,https://www.bee-link.com,HK,USD,bee-link.myshopify.com,Beelink
+www.beginningboutique.com,https://www.beginningboutique.com,US,USD,beginningboutique-us.myshopify.com,Beginning Boutique US
+www.beistravel.com,https://www.beistravel.com,US,USD,beistravel.myshopify.com,Béis
+www.bellsofsteel.us,https://www.bellsofsteel.us,US,USD,bells-of-steel-usa.myshopify.com,Bells of Steel USA
+www.bestmadeco.com,https://www.bestmadeco.com,US,USD,09e107-2.myshopify.com,Best Made Company
+www.bigagnes.com,https://www.bigagnes.com,US,USD,www-bigagnes-com.myshopify.com,Big Agnes
+www.bioliteenergy.com,https://www.bioliteenergy.com,US,USD,biolite-2.myshopify.com,BioLite
+www.blackdiamondequipment.com,https://www.blackdiamondequipment.com,US,USD,b4fbf5-dc.myshopify.com,Black Diamond
+www.blackwing602.com,https://www.blackwing602.com,US,USD,blackwing602.myshopify.com,Blackwing
+www.blenderseyewear.com,https://www.blenderseyewear.com,US,USD,blenderseyewear-com.myshopify.com,Blenders Eyewear
+www.blendjet.com,https://www.blendjet.com,US,USD,blendjet.myshopify.com,BlendJet
+www.blueair.com,https://www.blueair.com,US,USD,5ef43d-4a.myshopify.com,Blueair
+www.blurams.com,https://www.blurams.com,HK,USD,prgm11-qj.myshopify.com,blurams
+www.bonobos.com,https://www.bonobos.com,US,USD,h45hqs-bx.myshopify.com,Bonobos
+www.boteboard.com,https://www.boteboard.com,US,USD,boteboard.myshopify.com,BOTE
+www.bowflex.com,https://www.bowflex.com,US,USD,bowflex-dtc.myshopify.com,BowFlex
+www.boysmells.com,https://www.boysmells.com,US,USD,boysmells.myshopify.com,Boy Smells
+www.branchbasics.com,https://www.branchbasics.com,US,USD,branch-basics.myshopify.com,Branch Basics
+www.breeo.co,https://www.breeo.co,US,USD,breeo.myshopify.com,Breeo
+www.brew-watches.com,https://www.brew-watches.com,US,USD,0849fc-2.myshopify.com,Brew Watches
+www.brightland.co,https://www.brightland.co,US,USD,brightland-ca.myshopify.com,Brightland
+www.brixton.com,https://www.brixton.com,US,USD,brixtonllc.myshopify.com,Brixton
+www.brooklinen.com,https://www.brooklinen.com,US,USD,brooklinen2.myshopify.com,Brooklinen
+www.brooklyncandlestudio.com,https://www.brooklyncandlestudio.com,US,USD,brooklyn-candle-studio.myshopify.com,Brooklyn Candle Studio
+www.buffy.co,https://www.buffy.co,US,USD,buffy-zero.myshopify.com,Buffy.co
+www.burlapandbarrel.com,https://www.burlapandbarrel.com,US,USD,burlap-barrel.myshopify.com,Burlap & Barrel
+www.burrow.com,https://www.burrow.com,US,USD,burrow-prod.myshopify.com,Burrow
+www.burton.com,https://www.burton.com/en-us,US,USD,burton-na-production.myshopify.com,Burton Snowboards
+www.calpaktravel.com,https://www.calpaktravel.com,US,USD,calpak.myshopify.com,CALPAK
+www.canadapooch.com,https://www.canadapooch.com,CA,USD,canadapooch.myshopify.com,Canada Pooch
+www.cascadedesigns.com,https://www.cascadedesigns.com,US,USD,ce6df2-8b.myshopify.com,Cascade Designs
+www.casper.com,https://www.casper.com,US,USD,e75063-e5.myshopify.com,Casper Sleep
+www.cephalofair.com,https://www.cephalofair.com,US,USD,cephalofair.myshopify.com,Cephalofair
+www.chomps.com,https://www.chomps.com,US,USD,chomps.myshopify.com,Chomps 
+www.christydawn.com,https://www.christydawn.com,US,USD,christy-dawn.myshopify.com,Christy Dawn
+www.chromeindustries.com,https://www.chromeindustries.com,US,USD,chrome-ind.myshopify.com,Chrome Industries
+www.chroniclebooks.com,https://www.chroniclebooks.com,US,USD,mike-conway-chroniclebooks-com.myshopify.com,Chronicle Books
+www.chubbies.com,https://www.chubbies.com,US,USD,chubbies.myshopify.com,Chubbies Shorts
+www.cieleathletics.com,https://www.cieleathletics.com,CA,USD,ciele-athletics-united-states.myshopify.com,Ciele Athletics
+www.cleverfoxplanner.com,https://www.cleverfoxplanner.com,LV,USD,enfystore.myshopify.com,Clever Fox®
+www.cometeer.com,https://www.cometeer.com,US,USD,cometeer2023.myshopify.com,Cometeer 
+www.compartes.com,https://www.compartes.com,US,USD,chocolatetrial.myshopify.com,Compartes Chocolatier | Gourmet Chocolate Gifts
+www.corkcicle.com,https://www.corkcicle.com,US,USD,corkcicle.myshopify.com,CORKCICLE.
+www.cotopaxi.com,https://www.cotopaxi.com,,,,
+www.counterculturecoffee.com,https://www.counterculturecoffee.com,US,USD,counter-culture-coffee-retail.myshopify.com,Counter Culture Coffee
+www.cowaymega.com,https://www.cowaymega.com,US,USD,coway-mega.myshopify.com,Cowaymega
+www.coyuchi.com,https://www.coyuchi.com,US,USD,coyuchi-store.myshopify.com,Coyuchi
+www.cozyearth.com,https://www.cozyearth.com,US,USD,cozyearth2.myshopify.com,Cozy Earth
+www.craftdlondon.com,https://www.craftdlondon.com,GB,USD,craftdldn.myshopify.com,CRAFTD.com
+www.crbnpickleball.com,https://www.crbnpickleball.com,US,USD,crbn-pickleball.myshopify.com,CRBN Pickleball
+www.crossrope.com,https://www.crossrope.com,US,USD,crossrope.myshopify.com,Crossrope
+www.cuddleandkind.com,https://www.cuddleandkind.com,US,USD,cuddle-and-kind-us.myshopify.com,cuddle+kind
+www.cuyana.com,https://www.cuyana.com,US,USD,cuyana-prod.myshopify.com,Cuyana
+www.dagnedover.com,https://www.dagnedover.com,US,USD,dover.myshopify.com,DAGNE DOVER
+www.dangoproducts.com,https://www.dangoproducts.com,US,USD,dangoproducts.myshopify.com,Dango Products
+www.danielwellington.com,https://www.danielwellington.com,SE,EUR,daniel-wellington-eu.myshopify.com,Daniel Wellington EU
+www.darntough.com,https://www.darntough.com,US,USD,darn-tough.myshopify.com,Darn Tough
+www.davidstea.com,https://www.davidstea.com,CA,CAD,87e26e-4.myshopify.com,DAVIDsTEA
+www.deathwishcoffee.com,https://www.deathwishcoffee.com,US,USD,deathwishcoffee.myshopify.com,Death Wish Coffee
+www.demellierlondon.com,https://www.demellierlondon.com,GB,GBP,demellierstore.myshopify.com,DeMellier
+www.diasporaco.com,https://www.diasporaco.com,US,USD,diaspora-co-spices.myshopify.com,Diaspora Co. 
+www.diggs.pet,https://www.diggs.pet,US,USD,diggs-pet.myshopify.com,DIGGS
+www.dispeldice.com,https://www.dispeldice.com,US,USD,dispeldice.myshopify.com,Dispel Dice
+www.dixxon.com,https://www.dixxon.com,US,USD,dixxon-flannel-co.myshopify.com,Dixxon Flannel Co.
+www.dnddice.com,https://www.dnddice.com,US,USD,dnd-dice.myshopify.com,DNDDICE.COM
+www.dogeared.com,https://www.dogeared.com,US,USD,dogeared-jewelry.myshopify.com,Dogeared
+www.dogfriendlyco.com,https://www.dogfriendlyco.com,US,USD,dogfriendlyco.myshopify.com,Dog Friendly Co.
+www.dreametech.com,https://www.dreametech.com,US,USD,dreame-us.myshopify.com,Dreame
+www.drinkolipop.com,https://www.drinkolipop.com,US,USD,olipop-store.myshopify.com,OLIPOP
+www.drinkprime.com,https://www.drinkprime.com,US,USD,drinkprime.myshopify.com,PRIME
+www.dropps.com,https://www.dropps.com,US,USD,dropps.myshopify.com,Dropps
+www.duckcamp.com,https://www.duckcamp.com,,,,
+www.eaglesnestoutfittersinc.com,https://www.eaglesnestoutfittersinc.com,US,USD,eno-nation.myshopify.com,ENO
+www.earthrated.com,https://www.earthrated.com,US,USD,earthrated-global.myshopify.com,Earth Rated
+www.ekster.com,https://www.ekster.com,US,USD,ekster.myshopify.com,Ekster®
+www.elegoo.com,https://www.elegoo.com,HK,USD,elegoo-shop.myshopify.com,ELEGOO Official
+www.elitesrs.com,https://www.elitesrs.com,US,USD,elitesrs-fitness.myshopify.com,Elite Jumps
+www.ellusionist.com,https://www.ellusionist.com,US,USD,elusionist.myshopify.com,Ellusionist
+www.endgamegear.com,https://www.endgamegear.com,DE,USD,3e1855-d9.myshopify.com,Endgame Gear
+www.ensorings.com,https://www.ensorings.com,US,USD,ensorings.myshopify.com,Enso Rings
+www.ettitude.com,https://www.ettitude.com,US,USD,ettitudeusa.myshopify.com,ettitude
+www.evergoods.us,https://www.evergoods.us,US,USD,evergoods.myshopify.com,EVERGOODS
+www.explodingkittens.com,https://www.explodingkittens.com,US,USD,explodingkittens.myshopify.com,Exploding Kittens
+www.explorethousand.com,https://www.explorethousand.com,US,USD,thousand-helmets.myshopify.com,Thousand
+www.ezpzfun.com,https://www.ezpzfun.com,US,USD,ezpzfun.myshopify.com,ezpz
+www.fablepets.com,https://www.fablepets.com,US,USD,fable-pets.myshopify.com,Fable
+www.fangamer.com,https://www.fangamer.com,US,USD,fangamer.myshopify.com,Fangamer
+www.farer.com,https://www.farer.com,GB,GBP,farer.myshopify.com,Farer
+www.fearofgod.com,https://www.fearofgod.com,US,USD,fear-of-god.myshopify.com,Fear of God
+www.feastables.com,https://www.feastables.com,US,USD,feastables.myshopify.com,Feastables
+www.feetures.com,https://www.feetures.com,US,USD,feetures-online.myshopify.com,Feetures
+www.felixgray.com,https://www.felixgray.com,US,USD,felixgray.myshopify.com,Felix Gray
+www.fellowproducts.com,https://www.fellowproducts.com,US,USD,fellow-products.myshopify.com,Fellow
+www.fenix-store.com,https://www.fenix-store.com,US,USD,fenix-light-store.myshopify.com,Fenix Store
+www.fieldcompany.com,https://www.fieldcompany.com,US,USD,fieldcompany.myshopify.com,Field Company
+www.filson.com,https://www.filson.com,US,USD,cb3d2b-00.myshopify.com,Filson
+www.floydhome.com,https://www.floydhome.com,US,USD,floyd-home.myshopify.com,Floyd Home
+www.flybyjing.com,https://www.flybyjing.com,US,USD,fly-by-jing.myshopify.com,FLY BY JING
+www.flylowgear.com,https://www.flylowgear.com,US,USD,flylowgear.myshopify.com,Flylow Gear
+www.framebridge.com,https://www.framebridge.com,US,USD,framebridge-production.myshopify.com,Framebridge
+www.fringesport.com,https://www.fringesport.com,US,USD,fringesports.myshopify.com,Fringe Sport
+www.fromourplace.com,https://www.fromourplace.com,US,USD,fromourplace-com.myshopify.com,Our Place
+www.gaiam.com,https://www.gaiam.com,US,USD,gaiam-2.myshopify.com,Gaiam
+www.gerbergear.com,https://www.gerbergear.com,US,USD,gerber-production-store.myshopify.com,Gerber Gear
+www.getrawnutrition.com,https://www.getrawnutrition.com,US,USD,get-raw-nutrition-production-2.myshopify.com,Get Raw Nutrition
+www.ghostgolf.com,https://www.ghostgolf.com,US,USD,ghostgolf.myshopify.com,GHOSTGOLF
+www.ghostlifestyle.com,https://www.ghostlifestyle.com,US,USD,ghost-lifestyle.myshopify.com,GHOST
+www.girlfriend.com,https://www.girlfriend.com,US,USD,girlfriend-store.myshopify.com,Girlfriend Collective
+www.gloriousgaming.com,https://www.gloriousgaming.com,US,USD,glorious-pc-gaming-race.myshopify.com,Glorious
+www.goalzero.com,https://www.goalzero.com,US,USD,goalzerous.myshopify.com,Goal Zero
+www.gomacro.com,https://www.gomacro.com,US,USD,gomacro.myshopify.com,GoMacro
+www.goodgoodgolf.com,https://www.goodgoodgolf.com,US,USD,goodgoodgolf.myshopify.com,Good Good Golf
+www.goodr.com,https://www.goodr.com,US,USD,goodr-sunglasses.myshopify.com,goodr sunglasses
+www.goorin.com,https://www.goorin.com,US,USD,goorin-bros.myshopify.com,Goorin Bros.
+www.gorillamind.com,https://www.gorillamind.com,US,USD,gorilla-mind.myshopify.com,Gorilla Mind
+www.gorjana.com,https://www.gorjana.com,US,USD,gorjana.myshopify.com,gorjana
+www.goruck.com,https://www.goruck.com,US,USD,goruck-demo.myshopify.com,GORUCK
+www.gossamergear.com,https://www.gossamergear.com,US,USD,gossamer-gear.myshopify.com,Gossamer Gear
+www.gouletpens.com,https://www.gouletpens.com,US,USD,thegouletpencompany.myshopify.com,The Goulet Pen Company
+www.gozney.com,https://www.gozney.com,GB,GBP,gozney.myshopify.com,Gozney
+www.graza.co,https://www.graza.co,US,USD,getgraza.myshopify.com,Graza
+www.greatjonesgoods.com,https://www.greatjonesgoods.com,US,USD,great-jones-goods.myshopify.com,Great Jones
+www.groovelife.com,https://www.groovelife.com,US,USD,groove-rings.myshopify.com,Groove Life
+www.grove.co,https://www.grove.co,US,USD,fb4c79-b2.myshopify.com,Grove Collaborative
+www.gymreapers.com,https://www.gymreapers.com,US,USD,gymreapers.myshopify.com,Gymreapers
+www.halioswatches.com,https://www.halioswatches.com,CA,USD,halios.myshopify.com,HALIOS Watches
+www.hario-usa.com,https://www.hario-usa.com,US,USD,hario-usa.myshopify.com,Hario USA
+www.helinox.com,https://www.helinox.com,US,USD,helinox-furniture.myshopify.com,Helinox 
+www.herschel.com,https://www.herschel.com,US,USD,production-herschel-us.myshopify.com,Herschel Supply Co. USA
+www.hexclad.com,https://www.hexclad.com,US,USD,hexclad-cookware.myshopify.com,HexClad Cookware
+www.hollandcooper.com,https://www.hollandcooper.com,GB,GBP,hollandcooper.myshopify.com,Holland Cooper ®
+www.homesick.com,https://www.homesick.com,US,USD,scroll-commerce.myshopify.com,Homesick
+www.hotones.com,https://www.hotones.com,US,USD,vdi056-ej.myshopify.com,Hot Ones
+www.howlerbros.com,https://www.howlerbros.com,,,,
+www.huel.com,https://www.huel.com,US,USD,huelamerica.myshopify.com,Huel
+www.hukitchen.com,https://www.hukitchen.com,US,USD,hu-kitchen-2.myshopify.com,Hu Kitchen
+www.hyperice.com,https://www.hyperice.com,US,USD,hypericeprod.myshopify.com,Hyperice
+www.hyperlitemountaingear.com,https://www.hyperlitemountaingear.com,US,USD,hyperlite.myshopify.com,Hyperlite Mountain Gear
+www.iam8bit.com,https://www.iam8bit.com,US,USD,iam8bit.myshopify.com,iam8bit
+www.idrinkproducts.com,https://www.idrinkproducts.com,US,USD,idrink-drinkmate.myshopify.com,Drinkmate USA
+www.illumicrate.com,https://www.illumicrate.com,GB,GBP,fe8bbe-ca.myshopify.com,Illumicrate 
+www.instantpot.com,https://www.instantpot.com,US,USD,a5248a-2.myshopify.com,Instant Pot
+www.ippodotea.com,https://www.ippodotea.com,US,USD,menos-canada.myshopify.com,Ippodo Tea (USA & CA)
+www.islesurfandsup.com,https://www.islesurfandsup.com,US,USD,isleboards.myshopify.com,ISLE USA
+www.jackery.com,https://www.jackery.com,US,USD,jackery.myshopify.com,Jackery
+www.jadeleafmatcha.com,https://www.jadeleafmatcha.com,US,USD,jadeleaf.myshopify.com,Jade Leaf Matcha US
+www.jadeyoga.com,https://www.jadeyoga.com,US,USD,jadeyoga.myshopify.com,JadeYoga
+www.janji.com,https://www.janji.com,US,USD,janji-swimming.myshopify.com,Janji 
+www.jaxxon.com,https://www.jaxxon.com,US,USD,jaxxon-co.myshopify.com,JAXXON
+www.jonessnowboards.com,https://www.jonessnowboards.com,US,USD,jonessnowboards-us.myshopify.com,Jones Snowboards US
+www.joola.com,https://www.joola.com,US,USD,joola-usa.myshopify.com,JOOLA
+www.jot.co,https://www.jot.co,US,USD,jot-dev.myshopify.com,Jot
+www.kamadojoe.com,https://www.kamadojoe.com,US,USD,kamado-joe.myshopify.com,Kamado Joe
+www.kammok.com,https://www.kammok.com,US,USD,kammok.myshopify.com,Kammok
+www.kelty.com,https://www.kelty.com,US,USD,h1dpcq-ih.myshopify.com,Kelty
+www.kineuphorics.com,https://www.kineuphorics.com,US,USD,kin-cocktails.myshopify.com,Kin Euphorics
+www.kingice.com,https://www.kingice.com,US,USD,kingice.myshopify.com,King Ice
+www.kinto-usa.com,https://www.kinto-usa.com,US,USD,kinto-us.myshopify.com,"KINTO USA, Inc"
+www.kleankanteen.com,https://www.kleankanteen.com,US,USD,kleankanteen.myshopify.com,Klean Kanteen
+www.knix.com,https://www.knix.com,US,USD,knix-us-store.myshopify.com,Knix
+www.knockaround.com,https://www.knockaround.com,US,USD,knockaroundllc.myshopify.com,Knockaround
+www.kytebaby.com,https://www.kytebaby.com,US,USD,kyte-baby-co.myshopify.com,Kyte Baby
+www.lackofcolor.com,https://www.lackofcolor.com,US,USD,lack-of-color-us.myshopify.com,Lack of Color
+www.lairdsuperfood.com,https://www.lairdsuperfood.com,US,USD,laird-superfood.myshopify.com,Laird Superfood
+www.lalo.com,https://www.lalo.com,US,USD,lalo-usa.myshopify.com,LALO USA
+www.leatherman.com,https://www.leatherman.com,US,USD,ltg-b2c-us.myshopify.com,Leatherman
+www.leatherology.com,https://www.leatherology.com,US,USD,b3e3f2-63.myshopify.com,Leatherology
+www.lectricebikes.com,https://www.lectricebikes.com,US,USD,lectric-ebikes.myshopify.com,Lectric eBikes®
+www.leuchtturm1917.us,https://www.leuchtturm1917.us,US,USD,cf46ua-z1.myshopify.com,Leuchtturm1917.us
+www.levoit.com,https://www.levoit.com,US,USD,levoitstore.myshopify.com,Levoit
+www.lifestraw.com,https://www.lifestraw.com,US,USD,lifestraw-store.myshopify.com,LifeStraw Water Filters & Purifiers
+www.liforme.com,https://www.liforme.com,GB,GBP,liforme.myshopify.com,Liforme
+www.lifx.com,https://www.lifx.com,US,USD,lifxus.myshopify.com,LIFX - Smart Lighting
+www.limitedrungames.com,https://www.limitedrungames.com,US,USD,limited-run-games.myshopify.com,Limited Run Games
+www.lionbrand.com,https://www.lionbrand.com,US,USD,lion-brand-yarn.myshopify.com,Lion Brand Yarn
+www.litjoycrate.com,https://www.litjoycrate.com,US,USD,litjoy-crate.myshopify.com,LitJoy Crate
+www.littlesleepies.com,https://www.littlesleepies.com,US,USD,little-sleepies.myshopify.com,Little Sleepies
+www.localeclectic.com,https://www.localeclectic.com,US,USD,local-eclectic-usa.myshopify.com,local eclectic
+www.lodgecastiron.com,https://www.lodgecastiron.com,US,USD,lodgecastiron-us.myshopify.com,Lodge Cast Iron
+www.lokai.com,https://www.lokai.com,US,USD,lokai-holdings-llc.myshopify.com,Lokai
+www.lorierwatches.com,https://www.lorierwatches.com,US,USD,lorier.myshopify.com,LORIER
+www.lovecrafts.com,https://www.lovecrafts.com/en-gb,GB,GBP,r1ikds-8s.myshopify.com,LoveCrafts
+www.lucyand.co,https://www.lucyand.co,US,USD,lucy-and-co.myshopify.com,Lucy & Co.
+www.luluandgeorgia.com,https://www.luluandgeorgia.com,US,USD,lulu-and-georgia.myshopify.com,Lulu and Georgia
+www.mackweldon.com,https://www.mackweldon.com,US,USD,mack-weldon.myshopify.com,Mack Weldon
+www.madebymary.com,https://www.madebymary.com,US,USD,made-by-mary.myshopify.com,Made By Mary
+www.magicspoon.com,https://www.magicspoon.com,US,USD,magic-spoon.myshopify.com,Magic Spoon
+www.magnatiles.com,https://www.magnatiles.com,US,USD,i5nhgx-nj.myshopify.com,MAGNA TILES
+www.magneticme.com,https://www.magneticme.com,US,USD,magnetic-me-dev.myshopify.com,Magnetic Me
+www.maidenhome.com,https://www.maidenhome.com,US,USD,maiden-home.myshopify.com,Maiden Home
+www.maisonmiru.com,https://www.maisonmiru.com,US,USD,maisonmiru.myshopify.com,MIRU
+www.malbongolf.com,https://www.malbongolf.com,US,USD,malbon.myshopify.com,Malbon
+www.manduka.com,https://www.manduka.com,US,USD,mandukaglobal.myshopify.com,Manduka
+www.manlybands.com,https://www.manlybands.com,US,USD,manly-bands.myshopify.com,Manly Bands
+www.mansurgavriel.com,https://www.mansurgavriel.com,US,USD,mansur-gavriel.myshopify.com,MANSUR GAVRIEL
+www.marinelayer.com,https://www.marinelayer.com,US,USD,marinelayer.myshopify.com,Marine Layer
+www.matchaful.com,https://www.matchaful.com,US,USD,matchaful-2.myshopify.com,Matchaful
+www.materialkitchen.com,https://www.materialkitchen.com,US,USD,material-kitchen.myshopify.com,Material
+www.maxbone.com,https://www.maxbone.com,US,USD,max-bone.myshopify.com,maxbone
+www.meetlalo.com,https://www.meetlalo.com,US,USD,meetlalo.myshopify.com,Lalo
+www.mejuri.com,https://www.mejuri.com,CA,CAD,77123f.myshopify.com,Mejuri
+www.melin.com,https://www.melin.com,US,USD,melin-brand.myshopify.com,melin
+www.melissaanddoug.com,https://www.melissaanddoug.com,US,USD,melissadoug.myshopify.com,Melissa & Doug
+www.miir.com,https://www.miir.com,US,USD,miir-4.myshopify.com,MiiR.com
+www.mikeshothoney.com,https://www.mikeshothoney.com,US,USD,mikeshothoney1.myshopify.com,Mike's Hot Honey
+www.minisforum.com,https://www.minisforum.com,HK,USD,officialminisforum.myshopify.com,official store
+www.misen.com,https://www.misen.com,US,USD,misenco.myshopify.com,Misen
+www.missionworkshop.com,https://www.missionworkshop.com,US,USD,mission-workshop.myshopify.com,MISSION WORKSHOP
+www.missoma.com,https://www.missoma.com,GB,GBP,missoma-store.myshopify.com,Missoma
+www.molekule.com,https://www.molekule.com,US,USD,molekule-ecommerce.myshopify.com,Molekule
+www.momastore.org,https://www.momastore.org,US,USD,moma-design-store.myshopify.com,MoMA Design Store
+www.mondoshop.com,https://www.mondoshop.com,US,USD,mondo-30.myshopify.com,Mondo
+www.monos.com,https://www.monos.com,US,USD,monostravel.myshopify.com,Monos
+www.moodfabrics.com,https://www.moodfabrics.com,US,USD,moodfabric.myshopify.com,Mood Fabrics
+www.moonjuice.com,https://www.moonjuice.com,US,USD,mjecomm.myshopify.com,Moon Juice
+www.mudwtr.com,https://www.mudwtr.com,US,USD,mud-wtr.myshopify.com,MUD\WTR
+www.musgravepencil.com,https://www.musgravepencil.com,US,USD,musgrave-pencil-company.myshopify.com,Musgrave Pencil Company
+www.mvmt.com,https://www.mvmt.com,US,USD,5932am-t3.myshopify.com,MVMT
+www.nanit.com,https://www.nanit.com,US,USD,aislings-sweets-treats.myshopify.com,Nanit
+www.nativepet.com,https://www.nativepet.com,US,USD,the-native-pet.myshopify.com,Native Pet
+www.nealsyardremedies.com,https://www.nealsyardremedies.com,GB,GBP,nyr-uk.myshopify.com,Neal's Yard Remedies
+www.negativeunderwear.com,https://www.negativeunderwear.com,US,USD,negative-underwear.myshopify.com,Negative
+www.nemoequipment.com,https://www.nemoequipment.com,US,USD,nemo-equipment-shop.myshopify.com,NEMO Equipment
+www.nitecorestore.com,https://www.nitecorestore.com,US,USD,2ba744-6c.myshopify.com,Nitecore Store
+www.nixon.com,https://www.nixon.com,US,USD,nixoninc.myshopify.com,Nixon US
+www.noahny.com,https://www.noahny.com,US,USD,noahnyc.myshopify.com,Noah NYC
+www.nobullproject.com,https://www.nobullproject.com,US,USD,nobull.myshopify.com,NOBULL
+www.nomatic.com,https://www.nomatic.com,US,USD,basics-wallet.myshopify.com,NOMATIC
+www.norsefoundry.com,https://www.norsefoundry.com,US,USD,metaldice.myshopify.com,Norse Foundry
+www.notebooktherapy.com,https://www.notebooktherapy.com,GB,USD,notebooktherapy.myshopify.com,NotebookTherapy
+www.ohpolly.com,https://www.ohpolly.com,GB,GBP,oh-polly-uk.myshopify.com,Oh Polly UK
+www.ohuhu.com,https://www.ohuhu.com,US,USD,ohuhu-store.myshopify.com,Ohuhu
+www.olly.com,https://www.olly.com,US,USD,ollypbc.myshopify.com,OLLY PBC
+www.onyxcoffeelab.com,https://www.onyxcoffeelab.com,US,USD,onyx-coffee.myshopify.com,Onyx Coffee Lab
+www.ooly.com,https://www.ooly.com,US,USD,ooly-store.myshopify.com,OOLY
+www.ooni.com,https://www.ooni.com,US,USD,uuni.myshopify.com,Ooni USA
+www.openfarmpet.com,https://www.openfarmpet.com,US,USD,openfarm.myshopify.com,Open Farm
+www.opinel-usa.com,https://www.opinel-usa.com,US,USD,kniforia.myshopify.com,OPINEL USA
+www.optimumnutrition.com,https://www.optimumnutrition.com,IE,EUR,bjbebq-x1.myshopify.com,Optimum Nutrition
+www.otherland.com,https://www.otherland.com,US,USD,otherland-candles.myshopify.com,Otherland
+www.outdoorresearch.com,https://www.outdoorresearch.com,US,USD,outdoorresearchshop.myshopify.com,Outdoor Research
+www.outdoorvoices.com,https://www.outdoorvoices.com,US,USD,outdoor-voices.myshopify.com,Outdoor Voices
+www.outofprint.com,https://www.outofprint.com,US,USD,out-of-print-clothing.myshopify.com,Out of Print
+www.owalalife.com,https://www.owalalife.com,US,USD,owala.myshopify.com,Owala
+www.owlcrate.com,https://www.owlcrate.com,US,USD,owlcratepp.myshopify.com,OwlCrate
+www.owletcare.com,https://www.owletcare.com,US,USD,owletcare.myshopify.com,Owlet US
+www.paddletek.com,https://www.paddletek.com,US,USD,paddletek-2.myshopify.com,"Paddletek Pickleball, LLC"
+www.palaceskateboards.com,https://www.palaceskateboards.com,GB,GBP,palace-skateboards.myshopify.com,Palace Skateboards
+www.parachutehome.com,https://www.parachutehome.com,US,USD,parachute-home-2.myshopify.com,Parachute Home
+www.partakefoods.com,https://www.partakefoods.com,US,USD,partake-foods.myshopify.com,Partake Foods
+www.passionplanner.com,https://www.passionplanner.com,US,USD,passionplanner.myshopify.com,Passion Planner
+www.pawz.com,https://www.pawz.com,US,USD,pawzshop.myshopify.com,Pawz
+www.pdpaola.com,https://www.pdpaola.com,ES,EUR,pdpaola-prod-markets.myshopify.com,PDPAOLA
+www.perfectsnacks.com,https://www.perfectsnacks.com,US,USD,perfectfoods.myshopify.com,Perfect Snacks
+www.petalandpup.com,https://www.petalandpup.com,US,USD,petal-and-pup-usa.myshopify.com,Petal & Pup USA
+www.pfcandleco.com,https://www.pfcandleco.com,US,USD,p-f-candle-co.myshopify.com,P. F. Candle Co.
+www.phaidon.com,https://www.phaidon.com/en-us,GB,USD,phaidon-global-dev.myshopify.com,Phaidon
+www.pipsticks.com,https://www.pipsticks.com,US,USD,pipsticks.myshopify.com,Pipsticks
+www.pitviper.com,https://www.pitviper.com,US,USD,pitviper.myshopify.com,Pit Viper
+www.pleasuresnow.com,https://www.pleasuresnow.com,US,USD,pleasuresstore.myshopify.com,Pleasures
+www.polene-paris.com,https://www.polene-paris.com,FR,EUR,polene-paris.myshopify.com,Polène FR
+www.popovleather.com,https://www.popovleather.com,CA,CAD,popovleather.myshopify.com,Popov Leather®
+www.portlandleathergoods.com,https://www.portlandleathergoods.com,US,USD,forgedleather.myshopify.com,Portland Leather
+www.poshpeanut.com,https://www.poshpeanut.com,US,USD,poshpeanuts-com.myshopify.com,Posh Peanut
+www.primary.com,https://www.primary.com,US,USD,primarykids.myshopify.com,Primary.com
+www.prioritybicycles.com,https://www.prioritybicycles.com,US,USD,priority-bicycles-2.myshopify.com,Priority Bicycles
+www.publicgoods.com,https://www.publicgoods.com,US,USD,morgans-dont-run-out.myshopify.com,Public Goods
+www.puravidabracelets.com,https://www.puravidabracelets.com,US,USD,puravidabracelets.myshopify.com,Pura Vida Bracelets
+www.purecycles.com,https://www.purecycles.com,US,USD,purefixcycles.myshopify.com,Pure Cycles
+www.qalo.com,https://www.qalo.com,US,USD,qalo-ring.myshopify.com,QALO
+www.radpowerbikes.com,https://www.radpowerbikes.com,US,USD,rad-power-bikes.myshopify.com,Rad Power Bikes
+www.renogy.com,https://www.renogy.com,US,USD,rvi38u-rz.myshopify.com,Renogy US
+www.repfitness.com,https://www.repfitness.com,US,USD,repfitnessco.myshopify.com,REP Fitness
+www.ridelumos.com,https://www.ridelumos.com,HK,USD,lumos-helmet-us.myshopify.com,Lumos Helmet US
+www.riffraffandco.com,https://www.riffraffandco.com,AU,AUD,riff-raff-co.myshopify.com,Riff Raff Baby AU
+www.riflepaperco.com,https://www.riflepaperco.com,US,USD,rifle-paper.myshopify.com,Rifle Paper Co.
+www.rileyhome.com,https://www.rileyhome.com,US,USD,newriley.myshopify.com,Riley Home
+www.rishi-tea.com,https://www.rishi-tea.com,US,USD,rishi-tea-1.myshopify.com,Rishi Tea & Botanicals
+www.ritual.com,https://www.ritual.com,US,USD,mrwbcu-wt.myshopify.com,Ritual
+www.roborock.com,https://www.roborock.com,US,USD,roborock-official-website.myshopify.com,Roborock US Official Store
+www.rothys.com,https://www.rothys.com,,,,
+www.rouje.com,https://www.rouje.com,FR,EUR,rouje-paris.myshopify.com,Rouje
+www.rowingblazers.com,https://www.rowingblazers.com,US,USD,rowingblazers.myshopify.com,Rowing Blazers
+www.ruffwear.com,https://www.ruffwear.com,US,USD,ruffwear.myshopify.com,Ruffwear
+www.rumpl.com,https://www.rumpl.com,US,USD,gorumpl.myshopify.com,Rumpl
+www.runinrabbit.com,https://www.runinrabbit.com,US,USD,run-in-rabbit.myshopify.com,rabbit
+www.rxsmartgear.com,https://www.rxsmartgear.com,US,USD,rxsg.myshopify.com,RXSG
+www.ryzesuperfoods.com,https://www.ryzesuperfoods.com,US,USD,ryzeup.myshopify.com,RYZE
+www.sabai.design,https://www.sabai.design,US,USD,sabai-design.myshopify.com,Sabai Design
+www.saddlebackleather.com,https://www.saddlebackleather.com,US,USD,saddleback-leather.myshopify.com,Saddleback Leather Co.
+www.satisfyrunning.com,https://www.satisfyrunning.com,FR,EUR,satisfyrunning.myshopify.com,SATISFY
+www.sbdapparel.com,https://www.sbdapparel.com,GB,GBP,sbd-apparel-global.myshopify.com,SBD Apparel
+www.schoolhouse.com,https://www.schoolhouse.com,US,USD,schoolhouse-development.myshopify.com,Schoolhouse
+www.scribblesthatmatter.com,https://www.scribblesthatmatter.com,GB,USD,scribbles-that-matter.myshopify.com,STM US
+www.seatosummit.com,https://www.seatosummit.com,US,USD,seatosummitusa.myshopify.com,Sea to Summit North America
+www.selkirk.com,https://www.selkirk.com,US,USD,selkirk-sport.myshopify.com,Selkirk Sport
+www.shinola.com,https://www.shinola.com,US,USD,18bc9f-c1.myshopify.com,Shinola
+www.shopbala.com,https://www.shopbala.com,US,USD,bala-test-123.myshopify.com,Bala
+www.simplehuman.com,https://www.simplehuman.com,US,USD,simplehuman-llc.myshopify.com,Simplehuman
+www.simplemodern.com,https://www.simplemodern.com,US,USD,simple-modern.myshopify.com,Simple Modern
+www.sixmoondesigns.com,https://www.sixmoondesigns.com,US,USD,six-moon-designs.myshopify.com,Six Moon Designs
+www.skida.com,https://www.skida.com,US,USD,skidasport.myshopify.com,Skida | Headwear & Accessories
+www.skims.com,https://www.skims.com,US,USD,skimsbody.myshopify.com,SKIMS
+www.slumberkins.com,https://www.slumberkins.com,US,USD,spoon-moon.myshopify.com,Slumberkins
+www.smartwool.com,https://www.smartwool.com/en-us,US,USD,smartwool-amer.myshopify.com,Smartwool
+www.smithey.com,https://www.smithey.com,US,USD,smithey-iron-ware.myshopify.com,Smithey Ironware
+www.snellgolf.com,https://www.snellgolf.com,US,USD,snell-golf.myshopify.com,Snell Golf
+www.snowehome.com,https://www.snowehome.com,US,USD,snowehome.myshopify.com,Snowe
+www.sodastream.com,https://www.sodastream.com,US,USD,sodastream-usa.myshopify.com,SodaStream
+www.sollybaby.com,https://www.sollybaby.com,US,USD,solly-baby.myshopify.com,Solly Baby
+www.southerntide.com,https://www.southerntide.com,,,,
+www.soylent.com,https://www.soylent.com,US,USD,soylent-prod.myshopify.com,Soylent
+www.sparkpaws.com,https://www.sparkpaws.com,US,USD,bisous-lingerie.myshopify.com,SPARK PAWS
+www.stance.com,https://www.stance.com,US,USD,stance-us.myshopify.com,Stance
+www.stanley1913.com,https://www.stanley1913.com,US,USD,stanley-pmi.myshopify.com,Stanley 1913
+www.statebicycle.com,https://www.statebicycle.com,US,USD,state-bicycle-co.myshopify.com,State Bicycle Co.
+www.staud.clothing,https://www.staud.clothing,US,USD,staud-clothing.myshopify.com,STAUD
+www.steamforged.com,https://www.steamforged.com,GB,GBP,steamforged-games-us.myshopify.com,Steamforged Games
+www.stellaandchewys.com,https://www.stellaandchewys.com,US,USD,stella-chewys-dtc.myshopify.com,Stella & Chewy's
+www.stetson.com,https://www.stetson.com,US,USD,stetson3.myshopify.com,Stetson
+www.stewartgolf.co.uk,https://www.stewartgolf.co.uk,GB,GBP,stewartgolfuk.myshopify.com,Stewart Golf
+www.stio.com,https://www.stio.com,US,USD,stiomountain.myshopify.com,Stio
+www.stoneandstrand.com,https://www.stoneandstrand.com,US,USD,stoneandstrand.myshopify.com,STONE AND STRAND
+www.studs.com,https://www.studs.com,US,USD,studs-piercing.myshopify.com,Studs
+www.stumptowncoffee.com,https://www.stumptowncoffee.com,US,USD,stumptowncoffee.myshopify.com,Stumptown Coffee
+www.stussy.com,https://www.stussy.com,US,USD,stussy-na.myshopify.com, Stüssy
+www.summersalt.com,https://www.summersalt.com,US,USD,shopsummersalt.myshopify.com,Summersalt
+www.sundaygolf.com,https://www.sundaygolf.com,US,USD,sundaygolfco.myshopify.com,Sunday Golf
+www.sunski.com,https://www.sunski.com,US,USD,sunski.myshopify.com,Sunski
+www.super7.com,https://www.super7.com,US,USD,super7main.myshopify.com,Super7
+www.super73.com,https://www.super73.com,US,USD,lithiumcycles.myshopify.com,SUPER73
+www.supernote.com,https://www.supernote.com,US,USD,rattasupernote.myshopify.com,Supernote
+www.swellbottle.com,https://www.swellbottle.com,US,USD,swell-lifetime.myshopify.com,S'well
+www.swiftwick.com,https://www.swiftwick.com,US,USD,swiftwick.myshopify.com,Swiftwick
+www.switch-bot.com,https://www.switch-bot.com,US,USD,switchbot-smart-home.myshopify.com,SwitchBot International
+www.takearecess.com,https://www.takearecess.com,US,USD,takearecess.myshopify.com,Recess
+www.tannergoods.com,https://www.tannergoods.com,US,USD,tannergoods.myshopify.com,Tanner Goods
+www.taylorstitch.com,https://www.taylorstitch.com,US,USD,taylor-stitch.myshopify.com,Taylor Stitch
+www.teapigs.com,https://www.teapigs.com,US,USD,teapigs-us.myshopify.com,teapigs.com
+www.tenthousand.cc,https://www.tenthousand.cc,US,USD,ten-thousand.myshopify.com,Ten Thousand
+www.tentree.com,https://www.tentree.com,US,USD,tentree-development-store.myshopify.com,Tentree
+www.theblackbibs.com,https://www.theblackbibs.com,US,USD,the-black-bibs.myshopify.com,The Black Bibs
+www.thefoggydog.com,https://www.thefoggydog.com,US,USD,the-foggy-dog.myshopify.com,The Foggy Dog
+www.thegldshop.com,https://www.thegldshop.com,US,USD,the-gld-shop.myshopify.com,The GLD Shop
+www.thehundreds.com,https://www.thehundreds.com,US,USD,thehundreds.myshopify.com,The Hundreds
+www.thejamesbrand.com,https://www.thejamesbrand.com,US,USD,the-james-brand-inc.myshopify.com,The James Brand
+www.thepihut.com,https://www.thepihut.com,GB,GBP,the-pi-hut.myshopify.com,The Pi Hut
+www.therabody.com,https://www.therabody.com,US,USD,usa-therabody.myshopify.com,Therabody US
+www.thermoworks.com,https://www.thermoworks.com,US,USD,yipdiu-mx.myshopify.com,ThermoWorks
+www.thesill.com,https://www.thesill.com,US,USD,the-sill.myshopify.com,The Sill
+www.thespicehouse.com,https://www.thespicehouse.com,US,USD,thespicehouse.myshopify.com,The Spice House
+www.thirdlove.com,https://www.thirdlove.com,US,USD,thirdlove.myshopify.com,Thirdlove
+www.tigermist.com,https://www.tigermist.com,US,USD,tiger-mist-usa.myshopify.com,Tiger Mist USA
+www.timbuk2.com,https://www.timbuk2.com,US,USD,timbuk2-us.myshopify.com,Timbuk2
+www.timemore.com,https://www.timemore.com,SG,USD,timemore-re.myshopify.com,Timemore
+www.timex.com,https://www.timex.com,US,USD,timexstorefront.myshopify.com,Timex US
+www.titan.fitness,https://www.titan.fitness,US,USD,titan-brands-fitness.myshopify.com,Titan Fitness
+www.tombowusa.com,https://www.tombowusa.com,US,USD,tombowusa.myshopify.com,Tombow USA
+www.tomtoc.com,https://www.tomtoc.com,US,USD,tomtoc-online.myshopify.com,tomtoc
+www.tonyschocolonely.com,https://www.tonyschocolonely.com,NL,EUR,www-tonyschocolonely.myshopify.com,Tony’s Chocolonely Global
+www.topodesigns.com,https://www.topodesigns.com,US,USD,topo-designs.myshopify.com,Topo Designs
+www.tortugabackpacks.com,https://www.tortugabackpacks.com,US,USD,tortugabackpacks.myshopify.com,Tortuga
+www.tptherapy.com,https://www.tptherapy.com,US,USD,8vi0vs-ct.myshopify.com,TriggerPoint US
+www.transparentlabs.com,https://www.transparentlabs.com,US,USD,transparent-labs.myshopify.com,Transparent Labs
+www.trayvax.com,https://www.trayvax.com,US,USD,trayvax-enterprises.myshopify.com,Trayvax Enterprises
+www.trueclassictees.com,https://www.trueclassictees.com,US,USD,trueclassictees-com.myshopify.com,True Classic
+www.truffhotsauce.com,https://www.truffhotsauce.com,US,USD,truff-hot-sauce.myshopify.com,TRUFF
+www.tuftandneedle.com,https://www.tuftandneedle.com,US,USD,tuftandneedle-production.myshopify.com,Tuft and Needle
+www.tuftandpaw.com,https://www.tuftandpaw.com,US,USD,tuft-paw.myshopify.com,Tuft & Paw
+www.undone.com,https://www.undone.com,HK,USD,undone-watches.myshopify.com,UNDONE
+www.unimaticwatches.com,https://www.unimaticwatches.com,IT,EUR,unimatic-watches.myshopify.com,UNIMATIC Watches
+www.untuckit.com,https://www.untuckit.com,US,USD,untuckit.myshopify.com,UNTUCKit
+www.usagundamstore.com,https://www.usagundamstore.com,US,USD,usa-gundam-store.myshopify.com,USA Gundam Store
+www.vaerwatches.com,https://www.vaerwatches.com,US,USD,native-watch-co.myshopify.com,Vaer Watches
+www.vahdam.com,https://www.vahdam.com,US,USD,vahdamusa.myshopify.com,VAHDAM® USA
+www.vanness1938.com,https://www.vanness1938.com,US,USD,vanness.myshopify.com,Vanness
+www.versagripps.com,https://www.versagripps.com,US,USD,versagripps.myshopify.com,Versa Gripps
+www.vertx.com,https://www.vertx.com,US,USD,355634-12.myshopify.com,Vertx
+www.vervecoffee.com,https://www.vervecoffee.com,US,USD,vervecoffeeroasters.myshopify.com,Verve Coffee Roasters
+www.vicicollection.com,https://www.vicicollection.com,US,USD,shopvici.myshopify.com,VICI
+www.vitalproteins.com,https://www.vitalproteins.com,US,USD,vital-proteins.myshopify.com,Vital Proteins
+www.vitalydesign.com,https://www.vitalydesign.com,US,USD,vitaly-design.myshopify.com,Vitaly
+www.vitruvi.com,https://www.vitruvi.com,US,USD,vitruvi.myshopify.com,Vitruvi US
+www.voluspa.com,https://www.voluspa.com,US,USD,voluspa-us.myshopify.com,Voluspa
+www.vosgeschocolate.com,https://www.vosgeschocolate.com,US,USD,vosgeschocolate.myshopify.com,Vosges Haut-Chocolat
+www.weareknitters.com,https://www.weareknitters.com,NL,USD,wakusa.myshopify.com,We Are Knitters 
+www.whatdoyoumeme.com,https://www.whatdoyoumeme.com,US,USD,whatdoyoumeme.myshopify.com,Relatable
+www.whitefoxboutique.com,https://www.whitefoxboutique.com,US,USD,white-fox-boutique-usa.myshopify.com,White Fox Boutique USA
+www.wildbird.co,https://www.wildbird.co,US,USD,mywildbird.myshopify.com,WildBird
+www.wildone.com,https://www.wildone.com,US,USD,wildonepets.myshopify.com,Wild One
+www.wolfgangusa.com,https://www.wolfgangusa.com,US,USD,wolfgangusa.myshopify.com,Wolfgang
+www.wpstandard.com,https://www.wpstandard.com,US,USD,whippingpostleather.myshopify.com,WP Standard
+www.wusthof.com,https://www.wusthof.com,US,USD,wusthof.myshopify.com,WÜSTHOF
+www.wyze.com,https://www.wyze.com,US,USD,wyzecom.myshopify.com,"Wyze Labs, Inc."
+www.xtool.com,https://www.xtool.com,US,USD,makeblock-xtool.myshopify.com,xTool
+www.yamazakihome.com,https://www.yamazakihome.com,JP,JPY,yamajitsu.myshopify.com,Yamazaki
+www.yellowbirdfoods.com,https://www.yellowbirdfoods.com,US,USD,yellowbird-condiments.myshopify.com,Yellowbird®
+www.yosekastationery.com,https://www.yosekastationery.com,US,USD,yoseka-stationery.myshopify.com,Yoseka Stationery
+www.youngla.com,https://www.youngla.com,US,USD,youngla.myshopify.com,YoungLA
+www.youtooz.com,https://www.youtooz.com,US,USD,youtooz-2.myshopify.com,Youtooz Collectibles
+www.zeloswatches.com,https://www.zeloswatches.com,SG,USD,zelos-watches.myshopify.com,Zelos Watches
+www.zestypaws.com,https://www.zestypaws.com,US,USD,zesty-paws.myshopify.com,Zesty Paws
+www.zpacks.com,https://www.zpacks.com,US,USD,zpacks.myshopify.com,Zpacks
