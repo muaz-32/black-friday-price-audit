@@ -1,0 +1,2 @@
+run_id,prev_run_id,vantage,stores_ok,stores_failed,variants,marked_down,median_discount,matched,price_down,price_up,discount_inflated
+20261114T090046Z,,github-actions,466,2,1993021,541501,0.4,,,,

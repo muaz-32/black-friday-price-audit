@@ -119,6 +119,26 @@ FROM moved JOIN names USING (store, variant_id)
 ORDER BY was_after / was_before DESC;
 ```
 
+## Dashboard
+
+A static page for exploring the data: how much of each store is marked down,
+how prices move from snapshot to snapshot, a table of every store with its
+history, and the search-interest signals.
+
+```bash
+python -m dashboard.build                       # writes _site/
+python -m http.server 8000 --directory _site    # then open http://localhost:8000
+```
+
+It reads only small files committed here, not the snapshots themselves. After
+each snapshot `collector.summarize` writes one row per store to
+`summary/store_runs/<date>.csv` and one row per run to `summary/runs.csv`:
+items listed, items marked down, median claimed discount, and, compared with
+the previous snapshot, prices cut, prices raised, and "discounts" that grew
+because the compare-at price went up while the selling price did not go down.
+The price index chains the average price change of the same items from one
+snapshot to the next (a geometric mean, first snapshot = 100).
+
 ## Scheduled collection
 
 Three GitHub Actions workflows do the work:

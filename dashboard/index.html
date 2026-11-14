@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Black Friday price audit</title>
+<style>
+:root {
+  color-scheme: light;
+  --page: #f4f3ef; --surface: #fcfcfb; --border: #e2e0da; --grid: #ebe9e3;
+  --text: #0b0b0b; --text2: #52514e; --muted: #86857f;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --track: #e6e4de;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --page: #121211; --surface: #1a1a19; --border: #32322e; --grid: #292926;
+    --text: #f0efec; --text2: #c3c2b7; --muted: #8f8e86;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --track: #2c2c29;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 1120px; margin: 0 auto; padding: 24px 16px 64px; }
+h1 { font-size: 26px; margin: 0 0 4px; letter-spacing: -0.01em; }
+h2 { font-size: 18px; margin: 40px 0 4px; }
+h3 { font-size: 14px; margin: 0 0 2px; font-weight: 600; }
+p { margin: 0 0 8px; }
+a { color: var(--s1); }
+.lede, .note { color: var(--text2); max-width: 760px; }
+.note { font-size: 13px; }
+.status { color: var(--muted); font-size: 13px; margin-top: 8px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-top: 20px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+.tile .label { color: var(--text2); font-size: 13px; }
+.tile .value { font-size: 28px; font-weight: 650; letter-spacing: -0.02em; line-height: 1.25; font-variant-numeric: tabular-nums; }
+.tile .sub { color: var(--muted); font-size: 12px; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 12px; margin-top: 12px; }
+.chart { margin-top: 8px; position: relative; min-height: 60px; }
+.chart svg { display: block; width: 100%; overflow: visible; }
+.chart text { font-size: 11px; fill: var(--muted); font-variant-numeric: tabular-nums; }
+.chart text.endlabel { fill: var(--text2); font-size: 12px; }
+.empty { color: var(--muted); font-size: 13px; padding: 28px 0; text-align: center; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--text2); margin-top: 6px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 10px 0; }
+input[type=search], select, button { font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 7px; padding: 6px 10px; }
+input[type=search] { min-width: 220px; }
+button { cursor: pointer; }
+button:disabled { opacity: 0.45; cursor: default; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.chip { font-size: 12px; padding: 3px 10px; border-radius: 999px; }
+.chip[aria-pressed=true] { background: var(--text); color: var(--surface); border-color: var(--text); }
+.tablewrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; font-variant-numeric: tabular-nums; }
+th, td { padding: 7px 10px; text-align: right; border-bottom: 1px solid var(--border); white-space: nowrap; }
+th:first-child, td:first-child, th.l, td.l { text-align: left; }
+th { color: var(--text2); font-weight: 600; cursor: pointer; user-select: none; position: sticky; top: 0; background: var(--surface); }
+th[aria-sort]::after { content: " ▾"; } th[aria-sort=ascending]::after { content: " ▴"; }
+tbody tr { cursor: pointer; } tbody tr:hover { background: var(--page); }
+.meter { display: inline-block; width: 56px; height: 6px; border-radius: 3px; background: var(--track); margin-right: 8px; vertical-align: middle; overflow: hidden; }
+.meter b { display: block; height: 100%; background: var(--s1); border-radius: 3px; }
+.pager { display: flex; gap: 10px; align-items: center; justify-content: flex-end; margin-top: 10px; font-size: 13px; color: var(--text2); }
+ol.plain, ul.plain { margin: 6px 0 0; padding-left: 22px; } ul.plain { list-style: none; padding-left: 0; }
+.plain li { padding: 3px 0; } .plain small { color: var(--muted); }
+.badge { font-size: 11px; border: 1px solid var(--border); border-radius: 999px; padding: 0 7px; margin-left: 6px; color: var(--text2); }
+#tip { position: fixed; z-index: 10; pointer-events: none; background: var(--text); color: var(--surface); font-size: 12px; padding: 6px 9px; border-radius: 6px; max-width: 280px; display: none; line-height: 1.4; }
+#tip i { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 5px; }
+dialog { border: 1px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--text); width: min(880px, 94vw); padding: 20px; }
+dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
+dialog header { display: flex; justify-content: space-between; align-items: start; gap: 12px; }
+footer { margin-top: 48px; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Black Friday price audit</h1>
+  <p class="lede">Are Black Friday discounts real? This project records the public prices of online stores every six hours, before, during and after the sale, so each "deal" can be checked against what the product actually cost.</p>
+  <p class="status" id="status">Loading…</p>
+
+  <div class="tiles" id="tiles"></div>
+
+  <h2>Prices over time</h2>
+  <p class="note" id="panelnote"></p>
+  <div class="grid2">
+    <div class="card"><h3>Share of products marked down</h3><p class="note">Products showing a higher "was" price next to the selling price.</p><div class="chart" id="c-share"></div></div>
+    <div class="card"><h3>Price index</h3><p class="note">Average selling price of the same products, first full snapshot = 100.</p><div class="chart" id="c-index"></div></div>
+    <div class="card"><h3>Price changes per snapshot</h3><p class="note">Products whose selling price moved since the snapshot before.</p><div class="chart" id="c-changes"></div></div>
+    <div class="card"><h3>Discounts grown without a price cut</h3><p class="note">The "was" price went up while the selling price did not go down.</p><div class="chart" id="c-inflated"></div></div>
+  </div>
+
+  <h2>How much of each store is "on sale"</h2>
+  <p class="note">Stores grouped by the share of their catalogue that is marked down in the latest snapshot. A store with nearly everything marked down is not running a sale so much as a permanent one.</p>
+  <div class="card"><div class="chart" id="c-hist"></div></div>
+
+  <h2>Stores</h2>
+  <p class="note">Click a store for its history. "Since first" compares with the first snapshot of that store.</p>
+  <div class="card">
+    <div class="controls">
+      <input type="search" id="q" placeholder="Search stores" aria-label="Search stores">
+      <select id="market" aria-label="Market"></select>
+      <span class="note" id="count"></span>
+    </div>
+    <div class="tablewrap"><table id="stores"><thead></thead><tbody></tbody></table></div>
+    <div class="pager"><button id="prev">Previous</button><span id="page"></span><button id="next">Next</button></div>
+  </div>
+
+  <h2>What people are searching for</h2>
+  <p class="note">Three public signals. None of them is Google's 0–100 "interest over time" figure, which is not openly available.</p>
+  <div class="card">
+    <h3>Wikipedia page views per day</h3>
+    <p class="note">Choose up to four articles.</p>
+    <div class="chips" id="articles"></div>
+    <div class="chart" id="c-views"></div>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Google autocomplete</h3>
+      <p class="note" id="suggestnote">What Google suggests after a phrase, in order.</p>
+      <div class="controls"><select id="sgeo" aria-label="Country"></select><select id="sseed" aria-label="Phrase"></select></div>
+      <ol class="plain" id="suggest"></ol>
+    </div>
+    <div class="card">
+      <h3>Trending on Google right now</h3>
+      <p class="note" id="trendnote">Fastest-rising searches of all kinds; most are news and sport.</p>
+      <div class="controls"><select id="tgeo" aria-label="Country"></select></div>
+      <ol class="plain" id="trending"></ol>
+    </div>
+  </div>
+  <div class="card" style="margin-top:12px">
+    <h3>Shopping-related searches that have trended</h3>
+    <p class="note">Trending searches matching a list of shopping words (retailers, product names, "deal", "sale"), newest first.</p>
+    <ul class="plain" id="shopping"></ul>
+  </div>
+
+  <footer>
+    <p>Prices come from each store's public product feed, read from one fixed location. The store list is not a random sample of online retail, a "was" price is the store's own claim, and the pre-sale baseline is short, so the comparison with January matters most. Method, limits and the full dataset: <a id="repo" href="#">GitHub repository</a>.</p>
+    <p id="generated"></p>
+  </footer>
+</main>
+<div id="tip"></div>
+<dialog id="detail"><header><div><h2 style="margin:0" id="d-title"></h2><p class="note" id="d-sub"></p></div><button id="d-close">Close</button></header><div id="d-body"></div></dialog>
+
+<script>
+"use strict";
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const int = (n) => (n == null ? "–" : Math.round(n).toLocaleString("en-GB"));
+const pct = (x, d = 0) => (x == null ? "–" : (x * 100).toFixed(d) + "%");
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const day = (ms) => { const d = new Date(ms); return d.getUTCDate() + " " + MONTHS[d.getUTCMonth()]; };
+const dayTime = (ms) => { const d = new Date(ms); return day(ms) + " " + String(d.getUTCHours()).padStart(2, "0") + ":" + String(d.getUTCMinutes()).padStart(2, "0") + " UTC"; };
+const runMs = (id) => Date.UTC(+id.slice(0, 4), +id.slice(4, 6) - 1, +id.slice(6, 8), +id.slice(9, 11), +id.slice(11, 13));
+const tip = $("tip");
+function showTip(html, ev) {
+  tip.innerHTML = html; tip.style.display = "block";
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  tip.style.left = Math.min(window.innerWidth - w - 8, Math.max(8, ev.clientX + 14)) + "px";
+  tip.style.top = Math.max(8, ev.clientY - h - 12) + "px";
+}
+const hideTip = () => { tip.style.display = "none"; };
+
+function ticks(min, max, n) {
+  const span = max - min || Math.abs(max) || 1, raw = span / n, mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  const step = [1, 2, 2.5, 5, 10].map((m) => m * mag).find((s) => s >= raw);
+  const out = [];
+  for (let v = Math.ceil(min / step) * step; v <= max + step * 1e-9; v += step) out.push(+v.toFixed(10));
+  return out;
+}
+
+// Line chart. series: [{name, color, points: [[ms, y], ...]}]
+function lineChart(el, o) {
+  const series = o.series.map((s) => ({ ...s, points: s.points.filter((p) => p[1] != null) })).filter((s) => s.points.length);
+  const n = Math.max(0, ...series.map((s) => s.points.length));
+  if (n < (o.min || 2)) { el.innerHTML = `<div class="empty">${esc(o.empty || "Not enough data yet.")}</div>`; return; }
+  const multi = series.length > 1, W = el.clientWidth || 600, H = o.height || 210;
+  const m = { l: 46, r: multi && series.length <= 4 ? 118 : 14, t: 10, b: 24 };
+  const xs = [...new Set(series.flatMap((s) => s.points.map((p) => p[0])))].sort((a, b) => a - b);
+  let x0 = xs[0], x1 = xs[xs.length - 1]; if (x0 === x1) { x0 -= 36e5; x1 += 36e5; }
+  const ys = series.flatMap((s) => s.points.map((p) => p[1]));
+  let y0 = o.zero ? 0 : Math.min(...ys), y1 = Math.max(...ys);
+  if (y0 === y1) { y0 -= Math.abs(y0) * 0.02 || 1; y1 += Math.abs(y1) * 0.02 || 1; }
+  const pad = (y1 - y0) * 0.08; y1 += pad; if (!o.zero) y0 -= pad;
+  const X = (v) => m.l + ((v - x0) / (x1 - x0)) * (W - m.l - m.r), Y = (v) => H - m.b - ((v - y0) / (y1 - y0)) * (H - m.t - m.b);
+  const fmt = o.fmt || int, xf = x1 - x0 < 4 * 864e5 ? dayTime : day;
+  let g = "";
+  for (const t of ticks(y0, y1, 4)) g += `<line x1="${m.l}" x2="${W - m.r}" y1="${Y(t)}" y2="${Y(t)}" stroke="var(--grid)"/><text x="${m.l - 6}" y="${Y(t) + 4}" text-anchor="end">${esc(fmt(t))}</text>`;
+  const nx = Math.max(2, Math.min(5, Math.floor((W - m.l - m.r) / 130)));
+  for (let i = 0; i < nx; i++) { const v = x0 + ((x1 - x0) * i) / (nx - 1); g += `<text x="${X(v)}" y="${H - 6}" text-anchor="${i === 0 ? "start" : i === nx - 1 ? "end" : "middle"}">${esc(xf(v))}</text>`; }
+  const ends = [];
+  for (const s of series) {
+    g += `<path d="${s.points.map((p, i) => (i ? "L" : "M") + X(p[0]).toFixed(1) + " " + Y(p[1]).toFixed(1)).join("")}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+    if (s.points.length <= 40) for (const p of s.points) g += `<circle cx="${X(p[0])}" cy="${Y(p[1])}" r="${s.points.length <= 12 ? 4 : 2.5}" fill="${s.color}" stroke="var(--surface)" stroke-width="2"/>`;
+    const last = s.points[s.points.length - 1]; ends.push({ y: Y(last[1]), name: s.name });
+  }
+  if (m.r > 20) { ends.sort((a, b) => a.y - b.y); for (let i = 1; i < ends.length; i++) ends[i].y = Math.max(ends[i].y, ends[i - 1].y + 14); for (const e of ends) g += `<text class="endlabel" x="${W - m.r + 8}" y="${e.y + 4}">${esc(e.name.length > 17 ? e.name.slice(0, 16) + "…" : e.name)}</text>`; }
+  g += `<line id="x" y1="${m.t}" y2="${H - m.b}" stroke="var(--muted)" stroke-dasharray="3 3" visibility="hidden"/><rect x="${m.l}" y="${m.t}" width="${W - m.l - m.r}" height="${H - m.t - m.b}" fill="transparent"/>`;
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" height="${H}" role="img" aria-label="${esc(o.label || "")}">${g}</svg>` + (multi ? `<div class="legend">${series.map((s) => `<span><i style="background:${s.color}"></i>${esc(s.name)}</span>`).join("")}</div>` : "");
+  const svg = el.querySelector("svg"), cross = svg.querySelector("#x"), hit = svg.querySelector("rect");
+  hit.addEventListener("mousemove", (ev) => {
+    const box = svg.getBoundingClientRect(), v = x0 + ((((ev.clientX - box.left) / box.width) * W - m.l) / (W - m.l - m.r)) * (x1 - x0);
+    const near = xs.reduce((a, b) => (Math.abs(b - v) < Math.abs(a - v) ? b : a));
+    cross.setAttribute("x1", X(near)); cross.setAttribute("x2", X(near)); cross.setAttribute("visibility", "visible");
+    const rows = series.map((s) => { const p = s.points.find((p) => p[0] === near); return p ? `<div><i style="background:${s.color}"></i>${multi ? esc(s.name) + ": " : ""}<b>${esc((o.tipFmt || fmt)(p[1]))}</b></div>` : ""; }).join("");
+    showTip(`<div>${esc(xf(near))}</div>${rows}`, ev);
+  });
+  hit.addEventListener("mouseleave", () => { cross.setAttribute("visibility", "hidden"); hideTip(); });
+}
+
+// Bar chart. bars: [{label, value, tip}]
+function barChart(el, o) {
+  const W = el.clientWidth || 600, H = o.height || 220, m = { l: 46, r: 8, t: 10, b: 26 };
+  const max = Math.max(1, ...o.bars.map((b) => b.value)), tk = ticks(0, max, 4), top = Math.max(max, tk[tk.length - 1]);
+  const Y = (v) => H - m.b - (v / top) * (H - m.t - m.b), band = (W - m.l - m.r) / o.bars.length, bw = Math.min(64, band - 4);
+  let g = "";
+  for (const t of tk) g += `<line x1="${m.l}" x2="${W - m.r}" y1="${Y(t)}" y2="${Y(t)}" stroke="var(--grid)"/><text x="${m.l - 6}" y="${Y(t) + 4}" text-anchor="end">${int(t)}</text>`;
+  o.bars.forEach((b, i) => {
+    const x = m.l + band * i + (band - bw) / 2, y = Y(b.value), h = H - m.b - y, r = Math.min(4, h);
+    if (h > 0) g += `<path data-i="${i}" d="M${x} ${H - m.b}V${y + r}q0 ${-r} ${r} ${-r}h${bw - 2 * r}q${r} 0 ${r} ${r}V${H - m.b}Z" fill="var(--s1)"/>`;
+    g += `<rect data-i="${i}" x="${m.l + band * i}" y="${m.t}" width="${band}" height="${H - m.t - m.b}" fill="transparent"/>`;
+    if (band > 44 || i % 2 === 0) g += `<text x="${x + bw / 2}" y="${H - 8}" text-anchor="middle">${esc(b.label)}</text>`;
+  });
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" height="${H}" role="img" aria-label="${esc(o.label || "")}">${g}</svg>`;
+  el.querySelectorAll("rect").forEach((r) => {
+    r.addEventListener("mousemove", (ev) => showTip(o.bars[+r.dataset.i].tip, ev));
+    r.addEventListener("mouseleave", hideTip);
+  });
+}
+
+function tile(label, value, sub) { return `<div class="card tile"><div class="label">${esc(label)}</div><div class="value">${esc(value)}</div><div class="sub">${esc(sub || "")}</div></div>`; }
+function options(sel, values, label = (v) => v) { sel.innerHTML = values.map((v) => `<option value="${esc(v)}">${esc(label(v))}</option>`).join(""); }
+
+let DATA, redraw = [];
+fetch("data/overview.json").then((r) => r.json()).then(init).catch((e) => { $("status").textContent = "Could not load the data: " + e; });
+
+function init(data) {
+  DATA = data;
+  const P = data.prices, L = P.latest;
+  $("repo").href = "https://github.com/" + data.repo;
+  $("generated").textContent = "Page built " + dayTime(Date.parse(data.generated_at)) + ".";
+  if (!L) { $("status").textContent = "No snapshots summarised yet."; return; }
+  $("status").textContent = `Latest snapshot ${dayTime(Date.parse(L.t))} · ${int(L.stores_ok)} stores · ${int(L.variants)} priced items`;
+  const waiting = "needs two snapshots of the same stores";
+  $("tiles").innerHTML =
+    tile("Stores tracked", int(L.stores_ok), L.stores_failed ? `${int(L.stores_failed)} could not be read this time` : "all read successfully") +
+    tile("Priced items", int(L.variants), "each size or colour counts once") +
+    tile("Marked down", pct(L.marked_down / L.variants), 'show a higher "was" price') +
+    tile("Median claimed discount", pct(L.median_discount), "among marked-down items") +
+    tile("Price cuts", int(L.price_down), L.price_down == null ? waiting : "since the snapshot before") +
+    tile("Price rises", int(L.price_up), L.price_up == null ? waiting : "since the snapshot before") +
+    tile("Discounts grown without a cut", int(L.discount_inflated), L.discount_inflated == null ? waiting : '"was" price raised, price not cut');
+
+  const R = P.runs, col = (k) => R.map((r) => [Date.parse(r.t), r[k]]);
+  $("panelnote").textContent = `These charts follow the ${int(P.panel_stores)} stores read in the snapshot of ${dayTime(Date.parse(P.baseline_t))}, so that adding stores later does not look like a price change.`;
+  const soon = "This line starts once there are two snapshots of the full store list. Snapshots are taken every 6 hours.";
+  const soon2 = "Changes appear from the second snapshot of the full store list.";
+  redraw.push(() => {
+    lineChart($("c-share"), { series: [{ name: "Marked down", color: "var(--s1)", points: col("share") }], fmt: (v) => pct(v, 1), empty: soon, label: "Share of products marked down" });
+    lineChart($("c-index"), { series: [{ name: "Price index", color: "var(--s1)", points: col("index") }], fmt: (v) => v.toFixed(1), tipFmt: (v) => v.toFixed(2), empty: soon, label: "Price index" });
+    lineChart($("c-changes"), { series: [{ name: "Price cuts", color: "var(--s1)", points: col("cuts") }, { name: "Price rises", color: "var(--s2)", points: col("rises") }], zero: true, min: 1, empty: soon2, label: "Price cuts and rises per snapshot" });
+    lineChart($("c-inflated"), { series: [{ name: "Discounts grown without a cut", color: "var(--s1)", points: col("inflated") }], zero: true, min: 1, empty: soon2, label: "Discounts grown without a price cut" });
+  });
+
+  const current = P.stores.filter((s) => s.last === L.run_id);
+  const bins = ["0%", ...Array.from({ length: 10 }, (_, i) => (i ? i * 10 : 1) + "–" + (i + 1) * 10 + "%")].map((label) => ({ label, value: 0, items: 0 }));
+  for (const s of current) { const b = bins[s.s === 0 ? 0 : Math.min(10, Math.floor(s.s * 10 - 1e-9) + 1)]; b.value++; b.items += s.v; }
+  for (const b of bins) b.tip = `<div>${b.label} of the catalogue marked down</div><div><b>${int(b.value)}</b> stores (${pct(b.value / current.length)}) · ${int(b.items)} items</div>`;
+  redraw.push(() => barChart($("c-hist"), { bars: bins, label: "Stores by share of catalogue marked down" }));
+
+  initStores(P.stores);
+  initTrends(data.trends);
+  draw();
+  let timer; window.addEventListener("resize", () => { clearTimeout(timer); timer = setTimeout(draw, 150); });
+}
+function draw() { for (const f of redraw) f(); }
+
+const COLS = [
+  { k: "d", t: "Store", f: (s) => esc(s.d) },
+  { k: "m", t: "Market", cls: "l", f: (s) => esc(s.m) },
+  { k: "v", t: "Items", f: (s) => int(s.v) },
+  { k: "s", t: "Marked down", f: (s) => `<span class="meter"><b style="width:${(s.s * 100).toFixed(0)}%"></b></span>${pct(s.s)}` },
+  { k: "md", t: "Median discount", f: (s) => pct(s.md) },
+  { k: "ds", t: "Since first", f: (s) => (s.n < 2 ? "–" : (s.ds > 0 ? "+" : "") + (s.ds * 100).toFixed(1) + " pts") },
+  { k: "idx", t: "Price index", f: (s) => (s.n < 2 ? "–" : s.idx.toFixed(1)) },
+  { k: "cuts", t: "Cuts", f: (s) => (s.n < 2 ? "–" : int(s.cuts)) },
+  { k: "rises", t: "Rises", f: (s) => (s.n < 2 ? "–" : int(s.rises)) },
+  { k: "infl", t: "Grown without cut", f: (s) => (s.n < 2 ? "–" : int(s.infl)) },
+];
+function initStores(stores) {
+  for (const s of stores) s.ds = s.s - s.s0;
+  const state = { sort: "v", dir: -1, page: 0, per: 25 };
+  const markets = [...new Set(stores.map((s) => s.m))].filter(Boolean).sort();
+  options($("market"), ["", ...markets], (v) => v || "All markets");
+  const head = $("stores").querySelector("thead"), body = $("stores").querySelector("tbody");
+  function render() {
+    const q = $("q").value.trim().toLowerCase(), mk = $("market").value;
+    const rows = stores.filter((s) => (!q || s.d.includes(q)) && (!mk || s.m === mk));
+    rows.sort((a, b) => { const x = a[state.sort], y = b[state.sort]; return (typeof x === "string" ? x.localeCompare(y) : (x ?? -Infinity) - (y ?? -Infinity)) * state.dir; });
+    const pages = Math.max(1, Math.ceil(rows.length / state.per)); state.page = Math.min(state.page, pages - 1);
+    head.innerHTML = "<tr>" + COLS.map((c) => `<th data-k="${c.k}" class="${c.cls || ""}"${c.k === state.sort ? ` aria-sort="${state.dir > 0 ? "ascending" : "descending"}"` : ""}>${esc(c.t)}</th>`).join("") + "</tr>";
+    body.innerHTML = rows.slice(state.page * state.per, (state.page + 1) * state.per).map((s) => `<tr data-d="${esc(s.d)}">` + COLS.map((c) => `<td class="${c.cls || ""}">${c.f(s)}</td>`).join("") + "</tr>").join("");
+    $("count").textContent = `${int(rows.length)} stores`;
+    $("page").textContent = `Page ${state.page + 1} of ${pages}`;
+    $("prev").disabled = state.page === 0; $("next").disabled = state.page >= pages - 1;
+  }
+  head.addEventListener("click", (ev) => { const k = ev.target.dataset.k; if (!k) return; if (state.sort === k) state.dir *= -1; else { state.sort = k; state.dir = k === "d" || k === "m" ? 1 : -1; } state.page = 0; render(); });
+  body.addEventListener("click", (ev) => { const tr = ev.target.closest("tr"); if (tr) openStore(stores.find((s) => s.d === tr.dataset.d)); });
+  $("q").addEventListener("input", () => { state.page = 0; render(); });
+  $("market").addEventListener("change", () => { state.page = 0; render(); });
+  $("prev").addEventListener("click", () => { state.page--; render(); });
+  $("next").addEventListener("click", () => { state.page++; render(); });
+  $("d-close").addEventListener("click", () => $("detail").close());
+  render();
+}
+function openStore(s) {
+  $("d-title").textContent = s.d;
+  $("d-sub").textContent = `${s.m} · ${s.c} · ${int(s.v)} items · ${pct(s.s)} marked down · median claimed discount ${pct(s.md)} · followed since ${day(runMs(s.first))}`;
+  $("d-body").innerHTML = `<div class="grid2"><div><h3>Share marked down</h3><div class="chart" id="d1"></div></div><div><h3>Price index (first snapshot = 100)</h3><div class="chart" id="d2"></div></div><div><h3>Items listed</h3><div class="chart" id="d3"></div></div><div><h3>Price changes per snapshot</h3><div class="chart" id="d4"></div></div></div>`;
+  $("detail").showModal();
+  fetch("data/store/" + encodeURIComponent(s.d) + ".json").then((r) => r.json()).then((rows) => {
+    const col = (i) => rows.map((r) => [runMs(r[0]), r[i]]), empty = "Only one snapshot of this store so far.";
+    lineChart($("d1"), { series: [{ name: "Marked down", color: "var(--s1)", points: col(2) }], fmt: (v) => pct(v, 1), empty, height: 180 });
+    lineChart($("d2"), { series: [{ name: "Price index", color: "var(--s1)", points: col(7) }], fmt: (v) => v.toFixed(1), tipFmt: (v) => v.toFixed(2), empty, height: 180 });
+    lineChart($("d3"), { series: [{ name: "Items", color: "var(--s1)", points: col(1) }], empty, height: 180 });
+    lineChart($("d4"), { series: [{ name: "Price cuts", color: "var(--s1)", points: col(4) }, { name: "Price rises", color: "var(--s2)", points: col(5) }], zero: true, min: 1, empty, height: 180 });
+  }).catch(() => { $("d-body").innerHTML = '<div class="empty">Could not load this store\'s history.</div>'; });
+}
+
+function initTrends(T) {
+  const title = (a) => a.replace(/_/g, " ").replace(" (shopping)", "").replace(" (company)", "");
+  const articles = Object.keys(T.pageviews).sort(), colors = ["var(--s1)", "var(--s2)", "var(--s3)", "var(--s4)"];
+  const slots = ["Black_Friday_(shopping)", "Cyber_Monday", null, null].map((a) => (articles.includes(a) ? a : null));  // colour follows the slot an article was put in
+  function chips() {
+    $("articles").innerHTML = articles.map((a) => `<button class="chip" data-a="${esc(a)}" aria-pressed="${slots.includes(a)}">${esc(title(a))}</button>`).join("");
+    lineChart($("c-views"), { series: slots.map((a, i) => (a ? { name: title(a), color: colors[i], points: T.pageviews[a].map((p) => [Date.parse(p[0]), p[1]]) } : null)).filter(Boolean), zero: true, height: 260, empty: "Choose an article above.", label: "Wikipedia page views per day" });
+  }
+  $("articles").addEventListener("click", (ev) => {
+    const a = ev.target.dataset.a; if (!a) return;
+    const at = slots.indexOf(a), free = slots.indexOf(null);
+    if (at >= 0) slots[at] = null; else if (free >= 0) slots[free] = a; else return;
+    chips();
+  });
+  redraw.push(chips);
+
+  const geos = Object.keys(T.suggest);
+  if (geos.length) {
+    options($("sgeo"), geos);
+    const seeds = Object.keys(T.suggest[geos[0]]);
+    options($("sseed"), seeds, (s) => `"${s.trim()} …"`);
+    const show = () => {
+      const list = (T.suggest[$("sgeo").value] || {})[$("sseed").value] || [];
+      $("suggest").innerHTML = list.map((s) => `<li>${esc(s[0])}${s[2] ? `<span class="badge">new ${esc(day(Date.parse(s[1])))}</span>` : ""}</li>`).join("") || '<li class="note">No suggestions.</li>';
+    };
+    $("sgeo").addEventListener("change", show); $("sseed").addEventListener("change", show); show();
+    $("suggestnote").textContent = `What Google suggests after a phrase, in order. Read ${dayTime(Date.parse(T.suggest_at))}.`;
+  }
+  const tg = Object.keys(T.trending);
+  if (tg.length) {
+    options($("tgeo"), tg);
+    const show = () => { $("trending").innerHTML = (T.trending[$("tgeo").value] || []).map((r) => `<li>${esc(r[0])} <small>${r[1] ? int(r[1]) + "+ searches" : ""}${r[2] ? " · " + esc(r[2]) : ""}</small></li>`).join(""); };
+    $("tgeo").addEventListener("change", show); show();
+    $("trendnote").textContent = `Fastest-rising searches of all kinds; most are news and sport. Read ${dayTime(Date.parse(T.trending_at))}.`;
+  }
+  $("shopping").innerHTML = T.shopping.slice(0, 40).map((h) => `<li>${esc(h.query)} <small>${esc(h.geo)} · ${h.traffic ? int(h.traffic) + "+ searches · " : ""}${esc(dayTime(Date.parse(h.last)))}</small></li>`).join("") || '<li class="note">None seen yet.</li>';
+}
+</script>
+</body>
+</html>

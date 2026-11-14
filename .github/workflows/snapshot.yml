@@ -57,6 +57,12 @@ jobs:
           print(f"skip={'true' if hours < 4 else 'false'}")
           EOF
 
+      # Read before the snapshot overwrites it: the dashboard summary compares
+      # each run with the one before.
+      - name: Note the previous snapshot
+        id: prev
+        run: echo "run_id=$(python -c "import json; print(json.load(open('status/latest.json'))['run_id'])" 2>/dev/null)" >> "$GITHUB_OUTPUT"
+
       - name: Take snapshot
         if: steps.fresh.outputs.skip != 'true'
         env:
@@ -80,6 +86,24 @@ jobs:
             --notes "Raw snapshot files. See the README for the schema."
           gh release upload "$tag" data/prices-*.parquet data/catalog-*.parquet data/runs-*.parquet
 
+      # After the upload, so the previous run's files fetched here are not
+      # uploaded again. A failure here must not lose the snapshot's status commit.
+      - name: Summarise for the dashboard
+        if: always() && steps.fresh.outputs.skip != 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PREV: ${{ steps.prev.outputs.run_id }}
+        run: |
+          run=$(ls data/prices-*.parquet | sed 's/.*prices-\(.*\)\.parquet/\1/' | sort | tail -1)
+          if [ -n "$PREV" ] && [ "$PREV" != "$run" ]; then
+            gh release download "data-${PREV:0:4}-${PREV:4:2}" --dir data \
+              -p "prices-$PREV.parquet" -p "runs-$PREV.parquet" || PREV=""
+          else
+            PREV=""
+          fi
+          python -m collector.summarize --run "$run" ${PREV:+--prev "$PREV"}
+
       # The commit doubles as a heartbeat: GitHub disables scheduled workflows
       # in repositories with no activity for 60 days.
       - name: Commit run status
@@ -87,7 +111,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add status/latest.json
+          git add status/latest.json summary
           git diff --cached --quiet || git commit -m "status: snapshot $(date -u +%Y-%m-%dT%H:%MZ)"
           git pull --rebase
           git push
