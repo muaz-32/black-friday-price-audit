@@ -31,6 +31,7 @@ class Store:
     shop_id: str = ""
     name: str = ""
     listed_products: str = ""  # the store's own published count, at discovery
+    platform: str = "shopify"
 
 
 @dataclass

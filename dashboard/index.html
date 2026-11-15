@@ -364,8 +364,14 @@ function productStats(p) {
   const ev = p[3], first = ev.find((e) => e[1] != null), last = ev[ev.length - 1], ref0 = first ? Math.max(first[3] ?? 0, first[2] ?? first[1]) : null;
   return { p, name: p[1], first: first ? first[1] : null, now: last[1], was: last[3] ?? null, changes: ev.length - 1, cut: last[1] != null && first ? last[1] / first[1] - 1 : null, wasUp: last[3] != null && ref0 ? last[3] / ref0 - 1 : null };
 }
+const PLATFORM = {};
+// Shopify product pages live at /products/<handle>; WordPress finds any product by its id.
+function productUrl(store, p) {
+  return PLATFORM[store] === "woocommerce" ? `https://${store}/?post_type=product&p=${p[0]}` : p[2] ? `https://${store}/products/${encodeURIComponent(p[2])}` : "";
+}
 function initProducts(info, stores) {
   const currency = Object.fromEntries(stores.map((s) => [s.d, s.c]));
+  for (const s of stores) PLATFORM[s.d] = s.pl;
   const KINDS = [["cuts", "Price cuts"], ["rises", "Price rises"], ["inflated", '"Was" price raised, price not cut']];
   if (!info) { $("pcount").textContent = "Product histories have not been built yet."; $("pstore").disabled = true; return; }
   $("pstores").innerHTML = Object.keys(info.stores).sort().map((d) => `<option value="${esc(d)}">`).join("");
@@ -424,7 +430,7 @@ function openProduct(store, p, runs, cur) {
   if (ev.some((e) => e[2] != null)) series.push({ name: "Dearest option", color: "var(--s3)", points: line((e) => e[2] ?? e[1]) });
   if (ev.some((e) => e[3] != null)) series.push({ name: '"Was" price', color: "var(--s2)", dash: true, points: line((e) => e[3] ?? null) });
   $("d-title").textContent = p[1];
-  $("d-sub").innerHTML = `${esc(store)} · ${st.now == null ? "no longer listed" : "now " + money(st.now) + " " + esc(cur || "")} · first recorded ${esc(day(at(ev[0])))} at ${money(st.first)}` + (p[2] ? ` · <a href="https://${esc(store)}/products/${encodeURIComponent(p[2])}" target="_blank" rel="noopener">see it on the store</a>` : "");
+  $("d-sub").innerHTML = `${esc(store)} · ${st.now == null ? "no longer listed" : "now " + money(st.now) + " " + esc(cur || "")} · first recorded ${esc(day(at(ev[0])))} at ${money(st.first)}` + (productUrl(store, p) ? ` · <a href="${esc(productUrl(store, p))}" target="_blank" rel="noopener">see it on the store</a>` : "");
   $("d-body").innerHTML = `<div class="chart" id="pc"></div><div class="tablewrap" style="margin-top:12px"><table><thead><tr><th>Recorded</th><th>Price</th><th>Dearest option</th><th>"Was" price</th></tr></thead><tbody>${ev.map((e) => `<tr style="cursor:default"><td class="l">${esc(dayTime(at(e)))}</td>${e[1] == null ? '<td colspan="3">no longer listed</td>' : `<td>${money(e[1])}</td><td>${money(e[2] ?? e[1])}</td><td>${money(e[3])}</td>`}</tr>`).join("")}</tbody></table></div>`;
   $("detail").showModal();
   lineChart($("pc"), { series, step: true, fmt: money, height: 260, empty: "Only one snapshot of this product so far, so there is no line to draw yet. Each later change adds a row below.", label: "Price history" });

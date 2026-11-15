@@ -15,12 +15,18 @@ in the last 48 hours, so short-lived sale products are still described.
 
 The runs file matters as much as the prices: a variant missing from a snapshot
 only means "removed from the store" if that store's fetch succeeded in that run.
+
+With --shard I/N this process reads only its share of the stores; the scheduled
+job runs N shards side by side and `collector.combine` joins their files. Shares
+are balanced by each store's expected number of requests and are the same in
+every process, so the shards never overlap.
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import math
 import os
 import sys
 import time
@@ -32,8 +38,11 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 
 from .discover import load_stores
-from .http import LIMITER
-from .shopify import StoreResult, fetch_store
+from .http import LIMITER, OTHER_LIMITER
+from . import shopify, woocommerce
+from .shopify import Store, StoreResult
+
+FETCHERS = {"shopify": shopify.fetch_store, "woocommerce": woocommerce.fetch_store}
 
 TS = pa.timestamp("s", tz="UTC")
 PRICES_SCHEMA = pa.schema(
@@ -72,6 +81,7 @@ RUNS_SCHEMA = pa.schema(
         ("vantage", pa.string()),
         ("catalog", pa.string()),
         ("store", pa.string()),
+        ("platform", pa.string()),
         ("market", pa.string()),
         ("currency", pa.string()),
         ("ok", pa.bool_()),
@@ -94,6 +104,35 @@ def is_recent(row: dict, cutoff: datetime) -> bool:
     return bool((created and created >= cutoff) or (published and published >= cutoff))
 
 
+def expected_requests(store: Store, max_pages: int) -> int:
+    try:
+        listed = int(store.listed_products)
+    except ValueError:
+        listed = 2500  # unknown: assume a mid-sized store
+    if store.platform == "woocommerce":
+        return 2 * min(max_pages, math.ceil(listed / woocommerce.PAGE_SIZE) + 1) + 1
+    return min(max_pages, math.ceil(listed / shopify.PAGE_SIZE) + 1) + 1
+
+
+def shard_of(stores: list[Store], index: int, count: int, max_pages: int) -> list[Store]:
+    """Greedy balance: biggest stores first, each to the least loaded shard."""
+    load = [0] * count
+    mine = []
+    for s in sorted(stores, key=lambda s: (-expected_requests(s, max_pages), s.domain)):
+        target = load.index(min(load))
+        load[target] += expected_requests(s, max_pages)
+        if target == index:
+            mine.append(s)
+    return sorted(mine, key=lambda s: s.domain)
+
+
+def parse_shard(value: str) -> tuple[int, int]:
+    i, n = (int(x) for x in value.split("/"))
+    if not 0 <= i < n:
+        raise argparse.ArgumentTypeError("shard must be I/N with 0 <= I < N")
+    return i, n
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--stores", type=Path, default=Path("stores/stores.csv"))
@@ -109,6 +148,8 @@ def main() -> int:
     ap.add_argument("--workers", type=int, default=8, help="stores fetched in parallel")
     ap.add_argument("--max-pages", type=int, default=100, help="cap per store (250 products a page)")
     ap.add_argument("--limit", type=int, default=0, help="only the first N stores (for testing)")
+    ap.add_argument("--shard", type=parse_shard, default=(0, 1), metavar="I/N", help="read only share I of N (0-based)")
+    ap.add_argument("--run-id", default="", help="use this run id (all shards of one run share it)")
     ap.add_argument(
         "--budget-minutes",
         type=float,
@@ -121,11 +162,13 @@ def main() -> int:
     stores = load_stores(args.stores)
     if args.limit:
         stores = stores[: args.limit]
+    if args.shard[1] > 1:
+        stores = shard_of(stores, *args.shard, args.max_pages)
     if not stores:
         print(f"no stores in {args.stores}; run `python -m collector.discover` first", file=sys.stderr)
         return 2
     now = datetime.now(timezone.utc)
-    run_id = now.strftime("%Y%m%dT%H%M%SZ")
+    run_id = args.run_id or now.strftime("%Y%m%dT%H%M%SZ")
     vantage = os.environ.get("BF_VANTAGE", "local")
     catalog_mode = args.catalog
     if catalog_mode == "auto":
@@ -150,7 +193,7 @@ def main() -> int:
         # the budget the remaining stores are recorded as skipped instead.
         if deadline and time.monotonic() > deadline:
             return StoreResult(store=store, error="skipped: run time budget used up", started_at=datetime.now(timezone.utc))
-        return fetch_store(store, max_pages=args.max_pages)
+        return FETCHERS[store.platform](store, max_pages=args.max_pages)
 
     def run_batch(batch: list, label: str) -> None:
         with ThreadPoolExecutor(args.workers) as pool:
@@ -200,6 +243,7 @@ def main() -> int:
                     "vantage": vantage,
                     "catalog": catalog_mode,
                     "store": r.store.domain,
+                    "platform": r.store.platform,
                     "market": r.store.country,
                     "currency": r.currency,
                     "ok": r.ok,
@@ -235,7 +279,8 @@ def main() -> int:
         "variants": counts["prices"],
         "catalog_rows": counts["catalog"],
         "seconds": round(time.monotonic() - t0),
-        "throttle_pauses": LIMITER.cooldowns,
+        "throttle_pauses": LIMITER.cooldowns + OTHER_LIMITER.cooldowns,
+        "shard": f"{args.shard[0]}/{args.shard[1]}",
         "prices_bytes": paths["prices"].stat().st_size,
         "catalog_bytes": paths["catalog"].stat().st_size,
         "failures": {r.store.domain: r.error for r in failed},

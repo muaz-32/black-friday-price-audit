@@ -90,6 +90,7 @@ def build_prices(summary: Path, stores_csv: Path) -> tuple[dict, dict]:
             {
                 "d": store,
                 "m": m.get("country", ""),
+                "pl": m.get("platform") or "shopify",
                 "c": m.get("currency", ""),
                 "v": int(last["variants"]),
                 "s": round(last["_share"], 4),

@@ -74,6 +74,10 @@ class _Limiter:
 
 
 LIMITER = _Limiter(float(os.environ.get("BF_REQUESTS_PER_SECOND", "1")))
+# Stores on other platforms are separate servers, not one platform throttling
+# by IP, so they get their own budget and never wait on a Shopify pause. Each
+# store is still read one page at a time with a pause between pages.
+OTHER_LIMITER = _Limiter(float(os.environ.get("BF_OTHER_REQUESTS_PER_SECOND", "2")))
 
 
 class FetchError(Exception):
@@ -88,12 +92,19 @@ def new_session() -> requests.Session:
     return s
 
 
-def get(session: requests.Session, url: str, *, cookies: dict | None = None, tries: int = 4) -> requests.Response:
+def get(
+    session: requests.Session,
+    url: str,
+    *,
+    cookies: dict | None = None,
+    tries: int = 4,
+    limiter: _Limiter = LIMITER,
+) -> requests.Response:
     """GET with backoff on throttling and server errors. Honors Retry-After (capped at 60s)."""
     last = "no attempt made"
     status = None
     for attempt in range(tries):
-        LIMITER.wait()
+        limiter.wait()
         try:
             r = session.get(url, cookies=cookies, timeout=TIMEOUT)
         except requests.RequestException as e:
@@ -103,7 +114,7 @@ def get(session: requests.Session, url: str, *, cookies: dict | None = None, tri
         if r.status_code in RETRY_STATUSES:
             last, status = f"HTTP {r.status_code}", r.status_code
             if r.status_code in (429, 430):
-                LIMITER.throttled(urlsplit(url).netloc)
+                limiter.throttled(urlsplit(url).netloc)
             try:
                 wait = float(r.headers.get("Retry-After", 2 ** (attempt + 1)))
             except ValueError:
@@ -170,9 +181,9 @@ class Robots:
         return best_allow
 
 
-def fetch_robots(session: requests.Session, base_url: str) -> Robots:
+def fetch_robots(session: requests.Session, base_url: str, *, limiter: _Limiter = LIMITER) -> Robots:
     """A missing or unreadable robots.txt means no restrictions (RFC 9309 §2.3.1)."""
-    LIMITER.wait()
+    limiter.wait()
     try:
         r = session.get(base_url.rstrip("/") + "/robots.txt", timeout=TIMEOUT)
         if r.status_code == 200:

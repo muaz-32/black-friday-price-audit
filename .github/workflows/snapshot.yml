@@ -24,16 +24,68 @@ concurrency:
   group: snapshot
   cancel-in-progress: false
 
+env:
+  # The stores are split across this many jobs running side by side, each on
+  # its own runner and each at the usual 1 request per second. Keep it equal to
+  # the length of the shard list below.
+  SHARDS: 4
+
 jobs:
-  snapshot:
+  plan:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    timeout-minutes: 10
+    outputs:
+      skip: ${{ steps.plan.outputs.skip }}
+      run_id: ${{ steps.plan.outputs.run_id }}
+      catalog: ${{ steps.plan.outputs.catalog }}
     steps:
       - uses: actions/checkout@v5
         with:
           # The tip of the branch, not the commit at the moment the run was
           # requested: a run that waited in the queue must see what the run
           # before it committed, or the duplicate check reads stale files.
+          ref: main
+
+      # Runs are started both by an external cron service and by GitHub's own
+      # (unreliable) scheduler. Whichever comes second finds a recent snapshot
+      # and stops here, so stores are not fetched twice for one slot. All shards
+      # share one run id and one catalogue mode, decided here.
+      - name: Decide whether and how to run
+        id: plan
+        env:
+          FORCE: ${{ inputs.force && 'true' || 'false' }}
+          CATALOG: ${{ inputs.catalog || 'auto' }}
+        run: |
+          python - <<'EOF' >> "$GITHUB_OUTPUT"
+          import json, os
+          from datetime import datetime, timezone
+          now = datetime.now(timezone.utc)
+          try:
+              last = json.load(open("status/latest.json"))["run_id"]
+              hours = (now - datetime.strptime(last, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc)).total_seconds() / 3600
+          except (OSError, KeyError, ValueError):
+              hours = 99
+          catalog = os.environ["CATALOG"]
+          if catalog == "auto":
+              catalog = "full" if now.hour < 6 else "recent"
+          print(f"skip={'true' if hours < 4 and os.environ['FORCE'] != 'true' else 'false'}")
+          print(f"run_id={now:%Y%m%dT%H%M%SZ}")
+          print(f"catalog={catalog}")
+          EOF
+          cat "$GITHUB_OUTPUT"
+
+  shard:
+    needs: plan
+    if: needs.plan.outputs.skip != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v5
+        with:
           ref: main
 
       - uses: actions/setup-python@v6
@@ -43,82 +95,99 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      # Runs are started both by an external cron service and by GitHub's own
-      # (unreliable) scheduler. Whichever comes second finds a recent snapshot
-      # and stops here, so stores are not fetched twice for one slot.
-      - name: Skip if this slot already has a snapshot
-        id: fresh
-        if: ${{ !inputs.force }}
-        run: |
-          python - <<'EOF' >> "$GITHUB_OUTPUT"
-          import json
-          from datetime import datetime, timezone
-          try:
-              run_id = json.load(open("status/latest.json"))["run_id"]
-              last = datetime.strptime(run_id, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc)
-              hours = (datetime.now(timezone.utc) - last).total_seconds() / 3600
-          except (OSError, KeyError, ValueError):
-              hours = 99
-          print(f"skip={'true' if hours < 4 else 'false'}")
-          EOF
+      # The budget leaves an hour before the job timeout for stores already in
+      # flight, so a slow shard ends with complete files, not a killed job. The
+      # coverage check is left to the join, which sees every shard.
+      - name: Take snapshot
+        env:
+          BF_VANTAGE: github-actions
+          BF_USER_AGENT: "bf-price-audit/0.1 (+https://github.com/${{ github.repository }})"
+        run: >
+          python -m collector.snapshot
+          --shard "${{ matrix.shard }}/$SHARDS"
+          --run-id "${{ needs.plan.outputs.run_id }}"
+          --catalog "${{ needs.plan.outputs.catalog }}"
+          --budget-minutes 240 --min-ok 0
+          --out "data/shard-${{ matrix.shard }}"
+          --status "data/shard-${{ matrix.shard }}/latest.json"
 
-      # Read before the snapshot overwrites it: the dashboard summary compares
-      # each run with the one before.
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shard-${{ matrix.shard }}
+          path: data/shard-${{ matrix.shard }}/
+          retention-days: 1
+          compression-level: 0 # Parquet is already compressed
+
+  combine:
+    needs: [plan, shard]
+    if: always() && needs.plan.outputs.skip != 'true' && needs.plan.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      RUN: ${{ needs.plan.outputs.run_id }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      # Read before this run's status replaces it: the dashboard summary
+      # compares each run with the one before.
       - name: Note the previous snapshot
         id: prev
         run: echo "run_id=$(python -c "import json; print(json.load(open('status/latest.json'))['run_id'])" 2>/dev/null)" >> "$GITHUB_OUTPUT"
 
-      - name: Take snapshot
-        if: steps.fresh.outputs.skip != 'true'
-        env:
-          BF_VANTAGE: github-actions
-          BF_USER_AGENT: "bf-price-audit/0.1 (+https://github.com/${{ github.repository }})"
-          CATALOG: ${{ inputs.catalog || 'auto' }}
-        # The budget leaves an hour before the job timeout for stores already
-        # in flight, so a slow run ends with complete files, not a killed job.
-        run: python -m collector.snapshot --catalog "$CATALOG" --budget-minutes 240 --status status/latest.json
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: shard-*
+          path: data/shards
 
-      # Runs even when the snapshot step failed its coverage check: a partial
-      # snapshot plus its runs file is still valid data.
+      # A failed coverage check or a missing shard marks the run failed, but
+      # the steps below still run: a partial snapshot plus its runs file is
+      # still valid data.
+      - name: Join the shards
+        run: python -m collector.combine --run-id "$RUN" --shards data/shards --expected "$SHARDS" --status status/latest.json
+
       - name: Upload to this month's data release
-        if: always() && steps.fresh.outputs.skip != 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
+        if: always() && hashFiles(format('data/runs-{0}.parquet', env.RUN)) != ''
         run: |
-          tag="data-$(date -u +%Y-%m)"
+          tag="data-${RUN:0:4}-${RUN:4:2}"
           gh release view "$tag" >/dev/null 2>&1 || gh release create "$tag" \
-            --title "Snapshots $(date -u +%Y-%m)" \
+            --title "Snapshots ${RUN:0:4}-${RUN:4:2}" \
             --notes "Raw snapshot files. See the README for the schema."
-          gh release upload "$tag" data/prices-*.parquet data/catalog-*.parquet data/runs-*.parquet
+          gh release upload "$tag" "data/prices-$RUN.parquet" "data/catalog-$RUN.parquet" "data/runs-$RUN.parquet"
 
       # After the upload, so the previous run's files fetched here are not
       # uploaded again. A failure here must not lose the snapshot's status commit.
       - name: Summarise for the dashboard
-        if: always() && steps.fresh.outputs.skip != 'true'
+        if: always() && hashFiles(format('data/runs-{0}.parquet', env.RUN)) != ''
         continue-on-error: true
         env:
-          GH_TOKEN: ${{ github.token }}
           PREV: ${{ steps.prev.outputs.run_id }}
         run: |
-          run=$(ls data/prices-*.parquet | sed 's/.*prices-\(.*\)\.parquet/\1/' | sort | tail -1)
-          if [ -n "$PREV" ] && [ "$PREV" != "$run" ]; then
+          if [ -n "$PREV" ] && [ "$PREV" != "$RUN" ]; then
             gh release download "data-${PREV:0:4}-${PREV:4:2}" --dir data \
               -p "prices-$PREV.parquet" -p "runs-$PREV.parquet" || PREV=""
           else
             PREV=""
           fi
-          python -m collector.summarize --run "$run" ${PREV:+--prev "$PREV"}
+          python -m collector.summarize --run "$RUN" ${PREV:+--prev "$PREV"}
 
       # Folds this snapshot into the per-product change log kept in the "state"
       # release. If the existing state cannot be fetched the step stops rather
       # than start a new history; the state can be rebuilt from the snapshots.
       - name: Update product price histories
-        if: always() && steps.fresh.outputs.skip != 'true'
+        if: always() && hashFiles(format('data/runs-{0}.parquet', env.RUN)) != ''
         continue-on-error: true
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
-          run=$(ls data/prices-*.parquet | sed 's/.*prices-\(.*\)\.parquet/\1/' | sort | tail -1)
           gh release view state >/dev/null 2>&1 || gh release create state --latest=false \
             --title "Product price histories" \
             --notes "Rolling state files, rebuilt from the snapshots after every run. See the README."
@@ -128,9 +197,9 @@ jobs:
             newest=$(echo "$names" | grep "^product-$kind-" | sort | tail -1 || true)
             if [ -n "$newest" ]; then gh release download state --dir state -p "$newest"; fi
           done
-          python -m collector.products --run "$run"
-          if [ -f "state/product-history-$run.parquet" ]; then
-            gh release upload state "state/product-history-$run.parquet" "state/product-info-$run.parquet"
+          python -m collector.products --run "$RUN"
+          if [ -f "state/product-history-$RUN.parquet" ]; then
+            gh release upload state "state/product-history-$RUN.parquet" "state/product-info-$RUN.parquet"
             for kind in history info; do # keep the two newest of each
               echo "$names" | { grep "^product-$kind-" || true; } | sort | head -n -1 | while read -r old; do
                 gh release delete-asset state "$old" -y
@@ -139,13 +208,18 @@ jobs:
           fi
 
       # The commit doubles as a heartbeat: GitHub disables scheduled workflows
-      # in repositories with no activity for 60 days.
+      # in repositories with no activity for 60 days. Other workflows push to
+      # main too, so rebase and retry rather than fail.
       - name: Commit run status
-        if: always() && steps.fresh.outputs.skip != 'true'
+        if: always() && hashFiles('status/latest.json') != ''
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add status/latest.json summary
-          git diff --cached --quiet || git commit -m "status: snapshot $(date -u +%Y-%m-%dT%H:%MZ)"
-          git pull --rebase
-          git push
+          git diff --cached --quiet && exit 0
+          git commit -q -m "status: snapshot $(date -u +%Y-%m-%dT%H:%MZ)"
+          for attempt in 1 2 3 4; do
+            git pull -q --rebase && git push -q && exit 0
+            sleep $((attempt * 5))
+          done
+          exit 1

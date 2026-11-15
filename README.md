@@ -10,8 +10,21 @@ open so anyone can re-run the analysis.
 
 ## What is collected
 
-Each run reads the public product feed (`/products.json`) of every store in
-[stores/stores.csv](stores/stores.csv) and writes three Parquet files.
+Each run reads the public product listing of every store in
+[stores/stores.csv](stores/stores.csv) and writes three Parquet files. Two
+platforms are supported, both reading only what the shop's own pages show
+shoppers:
+
+- **Shopify**: the storefront feed `/products.json`.
+- **WooCommerce**: the Store API `/wp-json/wc/store/v1/products`, which
+  WooCommerce's own shop pages call from the browser. A variable product's
+  sizes and colours are read from the same API (`type=variation`); prices
+  arrive in minor units and are converted; `compare_at_price` is the regular
+  price while a product is on sale. These shops publish no product dates and
+  no home country (the `market` column is guessed from the domain or currency,
+  and left empty for euro shops on generic domains).
+
+The runs file has a `platform` column, so the two can always be told apart.
 
 **`prices-<run_id>.parquet`** has one row per product variant, every run:
 
@@ -78,7 +91,9 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 ```
 
 Add stores by appending domains to [stores/candidates.txt](stores/candidates.txt)
-and running the probe, which keeps the ones that serve a feed:
+and running the probe. It tries each domain as a Shopify store, then as a
+WooCommerce shop, and keeps the ones that serve a public listing; the reason
+for every rejection goes to `stores/rejected.csv`:
 
 ```bash
 .venv/bin/python -m collector.discover
@@ -164,7 +179,10 @@ Three GitHub Actions workflows do the work:
 
 - [snapshot.yml](.github/workflows/snapshot.yml), every 6 hours: takes the
   price snapshot, uploads the files to a monthly release (`data-YYYY-MM`), and
-  commits [status/latest.json](status/latest.json) as a heartbeat.
+  commits [status/latest.json](status/latest.json) as a heartbeat. The stores
+  are split across four jobs that run side by side on separate GitHub runners
+  (`--shard I/4`, balanced by expected requests), and `collector.combine` joins
+  their files into the usual three, so readers see one snapshot.
 - [trends.yml](.github/workflows/trends.yml), hourly: appends to the CSVs
   under `trends/`.
 - [discover.yml](.github/workflows/discover.yml), by hand: probes
@@ -182,8 +200,13 @@ the last 30 minutes) stops without fetching anything.
 
 - Identifies itself with a descriptive user agent that links to this repository.
 - Checks each store's `robots.txt` before every run and skips stores that disallow the feed.
-- Sends at most 1 request per second in total across all stores
-  (`BF_REQUESTS_PER_SECOND`) and honours `Retry-After`.
+- Reads each store one page at a time, with a pause between pages, and honours
+  `Retry-After`.
+- Sends at most 1 request per second in total to Shopify stores from each
+  runner (`BF_REQUESTS_PER_SECOND`); a scheduled run uses four runners, each
+  with its own quarter of the stores, so every store is still read by one
+  runner at that pace. WooCommerce shops are separate servers and share a
+  separate budget of 2 requests per second (`BF_OTHER_REQUESTS_PER_SECOND`).
 - Treats HTTP 429 from three different stores within a minute as the platform
   asking it to stop: it pauses every request, then resumes at a slower rate.
   Stores that were throttled are retried once at the end of the run.
@@ -202,8 +225,8 @@ the last 30 minutes) stops without fetching anything.
   with the same `vantage` in the runs file; the scheduled runs are all
   `github-actions`, and the single `local` run (`20261114T042558Z`) is kept
   as an early reference.
-- **Store selection is not random.** The list is hand-picked brand stores that
-  run Shopify and leave the feed open. Findings describe these stores, not
+- **Store selection is not random.** The list is hand-picked brand stores and
+  retailers that run Shopify or WooCommerce and leave the listing open. Findings describe these stores, not
   e-commerce as a whole, and not marketplaces such as Amazon.
 - **`compare_at_price` is the store's claim.** It is the thing being audited,
   not a ground truth.
