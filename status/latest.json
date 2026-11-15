@@ -1,20 +1,24 @@
 {
-  "run_id": "20261115T061715Z",
+  "run_id": "20261115T121712Z",
   "vantage": "github-actions",
   "catalog": "recent",
-  "stores_ok": 1416,
-  "stores_failed": 2,
+  "shards": 4,
+  "shards_missing": 0,
+  "stores_ok": 1638,
+  "stores_failed": 4,
   "stores_skipped": 0,
-  "stores_truncated": 14,
-  "products": 1600364,
-  "variants": 7612226,
-  "catalog_rows": 56969,
-  "seconds": 10037,
+  "stores_truncated": 25,
+  "products": 2289024,
+  "variants": 10520014,
+  "catalog_rows": 67918,
+  "seconds": 3306,
   "throttle_pauses": 0,
-  "prices_bytes": 39809735,
-  "catalog_bytes": 3610605,
+  "prices_bytes": 55123127,
+  "catalog_bytes": 4226628,
   "failures": {
+    "aboutarianne.com": "gave up after 4 tries: HTTP 500",
     "www.bonobos.com": "gave up after 4 tries: HTTP 500",
-    "www.nobullproject.com": "robots.txt disallows the feed"
+    "www.nobullproject.com": "robots.txt disallows the feed",
+    "www.scrollino.com": "gave up after 4 tries: HTTP 500"
   }
 }
