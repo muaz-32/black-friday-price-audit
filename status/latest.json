@@ -1,24 +1,27 @@
 {
-  "run_id": "20261115T121712Z",
+  "run_id": "20261115T181710Z",
   "vantage": "github-actions",
   "catalog": "recent",
   "shards": 4,
   "shards_missing": 0,
-  "stores_ok": 1638,
-  "stores_failed": 4,
+  "stores_ok": 1680,
+  "stores_failed": 7,
   "stores_skipped": 0,
-  "stores_truncated": 25,
-  "products": 2289024,
-  "variants": 10520014,
-  "catalog_rows": 67918,
-  "seconds": 3306,
+  "stores_truncated": 26,
+  "products": 2298838,
+  "variants": 10552494,
+  "catalog_rows": 58582,
+  "seconds": 3508,
   "throttle_pauses": 0,
-  "prices_bytes": 55123127,
-  "catalog_bytes": 4226628,
+  "prices_bytes": 55391752,
+  "catalog_bytes": 3894379,
   "failures": {
     "aboutarianne.com": "gave up after 4 tries: HTTP 500",
+    "sgwebpartners.com": "gave up after 4 tries: SSLError",
+    "www.1upkeyboards.com": "gave up after 4 tries: HTTP 500",
     "www.bonobos.com": "gave up after 4 tries: HTTP 500",
     "www.nobullproject.com": "robots.txt disallows the feed",
-    "www.scrollino.com": "gave up after 4 tries: HTTP 500"
+    "www.scrollino.com": "gave up after 4 tries: HTTP 500",
+    "www.ula-equipment.com": "HTTP 200 on page 1"
   }
 }
