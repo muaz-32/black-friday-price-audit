@@ -1,5 +1,7 @@
 domain,base_url,country,currency,shop_id,name,listed_products,platform
+1zpresso.coffee,https://1zpresso.coffee,US,USD,woocommerce:1zpresso.coffee,,32,woocommerce
 3leggedthing.com,https://3leggedthing.com/en-uk,GB,GBP,3leggedthing.myshopify.com,3 Legged Thing,365,shopify
+42keebs.eu,https://42keebs.eu,,EUR,woocommerce:42keebs.eu,,173,woocommerce
 abbottlyon.com,https://abbottlyon.com,GB,GBP,abbott-lyon-global.myshopify.com,Abbott Lyon,2670,shopify
 aboutarianne.com,https://aboutarianne.com,,EUR,woocommerce:aboutarianne.com,,798,woocommerce
 additionals.polestar.com,https://additionals.polestar.com,,EUR,woocommerce:additionals.polestar.com,,71,woocommerce
@@ -23,26 +25,31 @@ belstaff.com,https://belstaff.com,GB,GBP,belstaff-castore-group.myshopify.com,Be
 bendonlingerie.com.au,https://bendonlingerie.com.au,AU,AUD,bendon-au.myshopify.com,Bendon Lingerie Australia,545,shopify
 blackgirlsunscreen.com,https://blackgirlsunscreen.com,US,USD,woocommerce:blackgirlsunscreen.com,,26,woocommerce
 bloomming.com,https://bloomming.com,,EUR,woocommerce:bloomming.com,,78,woocommerce
+bloomscape.com,https://bloomscape.com,US,USD,woocommerce:bloomscape.com,,118,woocommerce
 blundstone.com.au,https://blundstone.com.au,AU,AUD,blundstone-au-production.myshopify.com,Blundstone Australia,164,shopify
 boat-lifestyle.com,https://boat-lifestyle.com,IN,INR,boatlifestylein.myshopify.com,boAt Lifestyle,1028,shopify
 bondisands.com.au,https://bondisands.com.au,AU,AUD,bondi-sands-au.myshopify.com,Bondi Sands Australia,114,shopify
 bonsoy.com,https://bonsoy.com,AU,AUD,woocommerce:bonsoy.com,,34,woocommerce
 bouclair.com,https://bouclair.com,CA,CAD,bouclair-production.myshopify.com,Bouclair,1817,shopify
+breadtopia.com,https://breadtopia.com,US,USD,woocommerce:breadtopia.com,,401,woocommerce
 bremont.com,https://bremont.com,GB,GBP,cc-bremont-uk.myshopify.com,Bremont Watch Company,134,shopify
 brewdog.com,https://brewdog.com,GB,GBP,b32dd2-83.myshopify.com,BrewDog,415,shopify
 brownsfashion.com,https://brownsfashion.com,GB,GBP,browns-development.myshopify.com,Browns | Designer Fashion & Homeware for Women and Men,25001,shopify
 bubbleroom.se,https://bubbleroom.se,SE,SEK,bubbleroom-sweden.myshopify.com,Bubbleroom,16883,shopify
 butlers.com,https://butlers.com,DE,EUR,butlerscom.myshopify.com,BUTLERS,4236,shopify
+cablemod.com,https://cablemod.com,US,USD,woocommerce:cablemod.com,,1274,woocommerce
 camilla.com,https://camilla.com,AU,USD,camilla-us.myshopify.com,Camilla eBoutique (US),4038,shopify
 carrollsirishgifts.com,https://carrollsirishgifts.com,IE,EUR,carrolls-irish-gifts.myshopify.com,Carrolls Irish Gifts,3425,shopify
 castelli-cycling.com,https://castelli-cycling.com,IT,EUR,0wfvkf-f6.myshopify.com,Castelli Cycling,727,shopify
 cavissima.com,https://cavissima.com,FR,EUR,cavissima.myshopify.com,Cavissima,4937,shopify
 cdlp.com,https://cdlp.com,SE,USD,cdlpstore.myshopify.com,CDLP,409,shopify
 challenger.sg,https://challenger.sg,SG,SGD,challenger-production.myshopify.com,Challenger Singapore,13306,shopify
+challengerbreadware.com,https://challengerbreadware.com,US,USD,woocommerce:challengerbreadware.com,,31,woocommerce
 cipherskincare.com,https://cipherskincare.com,US,USD,woocommerce:cipherskincare.com,,13,woocommerce
 cncpts.com,https://cncpts.com,US,USD,conceptsintl.myshopify.com,CNCPTS,1299,shopify
 colourpop.com,https://colourpop.com,US,USD,colourpop-prd.myshopify.com,ColourPop,1115,shopify
 coraandspink.com,https://coraandspink.com,GB,GBP,woocommerce:coraandspink.com,,13,woocommerce
+counciltool.com,https://counciltool.com,US,USD,woocommerce:counciltool.com,,160,woocommerce
 countryroad.com.au,https://countryroad.com.au,AU,AUD,country-road-au.myshopify.com,Country Road,6470,shopify
 creations.mattel.com,https://creations.mattel.com,US,USD,prod-collectorshub.myshopify.com,Mattel Creations,,shopify
 custhom.co.uk,https://custhom.co.uk,GB,USD,woocommerce:custhom.co.uk,,143,woocommerce
@@ -55,6 +62,7 @@ decjuba.com.au,https://decjuba.com.au,AU,AUD,decjuba.myshopify.com,DECJUBA,2337,
 denydesigns.com,https://denydesigns.com,US,USD,denydesigns.myshopify.com,Deny Designs,25001,shopify
 deycor.com,https://deycor.com,,EUR,woocommerce:deycor.com,,181,woocommerce
 diptyqueparis.com,https://diptyqueparis.com/fr-fr,FR,EUR,diptyque-xborder.myshopify.com,Diptyque,,shopify
+dizzypigbbq.com,https://dizzypigbbq.com,US,USD,woocommerce:dizzypigbbq.com,,66,woocommerce
 donebydeer.com,https://donebydeer.com/da-dk,DK,EUR,donebydeer-shop.myshopify.com,Done by Deer,947,shopify
 dowsedesign.co.uk,https://dowsedesign.co.uk,GB,GBP,dowse.myshopify.com,DOWSE,1554,shopify
 drawnandquarterly.com,https://drawnandquarterly.com,US,USD,woocommerce:drawnandquarterly.com,,580,woocommerce
@@ -68,6 +76,7 @@ ecoya.com.au,https://ecoya.com.au,AU,AUD,ecoyaaustralia.myshopify.com,ECOYA Aust
 eephusleague.com,https://eephusleague.com,US,USD,woocommerce:eephusleague.com,,3,woocommerce
 elverys.ie,https://elverys.ie,IE,EUR,intersport-ie.myshopify.com,Intersport Elverys,14430,shopify
 emmabridgewater.co.uk,https://emmabridgewater.co.uk,GB,GBP,emmabridgewater.myshopify.com,Emma Bridgewater,948,shopify
+en.akkogear.com,https://en.akkogear.com,US,USD,woocommerce:en.akkogear.com,,655,woocommerce
 endclothing.com,https://endclothing.com,GB,GBP,end-prod.myshopify.com,END.,25001,shopify
 eq3.com,https://eq3.com,CA,CAD,eq3websitecom.myshopify.com,EQ3,805,shopify
 eurekaspas.com,https://eurekaspas.com,US,USD,woocommerce:eurekaspas.com,,1,woocommerce
@@ -92,6 +101,7 @@ grenade.com,https://grenade.com,GB,GBP,grenade-uk.myshopify.com,Grenade UK,72,sh
 gymshark.com,https://gymshark.com,US,USD,gymsharkusa.myshopify.com,Gymshark US,10415,shopify
 halti.com,https://halti.com,FI,EUR,halti-global-store.myshopify.com,Halti Global Store,614,shopify
 harveynorman.ie,https://harveynorman.ie,IE,EUR,messagepool-hnie-prod.myshopify.com,Harvey Norman Ireland,25001,shopify
+hawkesmill.com,https://hawkesmill.com,GB,GBP,woocommerce:hawkesmill.com,,47,woocommerce
 haybcoffee.eu,https://haybcoffee.eu,,EUR,woocommerce:haybcoffee.eu,,299,woocommerce
 heals.com,https://heals.com,GB,GBP,healsdev.myshopify.com,Heal's,4706,shopify
 heatonist.com,https://heatonist.com,US,USD,heatonist-llc.myshopify.com,HEATONIST,,shopify
@@ -126,6 +136,7 @@ lamarzoccousa.com,https://lamarzoccousa.com,US,USD,woocommerce:lamarzoccousa.com
 lanius.com,https://lanius.com,DE,EUR,lanius-gmbh.myshopify.com,lanius.com,830,shopify
 lapuankankurit.fi,https://lapuankankurit.fi,FI,EUR,woocommerce:lapuankankurit.fi,,953,woocommerce
 ledergames.com,https://ledergames.com,US,USD,leder-games.myshopify.com,Leder Games,,shopify
+legionathletics.com,https://legionathletics.com,US,USD,woocommerce:legionathletics.com,,103,woocommerce
 lilyskitchen.co.uk,https://lilyskitchen.co.uk,GB,GBP,lilys-kitchen-uk.myshopify.com,Lily's Kitchen,328,shopify
 lolaandblake.co.uk,https://lolaandblake.co.uk,GB,GBP,woocommerce:lolaandblake.co.uk,,117,woocommerce
 lornajane.com.au,https://lornajane.com.au,AU,AUD,lornajane-au-prod.myshopify.com,Lorna Jane AU,2431,shopify
@@ -138,6 +149,7 @@ mamaearth.in,https://mamaearth.in,IN,INR,mamaearthprod.myshopify.com,Mamaearth,9
 mamasandpapas.com,https://mamasandpapas.com,GB,GBP,mamas-papas-uk.myshopify.com,Mamas & Papas UK,2484,shopify
 mammamiaitaly.com,https://mammamiaitaly.com,,EUR,woocommerce:mammamiaitaly.com,,32,woocommerce
 mastermindtoys.com,https://mastermindtoys.com,CA,CAD,mastermind-toys-live.myshopify.com,Mastermind Toys,2470,shopify
+matferbourgeatusa.com,https://matferbourgeatusa.com,US,USD,woocommerce:matferbourgeatusa.com,,850,woocommerce
 meblostan.pl,https://meblostan.pl,PL,PLN,woocommerce:meblostan.pl,,376,woocommerce
 megamart.subpop.com,https://megamart.subpop.com,US,USD,megamarting.myshopify.com,Sub Pop Mega Mart,1752,shopify
 merci-merci.com,https://merci-merci.com,FR,EUR,merciparis.myshopify.com,Merci Paris,7408,shopify
@@ -172,6 +184,7 @@ pompeiibrand.com,https://pompeiibrand.com,ES,EUR,pompeii-2.myshopify.com,Pompeii
 radley.co.uk,https://radley.co.uk,US,GBP,2d431f-e9.myshopify.com,Radley UK,2,shopify
 ramaworks.store,https://ramaworks.store,AU,USD,rama-works.myshopify.com,RAMA WORKS®,95,shopify
 reitmans.com,https://reitmans.com,CA,CAD,p2qmzk-1u.myshopify.com,Reitmans,2366,shopify
+ride1up.com,https://ride1up.com,US,USD,woocommerce:ride1up.com,,102,woocommerce
 rkgamingstore.com,https://rkgamingstore.com,US,USD,rkgaming.myshopify.com,RK Royal Kludge,80,shopify
 rodeo-labs.com,https://rodeo-labs.com,US,USD,woocommerce:rodeo-labs.com,,114,woocommerce
 roseanna.fr,https://roseanna.fr,FR,EUR,roseanna-dev.myshopify.com,ROSEANNA,226,shopify
@@ -192,6 +205,7 @@ shop.mattel.com,https://shop.mattel.com,US,USD,prod-mattel.myshopify.com,Mattel 
 shop.momofuku.com,https://shop.momofuku.com,US,USD,momofuku-online-store.myshopify.com,Momofuku Goods,,shopify
 shop.opticgaming.com,https://shop.opticgaming.com,US,USD,opticgaming-tv.myshopify.com,OpTic,95,shopify
 shop.pimoroni.com,https://shop.pimoroni.com,GB,GBP,pimoroni-2.myshopify.com,Pimoroni Ltd,,shopify
+shop.puri.sm,https://shop.puri.sm,US,USD,woocommerce:shop.puri.sm,,238,woocommerce
 shop.sentinels.gg,https://shop.sentinels.gg,US,USD,sen-test.myshopify.com,Sentinels | Shop,39,shopify
 shop.thecoolhunter.net,https://shop.thecoolhunter.net,AU,AUD,woocommerce:shop.thecoolhunter.net,,169,woocommerce
 shop.thrashermagazine.com,https://shop.thrashermagazine.com,US,USD,thrasher-magazine-2560.myshopify.com,Thrasher Magazine,601,shopify
@@ -214,6 +228,7 @@ stax.com.au,https://stax.com.au,AU,AUD,n7mzi0-rf.myshopify.com,STAX.,74,shopify
 stelton.com,https://stelton.com,DK,EUR,stelton-v2.myshopify.com,Stelton,500,shopify
 store.anycubic.com,https://store.anycubic.com,HK,USD,anycubic3d-printer.myshopify.com,ANYCUBIC-STORE,,shopify
 store.bluenote.com,https://store.bluenote.com,US,USD,bluenoterecords.myshopify.com,Blue Note Records,972,shopify
+store.cablemod.com,https://store.cablemod.com,US,USD,woocommerce:store.cablemod.com,,290,woocommerce
 store.cloud9.gg,https://store.cloud9.gg,US,USD,cloud9gg.myshopify.com,Cloud9,43,shopify
 store.dftba.com,https://store.dftba.com,US,USD,dftba-2.myshopify.com,DFTBA,652,shopify
 store.dropout.tv,https://store.dropout.tv,US,USD,dropout-store.myshopify.com,Dropout Store,,shopify
@@ -240,6 +255,7 @@ tmlewin.co.uk,https://tmlewin.co.uk,GB,GBP,tmlewinuk.myshopify.com,T.M.Lewin,104
 toyworld.com.au,https://toyworld.com.au,AU,AUD,toyworld-au.myshopify.com,Toyworld Australia,14863,shopify
 tropeaka.com.au,https://tropeaka.com.au,AU,AUD,tropeaka.myshopify.com,Tropeaka.com.au,114,shopify
 uggsince1974.com.au,https://uggsince1974.com.au,AU,AUD,ugg-since-1974.myshopify.com,UGG Since 1974,312,shopify
+uhk.io,https://uhk.io,US,USD,woocommerce:uhk.io,,67,woocommerce
 universalstore.com,https://universalstore.com,AU,AUD,universal-store-development.myshopify.com,Universal Store,9296,shopify
 universalworks.co.uk,https://universalworks.co.uk,GB,GBP,universalworks.myshopify.com,Universal Works,1450,shopify
 us.amazfit.com,https://us.amazfit.com,US,USD,amazfit-usa.myshopify.com,Amazfit,,shopify
@@ -270,6 +286,7 @@ www.100thieves.com,https://www.100thieves.com,US,USD,100t.myshopify.com,100 Thie
 www.111skin.com,https://www.111skin.com,GB,GBP,111skin-global.myshopify.com,111SKIN,73,shopify
 www.11degrees.com,https://www.11degrees.com,GB,GBP,11-degrees-official.myshopify.com,11 Degrees,125,shopify
 www.1stphorm.com,https://www.1stphorm.com,US,USD,1p-ecomm.myshopify.com,1st Phorm,,shopify
+www.1upkeyboards.com,https://www.1upkeyboards.com,US,USD,woocommerce:www.1upkeyboards.com,,287,woocommerce
 www.2modern.com,https://www.2modern.com,US,USD,2modern3.myshopify.com,2Modern Furniture & Lighting,21502,shopify
 www.2pood.com,https://www.2pood.com,US,USD,2pstrength.myshopify.com,2POOD,,shopify
 www.360cookware.com,https://www.360cookware.com,US,USD,360cookware.myshopify.com,360 Cookware,139,shopify
@@ -298,6 +315,7 @@ www.alaninu.com,https://www.alaninu.com,US,USD,alani-nu.myshopify.com,Alani Nu,,
 www.alastin.com,https://www.alastin.com,US,USD,alastin.myshopify.com,Alastin USA,42,shopify
 www.albanypark.com,https://www.albanypark.com,US,USD,albany-park.myshopify.com,Albany Park,,shopify
 www.alexandani.com,https://www.alexandani.com,US,USD,alexandani-us.myshopify.com,ALEX AND ANI,,shopify
+www.alfaforni.com,https://www.alfaforni.com,,EUR,woocommerce:www.alfaforni.com,,50,woocommerce
 www.allbirds.com,https://www.allbirds.com,US,USD,weareallbirds.myshopify.com,Allbirds,,shopify
 www.aloyoga.com,https://www.aloyoga.com,US,USD,alo-yoga.myshopify.com,Alo Yoga,,shopify
 www.alpakagear.com,https://www.alpakagear.com,US,USD,alpaka-gear.myshopify.com,ALPAKA,139,shopify
@@ -490,6 +508,7 @@ www.castlecreations.com,https://www.castlecreations.com,US,USD,bbsmf1-dy.myshopi
 www.catalinbread.com,https://www.catalinbread.com,US,USD,catalinbread-effects.myshopify.com,Catalinbread Effects,164,shopify
 www.catalystcase.com,https://www.catalystcase.com,US,USD,catalystcase.myshopify.com,Catalyst Case US,154,shopify
 www.catalystlifestyle.com,https://www.catalystlifestyle.com,HK,USD,catalystlifestyle.myshopify.com,Catalyst Lifestyle,153,shopify
+www.cayin.com,https://www.cayin.com,,EUR,woocommerce:www.cayin.com,,87,woocommerce
 www.cedarandmoss.com,https://www.cedarandmoss.com,US,USD,cedar-moss.myshopify.com,Cedar & Moss,438,shopify
 www.celimax.com,https://www.celimax.com,HK,USD,celimax-new-wdj0eyqg.myshopify.com,CELIMAX NEW,44,shopify
 www.celimax.us,https://www.celimax.us,KR,USD,celimax.myshopify.com,celimax US,40,shopify
@@ -501,6 +520,7 @@ www.chinatownmarket.com,https://www.chinatownmarket.com,US,USD,the-chinatown-mar
 www.chisos.com,https://www.chisos.com,US,USD,chisosboots.myshopify.com,Chisos,38,shopify
 www.chomps.com,https://www.chomps.com,US,USD,chomps.myshopify.com,Chomps ,,shopify
 www.chophousesteaks.ca,https://www.chophousesteaks.ca,CA,CAD,woocommerce:www.chophousesteaks.ca,,46,woocommerce
+www.chord.co.uk,https://www.chord.co.uk,GB,GBP,woocommerce:www.chord.co.uk,,111,woocommerce
 www.chrisreeve.com,https://www.chrisreeve.com,US,USD,chris-reeve-knives-shop.myshopify.com,Chris Reeve Knives ,96,shopify
 www.christianiabikes.com,https://www.christianiabikes.com,DK,DKK,woocommerce:www.christianiabikes.com,,790,woocommerce
 www.christydawn.com,https://www.christydawn.com,US,USD,christy-dawn.myshopify.com,Christy Dawn,,shopify
@@ -602,6 +622,7 @@ www.dreametech.com,https://www.dreametech.com,US,USD,dreame-us.myshopify.com,Dre
 www.dreamlandbabyco.com,https://www.dreamlandbabyco.com,US,USD,dreamland-baby-innovations.myshopify.com,Dreamland Baby,228,shopify
 www.drinkolipop.com,https://www.drinkolipop.com,US,USD,olipop-store.myshopify.com,OLIPOP,,shopify
 www.drinkprime.com,https://www.drinkprime.com,US,USD,drinkprime.myshopify.com,PRIME,,shopify
+www.drolemonsieur.com,https://www.drolemonsieur.com,,EUR,woocommerce:www.drolemonsieur.com,,380,woocommerce
 www.dropps.com,https://www.dropps.com,US,USD,dropps.myshopify.com,Dropps,,shopify
 www.dtlr.com,https://www.dtlr.com,US,USD,dtlrvilla.myshopify.com,DTLR,25001,shopify
 www.duckcamp.com,https://www.duckcamp.com,,,,,,shopify
@@ -628,6 +649,7 @@ www.encircled.co,https://www.encircled.co,CA,CAD,become.myshopify.com,Encircled,
 www.endgamegear.com,https://www.endgamegear.com,DE,USD,3e1855-d9.myshopify.com,Endgame Gear,,shopify
 www.ensorings.com,https://www.ensorings.com,US,USD,ensorings.myshopify.com,Enso Rings,,shopify
 www.envirosax.com,https://www.envirosax.com,US,USD,envirosaxbag.myshopify.com,Envirosax,193,shopify
+www.epiphan.com,https://www.epiphan.com,US,USD,woocommerce:www.epiphan.com,,40,woocommerce
 www.epitaph.com,https://www.epitaph.com,US,USD,077214-3e.myshopify.com,Epitaph Records,996,shopify
 www.epomaker.com,https://www.epomaker.com,US,USD,epomaker.myshopify.com,EPOMAKER,128,shopify
 www.ergopouch.com,https://www.ergopouch.com,US,USD,ergopouch-us.myshopify.com,ergopouch US,286,shopify
@@ -646,6 +668,7 @@ www.extremerate.com,https://www.extremerate.com,CN,USD,extremerate-retail.myshop
 www.ezpzfun.com,https://www.ezpzfun.com,US,USD,ezpzfun.myshopify.com,ezpz,,shopify
 www.fablepets.com,https://www.fablepets.com,US,USD,fable-pets.myshopify.com,Fable,,shopify
 www.facetheory.com,https://www.facetheory.com/en-gb,GB,GBP,foryouskincare.myshopify.com,facetheory.com,60,shopify
+www.fairyloot.com,https://www.fairyloot.com,GB,GBP,woocommerce:www.fairyloot.com,,125,woocommerce
 www.faithfullthebrand.com,https://www.faithfullthebrand.com,AU,USD,faithfull-the-brand-international.myshopify.com,Faithfull the Brand,854,shopify
 www.fangamer.com,https://www.fangamer.com,US,USD,fangamer.myshopify.com,Fangamer,,shopify
 www.fanjoy.co,https://www.fanjoy.co,US,USD,vaccarino22.myshopify.com,Fanjoy,268,shopify
@@ -668,6 +691,7 @@ www.filmphotographystore.com,https://www.filmphotographystore.com,US,USD,film-ph
 www.filson.com,https://www.filson.com,US,USD,cb3d2b-00.myshopify.com,Filson,,shopify
 www.finalmouse.com,https://www.finalmouse.com,US,USD,finalmouse.myshopify.com,Finalmouse,33,shopify
 www.finisterre.com,https://www.finisterre.com,GB,GBP,finisterre.myshopify.com,Finisterre,789,shopify
+www.fireboard.com,https://www.fireboard.com,US,USD,woocommerce:www.fireboard.com,,65,woocommerce
 www.firstaidbeauty.com,https://www.firstaidbeauty.com,US,USD,9bae17-7.myshopify.com,First Aid Beauty,98,shopify
 www.fiskars.com,https://www.fiskars.com/fi-fi,FI,EUR,fiskars-brand-site.myshopify.com,Fiskars Brand Site,1,shopify
 www.flauntcases.com,https://www.flauntcases.com,US,USD,idecoz.myshopify.com,FLAUNT,356,shopify
@@ -689,6 +713,8 @@ www.freshcleantees.com,https://www.freshcleantees.com,US,USD,fresh-clean-tees.my
 www.frida.com,https://www.frida.com,US,USD,fridababy.myshopify.com,Frida | The fuss stops here.,184,shopify
 www.fringesport.com,https://www.fringesport.com,US,USD,fringesports.myshopify.com,Fringe Sport,,shopify
 www.fromourplace.com,https://www.fromourplace.com,US,USD,fromourplace-com.myshopify.com,Our Place,,shopify
+www.frye.com,https://www.frye.com,US,USD,woocommerce:www.frye.com,,107,woocommerce
+www.fstopgear.com,https://www.fstopgear.com,US,USD,woocommerce:www.fstopgear.com,,127,woocommerce
 www.fuckingawesomestore.com,https://www.fuckingawesomestore.com,US,USD,fuckingawesome.myshopify.com,Fucking Awesome,428,shopify
 www.furitek.com,https://www.furitek.com,VN,USD,helidirectdev.myshopify.com,Furitek,640,shopify
 www.fwee.us,https://www.fwee.us,US,USD,fwee-usa.myshopify.com,fwee,19,shopify
@@ -696,8 +722,10 @@ www.g-wolves.com,https://www.g-wolves.com,HK,USD,gwolves.myshopify.com,G-Wolves,
 www.g2esports.com,https://www.g2esports.com,NL,EUR,g2esports.myshopify.com,G2 Esports,40,shopify
 www.gaiam.com,https://www.gaiam.com,US,USD,gaiam-2.myshopify.com,Gaiam,,shopify
 www.gamersupps.gg,https://www.gamersupps.gg,US,USD,gamersupps.myshopify.com,Gamer Supps,1578,shopify
+www.geekompc.com,https://www.geekompc.com,US,USD,woocommerce:www.geekompc.com,,80,woocommerce
 www.geekworm.com,https://www.geekworm.com,CN,USD,geekworm.myshopify.com,Geekworm,263,shopify
 www.geon.works,https://www.geon.works,KR,USD,geonworks.myshopify.com,GEONWORKS,142,shopify
+www.geprc.com,https://www.geprc.com,US,USD,woocommerce:www.geprc.com,,665,woocommerce
 www.gerbergear.com,https://www.gerbergear.com,US,USD,gerber-production-store.myshopify.com,Gerber Gear,,shopify
 www.getcasely.com,https://www.getcasely.com,US,USD,get-casely.myshopify.com,CASELY,2162,shopify
 www.getquip.com,https://www.getquip.com,US,USD,bb73c3-5.myshopify.com,quip,105,shopify
@@ -736,6 +764,7 @@ www.greats.com,https://www.greats.com,US,USD,greats.myshopify.com,GREATS,97,shop
 www.greenmountaingrills.com,https://www.greenmountaingrills.com,US,USD,woocommerce:www.greenmountaingrills.com,,162,woocommerce
 www.greenpan.us,https://www.greenpan.us,US,USD,greenpan-us.myshopify.com,GreenPan US,901,shopify
 www.greysonclothiers.com,https://www.greysonclothiers.com,US,USD,greyson-shop.myshopify.com,Greyson Clothiers,1398,shopify
+www.grillgrate.com,https://www.grillgrate.com,US,USD,woocommerce:www.grillgrate.com,,1,woocommerce
 www.groovelife.com,https://www.groovelife.com,US,USD,groove-rings.myshopify.com,Groove Life,,shopify
 www.grove.co,https://www.grove.co,US,USD,fb4c79-b2.myshopify.com,Grove Collaborative,,shopify
 www.gundamplanet.com,https://www.gundamplanet.com,US,USD,647054-8d.myshopify.com,Gundam Planet,17622,shopify
@@ -878,6 +907,7 @@ www.killerhogs.com,https://www.killerhogs.com,US,USD,howtobbqright-recipes.mysho
 www.killstar.com,https://www.killstar.com,GB,GBP,killstar-clothing.myshopify.com,KILLSTAR - UK Store,799,shopify
 www.kimesranch.com,https://www.kimesranch.com,US,USD,kimesranch.myshopify.com,Kimes Ranch,645,shopify
 www.kindredbravely.com,https://www.kindredbravely.com,US,USD,kindred-bravely.myshopify.com,Kindred Bravely,996,shopify
+www.kinesis-ergo.com,https://www.kinesis-ergo.com,US,USD,woocommerce:www.kinesis-ergo.com,,80,woocommerce
 www.kineuphorics.com,https://www.kineuphorics.com,US,USD,kin-cocktails.myshopify.com,Kin Euphorics,,shopify
 www.kinfolk.com,https://www.kinfolk.com,US,USD,woocommerce:www.kinfolk.com,,97,woocommerce
 www.kingice.com,https://www.kingice.com,US,USD,kingice.myshopify.com,King Ice,,shopify
@@ -935,6 +965,7 @@ www.leuchtturm1917.us,https://www.leuchtturm1917.us,US,USD,cf46ua-z1.myshopify.c
 www.levainbakery.com,https://www.levainbakery.com,US,USD,levainbakery.myshopify.com,Levain Bakery,75,shopify
 www.level8cases.com,https://www.level8cases.com,US,USD,level8-group.myshopify.com,LEVEL8,92,shopify
 www.levoit.com,https://www.levoit.com,US,USD,levoitstore.myshopify.com,Levoit,,shopify
+www.lian-li.com,https://www.lian-li.com,GB,GBP,woocommerce:www.lian-li.com,,140,woocommerce
 www.liewood.com,https://www.liewood.com,DK,EUR,liewood.myshopify.com,LIEWOOD,1274,shopify
 www.lifestraw.com,https://www.lifestraw.com,US,USD,lifestraw-store.myshopify.com,LifeStraw Water Filters & Purifiers,,shopify
 www.liforme.com,https://www.liforme.com,GB,GBP,liforme.myshopify.com,Liforme,,shopify
@@ -959,6 +990,7 @@ www.localboyoutfitters.com,https://www.localboyoutfitters.com,US,USD,www-localbo
 www.localeclectic.com,https://www.localeclectic.com,US,USD,local-eclectic-usa.myshopify.com,local eclectic,,shopify
 www.lodgecastiron.com,https://www.lodgecastiron.com,US,USD,lodgecastiron-us.myshopify.com,Lodge Cast Iron,,shopify
 www.loefflerrandall.com,https://www.loefflerrandall.com,US,USD,loeffler-randall-1.myshopify.com,Loeffler Randall,1056,shopify
+www.lojel.com,https://www.lojel.com,US,USD,woocommerce:www.lojel.com,,133,woocommerce
 www.lokai.com,https://www.lokai.com,US,USD,lokai-holdings-llc.myshopify.com,Lokai,,shopify
 www.lonelyghost.co,https://www.lonelyghost.co,US,USD,indythelabellabel.myshopify.com,LONELY GHOST,161,shopify
 www.loom.fr,https://www.loom.fr/fr-fr,FR,EUR,loom-fr.myshopify.com,Loom,111,shopify
@@ -1019,6 +1051,7 @@ www.meatchurch.com,https://www.meatchurch.com,US,USD,meat-church.myshopify.com,M
 www.mechanicalkeyboards.com,https://www.mechanicalkeyboards.com,US,USD,a701d1-5.myshopify.com,Mechanical Keyboards,5725,shopify
 www.mechboards.co.uk,https://www.mechboards.co.uk,GB,GBP,mechboards-online.myshopify.com,Mechboards,162,shopify
 www.mechkeys.com,https://www.mechkeys.com,HK,USD,mechkeysshop.myshopify.com,mechkeysshop,1300,shopify
+www.medfordknife.com,https://www.medfordknife.com,US,USD,woocommerce:www.medfordknife.com,,120,woocommerce
 www.medicube.us,https://www.medicube.us,US,USD,medicube-us.myshopify.com,MEDICUBE US,329,shopify
 www.mediheal.com,https://www.mediheal.com,KR,USD,medihealus.myshopify.com,Mediheal,141,shopify
 www.medik8.com,https://www.medik8.com,GB,GBP,medik8skin.myshopify.com,Medik8,108,shopify
@@ -1124,6 +1157,7 @@ www.nudelucy.com.au,https://www.nudelucy.com.au,AU,AUD,nudelucy.myshopify.com,nu
 www.nudestix.com,https://www.nudestix.com,US,USD,nudestix.myshopify.com,Nudestix,165,shopify
 www.numerogroup.com,https://www.numerogroup.com,US,USD,numero-group.myshopify.com,Numero Group,806,shopify
 www.numskull.com,https://www.numskull.com,GB,GBP,geekstore-us.myshopify.com,Numskull.com,325,shopify
+www.nutribullet.com,https://www.nutribullet.com,US,USD,woocommerce:www.nutribullet.com,,183,woocommerce
 www.nvgtn.com,https://www.nvgtn.com,US,USD,nvgtn.myshopify.com,NVGTN,1284,shopify
 www.oakandfort.com,https://www.oakandfort.com,US,USD,oak-fort-usa.myshopify.com,OAK + FORT USA,4768,shopify
 www.oakywood.shop,https://www.oakywood.shop,US,EUR,oakywood.myshopify.com,Oakywood,123,shopify
@@ -1208,6 +1242,7 @@ www.pfcandleco.com,https://www.pfcandleco.com,US,USD,p-f-candle-co.myshopify.com
 www.phaidon.com,https://www.phaidon.com/en-us,GB,USD,phaidon-global-dev.myshopify.com,Phaidon,,shopify
 www.phlur.com,https://www.phlur.com,US,USD,phlur-shop.myshopify.com,Phlur,147,shopify
 www.phoneloops.com,https://www.phoneloops.com,CA,USD,thatloop.myshopify.com,Phone Loops,253,shopify
+www.pine64.com,https://www.pine64.com,US,USD,woocommerce:www.pine64.com,,194,woocommerce
 www.pioneercarry.com,https://www.pioneercarry.com,US,USD,pioneerstudio.myshopify.com,PIONEER ,20,shopify
 www.pipsticks.com,https://www.pipsticks.com,US,USD,pipsticks.myshopify.com,Pipsticks,,shopify
 www.pisugar.com,https://www.pisugar.com,CN,USD,01246a-kz.myshopify.com,PiSugar Kitchen,11,shopify
@@ -1223,6 +1258,7 @@ www.poeticcases.com,https://www.poeticcases.com,US,USD,poeticcases.myshopify.com
 www.polarpro.com,https://www.polarpro.com,US,USD,polarpro.myshopify.com,PolarPro,265,shopify
 www.polarskateco.com,https://www.polarskateco.com,NL,EUR,polar-skate-co.myshopify.com,Polar Skate Co.,440,shopify
 www.polene-paris.com,https://www.polene-paris.com,FR,EUR,polene-paris.myshopify.com,Polène FR,,shopify
+www.polyend.com,https://www.polyend.com,US,USD,woocommerce:www.polyend.com,,270,woocommerce
 www.polyvinylrecords.com,https://www.polyvinylrecords.com,US,USD,9391b6-15.myshopify.com,Polyvinyl Record Co.,1981,shopify
 www.popflexactive.com,https://www.popflexactive.com,US,USD,popflex.myshopify.com,POPFLEX®,1130,shopify
 www.popovleather.com,https://www.popovleather.com,CA,CAD,popovleather.myshopify.com,Popov Leather®,,shopify
@@ -1342,6 +1378,7 @@ www.secretlystore.com,https://www.secretlystore.com,US,USD,secretlystore.myshopi
 www.selfieleslie.com,https://www.selfieleslie.com,US,USD,selfieleslie-us.myshopify.com,Selfie Leslie,8026,shopify
 www.selkirk.com,https://www.selkirk.com,US,USD,selkirk-sport.myshopify.com,Selkirk Sport,,shopify
 www.seoulceuticals.com,https://www.seoulceuticals.com,US,USD,seoulceuticals.myshopify.com,SeoulCeuticals,56,shopify
+www.sequential.com,https://www.sequential.com,US,USD,woocommerce:www.sequential.com,,96,woocommerce
 www.setactive.co,https://www.setactive.co,US,USD,set-active.myshopify.com,SET ACTIVE,824,shopify
 www.sfbags.com,https://www.sfbags.com,US,USD,waterfield-designs.myshopify.com,WaterField Designs,139,shopify
 www.sfoglini.com,https://www.sfoglini.com,US,USD,sfoglini.myshopify.com,Sfoglini,32,shopify
@@ -1434,6 +1471,7 @@ www.stewartgolfusa.com,https://www.stewartgolfusa.com,US,USD,stewartgolfusa.mysh
 www.stio.com,https://www.stio.com,US,USD,stiomountain.myshopify.com,Stio,,shopify
 www.stoneandstrand.com,https://www.stoneandstrand.com,US,USD,stoneandstrand.myshopify.com,STONE AND STRAND,,shopify
 www.strataportland.com,https://www.strataportland.com,US,USD,strata-portland.myshopify.com,Strata,3774,shopify
+www.strymon.net,https://www.strymon.net,US,USD,woocommerce:www.strymon.net,,117,woocommerce
 www.stubbleandco.com,https://www.stubbleandco.com,GB,GBP,stubble-co.myshopify.com,Stubble & Co,52,shopify
 www.studs.com,https://www.studs.com,US,USD,studs-piercing.myshopify.com,Studs,,shopify
 www.stumptowncoffee.com,https://www.stumptowncoffee.com,US,USD,stumptowncoffee.myshopify.com,Stumptown Coffee,,shopify
@@ -1501,6 +1539,7 @@ www.thinktankphoto.com,https://www.thinktankphoto.com,US,USD,think-tank-photo.my
 www.thirdlove.com,https://www.thirdlove.com,US,USD,thirdlove.myshopify.com,Thirdlove,,shopify
 www.thirdmanrecords.com,https://www.thirdmanrecords.com,US,USD,third-man-store.myshopify.com,Third Man Records – Official Store,838,shopify
 www.thisworks.com,https://www.thisworks.com,GB,GBP,thisworks-main-prod.myshopify.com,This Works,117,shopify
+www.thonk.co.uk,https://www.thonk.co.uk,GB,GBP,woocommerce:www.thonk.co.uk,,1291,woocommerce
 www.thrills.co,https://www.thrills.co,AU,AUD,thrillsco.myshopify.com,THRILLS CO,1189,shopify
 www.thrivecausemetics.com,https://www.thrivecausemetics.com,US,USD,thrive-causemetics.myshopify.com,Thrive Causemetics,164,shopify
 www.thursdayboots.com,https://www.thursdayboots.com,US,USD,the-boot-company.myshopify.com,Thursday Boot Company,1747,shopify
@@ -1549,6 +1588,7 @@ www.twelvesouth.com,https://www.twelvesouth.com,US,USD,twelvesouth.myshopify.com
 www.typeractive.xyz,https://www.typeractive.xyz,US,USD,typeractive.myshopify.com,Typeractive.xyz,49,shopify
 www.ugmonk.com,https://www.ugmonk.com,US,USD,ugmonk-2.myshopify.com,Ugmonk,185,shopify
 www.ugreen.com,https://www.ugreen.com,HK,HKD,ugreen-brandsite.myshopify.com,UGREEN Official Site,119,shopify
+www.ula-equipment.com,https://www.ula-equipment.com,US,USD,woocommerce:www.ula-equipment.com,,86,woocommerce
 www.undefeated.com,https://www.undefeated.com,US,USD,undefeated.myshopify.com,Undefeated,1381,shopify
 www.undone.com,https://www.undone.com,HK,USD,undone-watches.myshopify.com,UNDONE,,shopify
 www.unimaticwatches.com,https://www.unimaticwatches.com,IT,EUR,unimatic-watches.myshopify.com,UNIMATIC Watches,,shopify
@@ -1565,6 +1605,7 @@ www.vanquishproducts.com,https://www.vanquishproducts.com,US,USD,4a67ba-2.myshop
 www.velourlashes.com,https://www.velourlashes.com,CA,USD,velourlashes-shop.myshopify.com,Velour,65,shopify
 www.velvetcaviar.com,https://www.velvetcaviar.com,US,USD,velvet-caviar.myshopify.com,VelvetCaviar.com,3322,shopify
 www.venroy.com.au,https://www.venroy.com.au,AU,AUD,venroystore.myshopify.com,VENROY,1172,shopify
+www.venuslens.net,https://www.venuslens.net,US,USD,woocommerce:www.venuslens.net,,104,woocommerce
 www.vergegirl.com,https://www.vergegirl.com,AU,AUD,vergegirl.myshopify.com,VRG GRL,1029,shopify
 www.versagripps.com,https://www.versagripps.com,US,USD,versagripps.myshopify.com,Versa Gripps,,shopify
 www.versedskin.com,https://www.versedskin.com,US,USD,versed-skin.myshopify.com,Versed Skin,73,shopify
@@ -1587,6 +1628,7 @@ www.vosteed.com,https://www.vosteed.com,CN,USD,vosteed.myshopify.com,Vosteed,722
 www.vxe.com,https://www.vxe.com,HK,USD,h1i4m5-nt.myshopify.com,VXE Studio,8,shopify
 www.wallicases.com,https://www.wallicases.com,US,USD,walli-inc.myshopify.com,Walli Cases,938,shopify
 www.walrusaudio.com,https://www.walrusaudio.com,US,USD,walrus-audio-2.myshopify.com,Walrus Audio,227,shopify
+www.wamplerpedals.com,https://www.wamplerpedals.com,US,USD,woocommerce:www.wamplerpedals.com,,111,woocommerce
 www.wandrd.com,https://www.wandrd.com,US,USD,wandrd-development.myshopify.com,WANDRD Gear,275,shopify
 www.wearebraindead.com,https://www.wearebraindead.com,US,USD,brainddead.myshopify.com,Brain Dead,459,shopify
 www.wearefeel.com,https://www.wearefeel.com,GB,GBP,we-are-feel.myshopify.com,Feel,83,shopify
@@ -1624,6 +1666,7 @@ www.xtrema.com,https://www.xtrema.com,US,USD,ceramcor.myshopify.com,Xtrema Pure 
 www.yaber.com,https://www.yaber.com,US,USD,yaber-shop.myshopify.com,Yaber,39,shopify
 www.yamazakihome.com,https://www.yamazakihome.com,JP,JPY,yamajitsu.myshopify.com,Yamazaki,,shopify
 www.yellowbirdfoods.com,https://www.yellowbirdfoods.com,US,USD,yellowbird-condiments.myshopify.com,Yellowbird®,,shopify
+www.yodersmokers.com,https://www.yodersmokers.com,US,USD,woocommerce:www.yodersmokers.com,,32,woocommerce
 www.yosekastationery.com,https://www.yosekastationery.com,US,USD,yoseka-stationery.myshopify.com,Yoseka Stationery,,shopify
 www.youngla.com,https://www.youngla.com,US,USD,youngla.myshopify.com,YoungLA,,shopify
 www.youtooz.com,https://www.youtooz.com,US,USD,youtooz-2.myshopify.com,Youtooz Collectibles,,shopify
@@ -1637,7 +1680,9 @@ www.ziptop.com,https://www.ziptop.com,US,USD,zip-top.myshopify.com,Zip Top,21,sh
 www.zojirushi.com,https://www.zojirushi.com,US,USD,zojirushi-online.myshopify.com,Zojirushi Online Store,1050,shopify
 www.zoli-inc.com,https://www.zoli-inc.com,US,USD,zolibaby.myshopify.com,ZoLi,50,shopify
 www.zpacks.com,https://www.zpacks.com,US,USD,zpacks.myshopify.com,Zpacks,,shopify
+wyrmwoodgaming.com,https://wyrmwoodgaming.com,US,USD,woocommerce:wyrmwoodgaming.com,,482,woocommerce
 xpdboots.com,https://xpdboots.com,US,USD,woocommerce:xpdboots.com,,125,woocommerce
 yellowclothing.net,https://yellowclothing.net,BD,BDT,yellow-clothing1.myshopify.com,Yellow Clothing Ltd.,2929,shopify
 zagg.com,https://zagg.com/en-us,US,USD,zagg-2640.myshopify.com,ZAGG,2111,shopify
 zanerobe.com,https://zanerobe.com,AU,AUD,zanerobe.myshopify.com,ZANEROBE,2617,shopify
+zursunbeans.com,https://zursunbeans.com,US,USD,woocommerce:zursunbeans.com,,64,woocommerce
