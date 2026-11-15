@@ -1,26 +1,748 @@
 domain,reason
+29cm.co.kr,HTTP 404; woocommerce: HTTP 404
+43einhalb.com,HTTP 403; woocommerce: HTTP 403
+4f.com.pl,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+6thstreet.com,HTTP 403; woocommerce: HTTP 403
+aarong.com,not a product feed; woocommerce: not a product list
+abelandcole.co.uk,not a product feed; woocommerce: not a product list
+aboutyou.de,not a product feed; woocommerce: not a product list
+abrand.com.au,not a product feed; woocommerce: not a product list
+acnestudios.com,HTTP 404; woocommerce: HTTP 404
+acquadiparma.com,HTTP 404; woocommerce: HTTP 404
+action.com,not a product feed; woocommerce: not a product list
+adairs.com.au,HTTP 404; woocommerce: HTTP 404
+adlibris.com,gave up after 2 tries: HTTP 429
+adorebeauty.com.au,HTTP 404; woocommerce: HTTP 404
+adoremeau.com,gave up after 2 tries: ConnectionError
+aesop.com,HTTP 403; woocommerce: HTTP 403
+afends.com,same shop as www.afends.com
+aigle.com,gave up after 2 tries: SSLError
+aje.com.au,HTTP 404; woocommerce: HTTP 404
+ajio.com,HTTP 403; woocommerce: HTTP 403
+akademibokhandeln.se,gave up after 2 tries: HTTP 429
+alanui.com,gave up after 2 tries: ConnectionError
+aldi-onlineshop.de,HTTP 404; woocommerce: HTTP 404
+allegro.pl,HTTP 403; woocommerce: HTTP 403
+allsaints.com,HTTP 404; woocommerce: HTTP 404
+alltricks.fr,HTTP 403; woocommerce: HTTP 403
+alternate.de,HTTP 404; woocommerce: HTTP 404
+alternate.nl,HTTP 404; woocommerce: HTTP 404
+altex.ro,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+alza.cz,HTTP 403; woocommerce: HTTP 403
+am.pm.fr,gave up after 2 tries: ConnectionError
+amart.com.au,not a product feed; woocommerce: HTTP 404
+americanas.com.br,HTTP 404; woocommerce: HTTP 404
+ami-paris.com,gave up after 2 tries: ConnectionError
+anaconda.com.au,gave up after 2 tries: ConnectTimeout; woocommerce: gave up after 4 tries: ConnectTimeout
+andertons.co.uk,HTTP 404; woocommerce: HTTP 404
+angrycreative.com,HTTP 403; woocommerce: HTTP 403
+animates.co.nz,HTTP 404; woocommerce: HTTP 404
+answear.com,HTTP 403; woocommerce: HTTP 403
+answear.ro,HTTP 403; woocommerce: HTTP 403
+anwb.nl,HTTP 404; woocommerce: HTTP 404
+ao.com,HTTP 403; woocommerce: HTTP 403
+apc.fr,same shop as www.apc.fr
+apex4u.com,HTTP 405; woocommerce: HTTP 405
 apos.audio,same shop as www.apos.audio
+apotea.se,HTTP 403; woocommerce: HTTP 403
+apoteket.se,HTTP 404; woocommerce: HTTP 404
+appliancesonline.com.au,HTTP 404; woocommerce: HTTP 404
+arabia.fi,not a product feed; woocommerce: not a product list
+argos.co.uk,HTTP 403; woocommerce: HTTP 403
+aritzia.com,HTTP 403; woocommerce: HTTP 403
+arket.com,HTTP 403; woocommerce: HTTP 403
+arket.se,HTTP 403; woocommerce: HTTP 403
+arnhem.com,HTTP 404; woocommerce: HTTP 404
+arnotts.ie,HTTP 410; woocommerce: HTTP 410
+article.com,HTTP 202; woocommerce: HTTP 202
+asos.com,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+aspinaloflondon.com,HTTP 404; woocommerce: HTTP 404
+atmosphere.ca,not a product feed; woocommerce: not a product list
 audioengineusa.com,gave up after 2 tries: SSLError
+auvieuxcampeur.fr,HTTP 403; woocommerce: HTTP 403
+azerty.nl,HTTP 403; woocommerce: HTTP 403
+ba-sh.com,HTTP 404; woocommerce: HTTP 404
+babybunting.com.au,HTTP 403; woocommerce: HTTP 403
+babyshop.com,not a product feed; woocommerce: not a product list
+balzac-paris.fr,same shop as www.balzac-paris.fr
+bangerhead.se,HTTP 404; woocommerce: HTTP 404
+barbour.com,HTTP 404; woocommerce: HTTP 404
+bared.com.au,HTTP 404; woocommerce: HTTP 404
+bartsmit.nl,gave up after 2 tries: SSLError
+bata.com.bd,gave up after 2 tries: SSLError
+bcc.nl,HTTP 404; woocommerce: HTTP 404
+bcf.com.au,HTTP 410; woocommerce: HTTP 410
+beams.co.jp,gave up after 2 tries: HTTP 504; woocommerce: gave up after 4 tries: HTTP 504
+beautybay.com,not a product feed; woocommerce: not a product list
+bec-bridge.com.au,gave up after 2 tries: ConnectionError
+bedbathntable.com.au,HTTP 404; woocommerce: HTTP 404
+beer52.com,HTTP 404; woocommerce: HTTP 403
+belsimpel.nl,HTTP 404; woocommerce: HTTP 404
+benshermans.com,gave up after 2 tries: ConnectionError
+bergfreunde.de,HTTP 404; woocommerce: HTTP 404
+bergzeit.de,HTTP 404; woocommerce: HTTP 404
+bershka.com,HTTP 403; woocommerce: HTTP 403
+bestbuy.ca,HTTP 404; woocommerce: HTTP 404
+bever.nl,HTTP 404; woocommerce: HTTP 404
+bewakoof.com,HTTP 404; woocommerce: HTTP 404
+bialetti.com,HTTP 404; woocommerce: HTTP 403
+biba.in,gave up after 2 tries: TooManyRedirects; woocommerce: gave up after 4 tries: TooManyRedirects
+biccamera.com,gave up after 2 tries: ConnectTimeout; woocommerce: gave up after 4 tries: ConnectTimeout
+bigw.com.au,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+bijenkorf.nl,HTTP 403; woocommerce: HTTP 403
+bike-discount.de,HTTP 404; woocommerce: HTTP 404
+bike24.de,HTTP 403; woocommerce: HTTP 403
+bikeshop.ca,not a product feed; woocommerce: not a product list
+biltema.se,HTTP 404; woocommerce: HTTP 404
+bimbaylola.com,not a product feed; woocommerce: not a product list
+binglee.com.au,HTTP 403; woocommerce: HTTP 403
+birks.com,not a product feed; woocommerce: not a product list
+blackhearts.com.au,HTTP 404; woocommerce: HTTP 404
+blacks.co.uk,HTTP 403; woocommerce: HTTP 400
+blackwells.co.uk,HTTP 403; woocommerce: HTTP 403
 blackwing602.com,same shop as www.blackwing602.com
+blokker.nl,HTTP 404; woocommerce: HTTP 404
+blue-tomato.com,HTTP 404; woocommerce: HTTP 404
+bluestone.com,HTTP 404; woocommerce: HTTP 404
 boardsource.xyz,same shop as www.boardsource.xyz
+bobbyberk.com,HTTP 404; robots.txt disallows the Store API
+boden.co.uk,not a product feed; woocommerce: not a product list
+bodum.com,not a product feed; woocommerce: not a product list
+bodyandsoul.com.au,HTTP 403; woocommerce: HTTP 403
+bokus.com,gave up after 2 tries: HTTP 429
+bol.com,HTTP 404; woocommerce: HTTP 404
+bolia.com,HTTP 404; woocommerce: HTTP 404
+bonds.com.au,gave up after 2 tries: ConnectTimeout; woocommerce: gave up after 4 tries: ConnectTimeout
+bondsandco.com.au,gave up after 2 tries: ConnectTimeout; woocommerce: gave up after 4 tries: ConnectTimeout
+bonita.de,HTTP 404; woocommerce: HTTP 404
+bonobo-jeans.com,gave up after 2 tries: SSLError
+boohoo.com,HTTP 404; woocommerce: HTTP 404
+booktopia.com.au,HTTP 404; woocommerce: HTTP 404
+boots.com,not a product feed; woocommerce: not a product list
+boozt.com,not a product feed; woocommerce: not a product list
+boulanger.com,HTTP 400; woocommerce: HTTP 400
+box.co.uk,HTTP 404; woocommerce: HTTP 404
+br.dk,HTTP 404; woocommerce: HTTP 404
+brack.ch,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+brandalley.co.uk,HTTP 404; woocommerce: HTTP 404
+breuninger.com,HTTP 404; woocommerce: HTTP 404
+briscoes.co.nz,HTTP 404; woocommerce: HTTP 404
+brosa.com.au,HTTP 403; woocommerce: HTTP 403
+brownthomas.com,HTTP 410; woocommerce: HTTP 410
+buecher.de,HTTP 403; woocommerce: HTTP 403
+bulk.com,HTTP 404; woocommerce: HTTP 404
+bulknutrients.com.au,HTTP 404; woocommerce: HTTP 404
+burton.co.uk,HTTP 404; woocommerce: HTTP 404
+but.fr,HTTP 403; woocommerce: HTTP 403
+butternutbox.com,HTTP 403; woocommerce: HTTP 403
+bytes.co,HTTP 404; woocommerce: HTTP 404
+caffevergnano.com,HTTP 404; woocommerce: HTTP 404
+calzedonia.com,gave up after 2 tries: SSLError
+camaieu.fr,HTTP 403; woocommerce: HTTP 403
+cambridgesatchel.com,robots.txt disallows the feed
+camper.com,HTTP 404; woocommerce: HTTP 404
+canadacomputers.com,HTTP 404; woocommerce: HTTP 404
+canadagoose.com,empty feed; woocommerce: HTTP 400
+canadiantire.ca,HTTP 403; woocommerce: HTTP 403
+canyon.com,HTTP 404; woocommerce: HTTP 404
+caratlane.com,HTTP 404; woocommerce: HTTP 404
+casa.pt,HTTP 441; woocommerce: HTTP 440
+caseking.de,HTTP 404; woocommerce: HTTP 404
+castlery.com,not a product feed; woocommerce: not a product list
+castorama.fr,gave up after 2 tries: HTTP 503; woocommerce: gave up after 4 tries: HTTP 503
+catch.com.au,HTTP 403; woocommerce: HTTP 403
+cathkidston.com,HTTP 403; woocommerce: HTTP 403
+cats-eye.com.bd,gave up after 2 tries: ConnectionError
+caudalie.com,HTTP 404; woocommerce: HTTP 404
+cb2.ca,HTTP 403; woocommerce: HTTP 403
+ccc.eu,not a product feed; woocommerce: not a product list
+cdiscount.com,HTTP 403; woocommerce: HTTP 403
+cdon.com,HTTP 404; woocommerce: HTTP 404
+celio.com,HTTP 403; woocommerce: HTTP 403
+centrecom.com.au,HTTP 202; woocommerce: HTTP 202
+centrepointstores.com,HTTP 403; woocommerce: HTTP 403
+chainreactioncycles.com,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+chaldal.com,HTTP 404; woocommerce: HTTP 404
+chapters.indigo.ca,same shop as indigo.ca
+charlestyrwhitt.com,HTTP 404; woocommerce: HTTP 403
+charlottetilbury.com,HTTP 404; woocommerce: HTTP 404
+chemistwarehouse.com.au,HTTP 403; woocommerce: HTTP 403
+christopherward.com,HTTP 404; woocommerce: HTTP 404
+clasohlson.com,gave up after 2 tries: HTTP 500; woocommerce: HTTP 404
+claudiepierlot.com,HTTP 410; woocommerce: HTTP 410
+coastfashion.com,HTTP 404; woocommerce: HTTP 404
+coffeecircle.com,HTTP 404; woocommerce: HTTP 404
+coin.it,HTTP 404; woocommerce: HTTP 404
+coles.com.au,HTTP 404; woocommerce: HTTP 404
+collistar.it,HTTP 404; woocommerce: HTTP 404
 combustion.inc,same shop as www.combustion.inc
+comptoirdescotonniers.com,HTTP 404; woocommerce: HTTP 404
+conforama.fr,HTTP 403; woocommerce: HTTP 403
+conrad.de,HTTP 403; woocommerce: HTTP 403
+continente.pt,HTTP 410; woocommerce: HTTP 410
+coolblue.be,HTTP 403; woocommerce: HTTP 404
+coolblue.nl,HTTP 403; woocommerce: HTTP 404
+coolcat.nl,HTTP 403; woocommerce: HTTP 403
+coolmod.com,HTTP 403; woocommerce: HTTP 403
+coolshop.co.uk,HTTP 404; woocommerce: HTTP 404
+coppel.com,HTTP 404; woocommerce: HTTP 404
 core-electronics.com.au,HTTP 404
+cortina.nl,gave up after 2 tries: ConnectionError
+cos.com,HTTP 403; woocommerce: HTTP 403
+cosstores.com,gave up after 2 tries: ConnectTimeout; woocommerce: gave up after 4 tries: ConnectTimeout
+cotswoldoutdoor.com,HTTP 404; woocommerce: HTTP 404
+cottonon.com,HTTP 410; woocommerce: HTTP 410
+courts.com.sg,HTTP 404; woocommerce: HTTP 404
+cpcompany.com,HTTP 410; woocommerce: HTTP 410
+craghoppers.com,HTTP 404; woocommerce: HTTP 404
+crateandbarrel.ca,HTTP 403; woocommerce: HTTP 403
+crea.me,HTTP 404; woocommerce: HTTP 404
+croma.com,not a product feed; woocommerce: not a product list
+cropp.com,not a product feed; woocommerce: not a product list
+cruisefashion.com,HTTP 404; woocommerce: HTTP 404
+cultbeauty.co.uk,HTTP 404; woocommerce: HTTP 404
+cultura.com,HTTP 403; woocommerce: HTTP 403
+culturekings.com.au,robots.txt disallows the feed
+currys.co.uk,HTTP 403; woocommerce: HTTP 403
+cyberport.de,HTTP 403; woocommerce: HTTP 403
+czc.cz,HTTP 403; woocommerce: HTTP 403
+dafiti.cl,gave up after 2 tries: ConnectionError
+dafiti.com.br,HTTP 404; woocommerce: HTTP 404
+danmurphys.com.au,not a product feed; woocommerce: not a product list
+daraz.com.bd,not a product feed; woocommerce: not a product list
+dartingtoncrystal.co.uk,gave up after 2 tries: ConnectionError
+darty.com,HTTP 403; woocommerce: HTTP 403
+davehaughton.com,HTTP 404; woocommerce: HTTP 404
+davidjones.com,not a product feed; woocommerce: not a product list
+davidstea.com,same shop as www.davidstea.com
+debijenkorf.nl,HTTP 403; woocommerce: HTTP 403
+decathlon.de,HTTP 404; woocommerce: HTTP 404
+decathlon.fr,HTTP 404; woocommerce: HTTP 404
+decathlon.nl,HTTP 404; woocommerce: HTTP 404
+deciem.ca,gave up after 2 tries: ConnectTimeout; woocommerce: gave up after 4 tries: ConnectTimeout
+deciem.com,empty feed; woocommerce: HTTP 400
+decitre.fr,HTTP 403; woocommerce: HTTP 403
+depot-online.com,HTTP 404; woocommerce: HTTP 404
+desigual.com,gave up after 2 tries: ConnectionError
+dfs.co.uk,HTTP 403; woocommerce: HTTP 403
+didonato.ie,gave up after 2 tries: ConnectionError
+didriksons.com,HTTP 404; woocommerce: HTTP 404
+diesel.com,not a product feed; woocommerce: not a product list
+digitec.ch,HTTP 404; woocommerce: HTTP 404
+dille-kamille.nl,HTTP 404; woocommerce: HTTP 404
+dm.de,not a product feed; woocommerce: not a product list
+docmorris.de,HTTP 404; woocommerce: HTTP 404
+dorothyperkins.com,HTTP 404; woocommerce: HTTP 404
+douglas.ca,HTTP 404; woocommerce: HTTP 404
+douglas.de,HTTP 403; woocommerce: HTTP 403
+douglas.nl,HTTP 403; woocommerce: HTTP 403
+druni.es,HTTP 404; woocommerce: HTTP 404
+dunelm.com,HTTP 404; woocommerce: HTTP 404
+dunelondon.com,HTTP 404; woocommerce: HTTP 404
+dunhill.com,HTTP 404; woocommerce: HTTP 404
+dunnesstores.com,HTTP 404; woocommerce: HTTP 404
+dustinhome.se,HTTP 403; woocommerce: HTTP 403
+dv247.com,HTTP 403; woocommerce: HTTP 403
+dymocks.com.au,HTTP 403; woocommerce: HTTP 403
+dynamiteclothing.com,HTTP 404; woocommerce: HTTP 404
+eataly.com,HTTP 403; woocommerce: HTTP 403
+eataly.net,not a product feed; woocommerce: not a product list
+eb-games.com.au,gave up after 2 tries: ConnectionError
+ebuyer.com,HTTP 404; woocommerce: HTTP 404
+eclesiastico.es,gave up after 2 tries: ConnectionError
+ecosa.com.au,HTTP 404; woocommerce: HTTP 404
+ecstasybd.com,HTTP 404; woocommerce: HTTP 404
+edigital.hu,HTTP 511; woocommerce: HTTP 511
+ekosport.fr,gave up after 2 tries: SSLError
+elcorteingles.es,HTTP 403; woocommerce: HTTP 403
+elemis.com,HTTP 404; woocommerce: HTTP 404
+elganso.com,HTTP 404; woocommerce: HTTP 404
+elgiganten.se,gave up after 2 tries: HTTP 429
+ellos.se,HTTP 404; woocommerce: HTTP 404
+emag.hu,HTTP 511; woocommerce: HTTP 511
+emag.ro,HTTP 511; woocommerce: HTTP 511
+emma-sleep.com.au,HTTP 404; woocommerce: HTTP 404
+empik.com,HTTP 404; woocommerce: HTTP 404
+emuaustralia.com.au,not a product feed; woocommerce: not a product list
 en.akkogear.com,HTTP 404
+endy.com,HTTP 404; woocommerce: HTTP 403
+engelhorn.de,HTTP 404; woocommerce: HTTP 404
+eobuwie.pl,HTTP 404; woocommerce: HTTP 404
+eprice.it,HTTP 403; woocommerce: HTTP 403
+ernestjones.co.uk,HTTP 404; woocommerce: not a product list
+esprit.de,gave up after 2 tries: ConnectionError
+ethicalsuperstore.com,HTTP 404; woocommerce: HTTP 404
+etos.nl,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+euro.com.pl,HTTP 403; woocommerce: HTTP 403
+euronics.it,HTTP 404; woocommerce: HTTP 404
+evanscycles.com,HTTP 404; woocommerce: HTTP 404
+exis.com.gr,HTTP 404; woocommerce: HTTP 404
+fabienne-chapot.com,gave up after 2 tries: ConnectionError
+fabindia.com,HTTP 404; woocommerce: HTTP 404
+falabella.com,not a product feed; woocommerce: not a product list
+farahclothing.com,gave up after 2 tries: ConnectionError
+farfetch.com,HTTP 403; woocommerce: HTTP 403
+farmers.co.nz,HTTP 403; woocommerce: HTTP 403
+farmrio.com.br,HTTP 404; woocommerce: HTTP 404
+fashiondays.ro,not a product feed; woocommerce: not a product list
+fatface.com,HTTP 404; woocommerce: HTTP 404
+feelunique.com,HTTP 403; woocommerce: HTTP 403
+fermliving.com,same shop as www.fermliving.com
 fieldnotesbrand.com,HTTP 403
+fietsenwinkel.nl,HTTP 403; woocommerce: HTTP 403
+filippa-k.com,HTTP 410; woocommerce: HTTP 410
+finisterre.com,same shop as www.finisterre.com
+firstcry.com,HTTP 404; woocommerce: HTTP 404
+firsttracksmarketing.com,HTTP 202; woocommerce: HTTP 404
+fjallraven.com,HTTP 403; woocommerce: HTTP 403
+flaconi.de,HTTP 403; woocommerce: HTTP 403
+flannels.com,HTTP 404; woocommerce: HTTP 404
+flipkart.com,HTTP 529; woocommerce: HTTP 529
+fnac.be,HTTP 404; woocommerce: HTTP 403
+fnac.com,HTTP 403; woocommerce: HTTP 403
+fnac.es,HTTP 403; woocommerce: HTTP 403
+fnac.pt,HTTP 403; woocommerce: HTTP 403
+fonq.nl,HTTP 404; woocommerce: HTTP 404
+footasylum.com,not a product feed; woocommerce: not a product list
+footshop.cz,HTTP 404; woocommerce: HTTP 404
+forbiddenplanet.com,HTTP 403; woocommerce: HTTP 403
+fortnumandmason.com,HTTP 404; woocommerce: HTTP 404
+foyles.co.uk,HTTP 403; woocommerce: HTTP 403
+frankandoak.com,same shop as www.frankandoak.com
+frankbody.com,same shop as www.frankbody.com
+fredperry.com,HTTP 403; woocommerce: HTTP 403
+fressnapf.de,HTTP 404; woocommerce: HTTP 404
+g-star.com,HTTP 404; woocommerce: HTTP 404
+gak.co.uk,HTTP 403; woocommerce: HTTP 403
+galaxus.de,HTTP 404; woocommerce: HTTP 404
+galerieslafayette.com,HTTP 403; woocommerce: HTTP 403
 gamersupps.gg,same shop as www.gamersupps.gg
+gametraders.com.au,HTTP 400; woocommerce: HTTP 404
+gamma.nl,gave up after 2 tries: HTTP 429
+garageclothing.com,HTTP 404; woocommerce: HTTP 404
+gazelle.nl,gave up after 2 tries: HTTP 429
+gear4music.com,HTTP 403; woocommerce: HTTP 403
+gentlemonster.com,HTTP 404; woocommerce: HTTP 404
 geon.works,same shop as www.geon.works
+georgjensen.com,not a product feed; woocommerce: not a product list
+gerryweber.com,HTTP 404; woocommerce: HTTP 404
+gibert.com,HTTP 403; woocommerce: HTTP 403
+gigantti.fi,gave up after 2 tries: HTTP 429
+ginatricot.com,HTTP 404; woocommerce: HTTP 404
+glasshouse-fragrances.com,gave up after 2 tries: ConnectionError
+glassons.com,not a product feed; woocommerce: HTTP 404
 global.oliveyoung.com,HTTP 403
+globetrotter.de,HTTP 403; woocommerce: HTTP 403
+glossier.com,same shop as www.glossier.com
+go-to.com.au,gave up after 2 tries: ConnectionError
+goldengoose.com,HTTP 410; woocommerce: HTTP 410
+goldsmiths.co.uk,HTTP 404; woocommerce: not a product list
+golftown.com,HTTP 403; woocommerce: HTTP 403
+gooutdoors.co.uk,HTTP 403; woocommerce: HTTP 400
+graze.com,empty feed; woocommerce: HTTP 400
+grosbill.com,HTTP 404; woocommerce: HTTP 403
+gsmpunt.nl,HTTP 404; woocommerce: HTTP 404
+gstar.com,gave up after 2 tries: ConnectTimeout; woocommerce: gave up after 4 tries: ConnectTimeout
+gucci.com,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+gymshark.com.au,HTTP 404; woocommerce: HTTP 404
+haba.de,gave up after 2 tries: ConnectionError
+habitat.co.uk,HTTP 403; woocommerce: HTTP 403
+habitat.fr,HTTP 404; woocommerce: HTTP 404
+hachez.de,HTTP 404; woocommerce: HTTP 404
+haglofs.com,not a product feed; woocommerce: not a product list
+hallensteins.com,not a product feed; woocommerce: HTTP 404
+hamleys.com,HTTP 403; woocommerce: HTTP 403
+hamleys.in,HTTP 403; woocommerce: HTTP 403
+happysocks.com,not a product feed; woocommerce: not a product list
+harinaentrepiedras.com,HTTP 406; woocommerce: HTTP 406
+harrods.com,HTTP 403; woocommerce: HTTP 403
+harveynorman.com.au,HTTP 404; woocommerce: not a product list
+havaianas.com,HTTP 403; woocommerce: HTTP 403
+hawesandcurtis.com,HTTP 404; woocommerce: HTTP 404
+hawesko.de,HTTP 403; woocommerce: HTTP 403
+hay.dk,HTTP 404; woocommerce: HTTP 403
+hellyhansen.com,HTTP 403; woocommerce: HTTP 403
+hema.nl,HTTP 404; woocommerce: HTTP 404
+hessnatur.com,not a product feed; woocommerce: HTTP 404
+heybabe.com.au,HTTP 404; woocommerce: not a product list
 higround.co,same shop as www.higround.co
+hispanitas.com,not a product feed; woocommerce: HTTP 404
+hm.com,HTTP 403; woocommerce: HTTP 403
+hobbs.com,HTTP 404; woocommerce: HTTP 404
+hobbycraft.co.uk,HTTP 403; woocommerce: HTTP 403
+hoff.es,HTTP 441; woocommerce: HTTP 440
+holtrenfrew.com,HTTP 403; woocommerce: HTTP 403
+home24.de,HTTP 403; woocommerce: HTTP 403
+horace.co,HTTP 404; woocommerce: HTTP 404
+hotelchocolat.com,HTTP 403; woocommerce: HTTP 403
+house.pl,not a product feed; woocommerce: not a product list
+hsamuel.co.uk,HTTP 404; woocommerce: not a product list
+hudsonsbay.com,gave up after 2 tries: SSLError
+huel.com,HTTP 404; woocommerce: HTTP 404
+hugendubel.de,gave up after 2 tries: HTTP 503; woocommerce: gave up after 4 tries: HTTP 503
+hugoboss.com,HTTP 403; woocommerce: HTTP 403
+hunterboots.com,same shop as www.hunterboots.com
+ibs.it,gave up after 2 tries: HTTP 429
+ici-paris-xl.nl,gave up after 2 tries: ConnectionError
+ikea.com,HTTP 404; woocommerce: HTTP 404
+ikea.se,not a product feed; woocommerce: not a product list
+illum.dk,HTTP 404; woocommerce: HTTP 404
+illy.com,HTTP 403; woocommerce: HTTP 403
+inet.se,HTTP 403; woocommerce: HTTP 403
+intertoys.nl,HTTP 404; woocommerce: HTTP 404
+intimissimi.com,gave up after 2 tries: SSLError
 ippodotea.com,same shop as www.ippodotea.com
+jacadi.fr,HTTP 403; woocommerce: HTTP 403
+jackwills.com,HTTP 404; woocommerce: HTTP 404
+jbc.be,HTTP 404; woocommerce: HTTP 404
+jdsports.co.uk,HTTP 404; woocommerce: HTTP 404
+jdwilliams.co.uk,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+jelmoli-shop.ch,HTTP 404; woocommerce: HTTP 404
+johnlewis.com,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+jojomamanbebe.co.uk,not a product feed; woocommerce: not a product list
+jollyroom.se,not a product feed; woocommerce: not a product list
+joseph-joseph.com,gave up after 2 tries: ConnectionError
+joueclub.fr,HTTP 404; woocommerce: HTTP 404
+joules.com,HTTP 404; woocommerce: HTTP 404
+jula.se,HTTP 404; woocommerce: HTTP 404
+jules.com,HTTP 404; woocommerce: HTTP 404
+jumbo.ae,not a product feed; woocommerce: not a product list
+jw.com.au,HTTP 403; woocommerce: HTTP 403
+kappahl.com,HTTP 404; woocommerce: HTTP 404
+karenmillen.com,HTTP 404; woocommerce: HTTP 404
+kartell.com,not a product feed; woocommerce: not a product list
+karwei.nl,gave up after 2 tries: HTTP 429
+kaufland.de,HTTP 403; woocommerce: HTTP 403
+kawacom.gr,gave up after 2 tries: ConnectionError
 kbdfans.com,same shop as www.kbdfans.com
 keeb.io,HTTP 403
+kiabi.com,HTTP 406; woocommerce: HTTP 403
+kicks.se,HTTP 404; woocommerce: HTTP 404
+kiddies-kingdom.com,HTTP 404; woocommerce: HTTP 404
+kiko-milano.com,gave up after 2 tries: ConnectionError
+kikocosmetics.com,HTTP 404; woocommerce: HTTP 404
+kildarevillage.com,gave up after 2 tries: ConnectionError
+kilkennyshop.com,HTTP 404; woocommerce: HTTP 404
+king-jouet.com,gave up after 2 tries: SSLError
+kitchenwarehouse.com.au,HTTP 403; woocommerce: HTTP 403
+kmart.co.nz,HTTP 403; woocommerce: HTTP 403
+koala.com.au,gave up after 2 tries: ConnectionError
+kogan.com,HTTP 403; woocommerce: HTTP 403
+komplett.no,HTTP 404; woocommerce: HTTP 404
+komplett.se,HTTP 404; woocommerce: HTTP 404
+komputronik.pl,HTTP 403; woocommerce: HTTP 403
+kotn.com,same shop as www.kotn.com
+krefel.be,gave up after 2 tries: HTTP 500; woocommerce: gave up after 4 tries: HTTP 500
+kruidvat.nl,HTTP 403; woocommerce: HTTP 403
+kurtgeiger.com,HTTP 404; woocommerce: HTTP 403
+kwantum.nl,HTTP 404; woocommerce: HTTP 404
+la-roche-posay.fr,gave up after 2 tries: ConnectionError
+lackofcolor.com.au,same shop as www.lackofcolor.com
+lafeltrinelli.it,gave up after 2 tries: HTTP 429
+lagostina.it,HTTP 404; woocommerce: HTTP 403
+lagranderecre.fr,HTTP 404; woocommerce: HTTP 404
+laithwaites.co.uk,gave up after 2 tries: SSLError
+laithwaites.com.au,gave up after 2 tries: SSLError
+landyachtz.com,HTTP 404; woocommerce: not a product list
+lanidor.com,HTTP 404; woocommerce: HTTP 404
+laredoute.com,HTTP 403; woocommerce: HTTP 403
+laredoute.fr,HTTP 403; woocommerce: HTTP 403
+lavazza.com,HTTP 404; woocommerce: HTTP 404
+lavieenrose.com,HTTP 404; woocommerce: HTTP 403
+lavinia.fr,not a product feed; woocommerce: not a product list
+lazada.sg,not a product feed; woocommerce: not a product list
+ldlc.com,HTTP 404; woocommerce: HTTP 404
+le-slip-francais.fr,gave up after 2 tries: ConnectionError
+leenbakker.nl,HTTP 404; woocommerce: HTTP 404
+lego.com,HTTP 404; woocommerce: HTTP 404
+lekmer.se,not a product feed; woocommerce: not a product list
+lenskart.com,HTTP 404; woocommerce: HTTP 403
+lerevecraze.com,HTTP 404; woocommerce: HTTP 404
+leroymerlin.fr,HTTP 404; woocommerce: HTTP 403
+leschateau.com,not a product feed; woocommerce: not a product list
+lesitedumachiniste.fr,gave up after 2 tries: ConnectionError
+libertylondon.com,HTTP 410; woocommerce: HTTP 410
+lidl.de,HTTP 404; woocommerce: HTTP 404
+lifestylesports.com,HTTP 403; woocommerce: HTTP 403
+lifestylestores.com,HTTP 403; woocommerce: HTTP 403
+lindex.com,HTTP 403; woocommerce: HTTP 403
+lindt.de,HTTP 404; woocommerce: HTTP 404
+littlewoods.com,HTTP 404; woocommerce: HTTP 403
+littlewoodsireland.ie,HTTP 404; woocommerce: HTTP 403
+liverpool.com.mx,not a product feed; woocommerce: not a product list
+lkbennett.com,empty feed; woocommerce: HTTP 400
+loaf.com,HTTP 404; woocommerce: HTTP 404
+loavies.com,HTTP 404; woocommerce: HTTP 404
+loccitane.com,gave up after 2 tries: SSLError
+loft.co.jp,gave up after 2 tries: SSLError
+lookfantastic.com,HTTP 404; woocommerce: HTTP 404
+lovebonito.com,not a product feed; woocommerce: HTTP 404
+lovell-rugby.co.uk,HTTP 404; woocommerce: HTTP 404
+lpp.com,HTTP 404; woocommerce: HTTP 404
+luisaviaroma.com,HTTP 403; woocommerce: HTTP 403
+lululemon.com,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+lush.ca,HTTP 403; woocommerce: HTTP 403
+lush.com,HTTP 403; woocommerce: HTTP 403
+lushfresh.com,gave up after 2 tries: ConnectTimeout; woocommerce: gave up after 4 tries: ConnectTimeout
+lyko.com,HTTP 404; woocommerce: HTTP 404
+mackage.com,same shop as www.mackage.com
+macpac.co.nz,HTTP 410; woocommerce: HTTP 410
+macpac.com.au,HTTP 410; woocommerce: HTTP 410
+made.com,HTTP 404; woocommerce: HTTP 404
+madeindesign.de,HTTP 403; woocommerce: HTTP 403
+magasin.dk,HTTP 404; woocommerce: HTTP 404
+magazineluiza.com.br,HTTP 403; woocommerce: HTTP 403
+maisonkitsune.com,HTTP 404; woocommerce: HTTP 404
+maisonsdumonde.com,HTTP 403; woocommerce: HTTP 403
+maje.com,not a product feed; woocommerce: not a product list
+majestic.co.uk,HTTP 403; woocommerce: HTTP 403
+mall.cz,HTTP 404; woocommerce: HTTP 404
+mango.com,HTTP 403; woocommerce: HTTP 403
+manomano.fr,HTTP 404; woocommerce: HTTP 403
+manor.ch,HTTP 404; woocommerce: HTTP 404
+manyavar.com,HTTP 404; woocommerce: HTTP 404
+marc-o-polo.com,HTTP 404; woocommerce: HTTP 404
+mariagefreres.com,gave up after 2 tries: SSLError
+marimekko.com,gave up after 2 tries: HTTP 429
+marionnaud.fr,HTTP 403; woocommerce: HTTP 403
+marks.com,HTTP 403; woocommerce: HTTP 403
+marksandspencer.com,HTTP 404; woocommerce: HTTP 404
+massimodutti.com,HTTP 403; woocommerce: HTTP 403
+masterofmalt.com,HTTP 404; woocommerce: HTTP 404
+matchesfashion.com,empty feed; woocommerce: HTTP 400
+materiel.net,HTTP 404; woocommerce: HTTP 404
+mec.ca,HTTP 403; woocommerce: HTTP 403
+mecca.com,gave up after 2 tries: TooManyRedirects; woocommerce: HTTP 404
+mediaexpert.pl,HTTP 403; woocommerce: HTTP 403
+mediamarkt.de,HTTP 404; woocommerce: HTTP 404
+mediamarkt.es,HTTP 404; woocommerce: HTTP 404
+mediamarkt.nl,HTTP 404; woocommerce: HTTP 404
+mediaworld.it,HTTP 404; woocommerce: HTTP 404
+megekko.nl,not a product feed; woocommerce: not a product list
+mejuri.ca,HTTP 404; woocommerce: HTTP 404
+mejuri.com,HTTP 404; woocommerce: HTTP 404
+melissa.com.br,not a product feed; woocommerce: not a product list
+melitta.de,HTTP 404; woocommerce: HTTP 404
+memoryexpress.com,HTTP 404; woocommerce: HTTP 404
+mercadolibre.com.ar,HTTP 404; woocommerce: HTTP 404
+mercadolivre.com.br,HTTP 404; woocommerce: HTTP 404
+microspot.ch,HTTP 404; woocommerce: HTTP 404
+migaeyewear.com,gave up after 2 tries: HTTP 503; woocommerce: gave up after 4 tries: HTTP 503
+mightyape.co.nz,HTTP 403; woocommerce: HTTP 403
+mightyape.com.au,HTTP 403; woocommerce: HTTP 403
+millets.co.uk,HTTP 403; woocommerce: HTTP 400
+mindfactory.de,not a product feed; woocommerce: not a product list
+mio.se,HTTP 404; woocommerce: HTTP 404
+missguided.com,HTTP 404; woocommerce: HTTP 404
+missoma.com,same shop as www.missoma.com
+modivo.pl,HTTP 404; woocommerce: HTTP 404
+modrobes.com,not a product feed; woocommerce: not a product list
+moebel.de,HTTP 403; woocommerce: HTTP 403
+mohito.com,not a product feed; woocommerce: not a product list
+moncler.com,HTTP 403; woocommerce: HTTP 403
+monclick.it,HTTP 404; woocommerce: HTTP 404
+mondadoristore.it,HTTP 404; woocommerce: HTTP 404
+monicavinader.com,HTTP 403; woocommerce: HTTP 403
+monki.com,not a product feed; woocommerce: not a product list
+morele.net,not a product feed; woocommerce: HTTP 404
+mothercare.com,HTTP 404; woocommerce: HTTP 404
+mountainwarehouse.com,HTTP 404; woocommerce: not a product list
 mrbeast.store,same shop as www.mrbeast.store
+mrkitly.com,HTTP 403; woocommerce: HTTP 403
+mrporter.com,HTTP 403; woocommerce: HTTP 403
+muji.com,gave up after 2 tries: ConnectionError
+mulberry.com,HTTP 404; woocommerce: HTTP 404
+munich-sports.com,gave up after 2 tries: SSLError
+musinsa.com,HTTP 404; woocommerce: HTTP 404
+muuto.com,HTTP 302; woocommerce: HTTP 302
+myer.com.au,HTTP 404; woocommerce: HTTP 404
+myfood.eu,HTTP 404; woocommerce: HTTP 404
+myntra.com,not a product feed; woocommerce: not a product list
+myprotein.com,HTTP 404; woocommerce: HTTP 404
+myprotein.com.au,gave up after 2 tries: ConnectTimeout; woocommerce: gave up after 4 tries: ConnectTimeout
+mytheresa.com,not a product feed; woocommerce: not a product list
+mytheresa.de,not a product feed; woocommerce: not a product list
+mytheresa.it,not a product feed; woocommerce: not a product list
+mytopia.com.au,HTTP 404; woocommerce: HTTP 404
+mytoys.at,gave up after 2 tries: SSLError
+mytoys.de,not a product feed; woocommerce: not a product list
+na-kd.com,HTTP 404; woocommerce: HTTP 404
+naked-wines.com.au,gave up after 2 tries: ConnectionError
+nakedharvest.com.au,gave up after 2 tries: ConnectionError
+nakedwines.co.uk,HTTP 400; woocommerce: HTTP 404
+namshi.com,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+nastygal.com,not a product feed; woocommerce: not a product list
+natura.com.br,not a product feed; woocommerce: not a product list
+naturallab.com.au,gave up after 2 tries: ConnectionError
+nature-et-decouvertes.com,gave up after 2 tries: ConnectionError
+nealsyardremedies.com,same shop as www.nealsyardremedies.com
+needmoredesigns.com,HTTP 404; woocommerce: HTTP 404
+nelly.com,HTTP 404; woocommerce: HTTP 404
+net-a-porter.com,HTTP 403; woocommerce: HTTP 403
+netonnet.se,HTTP 403; woocommerce: HTTP 403
+netshoes.com.br,HTTP 403; woocommerce: HTTP 403
+newegg.ca,HTTP 403; woocommerce: HTTP 403
+newlook.com,gave up after 2 tries: SSLError
+next.co.uk,HTTP 403; woocommerce: HTTP 403
+nicolas.com,not a product feed; woocommerce: not a product list
+nigelcabourn.com,gave up after 2 tries: ConnectionError
+nikkie.com,HTTP 404; woocommerce: HTTP 404
+nn07.com,HTTP 404; woocommerce: HTTP 404
+nocibe.fr,HTTP 403; woocommerce: HTTP 403
+noelleeming.co.nz,HTTP 404; woocommerce: HTTP 404
+noise.com,HTTP 404; woocommerce: HTTP 404
+noon.com,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+nordicnest.com,HTTP 404; woocommerce: HTTP 404
+nordstrom.ca,not a product feed; woocommerce: not a product list
+normann-copenhagen.com,not a product feed; woocommerce: not a product list
+norrona.com,HTTP 404; woocommerce: HTTP 404
+notebooksbilliger.de,HTTP 404; woocommerce: HTTP 404
+notino.cz,HTTP 403; woocommerce: HTTP 403
+notino.de,HTTP 403; woocommerce: HTTP 403
+nykaa.com,HTTP 403; woocommerce: HTTP 403
 oakywood.shop,same shop as www.oakywood.shop
+oasis-stores.com,HTTP 404; woocommerce: HTTP 404
+oboticario.com.br,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+ocado.com,HTTP 202; woocommerce: HTTP 202
+oddbox.co.uk,HTTP 404; woocommerce: HTTP 404
+office.co.uk,HTTP 404; woocommerce: HTTP 404
+officeworks.com.au,HTTP 404; woocommerce: HTTP 404
+offspring.co.uk,HTTP 404; woocommerce: HTTP 404
+okaidi.fr,HTTP 403; woocommerce: HTTP 403
+oldrivers.fr,gave up after 2 tries: ConnectionError
+oneteaspoon.com.au,robots.txt disallows the feed
+osklen.com.br,HTTP 404; woocommerce: HTTP 404
+othoba.com,HTTP 404; woocommerce: not a product list
+otrium.nl,HTTP 404; woocommerce: HTTP 404
+otto.at,HTTP 404; woocommerce: HTTP 404
+otto.de,HTTP 404; woocommerce: HTTP 404
+ounass.ae,HTTP 404; woocommerce: HTTP 404
+overclockers.co.uk,HTTP 403; woocommerce: HTTP 403
+ovs.it,HTTP 404; woocommerce: HTTP 404
+oxybul.com,HTTP 403; woocommerce: HTTP 403
+oysho.com,HTTP 403; woocommerce: HTTP 403
+ozhairandbeauty.com,HTTP 404; woocommerce: HTTP 403
+p-e-nation.com,gave up after 2 tries: ConnectionError
+palaciodehierro.com,gave up after 2 tries: ConnectionError
+palaisdesthes.com,HTTP 404; woocommerce: HTTP 404
+pandora.net,gave up after 2 tries: HTTP 500; woocommerce: gave up after 4 tries: HTTP 500
+parfois.com,HTTP 404; woocommerce: HTTP 404
+paris.cl,HTTP 403; woocommerce: HTTP 403
+parkcameras.com,HTTP 403; woocommerce: HTTP 403
+patagonia.co.uk,not a product feed; woocommerce: not a product list
+pbtech.co.nz,HTTP 403; woocommerce: HTTP 403
+pccasegear.com,HTTP 403; woocommerce: HTTP 403
+pccomponentes.com,HTTP 403; woocommerce: HTTP 403
+peacecollective.ca,gave up after 2 tries: ConnectionError
+peacockdisplays.com.au,gave up after 2 tries: ConnectionError
+peakperformance.com,HTTP 403; woocommerce: HTTP 403
+peek-cloppenburg.de,HTTP 403; woocommerce: HTTP 403
+pepperfry.com,HTTP 404; woocommerce: HTTP 404
+peppermayo.com,same shop as www.peppermayo.com
+perfumeriasif.com,gave up after 2 tries: ConnectTimeout; woocommerce: gave up after 4 tries: ConnectTimeout
+petbarn.com.au,HTTP 404; woocommerce: HTTP 404
+petcircle.com.au,gave up after 2 tries: HTTP 429
+peterskitchen.com.au,gave up after 2 tries: ConnectionError
+petitbateau.fr,not a product feed; woocommerce: not a product list
+petsathome.com,HTTP 404; woocommerce: HTTP 404
+petstock.com.au,gave up after 2 tries: HTTP 429
+phase-eight.com,HTTP 404; woocommerce: HTTP 404
+pickaboo.com,HTTP 404; woocommerce: HTTP 404
+pierre-herme.com,gave up after 2 tries: SSLError
+pikolinos.com,HTTP 404; woocommerce: HTTP 404
+pip-and-nut.com,gave up after 2 tries: ConnectionError
+planet-sports.de,gave up after 2 tries: ConnectTimeout; woocommerce: gave up after 4 tries: ConnectTimeout
 playbackbone.com,HTTP 403
+playmobil.de,HTTP 404; woocommerce: HTTP 404
 ploopy.co,HTTP 404
+pomelofashion.com,HTTP 404; woocommerce: HTTP 404
+pompeii.com,gave up after 2 tries: ConnectTimeout; woocommerce: gave up after 4 tries: ConnectTimeout
+power.no,HTTP 404; woocommerce: HTTP 404
+powercity.ie,HTTP 404; woocommerce: HTTP 404
+prada.com,HTTP 410; woocommerce: HTTP 404
+praxis.nl,HTTP 403; woocommerce: HTTP 403
+prettylittlething.com,HTTP 404; woocommerce: HTTP 404
+priceline.com.au,HTTP 404; woocommerce: HTTP 404
+primor.eu,HTTP 404; woocommerce: HTTP 404
+princesspolly.com,HTTP 404; woocommerce: HTTP 404
+printemps.com,HTTP 403; woocommerce: HTTP 403
+priyoshop.com,HTTP 404; woocommerce: HTTP 404
+prodirectsoccer.com,HTTP 404; woocommerce: HTTP 404
+promod.fr,HTTP 404; woocommerce: HTTP 404
+proshop.dk,HTTP 403; woocommerce: HTTP 403
+proshop.se,HTTP 403; woocommerce: HTTP 403
+pukkaherbs.com,HTTP 404; woocommerce: HTTP 404
+pullandbear.com,HTTP 403; woocommerce: HTTP 403
+qbd.com.au,HTTP 403; woocommerce: HTTP 403
+qoo10.sg,gave up after 2 tries: ConnectionError
+rakuten.co.jp,HTTP 404; woocommerce: HTTP 404
+rapanui.com,HTTP 404; woocommerce: HTTP 404
+rapha.cc,HTTP 404; woocommerce: HTTP 404
+ravensburger.de,HTTP 404; woocommerce: HTTP 404
+rebelsport.co.nz,HTTP 404; woocommerce: HTTP 404
+rebelsport.com.au,HTTP 410; woocommerce: HTTP 410
+regatta.com,HTTP 404; woocommerce: HTTP 404
+reichelt.de,gave up after 2 tries: HTTP 503; woocommerce: gave up after 4 tries: HTTP 503
+reigningchamp.com,same shop as www.reigningchamp.com
+reima.com,HTTP 404; woocommerce: HTTP 403
+reiss.com,HTTP 404; woocommerce: HTTP 404
+reliancedigital.in,HTTP 403; woocommerce: HTTP 403
+repco.com.au,HTTP 403; woocommerce: HTTP 403
+reserved.com,not a product feed; woocommerce: not a product list
+revolutionbeauty.com,same shop as www.revolutionbeauty.com
 rhinoshield.io,HTTP 404
+richersounds.com,HTTP 404; woocommerce: HTTP 404
+rinascente.it,HTTP 403; woocommerce: HTTP 403
+ripley.cl,HTTP 403; woocommerce: HTTP 403
+ritter-sport.de,not a product feed; woocommerce: not a product list
+rituals.com,HTTP 404; woocommerce: HTTP 403
+riverford.co.uk,HTTP 404; woocommerce: HTTP 404
+riverisland.com,HTTP 404; woocommerce: HTTP 404
+rmwilliams.com.au,not a product feed; woocommerce: not a product list
+robertdyas.co.uk,HTTP 403; woocommerce: HTTP 403
+rohan.co.uk,HTTP 404; woocommerce: HTTP 404
+rokomari.com,HTTP 403; woocommerce: HTTP 403
+rollasjeans.com,HTTP 404; woocommerce: HTTP 403
+roots.com,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+rosebikes.de,HTTP 404; woocommerce: HTTP 404
+rossmann.de,not a product feed; woocommerce: not a product list
+rouje.com,same shop as www.rouje.com
 row.gymshark.com,HTTP 403
+royaldesign.se,HTTP 404; woocommerce: HTTP 404
+ruby.co.nz,gave up after 2 tries: ConnectTimeout; woocommerce: gave up after 4 tries: ConnectTimeout
+rueducommerce.fr,HTTP 404; woocommerce: HTTP 404
+rum21.se,HTTP 404; woocommerce: HTTP 403
+russellandbromley.co.uk,HTTP 403; woocommerce: HTTP 403
+ryanscomputers.com,HTTP 404; woocommerce: HTTP 404
+s.oliver.de,gave up after 2 tries: ConnectTimeout; woocommerce: gave up after 4 tries: ConnectTimeout
+sabo.com.au,gave up after 2 tries: ConnectionError
+sail.ca,HTTP 404; woocommerce: HTTP 404
+sailor.clothing,not a product feed; woocommerce: HTTP 404
+sainsburys.co.uk,HTTP 403; woocommerce: HTTP 403
+saint-james.com,robots.txt disallows the feed
 sakura.co,HTTP 404
+salsajeans.com,HTTP 404; woocommerce: HTTP 404
+samsoe.com,HTTP 404; woocommerce: HTTP 404
+sandro-paris.com,not a product feed; woocommerce: not a product list
+saturn.de,HTTP 404; woocommerce: HTTP 404
+scalpers.com,HTTP 404; woocommerce: HTTP 404
+scan.co.uk,HTTP 403; woocommerce: HTTP 403
+schleich-s.com,HTTP 404; woocommerce: HTTP 404
+schuh.co.uk,HTTP 403; woocommerce: HTTP 403
+scorptec.com.au,HTTP 404; woocommerce: not a product list
+scrubdaddy.com,HTTP 404; robots.txt disallows the Store API
+seasaltcornwall.com,HTTP 404; woocommerce: HTTP 404
+secretsales.com,HTTP 404; woocommerce: not a product list
+selfridges.com,HTTP 404; woocommerce: HTTP 404
+sephora.ca,HTTP 403; woocommerce: HTTP 403
+sephora.fr,HTTP 403; woocommerce: HTTP 403
+sessun.com,HTTP 404; woocommerce: HTTP 404
+sevenoakssoundandvision.co.uk,gave up after 2 tries: HTTP 500; woocommerce: gave up after 4 tries: HTTP 500
+sezane.com,HTTP 403; woocommerce: HTTP 403
+shajgoj.com,HTTP 404; woocommerce: HTTP 404
+sharafdg.com,HTTP 403; woocommerce: HTTP 403
+sheridan.com.au,gave up after 2 tries: ConnectTimeout; woocommerce: gave up after 4 tries: ConnectTimeout
+shop-apotheke.com,HTTP 404; woocommerce: HTTP 404
 shop.flipperzero.one,same shop as flipper.net
 shop.iflight.com,HTTP 404
 shop.keyboard.io,same shop as www.keyboardio.com
@@ -31,6 +753,36 @@ shop.mkbhd.com,not a product feed
 shop.puri.sm,HTTP 404
 shop.tsm.gg,gave up after 2 tries: ConnectionError
 shop.zojirushi.com,same shop as www.zojirushi.com
+shopee.sg,not a product feed; woocommerce: not a product list
+shoppersdrugmart.ca,not a product feed; woocommerce: not a product list
+silkandsnow.com,HTTP 403; woocommerce: HTTP 403
+simons.ca,HTTP 403; woocommerce: HTTP 403
+sinsay.com,not a product feed; woocommerce: not a product list
+size.co.uk,HTTP 403; woocommerce: HTTP 400
+sleek-makeup.com,gave up after 2 tries: ConnectionError
+sleepcountry.ca,not a product feed; woocommerce: not a product list
+sleepeezee.com.au,HTTP 404; woocommerce: HTTP 404
+smeg.com,gave up after 2 tries: ConnectTimeout; woocommerce: gave up after 4 tries: ConnectTimeout
+smythstoys.com,HTTP 403; woocommerce: not a product list
+snipes.com,HTTP 403; woocommerce: HTTP 403
+sofa.com,HTTP 403; woocommerce: HTTP 403
+solebox.com,HTTP 404; woocommerce: HTTP 404
+sostrenegrene.com,HTTP 404; woocommerce: HTTP 404
+spacenk.com,HTTP 404; woocommerce: HTTP 404
+spell.co,same shop as www.spell.co
+spielwaren-kurtz.de,HTTP 403; woocommerce: HTTP 403
+sportchek.ca,HTTP 403; woocommerce: HTTP 403
+sportscheck.com,HTTP 403; woocommerce: HTTP 403
+sportsdirect.com,HTTP 404; woocommerce: HTTP 404
+sportzone.pt,HTTP 403; woocommerce: HTTP 403
+ssense.com,HTTP 404; woocommerce: HTTP 404
+standaardboekhandel.be,HTTP 404; woocommerce: HTTP 404
+staples.ca,HTTP 403; woocommerce: HTTP 403
+startech.com.bd,HTTP 404; woocommerce: HTTP 404
+steiff.com,HTTP 404; woocommerce: HTTP 404
+stockmann.com,HTTP 403; woocommerce: HTTP 403
+stokke.com,HTTP 410; woocommerce: HTTP 410
+stoneisland.com,HTTP 403; woocommerce: HTTP 403
 store.4ad.com,gave up after 2 tries: ConnectionError
 store.cablemod.com,HTTP 404
 store.creality.com,HTTP 404
@@ -45,10 +797,69 @@ store.moma.org,HTTP 403
 store.rc4wd.com,HTTP 404
 store.roosterteeth.com,HTTP 403
 stores.horiusa.com,HTTP 404
+stradivarius.com,HTTP 403; woocommerce: HTTP 403
+structube.com,HTTP 404; woocommerce: not a product list
+studio.co.uk,HTTP 404; woocommerce: HTTP 404
+stylenanda.com,not a product feed; woocommerce: not a product list
+suitsupply.com,HTTP 404; woocommerce: HTTP 404
+sukin.com.au,gave up after 2 tries: ConnectionError
+supercheapauto.com.au,not a product feed; woocommerce: HTTP 410
+superdrug.com,HTTP 403; woocommerce: HTTP 403
+superdry.com,HTTP 404; woocommerce: HTTP 404
+tails.com,HTTP 404; woocommerce: HTTP 404
+tanishq.co.in,HTTP 403; woocommerce: HTTP 403
+tatacliq.com,not a product feed; woocommerce: not a product list
+tavonline.co.nz,gave up after 2 tries: ConnectionError
+tchibo.com,HTTP 404; woocommerce: HTTP 404
+tchibo.de,HTTP 404; woocommerce: HTTP 404
+techexpress.com.au,gave up after 2 tries: ConnectTimeout; woocommerce: gave up after 4 tries: ConnectTimeout
+techlandbd.com,HTTP 404; woocommerce: HTTP 404
 teenage.engineering,HTTP 404
+templeandwebster.com.au,HTTP 403; woocommerce: HTTP 403
+tezenis.com,gave up after 2 tries: SSLError
+thalia.de,HTTP 403; woocommerce: HTTP 403
+thebay.com,HTTP 403; woocommerce: HTTP 403
+thebodyshop.com,same shop as www.thebodyshop.com
+thehut.com,gave up after 2 tries: ConnectionError
+theiconic.com.au,HTTP 403; woocommerce: HTTP 403
 thekey.company,HTTP 404
+thenorthfacestore.com.au,gave up after 2 tries: ConnectionError
+theordinary.com,HTTP 404; woocommerce: HTTP 404
+thermomix.de,not a product feed; woocommerce: not a product list
+thesouledstore.com,not a product feed; woocommerce: HTTP 404
+thesource.ca,gave up after 2 tries: SSLError
+thetoyshop.com,HTTP 403; woocommerce: HTTP 403
+thetrainline.com,HTTP 404; woocommerce: HTTP 404
+thewarehouse.co.nz,HTTP 404; woocommerce: HTTP 404
+thewhiskyexchange.com,HTTP 403; woocommerce: HTTP 403
+theworks.co.uk,HTTP 404; woocommerce: HTTP 404
+thomann.de,HTTP 404; woocommerce: HTTP 404
+thomassabo.com,HTTP 404; woocommerce: HTTP 404
+thorntons.co.uk,gave up after 2 tries: SSLError
+tigerofsweden.com,not a product feed; woocommerce: not a product list
+titus.de,empty feed; woocommerce: HTTP 400
+tkmaxx.com,HTTP 403; woocommerce: HTTP 403
+tom-tailor.de,HTTP 404; woocommerce: HTTP 404
+topachat.com,HTTP 404; woocommerce: HTTP 404
+topman.com,not a product feed; woocommerce: not a product list
+topshop.com,HTTP 404; woocommerce: HTTP 404
+torfs.be,gave up after 2 tries: TooManyRedirects; woocommerce: gave up after 4 tries: TooManyRedirects
+torpedo7.co.nz,HTTP 404; woocommerce: HTTP 404
+tous.com,not a product feed; woocommerce: not a product list
+toysrus.ca,gave up after 2 tries: HTTP 502; woocommerce: gave up after 4 tries: HTTP 502
+tredz.co.uk,HTTP 404; woocommerce: HTTP 404
+trony.it,gave up after 2 tries: SSLError
 tryfi.com,HTTP 404
+twentysevennames.com,not a product feed; woocommerce: HTTP 404
+twiningsteashop.com,gave up after 2 tries: ConnectTimeout; woocommerce: gave up after 4 tries: ConnectTimeout
 typeractive.xyz,same shop as www.typeractive.xyz
+typology.com,HTTP 202; woocommerce: HTTP 202
+ugg.com.au,HTTP 404; woocommerce: HTTP 404
+unieuro.it,HTTP 404; woocommerce: not a product list
+uniqlo.com,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+united-arrows.co.jp,HTTP 403; woocommerce: HTTP 403
+unode50.com,HTTP 404; woocommerce: HTTP 404
+urbanladder.com,HTTP 404; woocommerce: HTTP 404
 us.govee.com,not a product feed
 us.jellycat.com,HTTP 403
 us.kef.com,empty feed
@@ -59,11 +870,58 @@ us.store.bambulab.com,HTTP 404
 us.tineco.com,HTTP 404
 us.yotoplay.com,robots.txt disallows the feed
 usa.erborian.com,HTTP 410
+valentino.com,HTTP 404; woocommerce: HTTP 404
+vandenborre.be,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+vanmoof.com,HTTP 404; woocommerce: HTTP 404
+veja-store.com,HTTP 404; woocommerce: HTTP 404
+verbaudet.fr,gave up after 2 tries: ConnectionError
+verkkokauppa.com,HTTP 404; woocommerce: HTTP 404
+vertbaudet.fr,HTTP 403; woocommerce: HTTP 403
+very.co.uk,HTTP 404; woocommerce: HTTP 403
+victoriabasement.com.au,gave up after 2 tries: ConnectionError
+viens-la.com,HTTP 404; woocommerce: HTTP 404
+vinatis.com,HTTP 404; woocommerce: HTTP 404
+vinomofo.com,HTTP 404; woocommerce: HTTP 404
+vinos.de,HTTP 403; woocommerce: HTTP 403
+virginmegastore.ae,HTTP 404; woocommerce: HTTP 404
+virginwines.co.uk,HTTP 403; woocommerce: HTTP 403
+vorwerk.de,not a product feed; woocommerce: not a product list
+vtwonen.nl,HTTP 404; woocommerce: not a product list
+waitrose.com,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+wakefit.co,HTTP 403; woocommerce: HTTP 403
+wallis.co.uk,HTTP 404; woocommerce: HTTP 404
+warehouselondon.com,HTTP 404; woocommerce: HTTP 404
+watchshop.com,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+waterstones.com,HTTP 403; woocommerce: HTTP 403
+wayfair.co.uk,HTTP 404; woocommerce: gave up after 4 tries: HTTP 429
+we-fashion.com,gave up after 2 tries: SSLError
+webhallen.com,not a product feed; woocommerce: not a product list
+weekday.com,HTTP 403; woocommerce: HTTP 403
+wehkamp.nl,HTTP 403; woocommerce: HTTP 403
+weinfreunde.de,HTTP 404; woocommerce: HTTP 404
+weirandsons.ie,HTTP 403; woocommerce: HTTP 403
+well.ca,not a product feed; woocommerce: HTTP 404
+westwing.de,HTTP 404; woocommerce: HTTP 404
+wexphotovideo.com,not a product feed; woocommerce: HTTP 404
+whistles.com,HTTP 404; woocommerce: HTTP 404
+whitefoxboutique.com,same shop as www.whitefoxboutique.com
+whitestuff.com,HTTP 404; woocommerce: HTTP 404
+whittard.co.uk,HTTP 409; woocommerce: HTTP 409
+whsmith.co.uk,gave up after 2 tries: ConnectTimeout; woocommerce: gave up after 4 tries: ConnectTimeout
+wiggle.co.uk,gave up after 2 tries: ConnectionError
+wilko.com,HTTP 403; woocommerce: HTTP 403
+wmf.com,HTTP 404; woocommerce: HTTP 404
+woodenstreet.com,HTTP 404; woocommerce: HTTP 404
+woodwood.com,HTTP 404; woocommerce: HTTP 404
+woolworths.com.au,HTTP 403; woocommerce: HTTP 403
+worten.es,HTTP 403; woocommerce: HTTP 403
+worten.pt,HTTP 403; woocommerce: HTTP 403
 www.11degrees.co.uk,gave up after 2 tries: ConnectTimeout
 www.1more.com,HTTP 404
 www.1upkeyboards.com,HTTP 404
 www.1zpresso.coffee,HTTP 404
 www.3ce.com,not a product feed
+www.3leggedthing.com,same shop as 3leggedthing.com
 www.42keebs.eu,HTTP 404
 www.4ad.com,not a product feed
 www.5.11tactical.com,gave up after 2 tries: SSLError
@@ -119,6 +977,7 @@ www.anycubic.com,HTTP 404
 www.apieu.com,HTTP 404
 www.aqara.com,HTTP 404
 www.arcteryx.com,HTTP 404
+www.ardene.com,same shop as ardene.com
 www.arducam.com,HTTP 404
 www.ariat.com,HTTP 404
 www.aritzia.com,HTTP 403
@@ -145,6 +1004,7 @@ www.audio-technica.com,HTTP 404
 www.audioengine.com,HTTP 403
 www.audo.com,HTTP 404
 www.auguste-thelabel.com,gave up after 2 tries: ConnectionError
+www.augustinusbader.com,same shop as augustinusbader.com
 www.aulastar.com,HTTP 404
 www.aureliebijoux.com,gave up after 2 tries: ConnectionError
 www.autelrobotics.com,HTTP 403
@@ -176,6 +1036,7 @@ www.battlebeaver.com,HTTP 404
 www.baumkuchen.net,gave up after 2 tries: ConnectTimeout
 www.bbqguys.com,HTTP 403
 www.beautybay.com,not a product feed
+www.beautycounter.com,same shop as www.counter.com
 www.bec-and-bridge.com,gave up after 2 tries: ConnectionError
 www.beekeeb.com,HTTP 404
 www.beelink.com,gave up after 2 tries: ConnectionError
@@ -360,6 +1221,7 @@ www.dark-seas.com,gave up after 2 tries: TooManyRedirects
 www.dasique.us,gave up after 2 tries: ConnectionError
 www.davidsnaturaltoothpaste.com,gave up after 2 tries: ConnectionError
 www.db.com,HTTP 404
+www.dbjourney.com,same shop as dbjourney.com
 www.dbrand.ca,HTTP 404
 www.dbrand.com,HTTP 404
 www.de-buyer.com,gave up after 2 tries: ConnectTimeout
@@ -388,6 +1250,7 @@ www.dominiqueansel.com,HTTP 404
 www.domino-music.com,HTTP 404
 www.dominomusic.com,HTTP 404
 www.done-by-deer.com,gave up after 2 tries: ConnectionError
+www.donebydeer.com,same shop as donebydeer.com
 www.dr-althea.com,gave up after 2 tries: ConnectionError
 www.dralthea.com,gave up after 2 tries: SSLError
 www.drdennisgross.com,HTTP 410
@@ -405,6 +1268,7 @@ www.dropoutstore.com,HTTP 402
 www.drsquatch.com,HTTP 404
 www.drsturm.com,HTTP 404
 www.drunkelephant.com,HTTP 410
+www.duer.ca,same shop as duer.com
 www.duke-cannon.com,not a product feed
 www.dunu-topsound.com,HTTP 400
 www.dunu.com,gave up after 2 tries: SSLError
@@ -412,6 +1276,7 @@ www.dwr.com,HTTP 410
 www.dynamite.com,HTTP 404
 www.dyson.com,HTTP 403
 www.earthquakerdevices.com,HTTP 404
+www.eastpak.com,same shop as us.eastpak.com
 www.eataly.com,HTTP 404
 www.eatofflimits.com,HTTP 404
 www.echtapparel.com,HTTP 403
@@ -560,6 +1425,7 @@ www.grillagrills.com,HTTP 404
 www.grillgrate.com,HTTP 404
 www.groove.life,not a product feed
 www.grovemade.com,HTTP 404
+www.gruum.com,HTTP 403; woocommerce: HTTP 403
 www.gshock.com,HTTP 403
 www.gulikit.com,HTTP 404
 www.gustiamo.com,HTTP 404
@@ -578,6 +1444,7 @@ www.harney.com,HTTP 403
 www.harryanddavid.com,HTTP 404
 www.harrys.com,not a product feed
 www.hasbropulse.com,HTTP 404
+www.hast.fr,same shop as www.hastparis.com
 www.hatch.co,HTTP 404
 www.hatchimals.com,not a product feed
 www.haus-labs.com,HTTP 404
@@ -617,6 +1484,7 @@ www.hori.com,not a product feed
 www.horizonhobby.com,HTTP 404
 www.hottopic.com,HTTP 404
 www.huckberry.com,HTTP 403
+www.hudabeauty.com,same shop as hudabeauty.com
 www.huelcom,gave up after 2 tries: ConnectionError
 www.huf.com,gave up after 2 tries: SSLError
 www.hultsbruk1697.se,gave up after 2 tries: ConnectionError
@@ -686,6 +1554,7 @@ www.kahiusa.com,gave up after 2 tries: SSLError
 www.kaja-beauty.com,gave up after 2 tries: ConnectionError
 www.kansept.com,HTTP 404
 www.kanto.com,gave up after 2 tries: ConnectTimeout
+www.kantoaudio.com,same shop as kantoaudio.com
 www.kate-spade.com,HTTP 403
 www.keeleyelectronics.com,HTTP 404
 www.kef.com,empty feed
@@ -790,6 +1659,7 @@ www.lumens.com,HTTP 403
 www.lumos.com,HTTP 404
 www.lush.com,HTTP 403
 www.lushusa.com,HTTP 403
+www.m5stack.com,same shop as m5stack-store.myshopify.com
 www.ma-nyo.com,gave up after 2 tries: ConnectionError
 www.maap.cc,HTTP 404
 www.madamstoltz.dk,HTTP 404
@@ -802,11 +1672,14 @@ www.maisonkitsune.com,HTTP 404
 www.maje.com,not a product feed
 www.makeprem.com,HTTP 404
 www.makeup-revolution.com,gave up after 2 tries: ConnectionError
+www.maksimer.no,HTTP 404; woocommerce: HTTP 404
+www.manfrotto.com,same shop as www.audixusa.com
 www.manly-bands.com,HTTP 404
 www.manning.com,HTTP 404
 www.manscaped.com,HTTP 403
 www.manyofactory.com,HTTP 521
 www.marcfisherfootwear.com,gave up after 2 tries: SSLError
+www.marketstudios.com,same shop as www.chinatownmarket.com
 www.marshall.com,HTTP 404
 www.master-dynamic.com,HTTP 404
 www.matferbourgeatusa.com,HTTP 404
@@ -937,6 +1810,7 @@ www.olivers.com,gave up after 2 tries: ConnectTimeout
 www.oliversapparel.com,gave up after 2 tries: SSLError
 www.oliveyoung.com,HTTP 403
 www.ollie.com,HTTP 404
+www.olukai.com,same shop as olukai.com
 www.omie.com,HTTP 404
 www.omsom.com,HTTP 404
 www.on-running.com,not a product feed
@@ -1258,6 +2132,7 @@ www.steelseries.com,HTTP 404
 www.stelly.com.au,HTTP 401
 www.stetsonapparel.com,gave up after 2 tries: SSLError
 www.steve-madden.com,HTTP 521
+www.stewartgolf.com,same shop as www.stewartgolfusa.com
 www.stickermule.com,HTTP 410
 www.stokke.com,HTTP 404
 www.stoneagegamer.com,HTTP 404
@@ -1371,6 +2246,7 @@ www.topshelfrecords.com,HTTP 404
 www.topsknives.com,HTTP 404
 www.torriden.com,HTTP 404
 www.totallee.com,HTTP 404
+www.totm.com,HTTP 404; woocommerce: not a product list
 www.touchinsol.com,HTTP 404
 www.towerhobbies.com,HTTP 404
 www.tracksmith.com,HTTP 404
@@ -1405,6 +2281,7 @@ www.ultimatehackingkeyboard.com,HTTP 404
 www.unbrandedbrand.com,gave up after 2 tries: ConnectionError
 www.uncommongoods.com,HTTP 404
 www.unimatic.com,gave up after 2 tries: SSLError
+www.universalyums.com,HTTP 404; woocommerce: HTTP 403
 www.unknownlondon.com,HTTP 404
 www.unleashia.com,gave up after 2 tries: ConnectionError
 www.uppababy.com,HTTP 404
@@ -1463,7 +2340,9 @@ www.westpaw.com,empty feed
 www.whistle.com,not a product feed
 www.whitemountainknives.com,HTTP 404
 www.whoop.com,HTTP 403
+www.wildsouls.gr,HTTP 403; woocommerce: HTTP 403
 www.williams-sonoma.com,HTTP 403
+www.willowpump.com,same shop as onewillow.com
 www.wingsandhorns.com,gave up after 2 tries: ConnectionError
 www.winky-lux.com,gave up after 2 tries: ConnectionError
 www.with-jean.com,gave up after 2 tries: ConnectionError
@@ -1495,6 +2374,7 @@ www.yotoplay.com,robots.txt disallows the feed
 www.yourheights.com,same shop as www.heights.com
 www.youthtothepeople.com,HTTP 403
 www.yumbox.com,gave up after 2 tries: ConnectionError
+www.zagg.com,same shop as zagg.com
 www.zavvi.com,HTTP 404
 www.zelos.com,HTTP 404
 www.zenpop.jp,HTTP 404
@@ -1514,3 +2394,27 @@ www.zursunbeans.com,not a product feed
 www.zvex.com,HTTP 404
 www.zwilling.com,HTTP 410
 wyrmwoodgaming.com,HTTP 404
+x-kom.pl,HTTP 403; woocommerce: HTTP 403
+xenos.nl,HTTP 404; woocommerce: HTTP 404
+xxxlutz.de,HTTP 403; woocommerce: HTTP 403
+yodobashi.com,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+yoox.com,HTTP 403; woocommerce: HTTP 403
+yves-rocher.fr,HTTP 403; woocommerce: HTTP 403
+zadig-et-voltaire.com,HTTP 404; woocommerce: HTTP 404
+zalando.de,HTTP 403; woocommerce: gave up after 4 tries: ReadTimeout
+zalando.nl,gave up after 2 tries: ReadTimeout; woocommerce: HTTP 403
+zalando.se,HTTP 403; woocommerce: HTTP 403
+zalora.com.my,HTTP 404; woocommerce: HTTP 404
+zalora.sg,HTTP 404; woocommerce: HTTP 404
+zara.com,HTTP 403; woocommerce: HTTP 403
+zavvi.com,not a product feed; woocommerce: not a product list
+zeeman.com,HTTP 403; woocommerce: HTTP 403
+zimmermann.com,HTTP 404; woocommerce: HTTP 404
+zingpopculture.com.au,HTTP 403; woocommerce: HTTP 403
+zippypaws.com,HTTP 307; woocommerce: HTTP 307
+zooplus.co.uk,HTTP 404; woocommerce: HTTP 404
+zooplus.de,HTTP 404; woocommerce: HTTP 404
+zooroyal.de,gave up after 2 tries: HTTP 500; woocommerce: HTTP 404
+zoot.cz,HTTP 404; woocommerce: not a product list
+zozo.jp,gave up after 2 tries: ReadTimeout; woocommerce: gave up after 4 tries: ReadTimeout
+zwilling.com,HTTP 410; woocommerce: HTTP 410
