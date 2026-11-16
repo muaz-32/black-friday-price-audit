@@ -48,7 +48,7 @@ from . import http
 
 RETAILERS = Path("stores/basket_retailers.csv")
 BASKET = Path("stores/basket.csv")
-DELAY = float(os.environ.get("BASKET_DELAY", "3"))
+DELAY = float(os.environ.get("BASKET_DELAY", "5"))
 BLOCK_AFTER = 5  # this many blocked pages in a row and the retailer is left alone for the run
 HTML_HEADERS = {"Accept": "text/html,application/xhtml+xml;q=0.9,*/*;q=0.8", "Accept-Language": "en"}
 
