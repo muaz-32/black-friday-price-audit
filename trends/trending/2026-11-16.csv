@@ -1,0 +1,141 @@
+fetched_at,geo,rank,query,approx_traffic,published_at,news_source,news_title
+2026-11-16T00:37:19Z,US,1,john lynch,5000,2026-11-16T00:20:00Z,NBC Sports,Raiders-49ers game at Levi’s Stadium resulted in 11 arrests and 45 ejections
+2026-11-16T00:37:19Z,US,2,skip bayless,500,2026-11-16T00:20:00Z,Yahoo Sports,‘I’ve looked at the list’: Skip Bayless has just made a bold claim about Lakers star Austin Reaves
+2026-11-16T00:37:19Z,US,3,flames vs ducks,1000,2026-11-16T00:20:00Z,NHL.com,Flames at Ducks projected lineups
+2026-11-16T00:37:19Z,US,4,joyce dewitt,500,2026-11-16T00:20:00Z,Grazia,"In 1977, John Ritter and Joyce DeWitt Became TV's Favorite Roommates. 49 Years Later, She Brought 'Three's Company' Back to New York"
+2026-11-16T00:37:19Z,US,5,ar-pine bluff vs usc,200,2026-11-16T00:20:00Z,Sportsgambler,"Arkansas-Pine Bluff vs USC Prediction, Picks & Odds | 15 Nov 2026"
+2026-11-16T00:37:19Z,US,6,hawks vs bucks,2000,2026-11-16T00:10:00Z,Milwaukee Journal Sentinel,"Bucks vs. Hawks, Milwaukee trying to snap nine-game losing streak"
+2026-11-16T00:37:19Z,US,7,panthers vs stars,1000,2026-11-16T00:10:00Z,NHL.com,Panthers at Stars projected lineups
+2026-11-16T00:37:19Z,US,8,ryan flournoy,1000,2026-11-16T00:10:00Z,The New York Times,The Cowboys trust Ryan Flournoy. Why that could be a big thing vs. the 49ers
+2026-11-16T00:37:19Z,US,9,andrew shue,500,2026-11-16T00:10:00Z,People.com,Andrew Shue and Marilee Fiebig Share First Photo from Their Wedding
+2026-11-16T00:37:19Z,US,10,deshon elliott,500,2026-11-16T00:10:00Z,Steelers.com,Steelers inactives for Week 10 vs. Bengals
+2026-11-16T00:37:19Z,GB,1,christian mccaffrey,200,2026-11-15T23:50:00Z,NFL.com,Christian McCaffrey's 12th TD of 2026 boosts 49ers' lead to 37-19 against Cowboys
+2026-11-16T00:37:19Z,GB,2,san francisco 49ers,100,2026-11-15T23:50:00Z,ESPN,"49ers OT Williams, LB Greenlaw questionable, WR Evans out vs. Cowboys"
+2026-11-16T00:37:19Z,GB,3,russian border,2000,2026-11-15T23:40:00Z,The Guardian,Estonia to close all border crossings with Russia after attack on drone maker
+2026-11-16T00:37:19Z,GB,4,project helix,500,2026-11-15T23:40:00Z,Windows Central,"Microsoft says Xbox Helix is a console, not a PC — but it will be able to play your PC games: ""It is not a PC that can also play console games"""
+2026-11-16T00:37:19Z,GB,5,devin booker,100,2026-11-15T23:40:00Z,Sports Illustrated,Devin Booker Debuts the Nike Book 3
+2026-11-16T00:37:19Z,GB,6,mo bamba,200,2026-11-15T23:30:00Z,CBS Sports,Jazz's Mo Bamba: Starting against Spurs
+2026-11-16T00:37:19Z,GB,7,ceedee lamb,100,2026-11-15T23:30:00Z,NBC Sports,"CeeDee Lamb is 96 yards from becoming first Cowboys' player with six straight 1,000-yard seasons"
+2026-11-16T00:37:19Z,GB,8,brian mackinnon,100,2026-11-15T23:20:00Z,BBC,Schoolboy imposter subjected ex-professor and wife to 'terrifying ordeal'
+2026-11-16T00:37:19Z,GB,9,a24,100,2026-11-15T23:20:00Z,IMDb,A24’s Viral Sensation Officially Removed From 770 Theaters Ahead of Major Box-Office Milestone
+2026-11-16T00:37:19Z,GB,10,ebenezer audience vs critic scores,200,2026-11-15T23:10:00Z,Forbes,‘Ebenezer’ Audiences Reject Rotten Tomatoes Critics’ Score Of Johnny Depp’s New Film
+2026-11-16T00:37:19Z,CA,1,dallas cowboys,500,2026-11-16T00:30:00Z,Fox News,"Life is short, but Jerry Jones makes being a Dallas Cowboys fan feel endless"
+2026-11-16T00:37:19Z,CA,2,george pickens,100,2026-11-16T00:30:00Z,NBC Sports,George Pickens (hamstring) cleared to face 49ers
+2026-11-16T00:37:19Z,CA,3,cowboys,500,2026-11-16T00:20:00Z,Sportsnet.ca,49ers’ Samuel takes reverse for incredible 70-yard TD vs. Cowboys
+2026-11-16T00:37:19Z,CA,4,oilers – flyers,200,2026-11-16T00:20:00Z,NHL.com,NHL On Tap: McDavid looks to push 21-game point streak with Oilers at Flyers
+2026-11-16T00:37:19Z,CA,5,heartland movie 2026,1000,2026-11-16T00:20:00Z,WSJ,‘Heartland’ Review: Jessica Chastain’s Country-Music Mystery
+2026-11-16T00:37:19Z,CA,6,cfl scores,2000,2026-11-16T00:10:00Z,TSN,"Rangers, Blackhawks complete backup goalie swap"
+2026-11-16T00:37:19Z,CA,7,flames vs ducks,500,2026-11-16T00:10:00Z,NHL.com,Flames at Ducks projected lineups
+2026-11-16T00:37:19Z,CA,8,wnba draft lottery,200,2026-11-16T00:10:00Z,ESPN,JuJu Watkins projected No. 1 WNBA pick in latest 2027 mock draft
+2026-11-16T00:37:19Z,CA,9,danielle fishel,100,2026-11-16T00:00:00Z,Entertainment Weekly,‘Boy Meets World’ book reveals ‘romantic’ rain moment between Danielle Fishel and Rider Strong
+2026-11-16T00:37:19Z,CA,10,ken newans,200,2026-11-16T00:00:00Z,CTV News,‘He was a force’: Calgary sports legend Ken Newans dies at 95
+2026-11-16T00:37:19Z,AU,1,christian mccaffrey,100,2026-11-16T00:10:00Z,San Francisco 49ers,McCaffrey Spins Into the End Zone for His 12th Touchdown of the 2026 Season
+2026-11-16T00:37:19Z,AU,2,dog,500,2026-11-16T00:00:00Z,News.com.au,"Tragic twist after groomer, dog found dead"
+2026-11-16T00:37:19Z,AU,3,wizards vs rockets,200,2026-11-15T23:50:00Z,The Dream Shake,Houston Rockets vs. Washington Wizards game preview
+2026-11-16T00:37:19Z,AU,4,ceedee lamb,200,2026-11-15T23:20:00Z,NBC Sports,"CeeDee Lamb is 96 yards from becoming first Cowboys' player with six straight 1,000-yard seasons"
+2026-11-16T00:37:19Z,AU,5,south australia vs new south wales,1000,2026-11-15T23:10:00Z,The Age,"While the past haunts Australian cricket, its future is piling on runs in the Sheffield Shield"
+2026-11-16T00:37:19Z,AU,6,rocket,200,2026-11-15T23:10:00Z,Space,"Vulcan Centaur rocket fails during return-to-flight launch, 40 Amazon satellites lost (video)"
+2026-11-16T00:37:19Z,AU,7,devin booker,200,2026-11-15T23:10:00Z,Sports Illustrated,"Devin Booker Goes Back to the Future With Nike Book 2 ""Mag"""
+2026-11-16T00:37:19Z,AU,8,venezuela,500,2026-11-15T23:00:00Z,The New York Times,"U.S. Handled $12 Billion in Venezuelan Oil Revenues, Secret Report Shows"
+2026-11-16T00:37:19Z,AU,9,south australia cricket team vs new south wales cricket team match scorecard,200,2026-11-15T23:00:00Z,South Australian Cricket Association | SACA,South Australia names squad to face New South Wales in ODC
+2026-11-16T00:37:19Z,AU,10,celtics vs mavericks,1000,2026-11-15T22:40:00Z,ESPN,Celtics set franchise mark with 42-9 lead over Mavericks after one quarter
+2026-11-16T00:37:19Z,DE,1,nvidia chef jensen huang,200,2026-11-16T00:20:00Z,DIE ZEIT,Chip-Konzern: Bericht: Jensen Huang spricht über Rückkehr an Nvidia-Spitze
+2026-11-16T00:37:19Z,DE,2,jen-hsun huang,200,2026-11-16T00:00:00Z,The New York Times,Jensen Huang’s Affair Puts His Wife in the Spotlight
+2026-11-16T00:37:19Z,DE,3,josefine preuss dr nice,50000,2026-11-15T23:50:00Z,Joyn,"""Dr. Nice""-Star Josefine Preuß: Wieso fehlt sie auf dem Gruppenfoto von Staffel 5?"
+2026-11-16T00:37:19Z,DE,4,mo bamba,100,2026-11-15T23:50:00Z,CBS Sports,Jazz's Mo Bamba: Starting against Spurs
+2026-11-16T00:37:19Z,DE,5,klarna,200,2026-11-15T23:50:00Z,Hamburger Abendblatt,"Postbank, Haspa, Klarna: Warum bei Dispo und Ratenkauf plötzlich Probleme drohen"
+2026-11-16T00:37:19Z,DE,6,russland brand,10000,2026-11-15T23:40:00Z,Spiegel,Russland: Ukraine schießt großes Industriegebiet in Brand
+2026-11-16T00:37:19Z,DE,7,celtics – mavericks,200,2026-11-15T23:30:00Z,ESPN,Celtics set franchise mark with 42-9 lead over Mavericks after one quarter
+2026-11-16T00:37:19Z,DE,8,thanksgiving 2026,100,2026-11-15T23:30:00Z,Food & Wine,"From Aldi to Walmart, These 7 Grocery Chains Are Offering Impressive Thanksgiving Meal Deals"
+2026-11-16T00:37:19Z,DE,9,grill den henssler,2000,2026-11-15T22:50:00Z,GALA.de,Von TV-Kollegen zum Traumpaar: Die schönsten Liebesbilder von Laura Wontorra und Riccardo Basile
+2026-11-16T00:37:19Z,DE,10,henry coates,200,2026-11-15T22:50:00Z,Sky Sports,Twenty-year-old Henry Coates hits TWO huge finishes against Michael van Gerwen at the Grand Slam of Darts.
+2026-11-16T00:37:19Z,FR,1,christine lagarde présidentielle 2027,200,2026-11-16T00:20:00Z,Les Echos,"Comment sortir de l'impasse en France ? « La personnalité au-dessus de la mêlée pour l'élection présidentielle, c'est Christine Lagarde"
+2026-11-16T00:37:19Z,FR,2,wizards – rockets,100,2026-11-16T00:20:00Z,HoopsHype,Bub Carrington and Alex Sarr have been upgraded to …
+2026-11-16T00:37:19Z,FR,3,dylan harper,100,2026-11-16T00:20:00Z,Pounding The Rock,What we learned from the Spurs win over the Bulls
+2026-11-16T00:37:19Z,FR,4,josh green,100,2026-11-16T00:00:00Z,CBS Sports,Jazz's Josh Okogie: Shifting back to bench Sunday
+2026-11-16T00:37:19Z,FR,5,ploemeur,200,2026-11-15T23:50:00Z,Ouest-France,Des rafales jusqu’à 90 km/h et de fortes pluies : le Maine-et-Loire en alerte aux orages et aux vents violents
+2026-11-16T00:37:19Z,FR,6,benyamin netanyahou,200,2026-11-15T23:40:00Z,Le Monde.fr,"Benyamin Nétanyahou ne peut pas rester « une minute de plus » à la tête du gouvernement israélien, estime Gadi Eisenkot"
+2026-11-16T00:37:19Z,FR,7,amazon leo,200,2026-11-15T23:40:00Z,Reuters,"Rocket from Boeing-Lockheed firm fails mid-flight, destroys payload of Amazon satellites"
+2026-11-16T00:37:19Z,FR,8,raptors – knicks,200,2026-11-15T23:10:00Z,Squawka,"Knicks vs Raptors: Prediction, Team News and the Barnes Question"
+2026-11-16T00:37:19Z,FR,9,celtics – mavericks,1000,2026-11-15T22:50:00Z,The Boston Globe,Mavericks at Celtics preview: Cooper Flagg and Dallas look to end Boston’s five-game winning streak
+2026-11-16T00:37:19Z,FR,10,saint-martin-vésubie,200,2026-11-15T22:50:00Z,France 3 Régions,Un octogénaire survit une nuit dans sa voiture suite à une chute de 30 mètres dans un ravin
+2026-11-16T00:37:19Z,IT,1,paura volo easyjet,200,2026-11-16T00:10:00Z,Sky TG24,Paura sul volo Easyjet Keflavik-Milano: fermato un passeggero ubriaco armato di coltello
+2026-11-16T00:37:19Z,IT,2,quentin grimes,100,2026-11-15T23:50:00Z,CBS Sports,Lakers' Quentin Grimes: Starting against Phoenix
+2026-11-16T00:37:19Z,IT,3,famiglia,200,2026-11-15T23:30:00Z,Mediaset Infinity,Fuori dal coro: Giù le mani dai bimbi: la storia choc dell'altra famiglia del bosco Video
+2026-11-16T00:37:19Z,IT,4,racconto di una notte,100,2026-11-15T23:20:00Z,Mediaset Infinity,"Racconto di una notte, il riassunto del 15 novembre"
+2026-11-16T00:37:19Z,IT,5,celtics - mavericks,500,2026-11-15T23:10:00Z,ESPN,Celtics set franchise mark with 42-9 lead over Mavericks after one quarter
+2026-11-16T00:37:19Z,IT,6,the body netflix,500,2026-11-15T23:10:00Z,The Guardian,The Body review – this sexy retro high school drama is like Cruel Intentions … with added Satanic rituals
+2026-11-16T00:37:19Z,IT,7,jennifer lawrence,200,2026-11-15T23:00:00Z,Who What Wear,Jennifer Lawrence Just Wore the Color That Makes Leopard Print Look Chic (Not Dated)
+2026-11-16T00:37:19Z,IT,8,guerra iran usa,500,2026-11-15T22:50:00Z,Corriere della Sera,"Guerra Iran-Usa, le notizie in diretta dal Medio Oriente | Nyt: «Portaerei Roosevelt in viaggio verso il Medio Oriente». Pasdaran: «Due petroliere in fiamme dopo aver urtato le mine a Hormuz». Ukmto: «Una nave attaccata»"
+2026-11-16T00:37:19Z,IT,9,wta ranking,200,2026-11-15T22:30:00Z,KMAland.com,"Geography with Goudge: WTA Ranked U.S. Players Map, 2026"
+2026-11-16T00:37:19Z,IT,10,djed spence,200,2026-11-15T22:30:00Z,BBC,England: James Hill called up as cover for Ezri Konsa for Croatia Nations League game
+2026-11-16T00:37:19Z,ES,1,supuesto apagon mundial,500,2026-11-16T00:00:00Z,El Diario de Madrid,Apagón mundial el 17 de noviembre: qué se sabe sobre el rumor de las 72 horas sin luz
+2026-11-16T00:37:19Z,ES,2,collin gillespie,200,2026-11-15T23:50:00Z,NBC Sports,"Luke Kennard hits three triples, scores 18 points"
+2026-11-16T00:37:19Z,ES,3,dillon brooks,100,2026-11-15T23:30:00Z,Yahoo Sports,Why Ziaire Williams credits ‘crazy’ Dillon Brooks for NBA success
+2026-11-16T00:37:19Z,ES,4,penalti,5000,2026-11-15T23:20:00Z,EL PAÍS,Harry Kane gana el pulso a Lamine
+2026-11-16T00:37:19Z,ES,5,defensor sporting - peñarol,200,2026-11-15T23:20:00Z,Montevideo Portal,Clausura: Peñarol quiere cerrar la Anual hoy ante Defensor. Horario y alineaciones
+2026-11-16T00:37:19Z,ES,6,celtics - mavericks,1000,2026-11-15T23:00:00Z,ESPN,Celtics set franchise mark with 42-9 lead over Mavericks after one quarter
+2026-11-16T00:37:19Z,ES,7,mo bamba,500,2026-11-15T23:00:00Z,CBS Sports,Jazz's Mo Bamba: Starting against Spurs
+2026-11-16T00:37:19Z,ES,8,quentin grimes,500,2026-11-15T23:00:00Z,CBS Sports,Lakers' Quentin Grimes: Starting against Phoenix
+2026-11-16T00:37:19Z,ES,9,jake laravia,200,2026-11-15T23:00:00Z,Yahoo Sports,Lakers' Jake LaRavia Has Surprising Response to Leading NBA in Fouls
+2026-11-16T00:37:19Z,ES,10,víctor janeiro,500,2026-11-15T22:50:00Z,Lecturas,"Leticia Martín Enjuto, psicóloga: “La principal fortaleza de Víctor Janeiro en 'Supervivientes' ha estado en la constancia. No necesita recurrir constantemente al conflicto”"
+2026-11-16T00:37:19Z,NL,1,concacaf nations league,200,2026-11-15T23:50:00Z,ESPN,Mexico on brink of missing Nations League semifinals after loss to Jamaica
+2026-11-16T00:37:19Z,NL,2,curacao voetbal,100,2026-11-15T23:30:00Z,NU,Advocaat speelt met Curaçao doelpuntloos gelijk in strijd om Gold Cup-deelname
+2026-11-16T00:37:19Z,NL,3,panama vs curaçao,200,2026-11-15T23:00:00Z,ESPN,"Panama vs. Curaçao (Nov 15, 2026) Team Stats"
+2026-11-16T00:37:19Z,NL,4,vvd d66 cda,5000,2026-11-15T22:00:00Z,NOS,"Crisisoverleg coalitie op Hilversums landgoed al uren bezig, uitkomst nog ongewis"
+2026-11-16T00:37:19Z,NL,5,kevin doets,200,2026-11-15T21:50:00Z,AD.nl,"LIVE Grand Slam of Darts | Vrouwelijke sensatie verrast met overtuigende zege op Niels Zonneveld, Ricky Evans wint ook"
+2026-11-16T00:37:19Z,NL,6,ben saunders,100,2026-11-15T21:50:00Z,RTL.nl,Vriendin Ben Saunders worstelt met toekomst zonder hem: 'Weet niet hoe ik verder moet'
+2026-11-16T00:37:19Z,NL,7,lamine yamal,200,2026-11-15T21:50:00Z,The Guardian,De la Fuente feels the strain as Lamine Yamal club v country debate rages in Spain
+2026-11-16T00:37:19Z,NL,8,stephan van baarle,200,2026-11-15T21:40:00Z,AD.nl,"Extra uitzending Pauw & De Wit over coalitiecrisis, ook veel aandacht in andere programma’s"
+2026-11-16T00:37:19Z,NL,9,thom de graaf,200,2026-11-15T21:40:00Z,NOS,Thom de Graaf over de kabinetscrisis
+2026-11-16T00:37:19Z,NL,10,denk,100,2026-11-15T21:40:00Z,Trouw,Live kabinetscrisis: Ook VVD zocht steun bij Denk rond belastingplan
+2026-11-16T00:37:19Z,BR,1,monica carvalho,200,2026-11-16T00:20:00Z,VEJA,Mônica Carvalho conta por que deixou de fazer novelas e sua nova fase
+2026-11-16T00:37:19Z,BR,2,new mexico united sacramento republic 15/11/2026,200,2026-11-16T00:20:00Z,uslchampionship.com,USL Championship Announces Reschedule of Western Conference Final
+2026-11-16T00:37:19Z,BR,3,previsão do tempo aracaju,100,2026-11-16T00:10:00Z,G1,Previsão do tempo hoje para Aracaju (SE): sol com muitas nuvens; pancadas de chuva à tarde e à noite
+2026-11-16T00:37:19Z,BR,4,celtics,500,2026-11-16T00:00:00Z,CelticsBlog,Celtics announce starting lineup ahead of Mavericks game
+2026-11-16T00:37:19Z,BR,5,chuva granizo,1000,2026-11-15T23:50:00Z,G1,BH registra chuva forte e granizo nesta tarde de domingo
+2026-11-16T00:37:19Z,BR,6,collin sexton,200,2026-11-15T23:50:00Z,Lakers Nation,Collin Sexton Discusses Cause Of Orbital Laceration & How He Is Feeling
+2026-11-16T00:37:19Z,BR,7,clima para amanhã,500000,2026-11-15T23:40:00Z,CNN Brasil,Brasil deve registrar temperaturas acima de 30°C até o fim de novembro
+2026-11-16T00:37:19Z,BR,8,ricardo magro,2000,2026-11-15T23:40:00Z,G1,"Mansões, carros de luxo e empresas: a vida de ostentação de Ricardo Magro nos EUA, que deve R$ 50 bilhões em impostos no Brasil"
+2026-11-16T00:37:19Z,BR,9,bombeiro,500,2026-11-15T23:40:00Z,G1,Bombeiros combatem focos de incêndio em fábrica de produtos químicos em Salto pelo 3º dia
+2026-11-16T00:37:19Z,BR,10,météo demain,200,2026-11-15T23:40:00Z,Le Parisien,"« Ça fait drôle ! » : la pluie revient abondamment partout en France, voici à quoi s’attendre ces prochains jours"
+2026-11-16T00:37:19Z,MX,1,bengals - steelers,2000,2026-11-16T00:30:00Z,Steelers.com,ARRIVAL PHOTOS: Week 10 at Bengals
+2026-11-16T00:37:19Z,MX,2,la granja vip votaciones,1000,2026-11-16T00:20:00Z,TV Azteca,La Granja VIP: Hora LÍMITE para votar hoy domingo 15 de noviembre y salvar a uno de los Granjeros Nominados
+2026-11-16T00:37:19Z,MX,3,brendan fraser,100,2026-11-16T00:10:00Z,Collider,Netflix’s New ‘Saving Private Ryan’ Replacement Officially Removed From Dozens of Theaters
+2026-11-16T00:37:19Z,MX,4,boxeo,100,2026-11-16T00:10:00Z,TUDN,Muere querida promesa del boxeo mexicano
+2026-11-16T00:37:19Z,MX,5,spurs,1000,2026-11-16T00:00:00Z,Yahoo Sports,It’s time for Basketball: San Antonio Spurs vs Utah Jazz
+2026-11-16T00:37:19Z,MX,6,albania,500,2026-11-16T00:00:00Z,AP News,NATO to skip a leaders’ summit in Albania next year as high-level meetings are scaled back
+2026-11-16T00:37:19Z,MX,7,mansion vip,2000,2026-11-16T00:00:00Z,AS México,¿Quién salió hoy de La Mansión VIP 2026? Conoce al primer eliminado
+2026-11-16T00:37:19Z,MX,8,wizards - rockets,500,2026-11-15T23:50:00Z,HoopsHype,Bub Carrington and Alex Sarr have been upgraded to …
+2026-11-16T00:37:19Z,MX,9,mo bamba,200,2026-11-15T23:50:00Z,CBS Sports,Jazz's Mo Bamba: Starting against Spurs
+2026-11-16T00:37:19Z,MX,10,como votar en la mansión vip,200,2026-11-15T23:50:00Z,El Financiero,¿Dónde ver el 24/7 de ‘La Mansión VIP 2’? Canal del reality show EN VIVO
+2026-11-16T00:37:19Z,IN,1,आईसीसी चैंपियन्स ट्रॉफ़ी,2000,2026-11-16T00:20:00Z,Cricinfo,2031 तक नौ टीमों वाला टूर्नामेंट बना रह सकता है WTC
+2026-11-16T00:37:19Z,IN,2,surya,100,2026-11-16T00:20:00Z,DD News,No Compromise on Devotees’ Safety: CM Yogi Directs Officials to Ensure Elaborate Chhath Arrangements
+2026-11-16T00:37:19Z,IN,3,தனியார் வங்கி,200,2026-11-16T00:10:00Z,Dinamalar,போலி கையெழுத்திட்டு ரூ.1.21 கோடி கையாடல் தனியார் வங்கி ஊழியர்கள் 6 பேர் கைது
+2026-11-16T00:37:19Z,IN,4,celtics vs mavericks,100,2026-11-16T00:10:00Z,The Boston Globe,Mavericks at Celtics preview: Cooper Flagg and Dallas look to end Boston’s five-game winning streak
+2026-11-16T00:37:19Z,IN,5,with,100,2026-11-16T00:00:00Z,Yahoo Sports,Can Kirk Cousins Win NFL MVP? Vikings Make Their Case
+2026-11-16T00:37:19Z,IN,6,jazz vs spurs,100,2026-11-15T23:50:00Z,Sportsgambler,"San Antonio Spurs vs Utah Jazz Prediction, Picks & Odds | NBA Sunday"
+2026-11-16T00:37:19Z,IN,7,बैंक अवकाश,500,2026-11-15T23:40:00Z,AajTak,"Bank Holiday: आज सोमवार, फिर क्‍यों बंद रहने वाले हैं बैंक? जानिए वजह"
+2026-11-16T00:37:19Z,IN,8,south australia vs new south wales,200,2026-11-15T23:40:00Z,Cricbuzz,"Cricket match player highlights | NSW vs SAUS, 10th Match, Sheffield Shield 2026-27"
+2026-11-16T00:37:19Z,IN,9,ಸುವರ್ಣ ನ್ಯೂಸ್,200,2026-11-15T23:40:00Z,Asianet News Kannada,"ಪುರೋಹಿತರಿಲ್ಲ, ಸಂಪ್ರದಾಯದ ಆಡಂಬರವಿಲ್ಲ: ಗ್ರೀಸ್‌ನಲ್ಲಿ ಸ್ವಯಂ ಗೌರವ ವಿವಾಹ ಆದ ಅನಿರುದ್ಧ್-ಕಾವ್ಯಾ, ಏನಿದು ವಿಶೇಷ ಮದುವೆ ಪದ್ಧತಿ?"
+2026-11-16T00:37:19Z,IN,10,বৃষ্টি,20000,2026-11-15T23:30:00Z,Anandabazar Patrika,১৪৫ কিলোমিটার বেগে ‘অতি তীব্র’ ঘূর্ণিঝড় আছড়ে পড়বে সেই অন্ধ্রেই! কলকাতা-সহ ছয় জেলায় বুধবার থেকে আবার বৃষ্টি
+2026-11-16T00:37:19Z,JP,1,九谷焼,100,2026-11-16T00:20:00Z,Yahoo!ニュース,石川県で「九谷焼のスカウト」を受けまくる21歳息子、迫られる“決断”は……「陶芸界の大谷」「新しいのに九谷とわかる」
+2026-11-16T00:37:19Z,JP,2,インファンティーノ,1000,2026-11-16T00:10:00Z,Yahoo!ニュース,「すごく驚いた。日本はFIFA内で政治力がなかった」田嶋氏の出馬にブラジル人記者が仰天！勝ち目、ブラジル・南米の支持は？
+2026-11-16T00:37:19Z,JP,3,ホロライブ,500,2026-11-16T00:10:00Z,毎日新聞,「ホロライブ」新イベント『ホロライブわちゃわちゃ学園祭』DAY1を開催！川柳対決、ロケ企画、体力王 紅白戦、全員合唱までを速報レポート！（PR TIMES）
+2026-11-16T00:37:19Z,JP,4,伊藤智洋,200,2026-11-16T00:00:00Z,株探,伊藤智洋が読む「日経平均株価・短期シナリオ」 (11月16日記）
+2026-11-16T00:37:19Z,JP,5,gdp,500,2026-11-15T23:50:00Z,NHKニュース,7-9月のGDP 年率-0.1％ 4期ぶりのマイナス
+2026-11-16T00:37:19Z,JP,6,サム・アルトマン,200,2026-11-15T23:50:00Z,Yahoo!ニュース,RAMの空き具合を送りつける迷惑メール装置「RAMアルトマン」が開発される（ギズモード・ジャパン）
+2026-11-16T00:37:19Z,JP,7,ルカ・ドンチッチ,200,2026-11-15T23:50:00Z,Yahoo!ニュース,好調レイカーズの懸念材料。ドンチッチの得点王は盤石も、「きっとどこかのタイミングでガタがくる」＜DUNKSHOOT＞
+2026-11-16T00:37:19Z,JP,8,ブラタモリ,200,2026-11-15T23:50:00Z,Yahoo!ニュース,＜ブラタモリ＞なぜ人々は八ヶ岳の絶景に心ひかれるのか タモリ念願の「七里岩」へ 縄文人の山への思いにも迫る
+2026-11-16T00:37:19Z,JP,9,宿題,100,2026-11-15T23:50:00Z,Yahoo!ニュース,宿題ぐらい「自力でやらないと」…でも勉強はチャッピー頼み、思考丸投げ「自分の今後怖い」（読売新聞オンライン）
+2026-11-16T00:37:19Z,JP,10,糸山英太郎,100,2026-11-15T23:50:00Z,ライブドアニュース,総資産4000億円の糸山英太郎氏 結婚巡り怒りの告発 (2026年11月16日掲載)
+2026-11-16T00:37:19Z,BD,1,belarus national football team vs albania national football team standings,1000,2026-11-16T00:30:00Z,Наша Ніва,Belarus national team loses crucial final Nations League match
+2026-11-16T00:37:19Z,BD,2,panama vs curaçao,500,2026-11-15T23:20:00Z,ESPN,Los Angeles Rams vs. Arizona Cardinals: Game Highlights
+2026-11-16T00:37:19Z,BD,3,কর্মচারী সুবিধা,100,2026-11-15T23:20:00Z,Dainik Shiksha,পে-ফিক্সেশনে বাড়তি শ্রান্তি ও বিনোদন ভাতা পাবেন না সরকারি কর্মচারীরা
+2026-11-16T00:37:19Z,BD,4,নামাজের সময়সূচি,200,2026-11-15T23:10:00Z,RTV News,আজকের নামাজের সময়সূচি
+2026-11-16T00:37:19Z,BD,5,সেনাবাহিনী,2000,2026-11-15T22:30:00Z,দ্য ডেইলি স্টার বাংলা,৫ মেজর জেনারেলের নতুন পদায়ন
+2026-11-16T00:37:19Z,BD,6,spain national football team vs england national football team standings,20000,2026-11-15T22:00:00Z,BBC,"Spain vs England LIVE: Nations League score, commentary, updates & stats"
+2026-11-16T00:37:19Z,BD,7,উয়েফা নেশনস লীগ,100,2026-11-15T21:50:00Z,Aaro Ananda,পিছিয়ে পড়েও জয়ী বেলজিয়াম
+2026-11-16T00:37:19Z,BD,8,france,100,2026-11-15T21:10:00Z,Foot Mercato,Équipe de France : Jacquet donne déjà rendez-vous à l’Espagne
+2026-11-16T00:37:19Z,BD,9,jude bellingham,100,2026-11-15T21:10:00Z,Goal.com,From the pitch to the tunnel: two Real Madrid stars ignite a night of tension
+2026-11-16T00:37:19Z,BD,10,france vs,200,2026-11-15T20:20:00Z,OneFootball,"Mbappé, Cherki and France stars get ready to hosting Türkiye"
