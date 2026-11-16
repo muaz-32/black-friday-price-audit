@@ -1,0 +1,66 @@
+name: basket
+
+# Large retailers without a product feed are followed through a fixed basket of
+# product pages (collector/basket.py). This workflow checks which retailers can
+# be read from GitHub's runners, and draws the basket once; the snapshot
+# workflow then reads the basket every 6 hours.
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: "check: test every retailer; pick: draw the basket for retailers not yet in it"
+        type: choice
+        options: [check, pick]
+        default: check
+      per_retailer:
+        description: "Pages per retailer when picking"
+        default: "150"
+
+permissions:
+  contents: write # commit stores/basket.csv
+
+concurrency:
+  group: basket
+  cancel-in-progress: false
+
+jobs:
+  basket:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Check or pick
+        env:
+          BF_USER_AGENT: "bf-price-audit/0.1 (+https://github.com/${{ github.repository }})"
+          COMMAND: ${{ inputs.command }}
+          PER_RETAILER: ${{ inputs.per_retailer }}
+        run: |
+          if [ "$COMMAND" = pick ]; then
+            python -m collector.basket pick --per-retailer "$PER_RETAILER"
+          else
+            python -m collector.basket check --tries 3
+          fi
+
+      - name: Commit the basket
+        if: inputs.command == 'pick'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stores/basket.csv
+          git diff --cached --quiet && exit 0
+          git commit -q -m "basket: pages drawn $(date -u +%Y-%m-%dT%H:%MZ)"
+          for attempt in 1 2 3 4; do
+            git pull -q --rebase && git push -q && exit 0
+            sleep $((attempt * 5))
+          done
+          exit 1
