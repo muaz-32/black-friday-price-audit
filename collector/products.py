@@ -96,7 +96,9 @@ def main() -> int:
         QUALIFY row_number() OVER (PARTITION BY store, product_id ORDER BY run_id DESC) = 1
         """
     )
-    db.execute(f"CREATE TEMP TABLE ok AS SELECT store FROM read_parquet('{runs}') WHERE ok")
+    # A store cut off at the page limit was not read in full: its missing items
+    # are not gone, so it gets no "removed" rows.
+    db.execute(f"CREATE TEMP TABLE ok AS SELECT store FROM read_parquet('{runs}') WHERE ok AND NOT coalesce(truncated, false)")
     changed = db.execute(
         f"""
         INSERT INTO history

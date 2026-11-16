@@ -207,6 +207,26 @@ jobs:
             done
           fi
 
+      # The variant-level change log behind the reference-price measures (was
+      # prices against the prices actually charged), kept in the "state"
+      # release like the product histories; the measures land in summary/.
+      - name: Update variant histories and reference-price measures
+        if: always() && hashFiles(format('data/runs-{0}.parquet', env.RUN)) != ''
+        continue-on-error: true
+        run: |
+          mkdir -p state
+          names=$(gh release view state --json assets --jq '.assets[].name')
+          newest=$(echo "$names" | grep "^variant-history-" | sort | tail -1 || true)
+          if [ -n "$newest" ]; then gh release download state --dir state -p "$newest"; fi
+          python -m collector.variants --run "$RUN"
+          if [ -f "state/variant-history-$RUN.parquet" ]; then
+            gh release upload state "state/variant-history-$RUN.parquet"
+            echo "$names" | { grep "^variant-history-" || true; } | sort | head -n -1 | while read -r old; do
+              gh release delete-asset state "$old" -y
+            done
+          fi
+          python -m collector.refprice --run "$RUN"
+
       # The commit doubles as a heartbeat: GitHub disables scheduled workflows
       # in repositories with no activity for 60 days. Other workflows push to
       # main too, so rebase and retry rather than fail.
