@@ -93,7 +93,7 @@ Variables are measured per variant: a product's size or colour, each with its ow
   - **Non-EU:** US, UK, AU and CA.
   - **Excluded from H1:** other countries and stores with no country.
 - **Platform balance.** Most EU stores were found through Common Crawl and are small WooCommerce shops, while most US stores are Shopify brands. To avoid comparing platforms instead of rules, the same Common Crawl search is run for the UK, AU, CA and NZ country domains. H1 is then estimated with platform as a covariate, and repeated **within each platform**: WooCommerce EU against WooCommerce UK/AU/CA, and Shopify EU against Shopify non-EU. A result that holds only in the pooled model and not within platforms is reported as such.
-- **Sample size.** It is fixed by collection, not chosen. At registration there are about 120 EU stores, and more are being added through a Common Crawl–based search (`collector/cc_candidates.py`). H1 is tested only if at least **50 EU stores** each contribute at least one eligible reduced variant. Otherwise H1 is reported descriptively, and that is stated.
+- **Sample size.** It is fixed by collection, not chosen. Stores are found through platform showcases, curated lists and a search of Common Crawl's public URL index (`collector/cc_candidates.py`); the counts per region and platform at registration are those of the registered commit. H1 is tested only if at least **50 EU stores** each contribute at least one eligible reduced variant. Otherwise H1 is reported descriptively, and that is stated.
 
 ## 6. Measurement validation
 
