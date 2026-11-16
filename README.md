@@ -197,6 +197,34 @@ The study these feed is pre-registered in
 [`research/preregistration.md`](research/preregistration.md): hypotheses,
 measures and tests were fixed before Black Friday 2026.
 
+### Large retailers: the tracked basket
+
+Large retailers on their own platforms (Target, John Lewis, MediaMarkt and so
+on) publish no product feed. `collector.basket` follows them through a fixed
+basket of product pages instead:
+
+1. `check` tests each retailer in `stores/basket_retailers.csv`. It reads
+   robots.txt, opens the sitemaps listed there, and tries a few product pages.
+2. `pick` draws up to 150 product pages per retailer **at random** from those
+   sitemaps (fixed seed). It keeps the pages whose schema.org markup (the
+   JSON-LD block retailers publish for search engines) carries a price. The
+   result is `stores/basket.csv`, which then stays fixed, so every run reads
+   the same products.
+3. `snapshot` runs as its own job in every snapshot. It reads each retailer
+   one page at a time, one page every 5 seconds (or the site's Crawl-delay if
+   longer), and publishes `basket-<run>.parquet` beside the other files. The
+   file holds the page URL, name, brand, SKU, GTIN, price, currency,
+   availability and, where the markup has it, a strikethrough or list price.
+
+Most large retailers block automated readers outright, often by refusing even
+robots.txt. Those are left alone; nothing here tries to get round a block, and
+a retailer that blocks five pages in a row is skipped for that run. From
+GitHub's servers on 2026-11-16, 14 retailers could be read: Costco, Wayfair,
+Ulta and GameStop (US); Marks & Spencer and Halfords (UK); JB Hi-Fi, Target
+Australia, The Good Guys and Myer (AU); Coolblue (NL), Power (DK), Euronics
+(IT) and Verkkokauppa (FI). Target US builds its prices in the browser, so its
+pages carry none to read.
+
 ## Scheduled collection
 
 Three GitHub Actions workflows do the work:

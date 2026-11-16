@@ -44,6 +44,8 @@ The EU rule is the only one that sets a mechanical, observable test. This makes 
 
 **Exploratory.** These are labelled as such in any report:
 
+- Price paths of a fixed random basket of product pages at large retailers that publish no feed (`collector/basket.py`, `stores/basket.csv`, drawn on 2026-11-16 with seed 20261116). The basket includes Costco, Wayfair, Marks & Spencer, JB Hi-Fi and Coolblue among its 14 retailers. Few of these pages carry a "was" price, so the basket is used to compare Black Friday prices with each product's own prices before and after, not for the measures in Section 4.
+
 - Timing of price cuts relative to search interest. The repository logs Wikipedia page views, search autocomplete and trending topics hourly.
 - Day-by-day dynamics through the season.
 - Store-level characteristics associated with the measures.
