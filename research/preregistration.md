@@ -52,7 +52,7 @@ The EU rule is the only one that sets a mechanical, observable test. This makes 
 
 ## 3. Data collection
 
-- **Sources.** Each store's public product feed: Shopify's `/products.json` and the WooCommerce Store API (`/wp-json/wc/store/v1/products`). These are the listings the stores' own pages use, read without logging in. The store list is `stores/stores.csv` (1,687 stores at registration), and `stores/rejected.csv` lists every domain probed and rejected, with the reason.
+- **Sources.** Each store's public product feed: Shopify's `/products.json` and the WooCommerce Store API (`/wp-json/wc/store/v1/products`). These are the listings the stores' own pages use, read without logging in. The store list is `stores/stores.csv` (its size at registration is given by the registered commit), and `stores/rejected.csv` lists every domain probed and rejected, with the reason.
 - **Frequency and vantage.** Every 6 hours (00:17, 06:17, 12:17 and 18:17 UTC), from GitHub Actions runners in the US. Each store's home market is pinned where the platform supports it.
 - **Politeness.** robots.txt is respected; requests run at 1 per second per platform family, with back-off on throttling; no personal data is collected.
 - **Stores added after registration.** Stores may be added until **2026-11-20 00:00 UTC**, so that every analysed store has at least 7 days of history before Black Friday. Stores added later are excluded from confirmatory tests.
@@ -92,6 +92,7 @@ Variables are measured per variant: a product's size or colour, each with its ow
   - **EU:** the 27 member states, and only stores priced in an EU currency, which excludes EU-registered stores priced in USD.
   - **Non-EU:** US, UK, AU and CA.
   - **Excluded from H1:** other countries and stores with no country.
+- **Platform balance.** Most EU stores were found through Common Crawl and are small WooCommerce shops, while most US stores are Shopify brands. To avoid comparing platforms instead of rules, the same Common Crawl search is run for the UK, AU, CA and NZ country domains. H1 is then estimated with platform as a covariate, and repeated **within each platform**: WooCommerce EU against WooCommerce UK/AU/CA, and Shopify EU against Shopify non-EU. A result that holds only in the pooled model and not within platforms is reported as such.
 - **Sample size.** It is fixed by collection, not chosen. At registration there are about 120 EU stores, and more are being added through a Common Crawl–based search (`collector/cc_candidates.py`). H1 is tested only if at least **50 EU stores** each contribute at least one eligible reduced variant. Otherwise H1 is reported descriptively, and that is stated.
 
 ## 6. Measurement validation
@@ -114,7 +115,8 @@ Screenshots are archived. The share of confirmed displays is reported, and the m
     - (a) store-level proportions, with every store weighted equally (Welch t-test and Mann-Whitney test);
     - (b) excluding the 5% of stores with the most eligible variants;
     - (c) excluding RRP-labelled stores (Section 6);
-    - (d) `never_charged` as the outcome.
+    - (d) `never_charged` as the outcome;
+    - (e) within-platform estimates (see Section 5).
 - **H2.** A one-sample test of the store-level median gap against 0 (Wilcoxon signed-rank test), with a store-clustered bootstrap confidence interval (2,000 resamples).
 - **H3.** Logistic regression of `raise_then_cut` on a Black Friday indicator with store fixed effects, using reductions that begin in either window.
 - **D1.** Shares with store-clustered bootstrap confidence intervals.
