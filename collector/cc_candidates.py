@@ -19,6 +19,7 @@ from __future__ import annotations
 import argparse
 import gzip
 import io
+import json
 import sys
 import time
 import urllib.request
@@ -41,6 +42,7 @@ def main() -> int:
     ap.add_argument("--crawl", default="CC-MAIN-2026-43")
     ap.add_argument("--tlds", default=EU, help="comma-separated country domains")
     ap.add_argument("--out", type=Path, default=Path("stores/candidates-cc.txt"))
+    ap.add_argument("--cache", type=Path, default=Path("data/cc-cache"), help="per-file results, so a rerun resumes")
     ap.add_argument("--known", type=Path, nargs="*", default=[Path("stores/stores.csv"), Path("stores/rejected.csv")])
     args = ap.parse_args()
     tlds = sorted({t.strip().lower().lstrip(".") for t in args.tlds.split(",") if t.strip()})
@@ -48,25 +50,40 @@ def main() -> int:
     con = duckdb.connect()
     con.sql("INSTALL httpfs; LOAD httpfs; SET threads = 2; SET http_retries = 8; SET http_retry_wait_ms = 2000")
 
-    def query(sql: str):
-        # Common Crawl answers 503 when too many requests arrive at once: wait and retry.
+    cache = args.cache
+    cache.mkdir(parents=True, exist_ok=True)
+
+    def query(sql: str, key: str):
+        """Run one query, cached on disk so an interrupted search resumes where it stopped.
+        Common Crawl answers 503 when busy: wait and retry, and give up on this file only."""
+        hit = cache / f"{key}.json"
+        if hit.exists():
+            return [tuple(r) for r in json.loads(hit.read_text())]
         for attempt in range(6):
             try:
-                return con.sql(sql).fetchall()
-            except duckdb.HTTPException as e:
-                if attempt == 5:
-                    raise
-                print(f"  {e.__class__.__name__}, retrying in {30 * (attempt + 1)}s", file=sys.stderr)
-                time.sleep(30 * (attempt + 1))
+                rows = con.sql(sql).fetchall()
+                hit.write_text(json.dumps(rows))
+                return rows
+            except duckdb.Error as e:
+                wait = 60 * (attempt + 1)
+                print(f"  {key}: {str(e)[:120]}; retrying in {wait}s", file=sys.stderr, flush=True)
+                time.sleep(wait)
+        skipped.append(key)
+        return None
 
     # Each file covers one sorted range of reversed host names ("de,example)/..."),
     # so only the files whose range covers a wanted domain are read.
+    skipped: list[str] = []
     wanted = []
     for url in parts(args.crawl):
-        lo, hi = query(
+        rows = query(
             f"SELECT min(stats_min_value), max(stats_max_value) FROM parquet_metadata('{url}') "
-            "WHERE path_in_schema = 'url_surtkey'"
-        )[0]
+            "WHERE path_in_schema = 'url_surtkey'",
+            f"range-{url.rsplit('/', 1)[-1][:10]}",
+        )
+        if not rows:
+            continue
+        lo, hi = rows[0]
         if any(lo.split(",")[0] <= t <= hi.split(",")[0] for t in tlds):
             wanted.append(url)
     print(f"{len(wanted)} index files cover {','.join(tlds)}", file=sys.stderr)
@@ -81,8 +98,9 @@ def main() -> int:
                        count(*) FILTER (WHERE url_path LIKE '/product-category/%') AS woo_category
                 FROM read_parquet('{url}')
                 WHERE url_host_tld IN ({tld_list})
-                GROUP BY 1, 2"""
-        )
+                GROUP BY 1, 2""",
+            f"shops-{url.rsplit('/', 1)[-1][:10]}-{'-'.join(tlds)}"[:200],
+        ) or []
         print(f"  {i}/{len(wanted)} files read", file=sys.stderr, flush=True)
     # A domain can straddle two files: add its counts up before applying the thresholds.
     totals: dict[tuple, list[int]] = {}
@@ -106,6 +124,9 @@ def main() -> int:
         by_tld[tld] = by_tld.get(tld, 0) + 1
     print(f"{len(found)} shop-like domains, {len(new)} not yet probed; by domain: {by_tld}", file=sys.stderr)
     args.out.write_text("".join(f"{d}\n" for d in new))
+    if skipped:
+        print(f"{len(skipped)} index files could not be read; run again to retry them: {skipped}", file=sys.stderr)
+        return 1
     return 0
 
 

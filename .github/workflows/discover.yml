@@ -12,6 +12,9 @@ on:
       platforms:
         description: "Platforms to try, in order"
         default: "shopify,woocommerce"
+      common_crawl:
+        description: "First add shop-like domains found in Common Crawl's index for these country domains (e.g. de,fr,nl; 'eu' for all EU ones; empty to skip)"
+        default: ""
 
 permissions:
   contents: write
@@ -23,7 +26,7 @@ concurrency:
 jobs:
   discover:
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v5
         with:
@@ -38,6 +41,22 @@ jobs:
 
       - run: pip install -r requirements.txt
 
+      # Reads only the index files covering those country domains, over plain
+      # HTTPS. If some files fail, the domains found so far are still used.
+      - name: Find candidates in Common Crawl
+        if: inputs.common_crawl != ''
+        continue-on-error: true
+        env:
+          TLDS: ${{ inputs.common_crawl }}
+        run: |
+          if [ "$TLDS" = eu ]; then TLDS=""; fi
+          python -m collector.cc_candidates ${TLDS:+--tlds "$TLDS"} --out data/candidates-cc.txt || true
+          if [ -s data/candidates-cc.txt ]; then
+            echo "# Common Crawl index, country domains ${TLDS:-EU}, $(date -u +%Y-%m-%d)" >> stores/candidates.txt
+            cat data/candidates-cc.txt >> stores/candidates.txt
+            echo "$(wc -l < data/candidates-cc.txt) new candidates"
+          fi
+
       - name: Probe candidates
         env:
           BF_USER_AGENT: "bf-price-audit/0.1 (+https://github.com/${{ github.repository }})"
@@ -51,7 +70,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add stores/stores.csv stores/rejected.csv
+          git add stores/stores.csv stores/rejected.csv stores/candidates.txt
           git diff --cached --quiet || git commit -m "stores: discovery run $(date -u +%Y-%m-%dT%H:%MZ)"
           for attempt in 1 2 3 4; do
             git pull -q --rebase && git push -q && exit 0
