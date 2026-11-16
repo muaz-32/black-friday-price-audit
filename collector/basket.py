@@ -259,7 +259,8 @@ def sitemap_urls(site: Site, limit_files: int = 40, limit_urls: int = 300_000) -
                 continue
         text = body.decode("utf-8", "replace")
         locs = [unescape(x.strip()) for x in re.findall(r"<loc>\s*(.*?)\s*</loc>", text, re.S)]
-        if "<sitemapindex" in text[:2000]:
+        # Some sites list their sitemaps in a plain <urlset> instead of a sitemap index.
+        if "<sitemapindex" in text[:2000] or (locs and all(re.search(r"\.xml(\.gz)?$", u) for u in locs)):
             # Depth first: open this index's own sitemaps before the next index.
             queue = [u for u in locs if u not in seen_files] + queue
         else:
