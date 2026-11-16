@@ -357,7 +357,16 @@ const money = (v) => (v == null ? "–" : v.toLocaleString("en-GB", { minimumFra
 const change = (r) => (r == null ? "–" : (r > 0 ? "+" : "") + (r * 100).toFixed(Math.abs(r) < 0.1 ? 1 : 0) + "%");
 const FILES = {};
 function loadProducts(store) {
-  return (FILES[store] ||= fetch("data/products/" + encodeURIComponent(store) + ".json").then((r) => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); }));
+  // Stored gzipped (see build.py); unpacked here whatever headers the server sends.
+  return (FILES[store] ||= fetch("data/products/" + encodeURIComponent(store) + ".json.gz").then(async (r) => {
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    const bytes = new Uint8Array(await r.arrayBuffer());
+    const gzipped = bytes[0] === 0x1f && bytes[1] === 0x8b;
+    const text = gzipped
+      ? await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"))).text()
+      : new TextDecoder().decode(bytes);
+    return JSON.parse(text);
+  }));
 }
 // p: [id, title, handle, [[run index, lowest, highest or null, "was" or null], ...]]
 function productStats(p) {

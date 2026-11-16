@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import gzip
 import json
 import math
 import re
@@ -256,7 +257,10 @@ def build_products(state: Path, out: Path) -> dict | None:
 
     def flush() -> None:
         if store is not None:
-            (directory / f"{store}.json").write_text(json.dumps({"runs": runs, "products": products}, separators=(",", ":")))
+            # Gzipped: the site has a 1 GB limit and these files shrink about 6x;
+            # the page unpacks them with the browser's DecompressionStream.
+            body = json.dumps({"runs": runs, "products": products}, separators=(",", ":")).encode()
+            (directory / f"{store}.json.gz").write_bytes(gzip.compress(body, 9, mtime=0))
             counts[store] = len(products)
 
     while batch := cur.fetchmany(200_000):
