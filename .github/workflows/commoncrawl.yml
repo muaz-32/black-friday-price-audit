@@ -1,0 +1,118 @@
+name: commoncrawl
+
+# Finds shop-like domains for chosen country domains in Common Crawl's public
+# URL index (collector/cc_candidates.py), adds them to stores/candidates.txt and
+# starts a discovery run to probe them. Common Crawl's file server is slow and
+# often busy, so the index files are split across parallel jobs, each on its
+# own runner and with its own time budget; whatever each job read is kept.
+on:
+  workflow_dispatch:
+    inputs:
+      tlds:
+        description: "Country domains, comma-separated (empty: all EU ones)"
+        default: ""
+      crawl:
+        description: "Common Crawl crawl to read"
+        default: "CC-MAIN-2026-43"
+
+permissions:
+  contents: write # commit stores/candidates.txt
+  actions: write # start the discovery run
+
+concurrency:
+  group: commoncrawl
+  cancel-in-progress: false
+
+env:
+  SHARDS: 8 # keep equal to the length of the shard list below
+
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      # The budget leaves an hour before the timeout for the file in flight.
+      - name: Search this shard's index files
+        env:
+          TLDS: ${{ inputs.tlds }}
+          CRAWL: ${{ inputs.crawl }}
+        run: >
+          python -m collector.cc_candidates --crawl "$CRAWL" ${TLDS:+--tlds "$TLDS"}
+          --shard "${{ matrix.shard }}/$SHARDS" --budget-minutes 240
+          --raw "cc-${{ matrix.shard }}.csv" || true
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cc-${{ matrix.shard }}
+          path: cc-${{ matrix.shard }}.csv
+          if-no-files-found: ignore
+          retention-days: 7
+
+  merge:
+    needs: search
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: cc-*
+          path: cc
+          merge-multiple: true
+
+      - name: Merge and add to the candidate list
+        env:
+          TLDS: ${{ inputs.tlds }}
+          CRAWL: ${{ inputs.crawl }}
+        run: |
+          ls cc
+          python -m collector.cc_candidates --merge cc/*.csv --out candidates-cc.txt
+          if [ -s candidates-cc.txt ]; then
+            echo "# Common Crawl $CRAWL, country domains ${TLDS:-EU}, $(date -u +%Y-%m-%d)" >> stores/candidates.txt
+            cat candidates-cc.txt >> stores/candidates.txt
+          fi
+          echo "$(wc -l < candidates-cc.txt) new candidates"
+
+      - name: Commit and start discovery
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add stores/candidates.txt
+          git diff --cached --quiet && exit 0
+          git commit -q -m "candidates: shop-like domains from Common Crawl $(date -u +%Y-%m-%dT%H:%MZ)"
+          for attempt in 1 2 3 4; do
+            if git pull -q --rebase && git push -q; then
+              gh workflow run discover.yml -f retry='^$'
+              exit 0
+            fi
+            sleep $((attempt * 5))
+          done
+          exit 1
