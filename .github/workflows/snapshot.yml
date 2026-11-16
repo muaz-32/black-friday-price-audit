@@ -119,8 +119,43 @@ jobs:
           retention-days: 1
           compression-level: 0 # Parquet is already compressed
 
+  # The large retailers' basket (collector/basket.py), read alongside the shards.
+  # Each retailer is read one page at a time on its own pace, so the job's
+  # length is set by the largest basket, not the number of retailers.
+  basket:
+    needs: plan
+    if: needs.plan.outputs.skip != 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 200
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Read the basket
+        env:
+          BF_USER_AGENT: "bf-price-audit/0.1 (+https://github.com/${{ github.repository }})"
+        run: |
+          if [ ! -s stores/basket.csv ]; then echo "no basket drawn yet"; exit 0; fi
+          python -m collector.basket snapshot --run-id "${{ needs.plan.outputs.run_id }}" --out data/basket --budget-minutes 150
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: basket
+          path: data/basket/
+          if-no-files-found: ignore
+          retention-days: 1
+          compression-level: 0
+
   combine:
-    needs: [plan, shard]
+    needs: [plan, shard, basket]
     if: always() && needs.plan.outputs.skip != 'true' && needs.plan.result == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 60
@@ -150,6 +185,12 @@ jobs:
           pattern: shard-*
           path: data/shards
 
+      - uses: actions/download-artifact@v4
+        continue-on-error: true # no basket drawn yet, or the basket job failed
+        with:
+          name: basket
+          path: data
+
       # A failed coverage check or a missing shard marks the run failed, but
       # the steps below still run: a partial snapshot plus its runs file is
       # still valid data.
@@ -163,7 +204,9 @@ jobs:
           gh release view "$tag" >/dev/null 2>&1 || gh release create "$tag" \
             --title "Snapshots ${RUN:0:4}-${RUN:4:2}" \
             --notes "Raw snapshot files. See the README for the schema."
-          gh release upload "$tag" "data/prices-$RUN.parquet" "data/catalog-$RUN.parquet" "data/runs-$RUN.parquet"
+          files=("data/prices-$RUN.parquet" "data/catalog-$RUN.parquet" "data/runs-$RUN.parquet")
+          if [ -f "data/basket-$RUN.parquet" ]; then files+=("data/basket-$RUN.parquet"); fi
+          gh release upload "$tag" "${files[@]}"
 
       # After the upload, so the previous run's files fetched here are not
       # uploaded again. A failure here must not lose the snapshot's status commit.
