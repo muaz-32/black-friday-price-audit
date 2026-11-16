@@ -13,6 +13,7 @@ from __future__ import annotations
 import argparse
 import csv
 import re
+import time
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict, fields
 from pathlib import Path
@@ -71,6 +72,12 @@ def main() -> None:
         help="platforms to try, in order (comma-separated: shopify, woocommerce)",
     )
     ap.add_argument("--fresh", action="store_true", help="ignore existing results and probe everything")
+    ap.add_argument(
+        "--budget-minutes",
+        type=float,
+        default=0,
+        help="stop starting new probes after this long and save what was found; the rest wait for the next run",
+    )
     args = ap.parse_args()
     platforms = [p.strip() for p in args.platforms.split(",") if p.strip()]
     unknown = set(platforms) - set(PROBES)
@@ -95,8 +102,17 @@ def main() -> None:
         if d not in known and (d not in rejected or (retry and retry.search(rejected[d])))
     ]
     print(f"probing {len(todo)} candidates ({len(stores)} stores already known)...", flush=True)
+    # In batches, so a time budget can stop between them with every result so
+    # far saved; unprobed candidates are simply left for the next run.
+    results = []
+    t0 = time.monotonic()
     with ThreadPoolExecutor(args.workers) as pool:
-        results = list(pool.map(lambda d: probe(d, platforms), todo))
+        for i in range(0, len(todo), 100):
+            if args.budget_minutes and time.monotonic() - t0 > args.budget_minutes * 60:
+                print(f"time budget used up; {len(todo) - i} candidates left for the next run", flush=True)
+                break
+            results += pool.map(lambda d: probe(d, platforms), todo[i : i + 100])
+    todo = todo[: len(results)]
 
     added = 0
     for domain, (store, reason) in zip(todo, results):

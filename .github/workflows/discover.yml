@@ -43,7 +43,9 @@ jobs:
           BF_USER_AGENT: "bf-price-audit/0.1 (+https://github.com/${{ github.repository }})"
           RETRY: ${{ inputs.retry }}
           PLATFORMS: ${{ inputs.platforms }}
-        run: python -m collector.discover --platforms "$PLATFORMS" ${RETRY:+--retry "$RETRY"}
+        # The budget leaves time to save results before the job timeout; candidates
+        # not reached are probed by the next run.
+        run: python -m collector.discover --budget-minutes 200 --platforms "$PLATFORMS" ${RETRY:+--retry "$RETRY"}
 
       - name: Commit store list
         run: |
