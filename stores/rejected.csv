@@ -925,8 +925,10 @@ worten.es,HTTP 403; woocommerce: HTTP 403
 worten.pt,HTTP 403; woocommerce: HTTP 403
 www.11degrees.co.uk,gave up after 2 tries: ConnectTimeout
 www.1more.com,woocommerce: HTTP 404
+www.1zpresso.coffee,same shop as 1zpresso.coffee
 www.3ce.com,woocommerce: not a product list
 www.3leggedthing.com,same shop as 3leggedthing.com
+www.42keebs.eu,same shop as 42keebs.eu
 www.4ad.com,woocommerce: not a product list
 www.5.11tactical.com,gave up after 2 tries: SSLError
 www.511tactical.com,woocommerce: HTTP 404
@@ -1074,6 +1076,7 @@ www.bladehq.com,woocommerce: HTTP 403
 www.blanqi.com,woocommerce: HTTP 400
 www.blick.com,woocommerce: HTTP 404
 www.bloomingville.com,woocommerce: HTTP 404
+www.bloomscape.com,same shop as bloomscape.com
 www.bluebottlecoffee.com,woocommerce: HTTP 404
 www.blueland.com,woocommerce: HTTP 404
 www.bluenote.com,woocommerce: HTTP 404
@@ -1104,6 +1107,7 @@ www.branded-bills.com,woocommerce: HTTP 403
 www.brandedbills.com,woocommerce: HTTP 404
 www.brandymelville.com,gave up after 2 tries: ConnectionError
 www.brave-star.com,gave up after 2 tries: ConnectionError
+www.breadtopia.com,same shop as breadtopia.com
 www.breville.com,woocommerce: HTTP 403
 www.brevilleusa.com,woocommerce: HTTP 404
 www.brewwatches.com,same shop as www.brew-watches.com
@@ -1125,6 +1129,7 @@ www.busytoddler.com,woocommerce: HTTP 404
 www.byhumankind.com,HTTP 402
 www.bylt.com,woocommerce: not a product list
 www.cablematters.com,woocommerce: not a product list
+www.cablemod.com,same shop as cablemod.com
 www.caldigit.com,woocommerce: HTTP 404
 www.calpak.com,gave up after 2 tries: SSLError
 www.cam-cam.dk,gave up after 2 tries: ConnectionError
@@ -1152,6 +1157,7 @@ www.catit.com,woocommerce: HTTP 404
 www.celsius.com,woocommerce: HTTP 404
 www.cgpgrey.com,woocommerce: HTTP 404
 www.chacos.com,woocommerce: HTTP 404
+www.challengerbreadware.com,same shop as challengerbreadware.com
 www.charlottetilbury.com,woocommerce: HTTP 404
 www.chasebliss.com,woocommerce: HTTP 404
 www.chefknivestogo.com,woocommerce: HTTP 404
@@ -1185,6 +1191,7 @@ www.corsair.com,woocommerce: HTTP 404
 www.corteiz.com,woocommerce: HTTP 400
 www.cos.com,woocommerce: HTTP 403
 www.cottonon.com,woocommerce: HTTP 410
+www.counciltool.com,same shop as counciltool.com
 www.courant.co,gave up after 2 tries: ConnectionError
 www.coway.com,woocommerce: HTTP 404
 www.cowgirlcreamery.com,gave up after 2 tries: HTTP 502
@@ -1236,6 +1243,7 @@ www.diehardgamefan.com,gave up after 2 tries: HTTP 500
 www.digikey.com,woocommerce: HTTP 403
 www.digitspace.com,woocommerce: not a product list
 www.diptyqueparis.com,same shop as diptyqueparis.com
+www.dizzypigbbq.com,same shop as dizzypigbbq.com
 www.dji.com,woocommerce: HTTP 404
 www.dltradingco.com,woocommerce: HTTP 404
 www.dlttrading.com,woocommerce: HTTP 404
@@ -1435,6 +1443,7 @@ www.hatch.co,woocommerce: HTTP 403
 www.hatchimals.com,woocommerce: HTTP 404
 www.haus-labs.com,woocommerce: HTTP 404
 www.haus.com,woocommerce: not a product list
+www.hawkesmill.com,same shop as hawkesmill.com
 www.hay.com,woocommerce: HTTP 403
 www.heliconusa.com,woocommerce: HTTP 404
 www.helixsleep.com,woocommerce: not a product list
@@ -1607,6 +1616,7 @@ www.lawless-beauty.com,gave up after 2 tries: ConnectionError
 www.lazypants.com,woocommerce: HTTP 404
 www.le-slip-francais.com,gave up after 2 tries: ConnectionError
 www.leder-games.com,gave up after 2 tries: ConnectionError
+www.legionathletics.com,same shop as legionathletics.com
 www.lego.com,woocommerce: HTTP 404
 www.lestriges.com,gave up after 2 tries: ConnectionError
 www.letshuoer.com,gave up after 2 tries: ConnectionError
@@ -1663,6 +1673,7 @@ www.marcfisherfootwear.com,gave up after 2 tries: SSLError
 www.marketstudios.com,same shop as www.chinatownmarket.com
 www.marshall.com,woocommerce: HTTP 404
 www.master-dynamic.com,woocommerce: HTTP 404
+www.matferbourgeatusa.com,same shop as matferbourgeatusa.com
 www.matt-and-nat.com,gave up after 2 tries: ConnectionError
 www.mattel.com,same shop as shop.mattel.com
 www.maxfli.com,gave up after 2 tries: ConnectTimeout
@@ -1952,6 +1963,7 @@ www.rhodiapads.com,woocommerce: HTTP 404
 www.rhone.com,woocommerce: HTTP 403
 www.richmondfinch.com,woocommerce: HTTP 403
 www.rickhindererknives.com,woocommerce: HTTP 403
+www.ride1up.com,same shop as ride1up.com
 www.ridge.com,woocommerce: HTTP 400
 www.rifflepaperco.com,gave up after 2 tries: ConnectionError
 www.rifruf.com,woocommerce: not a product list
@@ -2248,6 +2260,7 @@ www.uctronics.com,woocommerce: HTTP 404
 www.udiscovermusic.com,woocommerce: HTTP 404
 www.ulanzi.com,woocommerce: HTTP 400
 www.ultimateears.com,woocommerce: HTTP 403
+www.ultimatehackingkeyboard.com,same shop as uhk.io
 www.unbrandedbrand.com,gave up after 2 tries: ConnectionError
 www.uncommongoods.com,woocommerce: HTTP 404
 www.unimatic.com,gave up after 2 tries: SSLError
@@ -2329,6 +2342,7 @@ www.wrangler.com,woocommerce: HTTP 403
 www.wuquestudio.com,HTTP 522
 www.wurkkos.com,woocommerce: HTTP 403
 www.wuxlymovement.com,gave up after 2 tries: ConnectionError
+www.wyrmwoodgaming.com,same shop as wyrmwoodgaming.com
 www.x-raypad.com,gave up after 2 tries: SSLError
 www.xgimi.com,gave up after 2 tries: ConnectionError
 www.xreal.com,woocommerce: HTTP 403
@@ -2356,6 +2370,7 @@ www.zoliinc.com,gave up after 2 tries: ConnectionError
 www.zoskinhealth.com,woocommerce: not a product list
 www.zowie.benq.com,gave up after 2 tries: ConnectionError
 www.zsa.io,woocommerce: HTTP 404
+www.zursunbeans.com,same shop as zursunbeans.com
 www.zvex.com,woocommerce: HTTP 404
 www.zwilling.com,woocommerce: HTTP 410
 x-kom.pl,HTTP 403; woocommerce: HTTP 403
