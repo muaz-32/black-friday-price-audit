@@ -173,6 +173,30 @@ A product is one listing; its variants (sizes, colours) are summarised by the
 cheapest and dearest. The variant-level detail stays in the snapshots, and the
 state can be rebuilt from them by applying the runs in order.
 
+### Reference prices: is the "was" price real?
+
+`collector.variants` keeps the same kind of change log per variant
+(`variant-history-<run>.parquet` in the `state` release: `store`,
+`product_id`, `variant_id`, `run_id`, `price`, and `compare_at` while it is
+above the price). From it `collector.refprice` checks, after every snapshot,
+each variant a store shows as reduced:
+
+| Measure | The shown "was" price... |
+|---|---|
+| `never_charged` | is above every price the variant was seen at (7+ days watched) |
+| `above_30d_low` | is above the lowest price in the 30 days before the reduction began, the EU's prior-price rule (start of the reduction seen, 7+ days of prior history) |
+| `raise_then_cut` | follows a price rise of 5%+ in those 30 days, and the "sale" price is no lower than the price before the rise |
+
+plus the advertised discount against the real one (measured from the 30-day
+time-weighted average price). Results go to `summary/refprice/<date>.csv`
+(per store and run) and `summary/refprice_runs.csv` (per region and run).
+Because prices are only seen every 6 hours and since a store was added, these
+are lower bounds.
+
+The study these feed is pre-registered in
+[`research/preregistration.md`](research/preregistration.md): hypotheses,
+measures and tests were fixed before Black Friday 2026.
+
 ## Scheduled collection
 
 Three GitHub Actions workflows do the work:
