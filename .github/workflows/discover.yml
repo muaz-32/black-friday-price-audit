@@ -15,6 +15,7 @@ on:
 
 permissions:
   contents: write
+  actions: write # start the next run while candidates remain
 
 concurrency:
   group: discover
@@ -45,16 +46,26 @@ jobs:
           PLATFORMS: ${{ inputs.platforms }}
         # The budget leaves time to save results before the job timeout; candidates
         # not reached are probed by the next run.
-        run: python -m collector.discover --budget-minutes 200 --platforms "$PLATFORMS" ${RETRY:+--retry "$RETRY"}
+        run: |
+          set -o pipefail
+          python -m collector.discover --budget-minutes 200 --platforms "$PLATFORMS" ${RETRY:+--retry "$RETRY"} | tee probe.log
 
       - name: Commit store list
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PLATFORMS: ${{ inputs.platforms }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add stores/stores.csv stores/rejected.csv stores/candidates.txt
           git diff --cached --quiet || git commit -m "stores: discovery run $(date -u +%Y-%m-%dT%H:%MZ)"
           for attempt in 1 2 3 4; do
-            git pull -q --rebase && git push -q && exit 0
+            if git pull -q --rebase && git push -q; then pushed=1; break; fi
             sleep $((attempt * 5))
           done
-          exit 1
+          [ -n "$pushed" ] || exit 1
+          # Candidates left over: the next run picks them up. It re-probes no
+          # rejected domains, so the chain ends once every candidate is probed.
+          if grep -q "time budget used up" probe.log; then
+            gh workflow run discover.yml -f retry='^$' -f platforms="$PLATFORMS"
+          fi
