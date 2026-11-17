@@ -559,3 +559,143 @@ fetched_at,geo,rank,query,approx_traffic,published_at,news_source,news_title
 2026-11-17T03:37:30Z,BD,8,আয়কর,1000,2026-11-16T23:20:00Z,Samakal,রিটার্ন জমায় কোন হিসাব কোন নথি লাগবে
 2026-11-17T03:37:30Z,BD,9,greece national football team vs serbia national football team standings,2000,2026-11-16T23:00:00Z,BBC,Greece vs Serbia: UEFA Nations League stats & head-to-head
 2026-11-17T03:37:30Z,BD,10,germany national football team vs netherlands national football team standings,50000,2026-11-16T21:50:00Z,BBC,Germany 5-0 Netherlands: Florian Wirtz scores twice in Nations League
+2026-11-17T04:37:30Z,US,1,nfl draft order,1000,2026-11-17T04:20:00Z,CBS Sports,2027 NFL mock draft: Six quarterbacks go in the first round but none overcome Jeremiah Smith
+2026-11-17T04:37:30Z,US,2,cyberattack,1000,2026-11-17T04:10:00Z,NPR,California sues OpenAI over hacking risks
+2026-11-17T04:37:30Z,US,3,texas southern basketball,200,2026-11-17T04:10:00Z,The UCSD Guardian,Game of the Week: Men’s basketball vs Texas Southern
+2026-11-17T04:37:30Z,US,4,pak vs sl,2000,2026-11-17T04:00:00Z,Cricinfo,"Pakistan, Sri Lanka primed for more experimentation in Rawalpindi"
+2026-11-17T04:37:30Z,US,5,greta thunberg,500,2026-11-17T04:00:00Z,The Guardian,"The planet ‘is being killed’, Greta Thunberg tells Cop31 climate summit"
+2026-11-17T04:37:30Z,US,6,chris moore,200,2026-11-17T04:00:00Z,Yahoo Sports,Ravens Elevate 13-Touchdown Wide Receiver Before Jacoby Brissett Debut
+2026-11-17T04:37:30Z,US,7,malware,2000,2026-11-17T03:50:00Z,Gizmodo,Sprawling Malware Attack Reportedly Affects Zoom and Other Major Brands
+2026-11-17T04:37:30Z,US,8,demar derozan,200,2026-11-17T03:50:00Z,BasketNews.com,DeMar DeRozan takes back historic NBA spot from Stephen Curry
+2026-11-17T04:37:30Z,US,9,john christopher depp,200,2026-11-17T03:50:00Z,Rotten Tomatoes,Weekend Box Office: Ebenezer Wins a Sleepy Weekend
+2026-11-17T04:37:30Z,US,10,travel warning,200,2026-11-17T03:50:00Z,U.S. Embassy in Bulgaria (.gov),"Security Alert: U.S. Embassy in Bulgaria, November 16, 2026"
+2026-11-17T04:37:30Z,GB,1,polar vortex,200,2026-11-17T04:10:00Z,BBC,UK weather: Earliest reversal of polar vortex on record but will it bring snow?
+2026-11-17T04:37:30Z,GB,2,pak vs sl,500,2026-11-17T04:00:00Z,Cricinfo,"Pakistan, Sri Lanka primed for more experimentation in Rawalpindi"
+2026-11-17T04:37:30Z,GB,3,when does gta 6 come out,200,2026-11-17T03:50:00Z,BBC,New Zealand tricks and annual leave - the lengths fans are going to for GTA 6
+2026-11-17T04:37:30Z,GB,4,kyren wilson,500,2026-11-17T03:10:00Z,World Snooker Tour,Wilson Wins Champion Of Champions To Extend Title Streak
+2026-11-17T04:37:30Z,GB,5,timberwolves vs trail blazers,200,2026-11-17T02:10:00Z,UB - Universitat de Barcelona,[!Buffstreams!] Where To Watch Trail Blazers vs Timberwolves Live Free NBA Game in US UK AU 16 November 2026
+2026-11-17T04:37:30Z,GB,6,heat vs rockets,200,2026-11-17T01:20:00Z,ESPN,"Heat 128-110 Rockets (17 Nov, 2026) Game Recap"
+2026-11-17T04:37:30Z,GB,7,florence pugh,100,2026-11-17T01:20:00Z,The Guardian,Glenn Close cries! John Malkovich weeps! But it’s Nathan Fielder everyone wants to talk to at the honorary Oscars
+2026-11-17T04:37:30Z,GB,8,ravens vs chargers,1000,2026-11-17T01:10:00Z,ESPN,"Chargers vs. Ravens (17 Nov, 2026) Live Score"
+2026-11-17T04:37:30Z,GB,9,pelicans vs warriors,500,2026-11-17T01:10:00Z,ESPN,"Pelicans 115-94 Warriors (17 Nov, 2026) Final Score"
+2026-11-17T04:37:30Z,GB,10,black friday deals,500,2026-11-17T01:10:00Z,Forbes,Amazon Extends Black Friday And Cyber Monday Sales To 12 Days
+2026-11-17T04:37:30Z,CA,1,mike mcdaniel,100,2026-11-17T04:30:00Z,ESPN,"Five reasons why Chargers' offense, Justin Herbert have struggled in 2026 season"
+2026-11-17T04:37:30Z,CA,2,florence pugh,200,2026-11-17T04:20:00Z,ELLE,ELLE’s 2026 Women in Hollywood: Meet This Year’s Honorees
+2026-11-17T04:37:30Z,CA,3,gofundme,100,2026-11-17T04:20:00Z,People.com,Little Rascals’ Bug Hall Said He Had $10 Before GoFundMe (Exclusive)
+2026-11-17T04:37:30Z,CA,4,pak vs sl,2000,2026-11-17T04:10:00Z,Cricinfo,"Pakistan, Sri Lanka primed for more experimentation in Rawalpindi"
+2026-11-17T04:37:30Z,CA,5,vancouver canucks,2000,2026-11-17T04:00:00Z,NHL.com,FOLLOW LIVE: Vancouver vs Utah
+2026-11-17T04:37:30Z,CA,6,john christ,200,2026-11-17T03:40:00Z,Theprp.com,"John Christ (Ex-Danzig, Etc.) Has Passed Away"
+2026-11-17T04:37:30Z,CA,7,nikita tolopilo,200,2026-11-17T03:40:00Z,Pro Hockey Rumors,Canucks Reassign Jacob Quillan; Recall Nikita Tolopilo
+2026-11-17T04:37:30Z,CA,8,peg munson,100,2026-11-17T03:40:00Z,People.com,‘The Golden Bachelor’s Peg Munson Reveals Reason for Mel Owens Breakup: ‘It Wasn’t Mutual’
+2026-11-17T04:37:30Z,CA,9,lamelo ball,200,2026-11-17T03:30:00Z,NBC Sports,LaMelo Ball held to six points in win over Blazers
+2026-11-17T04:37:30Z,CA,10,take two stock,200,2026-11-17T03:30:00Z,Investing.com Canada,Take-Two shares rise premarket as Jefferies sees strong GTA VI pre-orders
+2026-11-17T04:37:30Z,AU,1,michael clarke sandpapergate opinions 2026,200,2026-11-17T04:20:00Z,Cricinfo,Khawaja: I made a promise to Warner in 2020
+2026-11-17T04:37:30Z,AU,2,bunnings,5000,2026-11-17T04:00:00Z,ABC News & Headlines – Australian Broadcasting Corporation,Breaking: Bunnings to make 230 jobs redundant and offshore some tech services
+2026-11-17T04:37:30Z,AU,3,mining,100,2026-11-17T04:00:00Z,Business Wire,Modern Mining to Begin Trading Today on NYSE American Under Ticker Symbol “MDRN”
+2026-11-17T04:37:30Z,AU,4,pak vs sl,2000,2026-11-17T03:50:00Z,cricket.com.au,"Pakistan's Shakeel falls in the nineties twice, saves Test"
+2026-11-17T04:37:30Z,AU,5,so you are,1000,2026-11-17T03:50:00Z,SMH.com.au,Melbourne Cup runner suspected to be horse found in Sydney skip bin
+2026-11-17T04:37:30Z,AU,6,infant,200,2026-11-17T03:50:00Z,WAVY.com,VBPD investigating infant death on Mica Ave.
+2026-11-17T04:37:30Z,AU,7,melbourne storm,100,2026-11-17T03:50:00Z,SEN,Storm confirm new role for Kamikamica after medical retirement
+2026-11-17T04:37:30Z,AU,8,ray tintori,100,2026-11-17T03:40:00Z,People.com,"Filmmaker Ray Tintori, Boyfriend of SNL Alum Heidi Gardner, Dead at 43"
+2026-11-17T04:37:30Z,AU,9,joel embiid,200,2026-11-17T03:20:00Z,ESPN,"76ers 135-123 Nets (17 Nov, 2026) Final Score"
+2026-11-17T04:37:30Z,AU,10,jeffrey epstein,100,2026-11-17T03:20:00Z,Nine.com.au,Australian woman who exposed one of the world’s most horrific sex-trafficking cases
+2026-11-17T04:37:30Z,DE,1,bergrettung,200,2026-11-17T04:20:00Z,GMX,Der Hochvogel bricht offenbar auseinander: Geologen warnen
+2026-11-17T04:37:30Z,DE,2,nets – 76ers,100,2026-11-17T04:10:00Z,BasketNews.com,Joel Embiid final injury status for 76ers vs. Nets revealed
+2026-11-17T04:37:30Z,DE,3,переговоры,100,2026-11-17T04:10:00Z,DW.com,Европейская команда переговорщиков впервые поучаствовала в переговорах Киева и США о мире
+2026-11-17T04:37:30Z,DE,4,wildschwein,100,2026-11-17T04:10:00Z,tagesschau.de,Baden-Württemberg: Totes Wildschwein geklaut: Warum das jetzt richtig Ärger geben kann
+2026-11-17T04:37:30Z,DE,5,silber,100,2026-11-17T04:10:00Z,Finanzen.net,"So bewegen sich die Preise von Gold, Öl, Erdgas und Silber am Sonntagabend"
+2026-11-17T04:37:30Z,DE,6,heizung,100,2026-11-17T04:10:00Z,Augsburger Allgemeine,Seit Monaten wartet eine Familie auf ihre Heizung – was läuft da schief?
+2026-11-17T04:37:30Z,DE,7,schnee,2000,2026-11-17T04:00:00Z,HNA,Schneewände im Flachland: Bis zu 7 Meter fallen dort – und ganz ausgeschlossen ist das bei uns nicht
+2026-11-17T04:37:30Z,DE,8,hells angels,200,2026-11-17T04:00:00Z,WELT,Mönchengladbach: Ministerium verbietet „Hells Angels“-Ableger
+2026-11-17T04:37:30Z,DE,9,украина,2000,2026-11-17T04:00:00Z,Українська правда,Оккупанты заявили о повторном ударе по Крымскому мосту
+2026-11-17T04:37:30Z,DE,10,marc-andré ter stegen,5000,2026-11-17T03:50:00Z,ARD Mediathek,Klopp schwärmt von ter Stegen - 'Wollte ihn nach Liverpool holen'
+2026-11-17T04:37:30Z,FR,1,gibier,100,2026-11-17T04:20:00Z,France 3 Régions,“On a plus de biches que de bovins au râtelier le matin” : 200 agriculteurs manifestent contre la prolifération du gibier
+2026-11-17T04:37:30Z,FR,2,pleine lune novembre 2026,100,2026-11-17T04:10:00Z,La République des Pyrénées,Pleine lune de novembre 2026 : quel jour et à quelle heure voir la lune du Castor
+2026-11-17T04:37:30Z,FR,3,états-unis,200,2026-11-17T03:50:00Z,franceinfo,"""La conversation n'a pas été facile"" : de premiers pourparlers se sont tenus entre l'Ukraine, l'Europe et les Etats-Unis, annonce Volodymyr Zelensky"
+2026-11-17T04:37:30Z,FR,4,policier,100,2026-11-17T03:50:00Z,Le Monde.fr,"Au procès de l’interpellation violente de Michel Zecler par des policiers : « Les vidéos parlent d’elles-mêmes, c’est impardonnable, ce n’est même pas de l’amateurisme »"
+2026-11-17T04:37:30Z,FR,5,nuggets – suns,100,2026-11-17T03:40:00Z,Action Network,"NBA Prop Bet for Devin Booker on Monday, November 16"
+2026-11-17T04:37:30Z,FR,6,fioul,2000,2026-11-17T03:40:00Z,Selectra,"Cuve de fioul dehors : 167 mm de pluie d'ici vendredi à Gérardmer, le tube à regarder dès ce lundi"
+2026-11-17T04:37:30Z,FR,7,pétrole,100,2026-11-17T03:40:00Z,Boursorama,"Goldman prévoit une baisse du Brent à 78 dollars le baril d'ici fin 2027, à mesure que les marchés s'adaptent"
+2026-11-17T04:37:30Z,FR,8,tsahal,100,2026-11-17T03:30:00Z,i24NEWS,"Matan Hassan, ancien soldat d'élite de Tsahal, placé sous haute protection pour son concert en France"
+2026-11-17T04:37:30Z,FR,9,corse,1000,2026-11-17T03:10:00Z,Le Monde.fr,Statue de la Vierge vandalisée à Porto-Vecchio : des peines de prison ferme requises
+2026-11-17T04:37:30Z,FR,10,famille royale britannique,200,2026-11-17T03:00:00Z,Paris Match,"Jessie Webb, la nounou de William et Harry qui tenait tête à Charles, est morte à l'âge de 84 ans"
+2026-11-17T04:37:30Z,IT,1,polizia,2000,2026-11-17T04:00:00Z,Corriere della Sera,"«De Gennaro va arrestato, ha depistato le indagini sulla strage di via D'Amelio»: la richiesta choc per l'ex capo della polizia indagato per depistaggio, poi il no del Gip"
+2026-11-17T04:37:30Z,IT,2,gatto,200,2026-11-17T03:50:00Z,Corriere Roma,"Il ministro Nordio al SuperCat Show: «Sono un gattaro, a casa comandano loro. I miei mici hanno distrutto divani e tappeti»"
+2026-11-17T04:37:30Z,IT,3,papa leone xiv,100,2026-11-17T03:50:00Z,ANSA,"Il Papa colpito da un rosario al volto, ma nessuna conseguenza"
+2026-11-17T04:37:30Z,IT,4,gasolio,200,2026-11-17T03:30:00Z,alVolante,"Benzina e diesel continuano a scendere, ma Gpl e metano preoccupano gli automobilisti"
+2026-11-17T04:37:30Z,IT,5,neve,200000,2026-11-17T03:30:00Z,La Gazzetta dello Sport,"Meteo, settimana instabile sull’Italia: in arrivo nuove piogge da martedì 17 novembre"
+2026-11-17T04:37:30Z,IT,6,petrolio,200,2026-11-17T03:30:00Z,Borsa Italiana,"Petrolio in calo, aumenta l'attesa per un surplus di offerta: tornano a crescere i flussi dal Medio Oriente"
+2026-11-17T04:37:30Z,IT,7,nets - sixers,100,2026-11-17T03:10:00Z,NBC Sports Philadelphia,Observations after Embiid posts season-high 37 points in Sixers' win over Nets
+2026-11-17T04:37:30Z,IT,8,enrico mentana,200,2026-11-17T02:50:00Z,Esquire,Perché non vedremo mai più Enrico Mentana al TG5
+2026-11-17T04:37:30Z,IT,9,pelicans - warriors,100,2026-11-17T02:40:00Z,RotoWire,Jeremiah Fears News: Logs first career triple-double in win
+2026-11-17T04:37:30Z,IT,10,celtics - magic,100,2026-11-17T02:30:00Z,RotoWire,Desmond Bane News: Leads Magic to victory
+2026-11-17T04:37:30Z,ES,1,timberwolves - trail blazers,100,2026-11-17T04:20:00Z,ESPN,"Timberwolves 106-98 Trail Blazers (Nov 16, 2026) Game Recap"
+2026-11-17T04:37:30Z,ES,2,impuesto,200,2026-11-17T04:20:00Z,El Mundo,"El PSOE promete otras diez subidas de impuestos y ""acelerar"" las mayores cotizaciones para obtener ""ingresos necesarios"""
+2026-11-17T04:37:30Z,ES,3,gonzalo bernardos,100,2026-11-17T04:10:00Z,heraldo.es,"Gonzalo Bernardos, economista: ""El secreto del éxito es comprar vivienda, sobre todo si después sube de precio. El 90 % de la riqueza de la clase media baja viene de herencias"""
+2026-11-17T04:37:30Z,ES,4,bonoloto hoy,200,2026-11-17T04:10:00Z,La Vanguardia,Comprobar Bonoloto de hoy lunes 16 de noviembre de 2026
+2026-11-17T04:37:30Z,ES,5,petróleo,100,2026-11-17T04:00:00Z,Yahoo,Petróleo retrocede mientras mayor oferta pesa más que las tensiones con Irán
+2026-11-17T04:37:30Z,ES,6,futbolista,500,2026-11-17T03:40:00Z,El Mundo,Tragedia en el fútbol argentino: muere un jugador de 16 años tras recibir un fuerte balonazo en la cabeza
+2026-11-17T04:37:30Z,ES,7,jürgen klopp,1000,2026-11-17T03:40:00Z,sportschau.de,5:0 - Deutschland gegen Niederlande wie im Rausch
+2026-11-17T04:37:30Z,ES,8,idealista,100,2026-11-17T03:10:00Z,Diari ARA,¿Por qué los datos de los alquileres del Gobierno y las ofertas de Idealista no coinciden?
+2026-11-17T04:37:30Z,ES,9,gta vi,500,2026-11-17T02:20:00Z,CNN,The biggest entertainment event of the year isn’t a movie — it’s ‘Grand Theft Auto VI’
+2026-11-17T04:37:30Z,ES,10,playz estupido cupido,5000,2026-11-17T02:00:00Z,RTVE.es,"Cómo y dónde ver 'Estúpido Cupido', la nueva serie vertical de Playz que mezcla ficción e improvisación"
+2026-11-17T04:37:30Z,NL,1,mark van bommel,1000,2026-11-17T04:00:00Z,AD.nl,‘Leve Mark van Bommel’: Nederlandse trainer doet gouden generatie in België vergeten
+2026-11-17T04:37:30Z,NL,2,scarlett johansson,200,2026-11-17T04:00:00Z,The New York Times,"How Adam Driver, Scarlett Johansson and Miles Teller Built a Family in ‘Paper Tiger’"
+2026-11-17T04:37:30Z,NL,3,الطقس,500,2026-11-17T03:30:00Z,Google DeepMind,PARDIG & SatWeave: Foundational Datasets for Earth Science
+2026-11-17T04:37:30Z,NL,4,box 3,500,2026-11-17T02:50:00Z,De Telegraaf,"Nieuw box 3-stelsel neemt belangrijke horde, ook al levert belastingplan kabinet kras op: dit gaat er veranderen"
+2026-11-17T04:37:30Z,NL,5,beuningen,100,2026-11-17T02:40:00Z,Beuningen.nieuws.nl,Tingeling wacht op Sinterklaas in Beuningen
+2026-11-17T04:37:30Z,NL,6,a58,100,2026-11-17T02:20:00Z,Eindhovens Dagblad,Beelden laten zien hoe het ‘bijna fataal’ misgaat op A58 bij Best: ‘Levensgevaarlijk gedrag’
+2026-11-17T04:37:30Z,NL,7,iran,100,2026-11-17T02:10:00Z,CNN,"Exclusive: US intel indicates Iran developing plans to potentially detonate a dirty bomb in Washington, sources say"
+2026-11-17T04:37:30Z,NL,8,kick,100,2026-11-17T00:10:00Z,GAMINGbible,You can grab GTA 6 entirely for free if you know where to look
+2026-11-17T04:37:30Z,NL,9,victoria regiadreef,100,2026-11-17T00:00:00Z,AD.nl,Vrouw overvallen en gewond achtergelaten in haar woning aan de Victoria Regiadreef in Overvecht
+2026-11-17T04:37:30Z,NL,10,benzine,2000,2026-11-16T23:40:00Z,De Telegraaf,Benzine goedkoper: hier tank je weer voor minder dan twee euro
+2026-11-17T04:37:30Z,BR,1,athletico x parana clube copa parana,2000,2026-11-17T04:00:00Z,ge,Athletico-PR 1 x 0 Paraná | Copa Paraná: melhores momentos
+2026-11-17T04:37:30Z,BR,2,gui santos,100,2026-11-17T04:00:00Z,ESPN Brasil,Gui Santos se torna o sétimo brasileiro a marcar 1000 pontos na NBA
+2026-11-17T04:37:30Z,BR,3,quando lança o gta 6,100,2026-11-17T03:50:00Z,G1,Quando será lançado GTA VI? Veja data e horário de estreia do novo jogo
+2026-11-17T04:37:30Z,BR,4,sydney sweeney,100,2026-11-17T03:40:00Z,Variety,"The Next Bond Girl: From Zendaya to Florence Pugh, 19 Actresses Who Could Join Robert Pattinson"
+2026-11-17T04:37:30Z,BR,5,dean wade,100,2026-11-17T03:10:00Z,CBS Sports,76ers' Dean Wade: Running with starters Monday
+2026-11-17T04:37:30Z,BR,6,bancos eua,500,2026-11-17T03:00:00Z,G1,Falha técnica afeta serviços de grandes bancos dos Estados Unidos
+2026-11-17T04:37:30Z,BR,7,michael porter jr.,100,2026-11-17T03:00:00Z,New York Post,Michael Porter Jr. sits for personal reasons — but he should be back soon
+2026-11-17T04:37:30Z,BR,8,julius randle,100,2026-11-17T03:00:00Z,CBS Sports,Nets' Julius Randle: Strikes for 33 points
+2026-11-17T04:37:30Z,BR,9,zendaya,1000,2026-11-17T02:10:00Z,Globo,Fortuna de Zendaya impressiona! Atriz acumula cinco imóveis milionários e mansões luxuosas nos Estados Unidos
+2026-11-17T04:37:30Z,BR,10,the economist 2027,1000,2026-11-17T02:10:00Z,The Economist,Tom Standage’s ten trends to watch in 2027
+2026-11-17T04:37:30Z,MX,1,tom blyth,100,2026-11-17T04:20:00Z,IMDb,Tom Blyth & Rachel Zegler Reunite for Next ‘Hunger Games’ Premiere After Starring in Previous Preque
+2026-11-17T04:37:30Z,MX,2,jeffrey epstein,500,2026-11-17T04:00:00Z,BBC,Forensic expert says his analysis of autopsy photos suggests Epstein was killed
+2026-11-17T04:37:30Z,MX,3,guardia nacional de méxico,200,2026-11-17T03:40:00Z,El Financiero,Guardia Nacional destituye a 17 elementos por presentar certificados de estudios falsos
+2026-11-17T04:37:30Z,MX,4,acción,100,2026-11-17T03:40:00Z,"Investing.com México - Finanzas, Bolsa y Forex",¿Por qué cae hoy la acción de Aclaris Therapeutics?
+2026-11-17T04:37:30Z,MX,5,gales vs portugal,100,2026-11-17T03:40:00Z,MARCA,Dónde ver Gales vs Portugal: Hora y canal TV para la UEFA Nations League 2026
+2026-11-17T04:37:30Z,MX,6,gta vi,2000,2026-11-17T03:30:00Z,CNN,The biggest entertainment event of the year isn’t a movie — it’s ‘Grand Theft Auto VI’
+2026-11-17T04:37:30Z,MX,7,predicción,100,2026-11-17T03:30:00Z,El Universal,"The Economist revela su portada de 2027; Irán, era post-Trump, la IA y otras tendencias que marcarán el próximo año"
+2026-11-17T04:37:30Z,MX,8,gran apagon mundial,2000,2026-11-17T03:20:00Z,Univision,No te asustes: Esto es lo que pasará mañana durante la prueba nacional del Sistema de Alertas de Emergencia en EEUU
+2026-11-17T04:37:30Z,MX,9,indonesia,500,2026-11-17T03:00:00Z,ABC News & Headlines – Australian Broadcasting Corporation,"Magnitude-6.6 earthquake prompts scientist's 'drop, cover, hold' reminder"
+2026-11-17T04:37:30Z,MX,10,quien es deiby ruiz,2000,2026-11-17T02:40:00Z,El Financiero,Estreno de ‘La Mansión VIP 2’: Así quedaron los cuartos en el arranque del reality show
+2026-11-17T04:37:30Z,IN,1,nifty 50,20000,2026-11-17T04:20:00Z,The Hindu,"Stock markets end higher on foreign fund inflows, lower crude oil; Sensex up 512 points"
+2026-11-17T04:37:30Z,IN,2,today gold rate in chennai,5000,2026-11-17T04:20:00Z,The Times of India,"Gold prices drop 4.1% to Rs 1.36 lakh, silver slides nearly 5% to Rs 1.76 lakh on MCX; inflation data, Fe"
+2026-11-17T04:37:30Z,IN,3,yes bank share price,1000,2026-11-17T04:20:00Z,The Economic Times,"Stocks in news: Adani Enterprises, BSE, Senco Gold, Hero Motors, HDFC Life, Anand Rathi Wealth and Urban C"
+2026-11-17T04:37:30Z,IN,4,itc share price,1000,2026-11-17T04:20:00Z,Moneycontrol.com,ITC shares jump 4% to 5-month high as FMCG index tops sectoral gainers; know reason behind today’s...
+2026-11-17T04:37:30Z,IN,5,yes bank share,500,2026-11-17T04:20:00Z,Reuters,Indian central bank seeks review of Supreme Court's Yes Bank AT-1 bonds order
+2026-11-17T04:37:30Z,IN,6,bel share price,500,2026-11-17T04:20:00Z,Business Today,BEL share price: Defence PSU stock in focus on Rs 619 crore order win; key details
+2026-11-17T04:37:30Z,IN,7,paytm share price,200,2026-11-17T04:20:00Z,Navbharat Live,"Paytm को RBI से मिली बड़ी राहत, शेयर ने छुआ ₹1,960 का रिकॉर्ड स्तर, जल्द लौट सकती है Wallet सर्विस"
+2026-11-17T04:37:30Z,IN,8,sri lanka national cricket team vs pakistan national cricket team match scorecard,50000,2026-11-17T04:10:00Z,Cricinfo,"Pakistan, Sri Lanka primed for more experimentation in Rawalpindi"
+2026-11-17T04:37:30Z,IN,9,sl vs pak,5000,2026-11-17T04:10:00Z,Cricinfo,"Pakistan, Sri Lanka primed for more experimentation in Rawalpindi"
+2026-11-17T04:37:30Z,IN,10,hdfc bank share price,2000,2026-11-17T04:10:00Z,Business Standard,"Honasa Consumer, HDFC Bank: Two stock ideas by Shrikant Chouhan"
+2026-11-17T04:37:30Z,JP,1,織田 翔 希,500,2026-11-17T04:20:00Z,Yahoo!ニュース,横浜・織田翔希との面談にアスレチックス・森井翔太郎が同席 “生の声”届ける狙いか…桐朋高から即メジャー挑戦の二刀流
+2026-11-17T04:37:30Z,JP,2,井上尚弥,2000,2026-11-17T04:10:00Z,,
+2026-11-17T04:37:30Z,JP,3,ポケモン go デュオ リンゴ,200,2026-11-17T04:10:00Z,Pokémon GO,『Pokémon GO』と『Duolingo』で新しい言語の冒険へ！
+2026-11-17T04:37:30Z,JP,4,有 吉弘 行,200,2026-11-17T04:10:00Z,,
+2026-11-17T04:37:30Z,JP,5,汚い爆弾,200,2026-11-17T04:10:00Z,Yahoo!ニュース,イランが米首都で「汚い爆弾」の使用を計画か 米情報機関 CNN EXCLUSIVE（CNN.co.jp）
+2026-11-17T04:37:30Z,JP,6,なぎさの進化論,2000,2026-11-17T04:00:00Z,Yahoo!ニュース,来秋朝ドラ『なぎさの進化論』ヒロインに飯沼愛 『VIVANT』初代・ブルーウォーカー役も話題（オリコン）
+2026-11-17T04:37:30Z,JP,7,政府広報,1000,2026-11-17T04:00:00Z,Yahoo!ニュース,「税金で用意したの？」と炎上、政府広報室CMでミセス大森元貴に用意された、疑惑のプレゼントに批判が殺到
+2026-11-17T04:37:30Z,JP,8,風太くん,500,2026-11-17T04:00:00Z,Yahoo!ニュース,レッサーパンダ風太 ギネスに認定
+2026-11-17T04:37:30Z,JP,9,スパイダーマン:ブランド・ニュー・デイ,200,2026-11-17T04:00:00Z,Yahoo!ニュース,『スパイダーマン：ブランド・ニュー・デイ』新規映像追加して2027年1月1日公開決定（ぴあ）
+2026-11-17T04:37:30Z,JP,10,佐藤義朗,100,2026-11-17T04:00:00Z,Yahoo!ニュース,家業を継ぐため日テレ退社した佐藤義朗さん イメージ激変の近影！「老舗アウトドアメーカー」代表…妻は後輩アナ
+2026-11-17T04:37:30Z,BD,1,সাঈদ খোকন,100,2026-11-17T04:30:00Z,Banglanews24,সাবেক মেয়র সাঈদ খোকন গ্রেপ্তার
+2026-11-17T04:37:30Z,BD,2,sri lanka national cricket team vs pakistan national cricket team match scorecard,10000,2026-11-17T04:10:00Z,Cricinfo,"Pakistan, Sri Lanka primed for more experimentation in Rawalpindi"
+2026-11-17T04:37:30Z,BD,3,বাংলাদেশ আওয়ামী লীগ,100,2026-11-17T03:40:00Z,প্রথম আলো,"লন্ডনে নাহিদ ইসলামের সংবর্ধনা শেষে আ.লীগ–এনসিপি সংঘর্ষ, আহত কয়েকজন"
+2026-11-17T04:37:30Z,BD,4,জাহাঙ্গীরনগর বিশ্ববিদ্যালয় ভর্তি বিজ্ঞপ্তি 2026,100,2026-11-17T02:50:00Z,,
+2026-11-17T04:37:30Z,BD,5,florian wirtz,100,2026-11-17T02:20:00Z,DIE ZEIT,Nations League: Die Ära Klopp hat begonnen
+2026-11-17T04:37:30Z,BD,6,find x10 pro max,1000,2026-11-17T02:00:00Z,GSMArena.com,Tilta Khronos Oppo Find X10 Pro Max Creator Kit hands-on - GSMArena.com news
+2026-11-17T04:37:30Z,BD,7,ব্রাজিল বনাম সিঙ্গাপুর,200,2026-11-17T01:30:00Z,bdnews24.com,ব্রাজিলকে ‘সবচেয়ে শক্তিশালী’ দলে পরিণত করার প্রত্যয় আনচেলত্তির
+2026-11-17T04:37:30Z,BD,8,concacaf nations league,200,2026-11-17T01:20:00Z,news.bet365.com,"Canada vs. Guatemala: Preview, Lineup Predictions & How to Watch"
+2026-11-17T04:37:30Z,BD,9,north macedonia national football team vs slovenia national football team standings,200,2026-11-17T01:10:00Z,BBC,North Macedonia vs Slovenia: UEFA Nations League stats & head-to-head
+2026-11-17T04:37:30Z,BD,10,canada vs guatemala,2000,2026-11-17T00:50:00Z,Concacaf | Official Website,Canadá avanza a las Finales de la Liga de Naciones de Concacaf por tercera vez
