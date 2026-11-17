@@ -97,7 +97,7 @@ def probe(domain: str) -> tuple[Store | None, str]:
         return None, f"woocommerce: HTTP {r.status_code}" if r.status_code != 200 else "woocommerce: not a product list"
     if not items:
         return None, "woocommerce: no products"
-    if "prices" not in items[0]:
+    if not isinstance(items[0], dict) or not isinstance(items[0].get("prices"), dict):
         return None, "woocommerce: not a product list"
 
     final = urlsplit(r.url)

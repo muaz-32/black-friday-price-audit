@@ -75,9 +75,12 @@ class _Limiter:
 
 LIMITER = _Limiter(float(os.environ.get("BF_REQUESTS_PER_SECOND", "1")))
 # Stores on other platforms are separate servers, not one platform throttling
-# by IP, so they get their own budget and never wait on a Shopify pause. Each
-# store is still read one page at a time with a pause between pages.
-OTHER_LIMITER = _Limiter(float(os.environ.get("BF_OTHER_REQUESTS_PER_SECOND", "2")))
+# by IP, so they get their own budget and never wait on a Shopify pause. What
+# protects each of them is that a store is read one page at a time with a pause
+# between pages; this cap only bounds the total across the many stores read at
+# once (raised from 2 on 2026-11-17, when 11,000 WooCommerce shops made it the
+# bottleneck of every snapshot).
+OTHER_LIMITER = _Limiter(float(os.environ.get("BF_OTHER_REQUESTS_PER_SECOND", "10")))
 
 
 class FetchError(Exception):

@@ -145,7 +145,7 @@ def main() -> int:
         help="full: describe every variant; recent: only products new in the last 48h; "
         "auto: full in the first run of the UTC day (before 06:00), recent otherwise",
     )
-    ap.add_argument("--workers", type=int, default=8, help="stores fetched in parallel")
+    ap.add_argument("--workers", type=int, default=16, help="stores fetched in parallel")
     ap.add_argument("--max-pages", type=int, default=100, help="cap per store (250 products a page)")
     ap.add_argument("--limit", type=int, default=0, help="only the first N stores (for testing)")
     ap.add_argument("--shard", type=parse_shard, default=(0, 1), metavar="I/N", help="read only share I of N (0-based)")

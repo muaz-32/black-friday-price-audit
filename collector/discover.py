@@ -51,7 +51,10 @@ def load_stores(path: Path) -> list[Store]:
 def probe(domain: str, platforms: list[str]) -> tuple[Store | None, str]:
     reasons = []
     for name in platforms:
-        store, reason = PROBES[name](domain)
+        try:
+            store, reason = PROBES[name](domain)
+        except Exception as e:  # one odd site must never sink a whole discovery run
+            store, reason = None, f"{name}: probe crashed ({type(e).__name__.removesuffix('Error')})"
         if store is not None:
             return store, ""
         reasons.append(reason)
@@ -64,7 +67,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--candidates", type=Path, default=Path("stores/candidates.txt"))
     ap.add_argument("--out", type=Path, default=Path("stores/stores.csv"))
-    ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--workers", type=int, default=8)
     ap.add_argument("--retry", metavar="REGEX", help="also re-probe rejected domains whose reason matches REGEX")
     ap.add_argument(
         "--platforms",
