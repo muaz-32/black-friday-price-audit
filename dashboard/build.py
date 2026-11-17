@@ -77,8 +77,8 @@ def build_prices(summary: Path, stores_csv: Path) -> tuple[dict, dict]:
             cuts += num(r["price_down"], int) or 0
             rises += num(r["price_up"], int) or 0
             inflated += num(r["discount_inflated"], int) or 0
-            variants = int(r["variants"])
-            share = int(r["marked_down"]) / variants if variants else 0.0
+            variants = num(r["variants"], int) or 0
+            share = (num(r["marked_down"], int) or 0) / variants if variants else 0.0
             r["_share"], r["_index"] = share, index
             series.append(
                 [r["run_id"], variants, round(share, 4), num(r["median_discount"]), num(r["price_down"], int),
@@ -93,7 +93,7 @@ def build_prices(summary: Path, stores_csv: Path) -> tuple[dict, dict]:
                 "m": m.get("country", ""),
                 "pl": m.get("platform") or "shopify",
                 "c": m.get("currency", ""),
-                "v": int(last["variants"]),
+                "v": num(last["variants"], int) or 0,
                 "s": round(last["_share"], 4),
                 "md": num(last["median_discount"]),
                 "mp": num(last["median_price"]),
@@ -117,7 +117,7 @@ def build_prices(summary: Path, stores_csv: Path) -> tuple[dict, dict]:
         if rid < baseline:
             continue
         rows = [at[(s, rid)] for s in panel if (s, rid) in at]
-        variants = sum(int(r["variants"]) for r in rows)
+        variants = sum((num(r["variants"], int) or 0) for r in rows)
         weight = sum(num(r["matched"], int) or 0 for r in rows if num(r["price_ratio"]))
         if weight:
             log = sum((num(r["matched"], int) or 0) * math.log(num(r["price_ratio"])) for r in rows if num(r["price_ratio"]))
@@ -130,7 +130,7 @@ def build_prices(summary: Path, stores_csv: Path) -> tuple[dict, dict]:
                 "t": run_time(rid),
                 "stores": len(rows),
                 "variants": variants,
-                "share": round(sum(int(r["marked_down"]) for r in rows) / variants, 4) if variants else None,
+                "share": round(sum((num(r["marked_down"], int) or 0) for r in rows) / variants, 4) if variants else None,
                 "median_store_share": round(shares[len(shares) // 2], 4) if shares else None,
                 "cuts": sum(num(r["price_down"], int) or 0 for r in rows) if compared else None,
                 "rises": sum(num(r["price_up"], int) or 0 for r in rows) if compared else None,
