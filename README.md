@@ -232,9 +232,11 @@ Three GitHub Actions workflows do the work:
 - [snapshot.yml](.github/workflows/snapshot.yml), every 6 hours: takes the
   price snapshot, uploads the files to a monthly release (`data-YYYY-MM`), and
   commits [status/latest.json](status/latest.json) as a heartbeat. The stores
-  are split across four jobs that run side by side on separate GitHub runners
-  (`--shard I/4`, balanced by expected requests), and `collector.combine` joins
-  their files into the usual three, so readers see one snapshot.
+  are split across 16 jobs that run side by side on separate GitHub runners
+  (`--shard I/16`, balanced by expected requests), and `collector.combine` joins
+  their files into the usual three, so readers see one snapshot. Within a job,
+  Shopify stores and the rest are read by separate worker pools, since they wait
+  on separate request budgets. A large-retailer basket job runs alongside.
 - [trends.yml](.github/workflows/trends.yml), hourly: appends to the CSVs
   under `trends/`.
 - [discover.yml](.github/workflows/discover.yml), by hand: probes

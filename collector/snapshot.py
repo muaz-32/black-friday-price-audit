@@ -145,7 +145,13 @@ def main() -> int:
         help="full: describe every variant; recent: only products new in the last 48h; "
         "auto: full in the first run of the UTC day (before 06:00), recent otherwise",
     )
-    ap.add_argument("--workers", type=int, default=16, help="stores fetched in parallel")
+    ap.add_argument("--workers", type=int, default=24, help="non-Shopify stores fetched in parallel")
+    ap.add_argument(
+        "--shopify-workers",
+        type=int,
+        default=4,
+        help="Shopify stores fetched in parallel (they share one platform-wide request budget anyway)",
+    )
     ap.add_argument("--max-pages", type=int, default=100, help="cap per store (250 products a page)")
     ap.add_argument("--limit", type=int, default=0, help="only the first N stores (for testing)")
     ap.add_argument("--shard", type=parse_shard, default=(0, 1), metavar="I/N", help="read only share I of N (0-based)")
@@ -196,8 +202,16 @@ def main() -> int:
         return FETCHERS[store.platform](store, max_pages=args.max_pages)
 
     def run_batch(batch: list, label: str) -> None:
-        with ThreadPoolExecutor(args.workers) as pool:
-            futures = [pool.submit(fetch, s) for s in batch]
+        # One pool per request budget: Shopify stores wait on the platform-wide
+        # Shopify limiter, the others on their own, so neither kind should hold
+        # the workers the other needs. The run then takes as long as the slower
+        # kind, not the two added together.
+        pools = {
+            "shopify": ThreadPoolExecutor(args.shopify_workers),
+            "other": ThreadPoolExecutor(args.workers),
+        }
+        try:
+            futures = [pools["shopify" if s.platform == "shopify" else "other"].submit(fetch, s) for s in batch]
             for done, fut in enumerate(as_completed(futures), 1):  # results are written on this thread only
                 res = fut.result()
                 n = len(res.rows)
@@ -218,6 +232,9 @@ def main() -> int:
                 mark = "ok " if res.ok else "ERR"
                 note = "" if res.ok else f"  {res.error}"
                 print(f"[{label} {done}/{len(batch)}] {mark} {res.store.domain}: {n} variants, {res.seconds}s{note}", flush=True)
+        finally:
+            for pool in pools.values():
+                pool.shutdown(wait=True)
 
     try:
         run_batch(stores, "pass 1")

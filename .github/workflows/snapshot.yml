@@ -27,8 +27,10 @@ concurrency:
 env:
   # The stores are split across this many jobs running side by side, each on
   # its own runner and each at the usual 1 request per second. Keep it equal to
-  # the length of the shard list below.
-  SHARDS: 8
+  # the length of the shard list below. GitHub's free plan runs at most 20 jobs
+  # at once per account: 16 shards plus the basket leave room for the hourly
+  # trends and Pages jobs.
+  SHARDS: 16
 
 jobs:
   plan:
@@ -82,7 +84,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
     steps:
       - uses: actions/checkout@v5
         with:
