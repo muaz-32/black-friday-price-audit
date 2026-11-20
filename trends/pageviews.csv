@@ -19,7 +19,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,Afterpay,147
 2026-10-19,en.wikipedia,Afterpay,128
 2026-10-20,en.wikipedia,Afterpay,131
-2026-10-21,en.wikipedia,Afterpay,149
+2026-10-21,en.wikipedia,Afterpay,132
 2026-10-22,en.wikipedia,Afterpay,132
 2026-10-23,en.wikipedia,Afterpay,181
 2026-10-24,en.wikipedia,Afterpay,162
@@ -48,6 +48,7 @@ date,project,article,views
 2026-11-16,en.wikipedia,Afterpay,141
 2026-11-17,en.wikipedia,Afterpay,146
 2026-11-18,en.wikipedia,Afterpay,118
+2026-11-19,en.wikipedia,Afterpay,178
 2026-10-01,en.wikipedia,AirPods,596
 2026-10-02,en.wikipedia,AirPods,496
 2026-10-03,en.wikipedia,AirPods,490
@@ -117,7 +118,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,Air_fryer,135
 2026-10-19,en.wikipedia,Air_fryer,116
 2026-10-20,en.wikipedia,Air_fryer,101
-2026-10-21,en.wikipedia,Air_fryer,133
+2026-10-21,en.wikipedia,Air_fryer,127
 2026-10-22,en.wikipedia,Air_fryer,138
 2026-10-23,en.wikipedia,Air_fryer,116
 2026-10-24,en.wikipedia,Air_fryer,147
@@ -215,7 +216,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,Amazon_(company),4797
 2026-10-19,en.wikipedia,Amazon_(company),7686
 2026-10-20,en.wikipedia,Amazon_(company),7483
-2026-10-21,en.wikipedia,Amazon_(company),12018
+2026-10-21,en.wikipedia,Amazon_(company),9575
 2026-10-22,en.wikipedia,Amazon_(company),12054
 2026-10-23,en.wikipedia,Amazon_(company),10334
 2026-10-24,en.wikipedia,Amazon_(company),9664
@@ -244,6 +245,7 @@ date,project,article,views
 2026-11-16,en.wikipedia,Amazon_(company),6253
 2026-11-17,en.wikipedia,Amazon_(company),6053
 2026-11-18,en.wikipedia,Amazon_(company),6850
+2026-11-19,en.wikipedia,Amazon_(company),7508
 2026-10-01,en.wikipedia,Amazon_Kindle,1071
 2026-10-02,en.wikipedia,Amazon_Kindle,1247
 2026-10-03,en.wikipedia,Amazon_Kindle,972
@@ -264,7 +266,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,Amazon_Kindle,647
 2026-10-19,en.wikipedia,Amazon_Kindle,613
 2026-10-20,en.wikipedia,Amazon_Kindle,628
-2026-10-21,en.wikipedia,Amazon_Kindle,619
+2026-10-21,en.wikipedia,Amazon_Kindle,598
 2026-10-22,en.wikipedia,Amazon_Kindle,738
 2026-10-23,en.wikipedia,Amazon_Kindle,653
 2026-10-24,en.wikipedia,Amazon_Kindle,650
@@ -293,6 +295,7 @@ date,project,article,views
 2026-11-16,en.wikipedia,Amazon_Kindle,748
 2026-11-17,en.wikipedia,Amazon_Kindle,694
 2026-11-18,en.wikipedia,Amazon_Kindle,684
+2026-11-19,en.wikipedia,Amazon_Kindle,734
 2026-10-01,en.wikipedia,Apple_Watch,966
 2026-10-02,en.wikipedia,Apple_Watch,884
 2026-10-03,en.wikipedia,Apple_Watch,951
@@ -342,6 +345,7 @@ date,project,article,views
 2026-11-16,en.wikipedia,Apple_Watch,752
 2026-11-17,en.wikipedia,Apple_Watch,707
 2026-11-18,en.wikipedia,Apple_Watch,758
+2026-11-19,en.wikipedia,Apple_Watch,818
 2026-10-01,en.wikipedia,Best_Buy,605
 2026-10-02,en.wikipedia,Best_Buy,582
 2026-10-03,en.wikipedia,Best_Buy,580
@@ -362,7 +366,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,Best_Buy,506
 2026-10-19,en.wikipedia,Best_Buy,627
 2026-10-20,en.wikipedia,Best_Buy,623
-2026-10-21,en.wikipedia,Best_Buy,566
+2026-10-21,en.wikipedia,Best_Buy,575
 2026-10-22,en.wikipedia,Best_Buy,592
 2026-10-23,en.wikipedia,Best_Buy,569
 2026-10-24,en.wikipedia,Best_Buy,502
@@ -391,6 +395,7 @@ date,project,article,views
 2026-11-16,en.wikipedia,Best_Buy,715
 2026-11-17,en.wikipedia,Best_Buy,594
 2026-11-18,en.wikipedia,Best_Buy,762
+2026-11-19,en.wikipedia,Best_Buy,818
 2026-10-01,en.wikipedia,Black_Friday_(shopping),732
 2026-10-02,en.wikipedia,Black_Friday_(shopping),712
 2026-10-03,en.wikipedia,Black_Friday_(shopping),647
@@ -410,8 +415,8 @@ date,project,article,views
 2026-10-17,en.wikipedia,Black_Friday_(shopping),974
 2026-10-18,en.wikipedia,Black_Friday_(shopping),1067
 2026-10-19,en.wikipedia,Black_Friday_(shopping),1261
-2026-10-20,en.wikipedia,Black_Friday_(shopping),3307
-2026-10-21,en.wikipedia,Black_Friday_(shopping),5320
+2026-10-20,en.wikipedia,Black_Friday_(shopping),1252
+2026-10-21,en.wikipedia,Black_Friday_(shopping),1314
 2026-10-22,en.wikipedia,Black_Friday_(shopping),8339
 2026-10-23,en.wikipedia,Black_Friday_(shopping),8016
 2026-10-24,en.wikipedia,Black_Friday_(shopping),5694
@@ -440,6 +445,7 @@ date,project,article,views
 2026-11-16,en.wikipedia,Black_Friday_(shopping),7594
 2026-11-17,en.wikipedia,Black_Friday_(shopping),7413
 2026-11-18,en.wikipedia,Black_Friday_(shopping),7628
+2026-11-19,en.wikipedia,Black_Friday_(shopping),9066
 2026-10-01,en.wikipedia,Boxing_Day,639
 2026-10-02,en.wikipedia,Boxing_Day,582
 2026-10-03,en.wikipedia,Boxing_Day,635
@@ -460,7 +466,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,Boxing_Day,784
 2026-10-19,en.wikipedia,Boxing_Day,738
 2026-10-20,en.wikipedia,Boxing_Day,627
-2026-10-21,en.wikipedia,Boxing_Day,656
+2026-10-21,en.wikipedia,Boxing_Day,639
 2026-10-22,en.wikipedia,Boxing_Day,884
 2026-10-23,en.wikipedia,Boxing_Day,1359
 2026-10-24,en.wikipedia,Boxing_Day,1329
@@ -538,6 +544,7 @@ date,project,article,views
 2026-11-16,en.wikipedia,"Buy_now,_pay_later",115
 2026-11-17,en.wikipedia,"Buy_now,_pay_later",106
 2026-11-18,en.wikipedia,"Buy_now,_pay_later",118
+2026-11-19,en.wikipedia,"Buy_now,_pay_later",163
 2026-10-01,en.wikipedia,Costco,2029
 2026-10-02,en.wikipedia,Costco,2008
 2026-10-03,en.wikipedia,Costco,1990
@@ -655,8 +662,8 @@ date,project,article,views
 2026-10-17,en.wikipedia,Dyson_(company),532
 2026-10-18,en.wikipedia,Dyson_(company),503
 2026-10-19,en.wikipedia,Dyson_(company),518
-2026-10-20,en.wikipedia,Dyson_(company),512
-2026-10-21,en.wikipedia,Dyson_(company),485
+2026-10-20,en.wikipedia,Dyson_(company),495
+2026-10-21,en.wikipedia,Dyson_(company),482
 2026-10-22,en.wikipedia,Dyson_(company),516
 2026-10-23,en.wikipedia,Dyson_(company),473
 2026-10-24,en.wikipedia,Dyson_(company),456
@@ -705,7 +712,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,EBay,1932
 2026-10-19,en.wikipedia,EBay,2543
 2026-10-20,en.wikipedia,EBay,2379
-2026-10-21,en.wikipedia,EBay,2642
+2026-10-21,en.wikipedia,EBay,2659
 2026-10-22,en.wikipedia,EBay,2896
 2026-10-23,en.wikipedia,EBay,2610
 2026-10-24,en.wikipedia,EBay,2339
@@ -753,7 +760,7 @@ date,project,article,views
 2026-10-17,en.wikipedia,Etsy,439
 2026-10-18,en.wikipedia,Etsy,520
 2026-10-19,en.wikipedia,Etsy,608
-2026-10-20,en.wikipedia,Etsy,682
+2026-10-20,en.wikipedia,Etsy,639
 2026-10-21,en.wikipedia,Etsy,721
 2026-10-22,en.wikipedia,Etsy,815
 2026-10-23,en.wikipedia,Etsy,738
@@ -803,7 +810,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,IPad,979
 2026-10-19,en.wikipedia,IPad,1081
 2026-10-20,en.wikipedia,IPad,954
-2026-10-21,en.wikipedia,IPad,1012
+2026-10-21,en.wikipedia,IPad,1017
 2026-10-22,en.wikipedia,IPad,996
 2026-10-23,en.wikipedia,IPad,1027
 2026-10-24,en.wikipedia,IPad,1070
@@ -852,7 +859,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,IPhone,2592
 2026-10-19,en.wikipedia,IPhone,2796
 2026-10-20,en.wikipedia,IPhone,2853
-2026-10-21,en.wikipedia,IPhone,3003
+2026-10-21,en.wikipedia,IPhone,3018
 2026-10-22,en.wikipedia,IPhone,3135
 2026-10-23,en.wikipedia,IPhone,3154
 2026-10-24,en.wikipedia,IPhone,3000
@@ -901,7 +908,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,Klarna,298
 2026-10-19,en.wikipedia,Klarna,395
 2026-10-20,en.wikipedia,Klarna,399
-2026-10-21,en.wikipedia,Klarna,428
+2026-10-21,en.wikipedia,Klarna,404
 2026-10-22,en.wikipedia,Klarna,403
 2026-10-23,en.wikipedia,Klarna,1060
 2026-10-24,en.wikipedia,Klarna,1300
@@ -950,7 +957,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,Lego,1633
 2026-10-19,en.wikipedia,Lego,1695
 2026-10-20,en.wikipedia,Lego,1746
-2026-10-21,en.wikipedia,Lego,1869
+2026-10-21,en.wikipedia,Lego,1683
 2026-10-22,en.wikipedia,Lego,1827
 2026-10-23,en.wikipedia,Lego,1633
 2026-10-24,en.wikipedia,Lego,1691
@@ -999,7 +1006,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,MacBook_Air,482
 2026-10-19,en.wikipedia,MacBook_Air,573
 2026-10-20,en.wikipedia,MacBook_Air,521
-2026-10-21,en.wikipedia,MacBook_Air,528
+2026-10-21,en.wikipedia,MacBook_Air,529
 2026-10-22,en.wikipedia,MacBook_Air,493
 2026-10-23,en.wikipedia,MacBook_Air,393
 2026-10-24,en.wikipedia,MacBook_Air,453
@@ -1048,7 +1055,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,Meta_Quest_3,271
 2026-10-19,en.wikipedia,Meta_Quest_3,278
 2026-10-20,en.wikipedia,Meta_Quest_3,307
-2026-10-21,en.wikipedia,Meta_Quest_3,271
+2026-10-21,en.wikipedia,Meta_Quest_3,270
 2026-10-22,en.wikipedia,Meta_Quest_3,300
 2026-10-23,en.wikipedia,Meta_Quest_3,280
 2026-10-24,en.wikipedia,Meta_Quest_3,266
@@ -1097,7 +1104,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,Nintendo_Switch_2,3113
 2026-10-19,en.wikipedia,Nintendo_Switch_2,3004
 2026-10-20,en.wikipedia,Nintendo_Switch_2,3083
-2026-10-21,en.wikipedia,Nintendo_Switch_2,2875
+2026-10-21,en.wikipedia,Nintendo_Switch_2,2921
 2026-10-22,en.wikipedia,Nintendo_Switch_2,3142
 2026-10-23,en.wikipedia,Nintendo_Switch_2,2997
 2026-10-24,en.wikipedia,Nintendo_Switch_2,3041
@@ -1195,7 +1202,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,PlayStation_5,4217
 2026-10-19,en.wikipedia,PlayStation_5,4340
 2026-10-20,en.wikipedia,PlayStation_5,4606
-2026-10-21,en.wikipedia,PlayStation_5,4283
+2026-10-21,en.wikipedia,PlayStation_5,4445
 2026-10-22,en.wikipedia,PlayStation_5,4026
 2026-10-23,en.wikipedia,PlayStation_5,3969
 2026-10-24,en.wikipedia,PlayStation_5,3723
@@ -1244,7 +1251,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,Robotic_vacuum_cleaner,73
 2026-10-19,en.wikipedia,Robotic_vacuum_cleaner,73
 2026-10-20,en.wikipedia,Robotic_vacuum_cleaner,71
-2026-10-21,en.wikipedia,Robotic_vacuum_cleaner,72
+2026-10-21,en.wikipedia,Robotic_vacuum_cleaner,58
 2026-10-22,en.wikipedia,Robotic_vacuum_cleaner,60
 2026-10-23,en.wikipedia,Robotic_vacuum_cleaner,95
 2026-10-24,en.wikipedia,Robotic_vacuum_cleaner,84
@@ -1273,6 +1280,7 @@ date,project,article,views
 2026-11-16,en.wikipedia,Robotic_vacuum_cleaner,73
 2026-11-17,en.wikipedia,Robotic_vacuum_cleaner,74
 2026-11-18,en.wikipedia,Robotic_vacuum_cleaner,62
+2026-11-19,en.wikipedia,Robotic_vacuum_cleaner,58
 2026-10-01,en.wikipedia,Samsung_Galaxy,701
 2026-10-02,en.wikipedia,Samsung_Galaxy,738
 2026-10-03,en.wikipedia,Samsung_Galaxy,764
@@ -1293,7 +1301,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,Samsung_Galaxy,825
 2026-10-19,en.wikipedia,Samsung_Galaxy,729
 2026-10-20,en.wikipedia,Samsung_Galaxy,722
-2026-10-21,en.wikipedia,Samsung_Galaxy,724
+2026-10-21,en.wikipedia,Samsung_Galaxy,729
 2026-10-22,en.wikipedia,Samsung_Galaxy,676
 2026-10-23,en.wikipedia,Samsung_Galaxy,772
 2026-10-24,en.wikipedia,Samsung_Galaxy,758
@@ -1322,6 +1330,7 @@ date,project,article,views
 2026-11-16,en.wikipedia,Samsung_Galaxy,665
 2026-11-17,en.wikipedia,Samsung_Galaxy,653
 2026-11-18,en.wikipedia,Samsung_Galaxy,682
+2026-11-19,en.wikipedia,Samsung_Galaxy,697
 2026-10-01,en.wikipedia,Shein,813
 2026-10-02,en.wikipedia,Shein,722
 2026-10-03,en.wikipedia,Shein,705
@@ -1391,7 +1400,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,Shopify,593
 2026-10-19,en.wikipedia,Shopify,816
 2026-10-20,en.wikipedia,Shopify,1064
-2026-10-21,en.wikipedia,Shopify,1059
+2026-10-21,en.wikipedia,Shopify,996
 2026-10-22,en.wikipedia,Shopify,979
 2026-10-23,en.wikipedia,Shopify,965
 2026-10-24,en.wikipedia,Shopify,796
@@ -1440,7 +1449,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,Singles'_Day,98
 2026-10-19,en.wikipedia,Singles'_Day,137
 2026-10-20,en.wikipedia,Singles'_Day,193
-2026-10-21,en.wikipedia,Singles'_Day,437
+2026-10-21,en.wikipedia,Singles'_Day,195
 2026-10-22,en.wikipedia,Singles'_Day,803
 2026-10-23,en.wikipedia,Singles'_Day,205
 2026-10-24,en.wikipedia,Singles'_Day,1164
@@ -1587,7 +1596,7 @@ date,project,article,views
 2026-10-18,en.wikipedia,Temu,1373
 2026-10-19,en.wikipedia,Temu,1375
 2026-10-20,en.wikipedia,Temu,1451
-2026-10-21,en.wikipedia,Temu,1483
+2026-10-21,en.wikipedia,Temu,1461
 2026-10-22,en.wikipedia,Temu,1566
 2026-10-23,en.wikipedia,Temu,1229
 2026-10-24,en.wikipedia,Temu,1159
@@ -1616,6 +1625,7 @@ date,project,article,views
 2026-11-16,en.wikipedia,Temu,1107
 2026-11-17,en.wikipedia,Temu,1167
 2026-11-18,en.wikipedia,Temu,1054
+2026-11-19,en.wikipedia,Temu,999
 2026-10-01,en.wikipedia,Walmart,2990
 2026-10-02,en.wikipedia,Walmart,2764
 2026-10-03,en.wikipedia,Walmart,2743
@@ -1665,6 +1675,7 @@ date,project,article,views
 2026-11-16,en.wikipedia,Walmart,3427
 2026-11-17,en.wikipedia,Walmart,3383
 2026-11-18,en.wikipedia,Walmart,3251
+2026-11-19,en.wikipedia,Walmart,3202
 2026-10-01,en.wikipedia,Xbox_Series_X_and_Series_S,1313
 2026-10-02,en.wikipedia,Xbox_Series_X_and_Series_S,1422
 2026-10-03,en.wikipedia,Xbox_Series_X_and_Series_S,1428
