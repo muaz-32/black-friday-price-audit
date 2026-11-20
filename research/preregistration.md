@@ -1,11 +1,12 @@
-# Pre-registration: Do "was" prices tell the truth on Black Friday? Evidence from 1,700 online stores in 15+ countries, and the EU's 30-day prior-price rule
+# Pre-registration: Do "was" prices tell the truth on Black Friday? Evidence from 46,000 online stores in 49 countries, and the EU's 30-day prior-price rule
 
-*Draft for registration on OSF (osf.io, "OSF Preregistration" template) before 2026-11-20, a week before Black Friday. Sections follow that template.*
+*For registration on 2026-11-20, a week before Black Friday. Sections follow the OSF Preregistration template.*
 
 - **Author(s):** [your name, affiliation]
 - **Repository:** https://github.com/muaz-32/black-friday-price-audit
-- **Analysis code frozen at:** commit `98a0516` (`collector/variants.py`, `collector/refprice.py`). Any later change to how a measure is computed is listed under "Deviations" with its date and reason.
-- **Status at registration:** data collection began on 2026-11-14. Interim figures have been computed to test the code, but no hypothesis test below has been run, and none can be: the Black Friday window has not happened yet.
+- **Measurement code frozen at:** commit `98a0516` (`collector/variants.py`, `collector/refprice.py`); these files are unchanged at registration. Any later change to how a measure is computed is listed under "Deviations" with its date and reason.
+- **Statistical analysis code:** the models in Section 7 will be committed to `research/` before any snapshot from the Black Friday window is analysed.
+- **Status at registration:** data collection began on 2026-11-14. No hypothesis test below has been run, and none can be: the Black Friday window has not happened yet. The collection workflow automatically publishes per-run descriptive summaries, including shares by region (`summary/refprice_runs.csv`). These cover snapshots before the window only and are not the tests below.
 
 ---
 
@@ -44,7 +45,7 @@ The EU rule is the only one that sets a mechanical, observable test. This makes 
 
 **Exploratory.** These are labelled as such in any report:
 
-- Price paths of a fixed random basket of product pages at large retailers that publish no feed (`collector/basket.py`, `stores/basket.csv`, drawn on 2026-11-16 with seed 20261116). The basket includes Costco, Wayfair, Marks & Spencer, JB Hi-Fi and Coolblue among its 14 retailers. Few of these pages carry a "was" price, so the basket is used to compare Black Friday prices with each product's own prices before and after, not for the measures in Section 4.
+- Price paths of a fixed random basket of product pages at large retailers that publish no feed (`collector/basket.py`, `stores/basket.csv`, drawn on 2026-11-16 with seed 20261116). The basket holds 2,271 pages from 17 retailers, including Marks & Spencer, JB Hi-Fi, Coolblue, Ulta and Hy-Vee: 150 pages each, except Costco (14) and Wayfair (7), where fewer pages could be read. Few of these pages carry a "was" price, so the basket is used to compare Black Friday prices with each product's own prices before and after, not for the measures in Section 4.
 
 - Timing of price cuts relative to search interest. The repository logs Wikipedia page views, search autocomplete and trending topics hourly.
 - Day-by-day dynamics through the season.
@@ -52,10 +53,10 @@ The EU rule is the only one that sets a mechanical, observable test. This makes 
 
 ## 3. Data collection
 
-- **Sources.** Each store's public product feed: Shopify's `/products.json` and the WooCommerce Store API (`/wp-json/wc/store/v1/products`). These are the listings the stores' own pages use, read without logging in. The store list is `stores/stores.csv` (its size at registration is given by the registered commit), and `stores/rejected.csv` lists every domain probed and rejected, with the reason.
+- **Sources.** Each store's public product feed: Shopify's `/products.json` and the WooCommerce Store API (`/wp-json/wc/store/v1/products`). These are the listings the stores' own pages use, read without logging in. The store list is `stores/stores.csv`: 46,306 stores (6,514 Shopify, 39,792 WooCommerce), last changed on 2026-11-18 (commit `d85e886`). `stores/rejected.csv` lists every domain probed and rejected, with the reason.
 - **Frequency and vantage.** Every 6 hours (00:17, 06:17, 12:17 and 18:17 UTC), from GitHub Actions runners in the US. Each store's home market is pinned where the platform supports it.
-- **Politeness.** robots.txt is respected; requests run at 1 per second per platform family, with back-off on throttling; no personal data is collected.
-- **Stores added after registration.** Stores may be added until **2026-11-20 00:00 UTC**, so that every analysed store has at least 7 days of history before Black Friday. Stores added later are excluded from confirmatory tests.
+- **Politeness.** robots.txt is respected, including crawl delays up to 10 seconds. Each store is read one request at a time. The stores are split across 16 runners; on each runner, Shopify requests are capped at 1 per second, and requests to other stores at 10 per second spread across different stores. Requests back off when throttled. No personal data is collected.
+- **Store cut-off.** Stores may be added until **2026-11-20 00:00 UTC**, so that every analysed store has at least 7 days of history before Black Friday. The list has not changed since 2026-11-18. Any store added after the cut-off is excluded from confirmatory tests.
 - **Collection ends** on 2027-01-31.
 - **Data availability.** Raw snapshots are published as Parquet files in the repository's monthly releases (`data-YYYY-MM`). Derived variant histories are in the `state` release, and per-run measures are in `summary/refprice/`.
 
@@ -89,15 +90,26 @@ Variables are measured per variant: a product's size or colour, each with its ow
   - It was read successfully in at least 80% of snapshots from 2026-11-20 to 2026-11-30.
   - It was not cut off at the page limit in the snapshot used.
 - **Regions.** Regions are assigned from the store's country as reported by the platform:
-  - **EU:** the 27 member states, and only stores priced in an EU currency, which excludes EU-registered stores priced in USD.
+  - **EU:** the 27 member states, and only stores priced in an EU currency, which excludes EU-registered stores priced in USD or GBP. This currency restriction is applied in the analysis; the automatic summaries in `summary/refprice/` group by country only.
   - **Non-EU:** US, UK, AU and CA.
-  - **Excluded from H1:** other countries and stores with no country.
-- **Platform balance.** Most EU stores were found through Common Crawl and are small WooCommerce shops, while most US stores are Shopify brands. To avoid comparing platforms instead of rules, the same Common Crawl search is run for the UK, AU, CA and NZ country domains. H1 is then estimated with platform as a covariate, and repeated **within each platform**: WooCommerce EU against WooCommerce UK/AU/CA, and Shopify EU against Shopify non-EU. A result that holds only in the pooled model and not within platforms is reported as such.
-- **Sample size.** It is fixed by collection, not chosen. Stores are found through platform showcases, curated lists and a search of Common Crawl's public URL index (`collector/cc_candidates.py`); the counts per region and platform at registration are those of the registered commit. H1 is tested only if at least **50 EU stores** each contribute at least one eligible reduced variant. Otherwise H1 is reported descriptively, and that is stated.
+  - **Excluded from H1:** other countries (including NZ) and stores with no country.
+- **Platform balance.** Most EU stores were found through Common Crawl and are small WooCommerce shops, while most US stores are Shopify brands. To avoid comparing platforms instead of rules, the same Common Crawl search was run for the UK, AU, CA and NZ country domains before registration. H1 is estimated with platform as a covariate, and repeated **within each platform**: WooCommerce EU against WooCommerce UK/AU/CA, and Shopify EU against Shopify non-EU. A result that holds only in the pooled model and not within platforms is reported as such.
+- **Sample size.** It is fixed by collection, not chosen. Stores were found through platform showcases, curated lists and a search of Common Crawl's public URL index (`collector/cc_candidates.py`). Stores listed at registration:
+
+  | Region | Shopify | WooCommerce | Total |
+  |---|---:|---:|---:|
+  | EU (EU currency) | 1,843 | 15,624 | 17,467 |
+  | UK | 1,023 | 8,165 | 9,188 |
+  | US | 1,106 | 232 | 1,338 |
+  | AU | 1,447 | 7,356 | 8,803 |
+  | CA | 616 | 2,834 | 3,450 |
+  | Excluded from H1: NZ, other countries, EU stores in other currencies, no country | 479 | 5,581 | 6,060 |
+
+  Far fewer stores will contribute eligible reduced variants. H1a is tested only if at least **50 EU stores** each contribute at least one eligible reduced variant, and H1b only if at least **50 UK stores** also do. A within-platform comparison is run only if each of its two groups has at least 50 such stores. Otherwise the comparison is reported descriptively, and that is stated.
 
 ## 6. Measurement validation
 
-During the Black Friday window, a stratified random sample of 200 variants flagged `above_30d_low` will be drawn: 50 each from the EU, UK, US and AU/CA, using seed 20261127. The variants' product pages will be opened and coded by hand for three things:
+During the Black Friday window, a stratified random sample of 200 variants flagged `above_30d_low` will be drawn: 50 each from the EU, UK, US and AU/CA (all of a stratum's flagged variants if it has fewer than 50), using seed 20261127. The variants' product pages will be opened and coded by hand for three things:
 
 1. Is the compare-at price displayed as a struck-through or "was" price?
 2. Is it labelled as a recommended retail price ("RRP", "UVP" or similar) rather than as the store's own former price?
@@ -108,7 +120,7 @@ Screenshots are archived. The share of confirmed displays is reported, and the m
 ## 7. Analysis plan
 
 - **H1.**
-  - **Model:** logistic regression at the variant level, `above_30d_low ~ EU + log(store variants) + log(median price) + platform`, with standard errors clustered by store.
+  - **Model:** logistic regression at the variant level, `above_30d_low ~ EU + log(store variants) + log(median price) + platform`, with standard errors clustered by store. A store's median price is converted to euros at the European Central Bank's reference rates of 2026-11-20, so that stores in different currencies are comparable.
   - **Samples:** H1a uses EU and pooled non-EU stores; H1b uses EU and UK stores only.
   - **Report:** odds ratios, average marginal effects and 95% confidence intervals.
   - **Robustness:**
@@ -130,6 +142,8 @@ Screenshots are archived. The share of confirmed displays is reported, and the m
 4. **Store country.** The country and currency are those the store reports. A store's EU sales may run through a market not observed here.
 5. **Sample selection.** Stores were found through platform showcases, curated lists and Common Crawl. They are not a random sample of retailers, and large retailers on their own platforms are absent.
 6. **Rule exceptions.** Some EU member states exempt goods on sale for under 30 days and progressive reductions. A sensitivity analysis repeats H1 without products the store created less than 30 days before the reduction began (Shopify's product creation date; WooCommerce publishes none, so its stores are left out of this check) and without reductions that deepened during the window.
+
+7. **Late-added stores.** Most stores entered the list between 2026-11-16 and 2026-11-18. At those stores, a reduction that began within 7 days of the store being added has too little prior observation and is ineligible. Early "Black Week" reductions are therefore under-represented among the eligible ones.
 
 ## 9. Deviations
 
