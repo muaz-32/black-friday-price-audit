@@ -68,9 +68,13 @@ def _text(value) -> str:
     return html.unescape(value or "").strip()
 
 
-def _list(session, url: str):
+def limiter_for(store: Store) -> http._Limiter:
+    return http.SITEGROUND_LIMITER if store.host == "siteground" else LIMITER
+
+
+def _list(session, url: str, limiter: http._Limiter = LIMITER):
     """One page of a listing: (items, total pages or None, response)."""
-    r = http.get(session, url, limiter=LIMITER)
+    r = http.get(session, url, limiter=limiter)
     if r.status_code != 200:
         return None, None, r
     try:
@@ -103,6 +107,7 @@ def probe(domain: str) -> tuple[Store | None, str]:
     final = urlsplit(r.url)
     prefix = final.path.rsplit(API, 1)[0]
     base_url = f"{final.scheme}://{final.netloc}{prefix}"
+    network = "siteground" if http.siteground(r) else ""
     if not http.fetch_robots(session, base_url, limiter=LIMITER).allowed(prefix + API):
         return None, "robots.txt disallows the Store API"
     currency = str(items[0]["prices"].get("currency_code") or "")
@@ -117,6 +122,7 @@ def probe(domain: str) -> tuple[Store | None, str]:
             name="",
             listed_products=str(r.headers.get("X-WP-Total", "")),
             platform="woocommerce",
+            host=network,
         ),
         "",
     )
@@ -128,7 +134,8 @@ def fetch_store(store: Store, *, max_pages: int = 100, page_delay: float = 0.5) 
     t0 = time.monotonic()
     session = http.new_session()
     try:
-        robots = http.fetch_robots(session, store.base_url, limiter=LIMITER)
+        limiter = limiter_for(store)
+        robots = http.fetch_robots(session, store.base_url, limiter=limiter)
         prefix = urlsplit(store.base_url).path
         if not robots.allowed(prefix + API):
             res.error = "robots.txt disallows the Store API"
@@ -138,11 +145,14 @@ def fetch_store(store: Store, *, max_pages: int = 100, page_delay: float = 0.5) 
         res.listed_products = int(store.listed_products) if store.listed_products.isdigit() else None
 
         def walk(extra: str) -> list[dict] | None:
+            nonlocal limiter
             out: list[dict] = []
             page = 1
             while True:
-                items, pages, r = _list(session, f"{store.base_url}{API}?per_page={PAGE_SIZE}&page={page}{extra}")
+                items, pages, r = _list(session, f"{store.base_url}{API}?per_page={PAGE_SIZE}&page={page}{extra}", limiter)
                 res.http_status = r.status_code
+                if http.siteground(r):  # not tagged at discovery: slow down from here on
+                    limiter = http.SITEGROUND_LIMITER
                 if items is None:
                     # Past the last page WordPress answers 400; that is the end, not an error.
                     if r.status_code == 400 and page > 1:

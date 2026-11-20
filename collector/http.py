@@ -83,6 +83,25 @@ LIMITER = _Limiter(float(os.environ.get("BF_REQUESTS_PER_SECOND", "1")))
 OTHER_LIMITER = _Limiter(float(os.environ.get("BF_OTHER_REQUESTS_PER_SECOND", "10")))
 
 
+# SiteGround hosts thousands of the WooCommerce shops followed here, and its bot
+# protection judges the request rate per visitor IP across its whole network,
+# answering with an HTTP 202 challenge page when that rate is too high. Like
+# Shopify, it gets a budget of its own, and a challenge counts as throttling.
+# (Measured 2026-11-20: at 10 requests/s shared with other shops, 400-1,260 of
+# about 3,000 SiteGround shops were challenged in each snapshot.)
+SITEGROUND_LIMITER = _Limiter(float(os.environ.get("BF_SITEGROUND_REQUESTS_PER_SECOND", "0.5")))
+SITEGROUND_MARK = "6b7412fb82ca5edfd0917e3957f05d89"  # SiteGround's "host-header" response header
+
+
+def siteground(r: requests.Response) -> bool:
+    return r.headers.get("host-header") == SITEGROUND_MARK or "sgcaptcha" in r.headers.get("location", "")
+
+
+def challenged(r: requests.Response) -> bool:
+    """A hosting network's bot check answering instead of the site: slow down, never solve it."""
+    return r.status_code == 202 and (siteground(r) or "sgcaptcha" in r.text[:3000])
+
+
 class FetchError(Exception):
     def __init__(self, message: str, status: int | None = None):
         super().__init__(message)
@@ -114,9 +133,9 @@ def get(
             last, status = f"{type(e).__name__}", None
             time.sleep(2**attempt)
             continue
-        if r.status_code in RETRY_STATUSES:
+        if r.status_code in RETRY_STATUSES or challenged(r):
             last, status = f"HTTP {r.status_code}", r.status_code
-            if r.status_code in (429, 430):
+            if r.status_code in (429, 430) or challenged(r):
                 limiter.throttled(urlsplit(url).netloc)
             try:
                 wait = float(r.headers.get("Retry-After", 2 ** (attempt + 1)))

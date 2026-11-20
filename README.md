@@ -257,13 +257,21 @@ the last 30 minutes) stops without fetching anything.
 - Reads each store one page at a time, with a pause between pages, and honours
   `Retry-After`.
 - Sends at most 1 request per second in total to Shopify stores from each
-  runner (`BF_REQUESTS_PER_SECOND`); a scheduled run uses four runners, each
-  with its own quarter of the stores, so every store is still read by one
-  runner at that pace. WooCommerce shops are separate servers and share a
-  separate budget of 2 requests per second (`BF_OTHER_REQUESTS_PER_SECOND`).
-- Treats HTTP 429 from three different stores within a minute as the platform
-  asking it to stop: it pauses every request, then resumes at a slower rate.
-  Stores that were throttled are retried once at the end of the run.
+  runner (`BF_REQUESTS_PER_SECOND`); a scheduled run uses 16 runners, each
+  with its own share of the stores, so every store is still read by one
+  runner at that pace. WooCommerce shops are separate servers: each is read one
+  page at a time, and together they share a budget of 10 requests per second
+  per runner (`BF_OTHER_REQUESTS_PER_SECOND`).
+- Shops hosted by SiteGround (marked `host=siteground` in `stores/stores.csv`,
+  or recognised by SiteGround's response header) get a budget of their own of
+  0.5 requests per second per runner (`BF_SITEGROUND_REQUESTS_PER_SECOND`):
+  SiteGround judges the rate per visitor across its whole network and answers
+  too many requests with an HTTP 202 bot check. That check is never solved or
+  worked around; it is treated like HTTP 429.
+- Treats HTTP 429, or a hosting network's bot check, from three different stores
+  within a minute as the platform asking it to stop: it pauses every request on
+  that budget, then resumes at a slower rate. Stores that were throttled are
+  retried once at the end of the run.
 - Reads only the public feed: no logins, no checkout, no customer data.
 
 ## Known limits

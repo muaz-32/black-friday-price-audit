@@ -32,6 +32,7 @@ class Store:
     name: str = ""
     listed_products: str = ""  # the store's own published count, at discovery
     platform: str = "shopify"
+    host: str = ""  # a hosting network that throttles by visitor IP across all its sites ("siteground")
 
 
 @dataclass

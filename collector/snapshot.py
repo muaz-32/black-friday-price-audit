@@ -38,7 +38,7 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 
 from .discover import load_stores
-from .http import LIMITER, OTHER_LIMITER
+from .http import LIMITER, OTHER_LIMITER, SITEGROUND_LIMITER
 from . import shopify, woocommerce
 from .shopify import Store, StoreResult
 
@@ -208,10 +208,15 @@ def main() -> int:
         # kind, not the two added together.
         pools = {
             "shopify": ThreadPoolExecutor(args.shopify_workers),
+            "siteground": ThreadPoolExecutor(args.shopify_workers),
             "other": ThreadPoolExecutor(args.workers),
         }
+
+        def pool_for(s) -> str:
+            return "shopify" if s.platform == "shopify" else "siteground" if s.host == "siteground" else "other"
+
         try:
-            futures = [pools["shopify" if s.platform == "shopify" else "other"].submit(fetch, s) for s in batch]
+            futures = [pools[pool_for(s)].submit(fetch, s) for s in batch]
             for done, fut in enumerate(as_completed(futures), 1):  # results are written on this thread only
                 res = fut.result()
                 n = len(res.rows)
@@ -240,7 +245,7 @@ def main() -> int:
         run_batch(stores, "pass 1")
         # Stores that were throttled get one more go once the rest are done;
         # by then the limiter has slowed down and any penalty has had time to lapse.
-        throttled = [r for r in results if not r.ok and r.http_status in (429, 430)]
+        throttled = [r for r in results if not r.ok and r.http_status in (202, 429, 430)]
         if throttled:
             results = [r for r in results if r not in throttled]
             print(f"retrying {len(throttled)} throttled stores", flush=True)
@@ -296,7 +301,7 @@ def main() -> int:
         "variants": counts["prices"],
         "catalog_rows": counts["catalog"],
         "seconds": round(time.monotonic() - t0),
-        "throttle_pauses": LIMITER.cooldowns + OTHER_LIMITER.cooldowns,
+        "throttle_pauses": LIMITER.cooldowns + OTHER_LIMITER.cooldowns + SITEGROUND_LIMITER.cooldowns,
         "shard": f"{args.shard[0]}/{args.shard[1]}",
         "prices_bytes": paths["prices"].stat().st_size,
         "catalog_bytes": paths["catalog"].stat().st_size,
