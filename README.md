@@ -1,5 +1,7 @@
 # Black Friday price audit
 
+**[📊 Live dashboard](https://muaz-32.github.io/black-friday-price-audit/)**: prices, discounts and product price histories, updated after every snapshot.
+
 Are Black Friday discounts real? This project records the public prices of
 online stores every few hours, starting before the sale and running until
 January, so that every "was / now" claim can be checked against what the price
