@@ -302,3 +302,25 @@ the last 30 minutes) stops without fetching anything.
 - **The baseline is short.** Collection started on 2026-11-14, about a week
   before Black Friday deals begin. The comparison with prices in December and
   January is what carries most of the weight.
+
+## Licence
+
+- **Code** (`collector/`, `dashboard/`, the workflows and other scripts): MIT,
+  see [LICENSE](LICENSE).
+- **[research/preregistration.md](research/preregistration.md)**: CC BY 4.0,
+  the same as its registration on OSF.
+- **Data** (the snapshot files in the releases, and `stores/`, `summary/`,
+  `status/` and `trends/`): prices, store lists and the measures derived from
+  them are facts, published for research. This project claims no rights over
+  them and adds no restrictions of its own; please cite this repository. It
+  cannot grant rights it does not have, though:
+  - Product titles, variant names, vendor names, tags and SKUs in the
+    catalogue files, and store names, belong to the stores. They are kept so
+    that prices can be matched to products, and brand names may be trademarks.
+  - Whether reusing a large part of one store's listings needs that store's
+    permission depends on where you are (in the EU, for example, the
+    database right).
+  - In `trends/`, Wikipedia page views come from the Wikimedia pageviews API,
+    whose data is released under CC0. Google's autocomplete suggestions and
+    trending searches, including the news headlines in the trending files,
+    belong to Google and the publishers.
