@@ -1,6 +1,6 @@
 # Pre-registration: Do "was" prices tell the truth on Black Friday? Evidence from 46,000 online stores in 49 countries, and the EU's 30-day prior-price rule
 
-*For registration on OSF on 2026-11-20, a week before Black Friday, with the **OSF Preregistration** template (version 4). Each heading below is one box of that form, in the form's order; paste each section into the box of the same name. Where a box has fixed choices, the choice to tick is given in bold.*
+*For registration on OSF on 2026-11-21, before Black Friday, with the **OSF Preregistration** template (version 4). Each heading below is one box of that form, in the form's order; paste each section into the box of the same name. Where a box has fixed choices, the choice to tick is given in bold.*
 
 ---
 
@@ -109,12 +109,12 @@ There is no randomization; regions are not assigned by the researchers. Two rand
 ### Data collection procedures
 
 - **Sources.** Each store's public product feed: Shopify's `/products.json` and the WooCommerce Store API (`/wp-json/wc/store/v1/products`). These are the listings the stores' own pages use, read without logging in.
-- **Sampling frame.** Stores were found through platform showcases, curated lists and a search of Common Crawl's public URL index (`collector/cc_candidates.py`). To reduce the difference in platform mix between regions, the same Common Crawl search was run for the UK, AU, CA and NZ country domains. The store list is `stores/stores.csv`: 46,306 stores (6,514 Shopify, 39,792 WooCommerce), last changed on 2026-11-18 (commit `d85e886`). `stores/rejected.csv` lists every domain probed and rejected, with the reason.
+- **Sampling frame.** Stores were found through platform showcases, curated lists and a search of Common Crawl's public URL index (`collector/cc_candidates.py`). To reduce the difference in platform mix between regions, the same Common Crawl search was run for the UK, AU, CA and NZ country domains. The store list is `stores/stores.csv`: 46,306 stores (6,514 Shopify, 39,792 WooCommerce). The set of stores was fixed on 2026-11-18 (commit `d85e886`). On 2026-11-20 a `host` column was added, marking the 3,072 shops hosted by SiteGround (commit `1d07632`); no store was added or removed. `stores/rejected.csv` lists every domain probed and rejected, with the reason.
 - **Frequency and vantage.** Every 6 hours (00:17, 06:17, 12:17 and 18:17 UTC), from GitHub Actions runners in the US. Shopify stores are read in their home market (via the `localization` setting), so the prices are those a local shopper sees.
 - **Politeness.**
   - robots.txt is respected, including crawl delays up to 10 seconds.
   - Each store is read one request at a time, and requests back off when throttled.
-  - The stores are split across 16 runners. On each runner, Shopify requests are capped at 1 per second, and requests to other stores at 10 per second spread across different stores.
+  - The stores are split across 16 runners. On each runner, Shopify requests are capped at 1 per second, requests to SiteGround-hosted shops at 0.5 per second, and requests to other stores at 10 per second spread across different stores. SiteGround applies its limit across its whole network, so it gets a budget of its own. A SiteGround bot check is treated as throttling: the collector slows down and never tries to solve it.
   - No personal data is collected.
 - **Data availability.** Raw snapshots are published as Parquet files in the repository's monthly releases (`data-YYYY-MM`). Derived variant histories are in the `state` release, and per-run measures are in `summary/refprice/`.
 
@@ -146,7 +146,7 @@ Otherwise the comparison is reported descriptively, and that is stated.
 ### Starting and stopping rules
 
 - **Start.** Collection began on 2026-11-14.
-- **Store cut-off.** Stores may be added until **2026-11-20 00:00 UTC**, so that every analysed store has at least 7 days of history before Black Friday. The list has not changed since 2026-11-18. Any store added after the cut-off is excluded from confirmatory tests.
+- **Store cut-off.** Stores may be added until **2026-11-20 00:00 UTC**, so that every analysed store has at least 7 days of history before Black Friday. No store has been added or removed since 2026-11-18. Any store added after the cut-off is excluded from confirmatory tests.
 - **Stop.** Collection ends on 2027-01-31, the end of the January window.
 
 ---
@@ -258,6 +258,7 @@ Definitions are in `collector/refprice.py`, and constants are fixed at registrat
 ### Missing data
 
 - A snapshot in which a store could not be read is a gap. Prices hold from the last observation until the next one, and a reduction run continues across the gap.
+- Until 2026-11-20, SiteGround's bot check turned away 400 to 1,260 of its roughly 3,000 shops in each snapshot. These failed reads are gaps like any other. From 2026-11-20 these shops are read on their own slower budget.
 - Stores read in fewer than 80% of the snapshots from 2026-11-20 to 2026-11-30 are excluded.
 - A variant missing from a listing is treated as unobserved, not as a price change.
 - Stores with no reported country are excluded from H1.
