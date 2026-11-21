@@ -199,6 +199,25 @@ The study these feed is pre-registered in
 [`research/preregistration.md`](research/preregistration.md): hypotheses,
 measures and tests were fixed before Black Friday 2026.
 
+The tests themselves are in [`research/analysis.py`](research/analysis.py),
+which takes every per-variant measure from `collector.refprice` unchanged and
+runs the pre-registered models (H1a, H1b, H2, H3 and the descriptive D1 and
+D2). After the last follow-up snapshot:
+
+```bash
+pip install -r research/requirements.txt
+gh release download state -p 'variant-history-*' --dir data/analysis
+gh release download data-2026-11 -p 'runs-*' --dir data/analysis
+gh release download data-2026-12 -p 'runs-*' --dir data/analysis
+gh release download data-2027-01 -p 'runs-*' --dir data/analysis
+python -m research.analysis --history data/analysis/variant-history-<newest>.parquet --runs data/analysis
+```
+
+It writes `research/results/report.md`, `results.json` and `d2.csv`. Every
+window, threshold and seed is a flag that defaults to its pre-registered
+value; a report run with any other value opens with a warning that it is not
+the pre-registered analysis.
+
 ### Large retailers: the tracked basket
 
 Large retailers on their own platforms (Target, John Lewis, MediaMarkt and so

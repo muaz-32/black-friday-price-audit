@@ -12,7 +12,7 @@
 
 **Contributors:** [your name, affiliation]
 
-**Repository:** https://github.com/muaz-32/black-friday-price-audit. Measurement code (`collector/variants.py`, `collector/refprice.py`) frozen at commit `98a0516` and unchanged at registration. The statistical models below will be committed to `research/` before any snapshot from the Black Friday window is analysed.
+**Repository:** https://github.com/muaz-32/black-friday-price-audit. Measurement code (`collector/variants.py`, `collector/refprice.py`) frozen at commit `98a0516` and unchanged at registration. The analysis script, `research/analysis.py`, runs every model below from those measures; its defaults are the windows, thresholds and seeds given here. It was tested only on snapshots from before the Black Friday window.
 
 ---
 
@@ -221,9 +221,10 @@ Definitions are in `collector/refprice.py`, and constants are fixed at registrat
     - (c) excluding stores whose pages show RRP labels (see "Other planned analysis");
     - (d) `never_charged` as the outcome;
     - (e) within each platform: WooCommerce EU against WooCommerce UK/AU/CA, and Shopify EU against Shopify non-EU. A result that holds only in the pooled model and not within platforms is reported as such.
-- **H2.** A one-sample test of the store-level median gap against 0 (Wilcoxon signed-rank test), with a store-clustered bootstrap confidence interval (2,000 resamples).
-- **H3.** Logistic regression of `raise_then_cut` on a Black Friday indicator with store fixed effects, using reductions that begin in either window.
-- **D1.** Shares with store-clustered bootstrap confidence intervals.
+- **H2.** A one-sample test of the store-level median gap against 0 (Wilcoxon signed-rank test), with a store-clustered bootstrap confidence interval (2,000 resamples) for the median of the store medians.
+- **H3.** Logistic regression of `raise_then_cut` on a Black Friday indicator with store fixed effects, using eligible reductions that begin in either window, each counted once. It is estimated as a conditional (fixed-effects) logit, so only stores with reductions beginning in both windows and with variation in the outcome contribute.
+- **D1.** For every variant in the Black Friday sample, its price on the first snapshot of each follow-up day, in stores read successfully and not cut off at the page limit in that snapshot. Variants no longer listed are left out. Shares are reported with store-clustered bootstrap confidence intervals.
+- **Bootstraps** use 2,000 resamples of stores and seed 20261127.
 
 ### Transformations
 
