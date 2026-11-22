@@ -114,7 +114,7 @@ There is no randomization; regions are not assigned by the researchers. Two rand
 - **Politeness.**
   - robots.txt is respected, including crawl delays up to 10 seconds.
   - Each store is read one request at a time, and requests back off when throttled.
-  - The stores are split across 16 runners. On each runner, Shopify requests are capped at 1 per second, requests to SiteGround-hosted shops at 0.5 per second, and requests to other stores at 10 per second spread across different stores. SiteGround applies its limit across its whole network, so it gets a budget of its own. A SiteGround bot check is treated as throttling: the collector slows down and never tries to solve it.
+  - The stores are split across 16 runners. On each runner, Shopify requests are capped at 1 per second, requests to SiteGround-hosted shops at 0.5 per second, and requests to other stores at 10 per second spread across different stores. SiteGround applies its limit across its whole network, so it gets a budget of its own. A SiteGround bot check is treated as throttling: the collector slows down and never tries to solve it. If a runner is turned away three times in a row, it stops asking SiteGround for the rest of that snapshot, and its SiteGround shops are recorded as not read. They are not retried from another runner.
   - No personal data is collected.
 - **Data availability.** Raw snapshots are published as Parquet files in the repository's monthly releases (`data-YYYY-MM`). Derived variant histories are in the `state` release, and per-run measures are in `summary/refprice/`.
 
@@ -259,7 +259,7 @@ Definitions are in `collector/refprice.py`, and constants are fixed at registrat
 ### Missing data
 
 - A snapshot in which a store could not be read is a gap. Prices hold from the last observation until the next one, and a reduction run continues across the gap.
-- Until 2026-11-20, SiteGround's bot check turned away 400 to 1,260 of its roughly 3,000 shops in each snapshot. These failed reads are gaps like any other. From 2026-11-20 these shops are read on their own slower budget.
+- Until 2026-11-20, SiteGround's bot check turned away 400 to 1,260 of its roughly 3,000 shops in each snapshot. These failed reads are gaps like any other. From 2026-11-20 these shops are read on their own slower budget. From 2026-11-20 to 2026-11-22, some runners were turned away from their first request. Their pauses held snapshots to the 4-hour limit and pushed the following snapshots later than the 6-hour slots. Since 2026-11-22, a runner that is turned away gives up on SiteGround for that snapshot (see Politeness), and the snapshots are back on the 6-hour schedule. Those shops are gaps for that snapshot.
 - Stores read in fewer than 80% of the snapshots from 2026-11-20 to 2026-11-30 are excluded.
 - A variant missing from a listing is treated as unobserved, not as a price change.
 - Stores with no reported country are excluded from H1.
