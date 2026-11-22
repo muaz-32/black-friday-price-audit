@@ -288,7 +288,13 @@ the last 30 minutes) stops without fetching anything.
   0.5 requests per second per runner (`BF_SITEGROUND_REQUESTS_PER_SECOND`):
   SiteGround judges the rate per visitor across its whole network and answers
   too many requests with an HTTP 202 bot check. That check is never solved or
-  worked around; it is treated like HTTP 429.
+  worked around; it is treated like HTTP 429. Some runner IPs are turned away
+  from their first request, so after three pauses in a row with no good answer
+  (about 7 minutes) a runner stops asking SiteGround for the rest of the run
+  and records its SiteGround shops as `not read: SiteGround's bot check turned
+  this runner away` (`BF_SITEGROUND_GIVE_UP_AFTER`). Those shops are not
+  retried from another runner. The run summary counts them as
+  `stores_turned_away`.
 - Treats HTTP 429, or a hosting network's bot check, from three different stores
   within a minute as the platform asking it to stop: it pauses every request on
   that budget, then resumes at a slower rate. Stores that were throttled are

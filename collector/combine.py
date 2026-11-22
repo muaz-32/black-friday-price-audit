@@ -20,6 +20,8 @@ from pathlib import Path
 
 import pyarrow.parquet as pq
 
+from .http import GAVE_UP
+
 
 def join(parts: list[Path], out: Path) -> int:
     rows = 0
@@ -83,6 +85,7 @@ def main() -> int:
         "stores_ok": len(ok),
         "stores_failed": len(failed),
         "stores_skipped": sum((r["error"] or "").startswith("skipped") for r in failed),
+        "stores_turned_away": sum((r["error"] or "") == GAVE_UP for r in failed),
         "stores_truncated": sum(bool(r["truncated"]) for r in ok),
         "products": sum(r["products"] or 0 for r in ok),
         "variants": counts["prices"],

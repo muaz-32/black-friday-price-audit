@@ -38,7 +38,7 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 
 from .discover import load_stores
-from .http import LIMITER, OTHER_LIMITER, SITEGROUND_LIMITER
+from .http import GAVE_UP, LIMITER, OTHER_LIMITER, SITEGROUND_LIMITER
 from . import shopify, woocommerce
 from .shopify import Store, StoreResult
 
@@ -296,6 +296,7 @@ def main() -> int:
         "stores_ok": len(ok),
         "stores_failed": len(failed),
         "stores_skipped": sum(r.error.startswith("skipped") for r in failed),
+        "stores_turned_away": sum(r.error == GAVE_UP for r in failed),  # by a hosting network's bot check
         "stores_truncated": sum(r.truncated for r in ok),
         "products": sum(r.products for r in ok),
         "variants": counts["prices"],

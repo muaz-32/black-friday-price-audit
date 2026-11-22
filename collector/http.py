@@ -33,7 +33,7 @@ class _Limiter:
     MAX_INTERVAL = 4.0  # never slower than one request every 4 seconds
     MAX_COOLDOWN = 300.0
 
-    def __init__(self, per_second: float):
+    def __init__(self, per_second: float, *, give_up_after: int = 0, name: str = ""):
         self.interval = 1.0 / per_second
         self.lock = threading.Lock()
         self.next_slot = 0.0
@@ -41,6 +41,16 @@ class _Limiter:
         self.cooldown = 60.0
         self.cooldowns = 0
         self.recent: deque[tuple[float, str]] = deque()
+        # After this many pauses in a row with no good answer in between, stop
+        # asking for the rest of the run (0: never). See SITEGROUND_LIMITER.
+        self.give_up_after = give_up_after
+        self.name = name
+        self.strikes = 0
+        self.gave_up = False
+
+    def ok(self) -> None:
+        """A real answer (not throttling, not a bot check) came back."""
+        self.strikes = 0
 
     def wait(self) -> None:
         with self.lock:
@@ -63,6 +73,13 @@ class _Limiter:
                 return
             self.recent.clear()
             self.cooldowns += 1
+            self.strikes += 1
+            if self.give_up_after and self.strikes >= self.give_up_after:
+                self.gave_up = True
+                self.blocked_until = 0.0  # nothing more will be sent; let waiting requests fail at once
+                print(f"{self.name or 'requests'}: turned away {self.strikes} times in a row; "
+                      "not asking again in this run", flush=True)
+                return
             self.blocked_until = now + self.cooldown
             self.interval = min(self.interval * 1.5, self.MAX_INTERVAL)
             print(
@@ -89,7 +106,21 @@ OTHER_LIMITER = _Limiter(float(os.environ.get("BF_OTHER_REQUESTS_PER_SECOND", "1
 # Shopify, it gets a budget of its own, and a challenge counts as throttling.
 # (Measured 2026-11-20: at 10 requests/s shared with other shops, 400-1,260 of
 # about 3,000 SiteGround shops were challenged in each snapshot.)
-SITEGROUND_LIMITER = _Limiter(float(os.environ.get("BF_SITEGROUND_REQUESTS_PER_SECOND", "0.5")))
+#
+# Some runner IPs are turned away by SiteGround before a single request of ours
+# could have earned it (measured 2026-11-22: challenged within the first minute,
+# then at every attempt for four hours, while runners on other IPs were never
+# challenged). Waiting does not help and only keeps knocking, and it held the
+# whole snapshot to its time limit. So after three pauses in a row without one
+# good answer (about 7 minutes), the runner stops asking SiteGround for the rest
+# of the run and records its SiteGround shops as not read. Never try to get
+# past the check, from this runner or another.
+SITEGROUND_LIMITER = _Limiter(
+    float(os.environ.get("BF_SITEGROUND_REQUESTS_PER_SECOND", "0.5")),
+    give_up_after=int(os.environ.get("BF_SITEGROUND_GIVE_UP_AFTER", "3")),
+    name="SiteGround",
+)
+GAVE_UP = "not read: SiteGround's bot check turned this runner away"
 SITEGROUND_MARK = "6b7412fb82ca5edfd0917e3957f05d89"  # SiteGround's "host-header" response header
 
 
@@ -126,7 +157,11 @@ def get(
     last = "no attempt made"
     status = None
     for attempt in range(tries):
+        if limiter.gave_up:
+            raise FetchError(GAVE_UP)
         limiter.wait()
+        if limiter.gave_up:
+            raise FetchError(GAVE_UP)
         try:
             r = session.get(url, cookies=cookies, timeout=TIMEOUT)
         except requests.RequestException as e:
@@ -143,6 +178,7 @@ def get(
                 wait = 2 ** (attempt + 1)
             time.sleep(min(max(wait, 1.0), 60.0))
             continue
+        limiter.ok()
         return r
     raise FetchError(f"gave up after {tries} tries: {last}", status)
 
@@ -205,6 +241,8 @@ class Robots:
 
 def fetch_robots(session: requests.Session, base_url: str, *, limiter: _Limiter = LIMITER) -> Robots:
     """A missing or unreadable robots.txt means no restrictions (RFC 9309 §2.3.1)."""
+    if limiter.gave_up:
+        raise FetchError(GAVE_UP)
     limiter.wait()
     try:
         r = session.get(base_url.rstrip("/") + "/robots.txt", timeout=TIMEOUT)
