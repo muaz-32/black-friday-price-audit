@@ -27,10 +27,12 @@ pre-registered analysis and lists what was changed.
 from __future__ import annotations
 
 import argparse
+import atexit
 import csv
 import io
 import json
 import math
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -294,6 +296,7 @@ def main() -> int:
 
     # The history of the included stores only, up to the last snapshot needed.
     tmp = Path(tempfile.mkdtemp(prefix="bf-analysis-"))
+    atexit.register(shutil.rmtree, tmp, ignore_errors=True)
     hist = tmp / "history.parquet"
     db.execute(
         f"""COPY (SELECT * FROM read_parquet('{args.history}')
