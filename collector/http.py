@@ -168,10 +168,20 @@ def get(
             last, status = f"{type(e).__name__}", None
             time.sleep(2**attempt)
             continue
+        if challenged(r) and limiter is not SITEGROUND_LIMITER:
+            # A SiteGround shop the store list does not mark as one. Its bot check
+            # counts against SiteGround's budget and give-up rule, not the shared
+            # one: on 22 Nov 35 such shops, on a runner SiteGround had turned away,
+            # slowed every other store on that runner to one request per 4 seconds.
+            limiter = SITEGROUND_LIMITER
+            if limiter.gave_up:
+                raise FetchError(GAVE_UP)
         if r.status_code in RETRY_STATUSES or challenged(r):
             last, status = f"HTTP {r.status_code}", r.status_code
             if r.status_code in (429, 430) or challenged(r):
                 limiter.throttled(urlsplit(url).netloc)
+                if limiter.gave_up:
+                    raise FetchError(GAVE_UP)  # no status: not one for the second pass to retry
             try:
                 wait = float(r.headers.get("Retry-After", 2 ** (attempt + 1)))
             except ValueError:

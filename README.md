@@ -284,7 +284,7 @@ the last 30 minutes) stops without fetching anything.
   page at a time, and together they share a budget of 10 requests per second
   per runner (`BF_OTHER_REQUESTS_PER_SECOND`).
 - Shops hosted by SiteGround (marked `host=siteground` in `stores/stores.csv`,
-  or recognised by SiteGround's response header) get a budget of their own of
+  or recognised by SiteGround's response header or bot check) get a budget of their own of
   0.5 requests per second per runner (`BF_SITEGROUND_REQUESTS_PER_SECOND`):
   SiteGround judges the rate per visitor across its whole network and answers
   too many requests with an HTTP 202 bot check. That check is never solved or
