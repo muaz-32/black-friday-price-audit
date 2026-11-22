@@ -1679,3 +1679,143 @@ fetched_at,geo,rank,query,approx_traffic,published_at,news_source,news_title
 2026-11-22T11:37:21Z,BD,8,eva yi xie princeton,200,2026-11-22T10:10:00Z,The Daily Princetonian,Princeton neuroscience Ph.D. student detained by ICE
 2026-11-22T11:37:21Z,BD,9,the riemann hypothesis,200,2026-11-22T09:50:00Z,The New York Times,Anthropic Mathematician Claims to Solve Riemann Hypothesis With Help From Claude
 2026-11-22T11:37:21Z,BD,10,pakistan a vs india a,5000,2026-11-22T09:40:00Z,Cricbuzz,"Match Forecast: India A vs Pakistan A, Asia Cup Rising Stars"
+2026-11-22T12:37:23Z,US,1,man city vs tottenham,200,2026-11-22T12:20:00Z,BBC,"WSL: Man City host Spurs seeking to go top, Man Utd at Birmingham"
+2026-11-22T12:37:23Z,US,2,xbox game pass,200,2026-11-22T12:20:00Z,XBOX Wire,"Coming to XBOX Game Pass: Hela: of Mice & Magic, The Outlast Trials, Sniper Ghost Warrior Contracts 2, and More"
+2026-11-22T12:37:23Z,US,3,why is the air quality bad today,100,2026-11-22T12:20:00Z,FOX43,Code Orange air quality alert issued for central Pennsylvania Saturday
+2026-11-22T12:37:23Z,US,4,apple black friday deals,200,2026-11-22T12:20:00Z,AppleInsider,Apple iPad mini 7 Drops to $449 in Amazon Black Friday Sale
+2026-11-22T12:37:23Z,US,5,charlotte weather,100,2026-11-22T12:20:00Z,Charlotte Observer,"Charlotte’s Thanksgiving airport rush: What to know about weather, outages and more"
+2026-11-22T12:37:23Z,US,6,kohls black friday 2026,200,2026-11-22T12:20:00Z,Yahoo,"Black Friday store hours 2026: When do doors open at Walmart, Target, Kohl's, Macy's, Best Buy, Costco and other retailers?"
+2026-11-22T12:37:23Z,US,7,barcelona - villarreal,2000,2026-11-22T12:10:00Z,ESPN Deportes,Barcelona: posible alineación y probabilidades vs Villarreal
+2026-11-22T12:37:23Z,US,8,burnley vs blackburn rovers,200,2026-11-22T12:10:00Z,BBC,"EFL Championship LIVE: Burnley vs Blackburn Rovers - build-up, team news, match stats & live text commentary"
+2026-11-22T12:37:23Z,US,9,ncaa division i football bowl subdivision,2000,2026-11-22T12:10:00Z,NCAA.com,2026 FCS playoffs automatic bid tracker and scenarios
+2026-11-22T12:37:23Z,US,10,weather nyc,1000,2026-11-22T12:10:00Z,The Weather Channel,East Coast storm could soak millions this weekend
+2026-11-22T12:37:23Z,GB,1,barcelona vs villarreal,2000,2026-11-22T12:10:00Z,Diario AS,"Barcelona - Villarreal, en directo: previa y última hora de LaLiga EA Sports, hoy en vivo"
+2026-11-22T12:37:23Z,GB,2,xbox game pass,200,2026-11-22T12:10:00Z,XBOX Wire,"Coming to XBOX Game Pass: Hela: of Mice & Magic, The Outlast Trials, Sniper Ghost Warrior Contracts 2, and More"
+2026-11-22T12:37:23Z,GB,3,juventus,500,2026-11-22T12:00:00Z,La Gazzetta dello Sport,"LIVE Juve-Venezia 0-0: Stankovic respinge un tiro di Zhegrova, Vicario attento su Busio"
+2026-11-22T12:37:23Z,GB,4,watford fc,10000,2026-11-22T12:00:00Z,BBC,Sheffield United 4-0 Watford - Ben Brereton Diaz double in Blades win
+2026-11-22T12:37:23Z,GB,5,audley harrison,100,2026-11-22T12:00:00Z,Sky Sports,Audley Harrison has backed Anthony Joshua and Tyson Fury to deliver when they fight on December 11 in Cardiff.
+2026-11-22T12:37:23Z,GB,6,tony mowbray,2000,2026-11-22T11:40:00Z,BBC,Blackburn boss Mowbray steps back over health issues
+2026-11-22T12:37:23Z,GB,7,man city vs tottenham,2000,2026-11-22T11:30:00Z,The Guardian,"Manchester City v Tottenham, Birmingham v Manchester United: WSL clockwatch – live"
+2026-11-22T12:37:23Z,GB,8,nottinghamshire police whatsapp scam spike,200,2026-11-22T11:30:00Z,BBC,WhatsApp scam warning issued after spike in reports
+2026-11-22T12:37:23Z,GB,9,eva longoria,500,2026-11-22T11:30:00Z,cwibc.co.id,Eva Longoria Balances Motherhood With Career and New Cruise Role
+2026-11-22T12:37:23Z,GB,10,birmingham city vs man utd,2000,2026-11-22T11:20:00Z,BBC,Birmingham City vs Manchester United: Women's Super League stats & head-to-head
+2026-11-22T12:37:23Z,CA,1,costco wasaga beach,500,2026-11-22T12:10:00Z,CTV News,‘We got here at 3:00 a.m.’ Hundreds line up as Wasaga Beach Costco opens its doors
+2026-11-22T12:37:23Z,CA,2,stat,5000,2026-11-22T12:00:00Z,DAZN,Victor Wembanyama takes 'stat padding' swipe after dropping 50 on Pelicans
+2026-11-22T12:37:23Z,CA,3,winnipeg weather,100,2026-11-22T12:00:00Z,The Weather Network,Impactful weather interruptions will mark November's end across Canada
+2026-11-22T12:37:23Z,CA,4,maple leafs 2027 draft picks,100,2026-11-22T11:30:00Z,Sportsnet.ca,Saturday Headlines: Clearing up Maple Leafs’ first-round pick
+2026-11-22T12:37:23Z,CA,5,juventus vs venezia,500,2026-11-22T11:20:00Z,Yahoo,🚨 Woltemade left out of Juventus' starting XI against Venezia
+2026-11-22T12:37:23Z,CA,6,xi jinping,200,2026-11-22T11:20:00Z,Reuters,"As Trump courts Xi and Putin, middle powers make their own moves"
+2026-11-22T12:37:23Z,CA,7,roundup,100,2026-11-22T11:10:00Z,BBC,Judge approves $7.25bn settlement for Roundup weedkiller cancer claims
+2026-11-22T12:37:23Z,CA,8,maple leafs coach jim hiller comments,1000,2026-11-22T10:50:00Z,Sportsnet.ca,Maple Leafs coach Jim Hiller under the microscope after winless streak
+2026-11-22T12:37:23Z,CA,9,movie times,100,2026-11-22T10:40:00Z,Los Angeles Times,David Fincher got to make his own Tarantino movie. First he needed to find himself in it
+2026-11-22T12:37:23Z,CA,10,stock market today,500,2026-11-22T10:30:00Z,Global News,"S&P 500, Dow on track for correction as Anthropic retreat weighs on AI stocks"
+2026-11-22T12:37:23Z,AU,1,man city vs tottenham,200,2026-11-22T12:20:00Z,Goal.com,"Manchester City Women vs Tottenham Hotspur Women: TV channel, live stream and kick-off time | Goal.com Australia"
+2026-11-22T12:37:23Z,AU,2,barcelona vs villarreal,1000,2026-11-22T12:10:00Z,Sports Illustrated,Barcelona vs. Villarreal Predictions: Reigning Champions Chase Another Glitzy Win
+2026-11-22T12:37:23Z,AU,3,juventus,100,2026-11-22T12:10:00Z,la Repubblica,Juventus - Venezia Serie A 2026
+2026-11-22T12:37:23Z,AU,4,burnley vs blackburn rovers,200,2026-11-22T11:50:00Z,BBC,"EFL Championship LIVE: Burnley vs Blackburn Rovers - build-up, team news, match stats & live text commentary"
+2026-11-22T12:37:23Z,AU,5,juventus vs venezia,1000,2026-11-22T10:40:00Z,News.com.au,‘Why is there so much fuss about it?’ – Under-fire Juventus head coach Luciano Spalletti not feeling the heat of Antonio
+2026-11-22T12:37:23Z,AU,6,meet the parents,100,2026-11-22T10:10:00Z,CNN,Ariana Grande had a tough year. ‘Focker In-Law’ ends it on a high
+2026-11-22T12:37:23Z,AU,7,ind vs pak,2000,2026-11-22T09:40:00Z,Cricinfo,Pakistan A opt to bat against India A; both teams unchanged
+2026-11-22T12:37:23Z,AU,8,sam bankman-fried,1000,2026-11-22T09:30:00Z,The Guardian,The Altruists review – two of TV’s best actors light up this chaotic crypto tale
+2026-11-22T12:37:23Z,AU,9,robodebt,500,2026-11-22T09:20:00Z,TV Tonight | Australia's Leading TV Blog,Shakedown
+2026-11-22T12:37:23Z,AU,10,byd folding steering wheel,2000,2026-11-22T09:20:00Z,New Atlas,BYD just killed the steering wheel as we know it
+2026-11-22T12:37:23Z,DE,1,autohaus könig insolvenzverfahren,2000,2026-11-22T12:20:00Z,rbb24.de,Autohaus König insolvent: Warum manche Kunden ihr Auto bekommen und andere nicht
+2026-11-22T12:37:23Z,DE,2,freiburg – stuttgart,200,2026-11-22T12:20:00Z,SC Freiburg,U19 erkämpft sich Auswärtssieg in Stuttgart
+2026-11-22T12:37:23Z,DE,3,frederik x.,200,2026-11-22T12:20:00Z,RTL.de,Nicht alle Familienmitglieder des dänischen Königshauses feiern Weihnachten zusammen
+2026-11-22T12:37:23Z,DE,4,spenge,200,2026-11-22T12:20:00Z,Neue Westfälische,Archäologen entdecken in Spenger Neubaugebiet Jahrhunderte alte Funde
+2026-11-22T12:37:23Z,DE,5,massenstart,1000,2026-11-22T12:20:00Z,sportschau.de,Biathlon vor neuer Saison: DSV-Biathleten im Umbruch - auf neuen Wegen zu alter Stärke
+2026-11-22T12:37:23Z,DE,6,igor matanović,5000,2026-11-22T12:20:00Z,sportschau.de,Punktgleich mit Bayern: Der SC Freiburg eine Spitzenmannschaft? Matanovic trifft und grinst
+2026-11-22T12:37:23Z,DE,7,barcelona – villarreal,2000,2026-11-22T12:10:00Z,Diario AS,"Barcelona - Villarreal, en directo: previa y última hora de LaLiga EA Sports, hoy en vivo"
+2026-11-22T12:37:23Z,DE,8,konyaspor – beşiktaş,1000,2026-11-22T12:10:00Z,https://beyazbelgehaber.com/,"Beşiktaşın Maçı Var: Beşiktaş, T. Konyaspor ile Karşılaşacak"
+2026-11-22T12:37:23Z,DE,9,nachzahlung für rentner,2000,2026-11-22T12:10:00Z,Yahoo Finanzen Deutschland,Millionen Rentner bekommen eine Nachzahlung – wer davon bald profitiert
+2026-11-22T12:37:23Z,DE,10,برشلونة ضد فياريال,500,2026-11-22T12:10:00Z,Kooora,مفاجأة هجومية في تشكيل برشلونة لمباراة فياريال
+2026-11-22T12:37:23Z,FR,1,michel zecler,2000,2026-11-22T12:20:00Z,franceinfo,Procès Zecler : les trois policiers condamnés pour agression raciste et des peines allant jusqu'à deux ans de prison ferme
+2026-11-22T12:37:23Z,FR,2,barcelona vs villarreal,500,2026-11-22T12:20:00Z,Diario AS,"Barcelona - Villarreal, en directo: previa y última hora de LaLiga EA Sports, hoy en vivo"
+2026-11-22T12:37:23Z,FR,3,konyaspor – beşiktaş,200,2026-11-22T12:20:00Z,https://beyazbelgehaber.com/,"Beşiktaşın Maçı Var: Beşiktaş, T. Konyaspor ile Karşılaşacak"
+2026-11-22T12:37:23Z,FR,4,brimeux,200,2026-11-22T12:20:00Z,franceinfo,"""On est fatigué, (...) c'est épuisant, stressant"" : le désarroi des habitants du Pas-de-Calais après des inondations à répétition"
+2026-11-22T12:37:23Z,FR,5,moto gp portugal,1000,2026-11-22T12:20:00Z,L'Équipe,« On était à un tour et demi d'atteindre notre but » : Marc Marquez douché mais pas coulé après sa chute en sprint au Portugal
+2026-11-22T12:37:23Z,FR,6,barcelone – villarreal,5000,2026-11-22T12:10:00Z,L'Équipe,"FC Barcelone - Villarreal, La Liga, match en direct le 22/11/2026"
+2026-11-22T12:37:23Z,FR,7,el chapo isidro,200,2026-11-22T12:10:00Z,France 24,"Samuel González: ""'El Chapo Isidro' es un hombre extraordinariamente violento"""
+2026-11-22T12:37:23Z,FR,8,iphone 15,500,2026-11-22T12:10:00Z,BFM,"Black Friday Apple : cet iPhone 18 Pro se vend par milliers sur ce site spécialisé, vu les performance ça n'étonne personne"
+2026-11-22T12:37:23Z,FR,9,trélissac,500,2026-11-22T11:50:00Z,Sud Ouest,« Choc frontal violent » : deux voitures se percutent sur une route de Dordogne
+2026-11-22T12:37:23Z,FR,10,christian bale,200,2026-11-22T11:50:00Z,Deadline,‘American Psycho’ Gets Axed: Luca Guadagnino Confirms His Adaptation Is “Not Happening”
+2026-11-22T12:37:23Z,IT,1,barcelona vs villarreal,200,2026-11-22T12:20:00Z,Diario AS,"Barcelona - Villarreal, en directo: previa y última hora de LaLiga EA Sports, hoy en vivo"
+2026-11-22T12:37:23Z,IT,2,carriera,100,2026-11-22T12:20:00Z,La Provincia di Cremona,La carriera con la divisa fa breccia tra gli studenti
+2026-11-22T12:37:23Z,IT,3,yara gambirasio,100,2026-11-22T12:20:00Z,Mediaset Infinity,"TG5: Massimo Bossetti: ""Per l'omicidio di Yara cercare nella palestra"" Video"
+2026-11-22T12:37:23Z,IT,4,grignone,100,2026-11-22T12:20:00Z,La Provincia Unica Tv,Cane precipita dal Grignone: salvato dai vigili del fuoco insieme al proprietario
+2026-11-22T12:37:23Z,IT,5,barcellona - villarreal,1000,2026-11-22T12:10:00Z,Bwin,quote Barcellona Villarreal: il pronostico sui blaugrana
+2026-11-22T12:37:23Z,IT,6,fabrizio pregliasco,200,2026-11-22T12:10:00Z,Sky TG24,"Influenza, quando arriverà il picco? Cosa dicono gli espersti"
+2026-11-22T12:37:23Z,IT,7,ascolti tv ieri,200,2026-11-22T12:10:00Z,Il Messaggero,Ascolti tv 21 novembre: chi ha vinto tra Ballando con le Stelle e Tu Si Que Vales. Sfida Affari Tuoi-Ruota della Fortuna
+2026-11-22T12:37:23Z,IT,8,cop31,1000,2026-11-22T12:10:00Z,Sky TG24,"Cop31, respinto l'accordo. Insuperabile nodo su combustili fossili"
+2026-11-22T12:37:23Z,IT,9,sanremo giovani 2026,500,2026-11-22T11:50:00Z,RaiNews,Sanremo Giovani 2026: Scelti i sei finalisti di “Sarà Sanremo”
+2026-11-22T12:37:23Z,IT,10,lucio battisti,500,2026-11-22T11:50:00Z,RaiNews,"Rubata la statua di Lucio Battisti a Torre Squillace, in Salento: sono rimasti solo i piedi"
+2026-11-22T12:37:23Z,ES,1,crvena zvezda - cibona,200,2026-11-22T12:20:00Z,,
+2026-11-22T12:37:23Z,ES,2,córdoba - real oviedo,200,2026-11-22T12:20:00Z,Diario AS,"Córdoba - Real Oviedo, en directo: LaLiga Hypermotion hoy en vivo"
+2026-11-22T12:37:23Z,ES,3,agua potable,100,2026-11-22T12:20:00Z,Granada Hoy,Granada pierde una de sus reservas de agua potable por las obras en la presa de Quéntar
+2026-11-22T12:37:23Z,ES,4,barcelona - villarreal,20000,2026-11-22T12:10:00Z,Diario AS,"Barcelona - Villarreal, en directo: previa y última hora de LaLiga EA Sports, hoy en vivo"
+2026-11-22T12:37:23Z,ES,5,quentin tarantino,200,2026-11-22T12:10:00Z,Far Out Magazine,"In 2012, Quentin Tarantino called ‘Death Proof’ his worst movie. He also said it has “the best line of dialogue I’ve ever written”"
+2026-11-22T12:37:23Z,ES,6,baskonia,200,2026-11-22T12:10:00Z,El Correo,"En directo, Surne Bilbao-Baskonia"
+2026-11-22T12:37:23Z,ES,7,euskal herria bildu,100,2026-11-22T12:10:00Z,El Independiente,Bildu: de la ikurriña a la bandera 'antifascista' para asaltar el poder del PNV
+2026-11-22T12:37:23Z,ES,8,begoña gómez fernández,500,2026-11-22T12:00:00Z,Woman Madame Figaro,"Los estudios de Begoña Gómez (55 años), mujer de Pedro Sánchez (54 años): licenciada en Marketing en la Escuela Superior de Marketing y Negocios, y con otros cursos enfocados al universo empresarial"
+2026-11-22T12:37:23Z,ES,9,juventus vs venezia,100,2026-11-22T11:50:00Z,MARCA,Juventus - Venezia LIVE. Serie A latest updates
+2026-11-22T12:37:23Z,ES,10,gonzalo tapia,200,2026-11-22T11:40:00Z,Diario AS,El pelotazo de Messi a la cara de un rival por pura frustración que desata la polémica en EE.UU.
+2026-11-22T12:37:23Z,NL,1,konyaspor - beşiktaş,500,2026-11-22T12:20:00Z,https://beyazbelgehaber.com/,"Beşiktaşın Maçı Var: Beşiktaş, T. Konyaspor ile Karşılaşacak"
+2026-11-22T12:37:23Z,NL,2,barcelona - villarreal,2000,2026-11-22T12:10:00Z,Yahoo,Mal presagio: un historial irregular amenaza al Barcelona ante el Villarreal
+2026-11-22T12:37:23Z,NL,3,kimi antonelli,1000,2026-11-22T12:10:00Z,Formula 1,Antonelli explains ‘annoying’ last-lap issue in Las Vegas as he admits having ‘a lot to learn in these conditions’
+2026-11-22T12:37:23Z,NL,4,vandaag inside,200,2026-11-22T12:10:00Z,RTL.nl,Johan Derksen stelt harde voorwaarde aan doorgaan met Vandaag Inside
+2026-11-22T12:37:23Z,NL,5,doorbraak kanker,200,2026-11-22T12:00:00Z,Nieuwsblad,"Jarenlang de dodelijkste kanker, binnenkort te behandelen met een pilletje: “Dit is echt een doorbraak”"
+2026-11-22T12:37:23Z,NL,6,danny ghosen,200,2026-11-22T12:00:00Z,Het Parool,De machinerie achter de blikjesrapers blijkt bijzonder treurigstemmend
+2026-11-22T12:37:23Z,NL,7,boeing 787,200,2026-11-22T11:50:00Z,Dj's Aviation,"Boeing 787-9 vs 787-10: Differences in Size, Range & Seating"
+2026-11-22T12:37:23Z,NL,8,raków częstochowa – widzew łódź,100,2026-11-22T11:30:00Z,Przegląd Sportowy,Ekstraklasa: Raków Częstochowa - Widzew Łódź [RELACJA NA ŻYWO]
+2026-11-22T12:37:23Z,NL,9,leandro paredes,100,2026-11-22T11:30:00Z,Infobae,Leandro Paredes se descompensó en medio de una entrevista tras ganar la Copa Sudamericana con Boca Juniors en Barranquilla
+2026-11-22T12:37:23Z,NL,10,vakantie,2000,2026-11-22T11:20:00Z,De Gelderlander,Roel (64) verdient netto 4400 euro voor 30 uur werk en krijgt 12 weken vakantie
+2026-11-22T12:37:23Z,BR,1,barcelona - villarreal,500,2026-11-22T12:20:00Z,OneFootball,Barcelona-Villarreal: cuenta atrás para conocer los ONCES
+2026-11-22T12:37:23Z,BR,2,finlândia,100,2026-11-22T12:20:00Z,Valor Econômico,Navio de carga russo pega fogo na costa da Finlândia após ataque
+2026-11-22T12:37:23Z,BR,3,ibge,200,2026-11-22T12:00:00Z,Agência de Notícias - IBGE,Quer trabalhar no IBGE? Live esclarece dúvidas sobre seleção com remuneração de até R$ 5.562/mês
+2026-11-22T12:37:23Z,BR,4,eduardo domínguez,500,2026-11-22T12:00:00Z,Clarin.com,"""Boca tiene muchos hinchas en Colombia por mi suegro"": Eduardo Domínguez habló de Bianchi antes de la final de la Sudamericana"
+2026-11-22T12:37:23Z,BR,5,barcelona x villarreal,10000,2026-11-22T11:50:00Z,Estadão,"Barcelona x Villarreal na La Liga: onde assistir ao vivo, horário e escalação"
+2026-11-22T12:37:23Z,BR,6,imigração nos estados unidos,500,2026-11-22T11:50:00Z,O GLOBO,Polícia de imigração dos EUA prende neurocientista de Princeton e bloqueia decolagem em operações em aeroportos
+2026-11-22T12:37:23Z,BR,7,schynaider moura,200,2026-11-22T11:40:00Z,O GLOBO,Schynaider Moura usa vestido de noiva com saia volumosa e bordados em casamento no Marrocos
+2026-11-22T12:37:23Z,BR,8,paris fc,100,2026-11-22T11:40:00Z,WhoScored.com,"Paris FC vs Angers: Lineups, Prediction, Odds & Bet Builder Tip"
+2026-11-22T12:37:23Z,BR,9,metrô,100,2026-11-22T11:30:00Z,O GLOBO,Por dentro das obras da Estação Gávea: diretor de Engenharia da RioTrilhos explica como funciona construção do metrô
+2026-11-22T12:37:23Z,BR,10,flávio dino,500,2026-11-22T11:20:00Z,Poder360,Dino reacende debate sobre imunidade parlamentar no caso van Hattem
+2026-11-22T12:37:23Z,MX,1,barcelona - villarreal,20000,2026-11-22T12:20:00Z,ESPN México,Barcelona: posible alineación y probabilidades vs Villarreal
+2026-11-22T12:37:23Z,MX,2,esteban solari,200,2026-11-22T12:10:00Z,ESPN México,Esteban Solari: 'Soy el principal responsable'
+2026-11-22T12:37:23Z,MX,3,telmex,100,2026-11-22T12:10:00Z,CNN en Español,"“No me puedo desplazar”: usuarios de Telcel, AT&T y Movistar reportan fallas generalizadas en México"
+2026-11-22T12:37:23Z,MX,4,granada cf - real madrid,200,2026-11-22T11:20:00Z,Diario AS,Jensen asalta la segunda plaza
+2026-11-22T12:37:23Z,MX,5,juventus - venezia,2000,2026-11-22T10:50:00Z,ANSA,Serie A: Juventus-Venezia in campo 0-0 DIRETTA
+2026-11-22T12:37:23Z,MX,6,antonio mohamed,200,2026-11-22T10:50:00Z,ESPN México,Mohamed: No es normal que ganemos seis títulos en un año y medio
+2026-11-22T12:37:23Z,MX,7,escuela,5000,2026-11-22T07:50:00Z,UnoTV,¡Prepara el puente! SEP confirma viernes sin clases en noviembre y fecha de vacaciones
+2026-11-22T12:37:23Z,MX,8,película,200,2026-11-22T07:20:00Z,Yahoo,La película chilena 'Después de Elena' gana el Colón de Oro del Festival de Huelva
+2026-11-22T12:37:23Z,MX,9,grand theft auto vi,5000,2026-11-22T07:00:00Z,Rockstar Games,Grand Theft Auto VI Now Available
+2026-11-22T12:37:23Z,MX,10,juventus vs venezia,500,2026-11-22T05:50:00Z,Reuters Connect,Licensable picture: Serie A - Juventus v Venezia
+2026-11-22T12:37:23Z,IN,1,ബോക്സ് ഓഫീസ്,200,2026-11-22T12:20:00Z,Manorama News,ഇങ്ങനെ പോയാല്‍ 100 കോടി കടക്കും; സമ്മിശ്ര പ്രതികരണത്തിലും മികച്ച കലക്ഷനുമായി 'ഒ.എം'; രണ്ടാം ദിനം നേടിയത്
+2026-11-22T12:37:23Z,IN,2,ഇന്ത്യ,200,2026-11-22T12:20:00Z,Manorama Online,‘യുദ്ധത്തിൽ പങ്കെടുക്കാതെ പാക്കിസ്ഥാനെ ശക്തിപ്പെടുത്താമെന്ന് തെളിയിച്ചു’; ഇന്ത്യയെ ഒതുക്കാൻ ചൈന ?; യുഎസ് റിപ്പോർട്ട്
+2026-11-22T12:37:23Z,IN,3,sara tendulkar,200,2026-11-22T12:20:00Z,NTV Telugu,Sara Tendulkar Wedding: శుభ్‌మన్ గిల్ కాదు.. యువ హీరోతో సారా టెండూల్కర్ పెళ్లి?
+2026-11-22T12:37:23Z,IN,4,aryan juyal,200,2026-11-22T12:10:00Z,Cricbuzz,"SMAT 2026: Bhuvneshwar three-fer, Juyal 64* headline impressive UP win"
+2026-11-22T12:37:23Z,IN,5,anukul roy,200,2026-11-22T12:10:00Z,Dainik Hawk,"स्मैट 2026 : झारखंड ने कर्नाटक को 7 विकेट से दी शिकस्त, सौराष्ट्र, बंगाल और केरल ने दर्ज की आसान जीत"
+2026-11-22T12:37:23Z,IN,6,il t20,20000,2026-11-22T12:10:00Z,Cricbuzz,"With schedule conflict averted, SA players happy to be part of ILT20"
+2026-11-22T12:37:23Z,IN,7,தேனி,200,2026-11-22T12:10:00Z,,
+2026-11-22T12:37:23Z,IN,8,શાહરૂખ ખાન,200,2026-11-22T12:10:00Z,Gujarat Samachar,"સલમાન અને સોનુ સૂદ બાદ હવે શાહરૂખ ખાને બતાવ્યું મોટું દિલ, જૂના કો-સ્ટાર શરદ કપૂરની મદદે આવ્યો કિંગ ખાન"
+2026-11-22T12:37:23Z,IN,9,रॉबर्ट कियोसाकी,200,2026-11-22T12:00:00Z,AajTak,"Robert Kiyosaki Advice: 'मुनाफा तब... जब खरीदेंगे', सोना-चांदी और बिटकॉइन क्रैश पर रॉबर्ट कियोसाकी का सबक"
+2026-11-22T12:37:23Z,IN,10,আনন্দবাজার পত্রিকা,100,2026-11-22T12:00:00Z,Anandabazar Patrika,"মার্কিন রিপোর্টে ‘সিঁদুর অভিযান’: চিনের ‘মতিগতি’ নিয়ে কেন্দ্রকে সতর্ক করছে বিরোধীরা, প্রশ্ন ট্রাম্পের পাকিস্তান-নীতি নিয়েও"
+2026-11-22T12:37:23Z,JP,1,バルセロナ 対 ビジャレアル,1000,2026-11-22T12:20:00Z,DAZN,【11月22日】バルセロナvsビジャレアルのテレビ放送・ネット配信予定・視聴方法｜ラ・リーガ第13節
+2026-11-22T12:37:23Z,JP,2,ドンデコルテ 銀次,200,2026-11-22T12:20:00Z,Yahoo!ニュース,ドンデコルテ冠特番「人間、銀次。」全国ロードショー決定 フェイクニュース新聞風ビジュアルも解禁（モデルプレス）
+2026-11-22T12:37:23Z,JP,3,barcelona vs villarreal,200,2026-11-22T12:20:00Z,DAZN,Alineaciones FC Barcelona vs Villarreal hoy: once inicial y banquillo de suplentes de Hansi Flick e Iñigo Pérez para LaLiga 2026/27
+2026-11-22T12:37:23Z,JP,4,persib bandung vs bali united,200,2026-11-22T12:20:00Z,Aktualita.co,Persib vs Bali United Live Score Tonight: Who Is Leading? Check Latest Scores and Match Updates!
+2026-11-22T12:37:23Z,JP,5,中嶋聡,100,2026-11-22T12:20:00Z,Yahoo!ニュース,【日本ハム】中嶋聡氏「出たくない」とごねるも最終回に登場 マイケルとバッテリー（日刊スポーツ）
+2026-11-22T12:37:23Z,JP,6,原田美枝子,1000,2026-11-22T12:10:00Z,TVer,【もりおか座映画祭】大友啓史監督（盛岡出身）が制作秘話語る
+2026-11-22T12:37:23Z,JP,7,コンカフェ,1000,2026-11-22T12:10:00Z,朝日新聞,死因は首の傷による出血性ショックや窒息の疑い 中野の女性刺殺事件 [東京都]
+2026-11-22T12:37:23Z,JP,8,有働由美子,200,2026-11-22T12:10:00Z,Yahoo!ニュース,有働由美子、履歴書にスナップ写真＆シール写真貼りつける若者に絶句も「私が古い」世代で揺らぐ証明写真の“常識”
+2026-11-22T12:37:23Z,JP,9,石橋静河,10000,2026-11-22T12:00:00Z,Yahoo!ニュース,【ブラッサム】第9週予告、珠・保・西尾の“三者会談”に視聴者騒然「予告だけで怖い」「大変なことになってる」（Lmaga.jp）
+2026-11-22T12:37:23Z,JP,10,柄本佑,500,2026-11-22T12:00:00Z,,
+2026-11-22T12:37:23Z,BD,1,ai math riemann hypothesis,500,2026-11-22T12:30:00Z,The New York Times,Anthropic Mathematician Claims to Solve Riemann Hypothesis With Help From Claude
+2026-11-22T12:37:23Z,BD,2,burnley vs blackburn rovers,200,2026-11-22T12:10:00Z,news.bet365.com,Burnley v Blackburn Rovers confirmed lineups and team news
+2026-11-22T12:37:23Z,BD,3,man city vs tottenham,200,2026-11-22T12:00:00Z,BBC,"WSL: Man City host Spurs seeking to go top, Man Utd at Birmingham"
+2026-11-22T12:37:23Z,BD,4,দক্ষিণ কোরিয়া,200,2026-11-22T11:40:00Z,দৈনিক ইনকিলাব,"এআইয়ের সাহায্যে নকল করে প্রথম স্থান অর্জনের স্বীকারোক্তি, দক্ষিণ কোরিয়ার শিক্ষামন্ত্রীর পদত্যাগ"
+2026-11-22T12:37:23Z,BD,5,জেনিফার লরেন্স,500,2026-11-22T11:20:00Z,The Daily Ittefaq,"পর্দায় কাদের সঙ্গে চুমুর দৃশ্য সবচেয়ে উপভোগ করেছেন, জানালেন অভিনেত্রী"
+2026-11-22T12:37:23Z,BD,6,abhishek sharma,200,2026-11-22T11:20:00Z,ABP Live English,WATCH: Vaibhav Sooryavanshi Teaches Young Fan To Respect Abhishek Sharma
+2026-11-22T12:37:23Z,BD,7,নিরাপত্তা,200,2026-11-22T11:20:00Z,Bangla Tribune,রাজনৈতিক সংঘাতের ছায়ায় বাংলাদেশের ভবিষ্যৎ
+2026-11-22T12:37:23Z,BD,8,gulf giants vs sharjah warriors,200,2026-11-22T11:00:00Z,Cricket World,International League T20: ILT20 2026 Match 2 & 3: Sharjah Warriors vs Gulf Giants; Dubai Capitals vs Abu Dhabi Knight Riders - Predictions: Nov 22
+2026-11-22T12:37:23Z,BD,9,juventus vs venezia,5000,2026-11-22T10:40:00Z,Sports Mole,"Preview: Juventus vs Venezia - prediction, team news, lineups"
+2026-11-22T12:37:23Z,BD,10,leandro paredes,100,2026-11-22T10:40:00Z,La Razón Digital Bolivia,"Este título ‘es lo más importante’, dice Paredes capitán de Boca"
