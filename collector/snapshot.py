@@ -170,6 +170,11 @@ def main() -> int:
         stores = stores[: args.limit]
     if args.shard[1] > 1:
         stores = shard_of(stores, *args.shard, args.max_pages)
+    # Biggest stores first. A store with 10,000+ products can take an hour on its
+    # own, and one started late (they used to go in alphabetical order) kept the
+    # whole shard waiting long after the rest were done. Only the order changes:
+    # every store is still read once, the same way.
+    stores.sort(key=lambda s: (-expected_requests(s, args.max_pages), s.domain))
     if not stores:
         print(f"no stores in {args.stores}; run `python -m collector.discover` first", file=sys.stderr)
         return 2
