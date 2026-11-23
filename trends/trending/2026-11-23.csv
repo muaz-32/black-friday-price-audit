@@ -1539,3 +1539,143 @@ fetched_at,geo,rank,query,approx_traffic,published_at,news_source,news_title
 2026-11-23T10:37:27Z,BD,8,climate change,200,2026-11-23T08:20:00Z,Dhaka Tribune,"Govt plans to transform Korail, Bhashantek slums"
 2026-11-23T10:37:27Z,BD,9,new zealand national cricket team,500,2026-11-23T07:50:00Z,Cricbuzz,"'Management picked the best possible XI': Kotak on Siraj, Jadeja omissions"
 2026-11-23T10:37:27Z,BD,10,south africa national cricket team,100,2026-11-23T07:50:00Z,Cricinfo,"Ball by Ball Commentary & Live Score - SA vs BAN, 2nd Test"
+2026-11-23T11:37:25Z,US,1,iran war hormuz,200,2026-11-23T11:20:00Z,CNN,Iranian attacks in the Strait of Hormuz are at the highest levels since the conflict began
+2026-11-23T11:37:25Z,US,2,crwd stock,200,2026-11-23T11:20:00Z,CNBC,CrowdStrike bets on network security with $43.9 billion Zscaler deal
+2026-11-23T11:37:25Z,US,3,gta6 chapter 3,200,2026-11-23T11:20:00Z,VICE,How Long Is Chapter 3 in GTA 6? All Missables and Mission List
+2026-11-23T11:37:25Z,US,4,perez hilton,100,2026-11-23T11:20:00Z,Yahoo,Perez Hilton's scars visible as blogger's spotted for first time since suicide attempt
+2026-11-23T11:37:25Z,US,5,weather boston,100,2026-11-23T11:20:00Z,The Boston Globe,These storm maps show expected rainfall and strongest winds into early Monday
+2026-11-23T11:37:25Z,US,6,patty hearst,200,2026-11-23T11:20:00Z,Page Six,Patty Hearst’s family and friends share ‘great concerns’ that ‘socialite’ boyfriend is taking advantage of her fortune
+2026-11-23T11:37:25Z,US,7,michigan lottery,100,2026-11-23T11:10:00Z,Detroit Free Press,"Michigan Lottery Daily 3, Daily 4 results for Nov. 22, 2026"
+2026-11-23T11:37:25Z,US,8,sofi stock,100,2026-11-23T11:10:00Z,Yahoo Finance,SOFI Stock Slumps To 52-Week Lows: Retail Blames Anthropic For Being A Liquidity ‘Sponge’
+2026-11-23T11:37:25Z,US,9,space exploration technologies corp.,100,2026-11-23T11:00:00Z,Benzinga,"Grant Cardone Says Elon Musk Could Buy 50% of Nvidia and Bring Jensen Huang Back, Days After SpaceX CEO’s"
+2026-11-23T11:37:25Z,US,10,cbs sports top 25 basketball prediction,100,2026-11-23T11:00:00Z,ESPN,"Men's college basketball Power Rankings: Duke drops, Kansas is new No. 1"
+2026-11-23T11:37:25Z,GB,1,zscaler,200,2026-11-23T11:10:00Z,CNBC,CrowdStrike bets on network security with $43.9 billion Zscaler deal
+2026-11-23T11:37:25Z,GB,2,satya nadella,100,2026-11-23T10:50:00Z,Yahoo Finance,Microsoft CEO Satya Nadella explains why he asked 60K employees to quit
+2026-11-23T11:37:25Z,GB,3,north sea oil,200,2026-11-23T10:40:00Z,The Telegraph,North Sea oil’s new predators will cost Labour billions
+2026-11-23T11:37:25Z,GB,4,denise van outen,500,2026-11-23T10:40:00Z,The Independent,Sunday Brunch addresses Tim Lovejoy absence after viewer concern
+2026-11-23T11:37:25Z,GB,5,pip assessments,10000,2026-11-23T10:20:00Z,BBC,"Pip assessments need 'fundamental overhaul', report to say"
+2026-11-23T11:37:25Z,GB,6,gta 6 update,1000,2026-11-23T10:10:00Z,Red Bull,"GTA 6 launch updates: Patch sizes, versions and release dates"
+2026-11-23T11:37:25Z,GB,7,joan collins,200,2026-11-23T09:40:00Z,The Times,"Oh Joan Collins, are men really treating us worse than they did in 1970?"
+2026-11-23T11:37:25Z,GB,8,charlie cox,200,2026-11-23T09:40:00Z,Yahoo,New Daredevil Set Photos Spoil Born Again’s Final Season
+2026-11-23T11:37:25Z,GB,9,water,500,2026-11-23T09:30:00Z,BBC,South East Water reports loss after supply issues
+2026-11-23T11:37:25Z,GB,10,amy dowden,500,2026-11-23T09:30:00Z,BBC,Princess Catherine's cancer journey to be depicted in new show
+2026-11-23T11:37:25Z,CA,1,représentant américain au commerce,500,2026-11-23T11:10:00Z,La Presse,Guerre commerciale | Trump répète que le Canada « exploite » les États-Unis
+2026-11-23T11:37:25Z,CA,2,grand theft auto vi,500,2026-11-23T11:10:00Z,Polygon.com,'GTA 6' Bombshell: Husband Melts Down After Wife Hid Her Role In Game For Years
+2026-11-23T11:37:25Z,CA,3,meta stock,100,2026-11-23T11:10:00Z,The Globe and Mail,Mark Zuckerberg’s Meta Platforms Is Pouring Up to $145 Billion Into AI This Year. Investors Should Watch This 1 Number.
+2026-11-23T11:37:25Z,CA,4,corée du nord,100,2026-11-23T11:00:00Z,La Presse,Corée du Nord | Kim Jong-un dit chercher la « sécurité » et non la « suprématie »
+2026-11-23T11:37:25Z,CA,5,taxe,100,2026-11-23T11:00:00Z,Radio-Canada,"Montréal prévoit une hausse de 9,8 % des taxes résidentielles en 2027"
+2026-11-23T11:37:25Z,CA,6,environment canada,100,2026-11-23T10:40:00Z,insauga.com,"Weather warning issued for Toronto, Mississauga, Hamilton and Niagara"
+2026-11-23T11:37:25Z,CA,7,aéroport,100,2026-11-23T10:30:00Z,RFI,"Belgique: journée de grève nationale contre la vie chère, le trafic aérien entièrement paralysé"
+2026-11-23T11:37:25Z,CA,8,logement,100,2026-11-23T10:20:00Z,Journal de Québec,Du logement et des soins pour contrer l’itinérance en tête des priorités des Québécois
+2026-11-23T11:37:25Z,CA,9,carys zeta douglas,200,2026-11-23T10:00:00Z,BBC,Catherine Zeta-Jones' daughter says parents warned her about 'nepo baby' label
+2026-11-23T11:37:25Z,CA,10,stock market today,1000,2026-11-23T10:00:00Z,CNBC,"Nasdaq 100 futures rebound sharply to rise 3%, kick-starting shortened week after tech rout: Live updates"
+2026-11-23T11:37:25Z,AU,1,bangladesh national cricket team vs south africa national cricket team match scorecard,2000,2026-11-23T11:20:00Z,Cricinfo,'It's quite a smooth transition'- Markram on stepping in for Bavuma
+2026-11-23T11:37:25Z,AU,2,georgie prespakis,500,2026-11-23T10:40:00Z,afl.com.au,Cats superstar makes history with AFLW B&F win
+2026-11-23T11:37:25Z,AU,3,debt,500,2026-11-23T10:40:00Z,AFR,Lendlease rules out emergency capital raising but debt woes linger
+2026-11-23T11:37:25Z,AU,4,gta 6 update,500,2026-11-23T10:20:00Z,PC Gamer,"Binding of Isaac DLC adds AI music in GTA 6-parodying update despite not having an AI disclosure, Steam reviews drop to Overwhelmingly Negative, music gets pulled"
+2026-11-23T11:37:25Z,AU,5,bill burr,200,2026-11-23T10:20:00Z,Daily Mail,Truth about Bill Burr and Billy Corgan being brothers revealed
+2026-11-23T11:37:25Z,AU,6,afl tribunal appeal penalty change,200,2026-11-23T10:10:00Z,afl.com.au,Huge change to Tribunal system being considered
+2026-11-23T11:37:25Z,AU,7,stranger things,200,2026-11-23T09:50:00Z,Collider,‘Stranger Things’ Officially Sets 2028 Netflix Return
+2026-11-23T11:37:25Z,AU,8,the altruists,500,2026-11-23T09:40:00Z,The Guardian,The Altruists review – two of TV’s best actors light up this chaotic crypto tale
+2026-11-23T11:37:25Z,AU,9,kwinana freeway,500,2026-11-23T09:30:00Z,PerthNow,Peak hour pandemonium following major Freeway crash
+2026-11-23T11:37:25Z,AU,10,sam bankman-fried,200,2026-11-23T09:30:00Z,Forbes,Sam Bankman-Fried’s Anthropic Bet Is A $48 Billion Windfall For 37 Investor Groups
+2026-11-23T11:37:25Z,DE,1,carmen geiss,200,2026-11-23T11:20:00Z,T-Online,"""Er war ja richtig heiß"": So sahen Carmen und Robert Geiss mit Anfang 20 aus"
+2026-11-23T11:37:25Z,DE,2,waipu.tv,200,2026-11-23T11:20:00Z,n-tv.de,Ausverkauf bei Waipu.tv? 50 Prozent Black-Week-Rabatt auf TV-Tarife
+2026-11-23T11:37:25Z,DE,3,berliner kurier horoskop,200,2026-11-23T11:20:00Z,swp.de,Horoskop heute: Das Tageshoroskop für den 23. November 2026
+2026-11-23T11:37:25Z,DE,4,меркурий,100,2026-11-23T11:20:00Z,Meduza,"«Образцовая украинская операция в ответ на российскую войну». Зеленский подтвердил, что Украина атаковала российский корабль в Ливии"
+2026-11-23T11:37:25Z,DE,5,fallon sherrock,500,2026-11-23T11:00:00Z,SPORT1,Darts: Zwei Titel in zwei Tagen! Sherrock räumt groß ab
+2026-11-23T11:37:25Z,DE,6,lichtenau,200,2026-11-23T11:00:00Z,Radio Hochstift,"Spatenstich in Lichtenau: ""Schlafender Riese"" geweckt"
+2026-11-23T11:37:25Z,DE,7,mdr,200,2026-11-23T11:00:00Z,HÖRZU,MDR aktuell im TV Programm: 23.11. - 17:45 - MDR
+2026-11-23T11:37:25Z,DE,8,alessandra meyer-wölden,200,2026-11-23T11:00:00Z,STERN.de,Sandy Meyer-Wölden über Boris Becker: So erfuhr sie von der Trennung
+2026-11-23T11:37:25Z,DE,9,oliver pocher,500,2026-11-23T10:50:00Z,t-online – Leipzig,Versöhnung mit Oliver Pocher geplant – dann verlässt DSDS-Sieger in Leipzig die Bühne
+2026-11-23T11:37:25Z,DE,10,vw id. polo,500,2026-11-23T10:50:00Z,electrive.net,Ein elektrischer VW ID. Polo GTI für die Rennstrecke
+2026-11-23T11:37:25Z,FR,1,rockstar games,1000,2026-11-23T11:10:00Z,Rockstar Games,Grand Theft Auto VI Now Available
+2026-11-23T11:37:25Z,FR,2,paris match belgique,200,2026-11-23T11:00:00Z,TF1+,Star Academy 2026 : Leeloo détrône Zoé sur le tableau chanté-dansé et prend la tête pour la tournée… découvrez sa note
+2026-11-23T11:37:25Z,FR,3,emmanuel chaunu,500,2026-11-23T11:00:00Z,Le Monde.fr,"A la COP31, la communauté internationale s’est fracturée sur la sortie des énergies fossiles et le financement de l’adaptation"
+2026-11-23T11:37:25Z,FR,4,suriname,200,2026-11-23T10:50:00Z,Waterkant,Wang: “Bezorgde ouders durven hun kinderen niet meer naar school te sturen”
+2026-11-23T11:37:25Z,FR,5,dénutrition,200,2026-11-23T10:50:00Z,Radio France,"Personnes âgées : la dénutrition, un danger qui s'installe souvent en silence"
+2026-11-23T11:37:25Z,FR,6,david lisnard maire de cannes,20000,2026-11-23T10:40:00Z,L'Express,"L'ascension de David Lisnard, le recul de Marine Le Pen : les enseignements du baromètre Toluna-Harris Interactive-M6-RTL-L’Express"
+2026-11-23T11:37:25Z,FR,7,nathalie marquay,200,2026-11-23T10:40:00Z,Paris Match,« Il n'a pas beaucoup profité de sa retraite » : Nathalie Marquay révèle comment elle a convaincu Jean-Pierre Pernaut de quitter le 13h
+2026-11-23T11:37:25Z,FR,8,gianluca pollefliet,200,2026-11-23T10:40:00Z,DirectVelo,"Non conservé par Decathlon CMA CGM, Gianluca Pollefliet a retrouvé une équipe"
+2026-11-23T11:37:25Z,FR,9,oise,200,2026-11-23T10:40:00Z,Le Parisien,"Licencié, un homme se venge en incendiant son ancienne entreprise : il voulait « détruire la société comme elle l’avait détruit"
+2026-11-23T11:37:25Z,FR,10,iraqi airways,500,2026-11-23T10:30:00Z,BFM,Les deux avions estimés à 900.000 dollars chacun dorment dans un hangar en Tunisie depuis 35 ans: la compagnie Iraqi Airways vend deux vieux Boeing 747 dont celui de Saddam Hussein
+2026-11-23T11:37:25Z,IT,1,bangladesh national cricket team vs south africa national cricket team match scorecard,2000,2026-11-23T11:20:00Z,Cricinfo,'It's quite a smooth transition'- Markram on stepping in for Bavuma
+2026-11-23T11:37:25Z,IT,2,buono pasto,200,2026-11-23T11:20:00Z,ANIEF,"MANOVRA 2027 - Scuola, su precariato e organici è ora di cambiare: presentati 24 emendamenti incentrati sulle proposte Anief"
+2026-11-23T11:37:25Z,IT,3,fitch ratings,200,2026-11-23T11:20:00Z,"Investing.com - Quotazioni, Borsa, Economia e Finanza","Banco BPM, Fitch alza l’outlook a positivo e conferma il rating Da OraFinanza"
+2026-11-23T11:37:25Z,IT,4,harper's bazaar,200,2026-11-23T11:10:00Z,Harper's BAZAAR,Gigi Hadid Breaks Out Her (Reversible!) Cashmere Beanie for a Cozy Winter Walk
+2026-11-23T11:37:25Z,IT,5,29 novembre,200,2026-11-23T11:10:00Z,Sortir à Paris,Quasimodo e The Mosquito Bowl: le novità del vostro weekend in streaming
+2026-11-23T11:37:25Z,IT,6,bangladesh a vs sri lanka a,200,2026-11-23T10:50:00Z,NDTV Profit,Sri Lanka A vs Bangladesh A Live Streaming: When And Where To Watch Asia Cup Rising Stars Match?
+2026-11-23T11:37:25Z,IT,7,playstation plus,1000,2026-11-23T10:40:00Z,Everyeye.it,"Giochi PlayStation Plus gratis: l'annuncio tanto atteso arriva questa settimana, data e ora"
+2026-11-23T11:37:25Z,IT,8,kerim alajbegović,1000,2026-11-23T10:30:00Z,La Gazzetta dello Sport,"Juve, contusione alla tibia sinistra per Alajbegovic: l'esterno sostituito col Venezia"
+2026-11-23T11:37:25Z,IT,9,"charles spencer, ix conte spencer",1000,2026-11-23T10:30:00Z,Sky TG24,"Lady Diana, il fratello Charles Spencer: ""Carlo mi disse che sarebbe stata dimenticata"""
+2026-11-23T11:37:25Z,IT,10,arma nucleare,2000,2026-11-23T10:20:00Z,Sky TG24,"Ucraina, Zelensky rivendica gli attacchi a navi russe in Libia. Raid droni su Rostov. LIVE"
+2026-11-23T11:37:25Z,ES,1,camionero,500,2026-11-23T11:20:00Z,La Voz de Galicia,Un camionero resulta herido tras quedar atrapado en la cabina de su vehículo en la A-6 a su paso por Cambre
+2026-11-23T11:37:25Z,ES,2,miley,500,2026-11-23T11:20:00Z,NBC Los Angeles,Miley Cyrus shares first wedding photos after marrying Maxx Morando
+2026-11-23T11:37:25Z,ES,3,sorteo copa del rey futbol,200,2026-11-23T11:10:00Z,MARCA,"Sorteo de Copa del Rey, en directo | Cruces, partidos y emparejamientos de segunda ronda en vivo hoy"
+2026-11-23T11:37:25Z,ES,4,la oreja de van gogh,200,2026-11-23T11:00:00Z,Noticias de Navarra,Crítica del primer concierto de La Oreja de Van Gogh en el Navarra Arena: una celebración de vida y canciones
+2026-11-23T11:37:25Z,ES,5,patricia pardo,1000,2026-11-23T10:50:00Z,HOLA,"Patricia Pardo inaugura la Navidad con su hijo Luca y comparte unas imágenes llenas de ternura e ilusión: ""¡Empieza la época más bonita del año!"""
+2026-11-23T11:37:25Z,ES,6,álex márquez,100000,2026-11-23T10:50:00Z,EL PAÍS,"La intrahistoria del título de Marc Márquez, un campeón inagotable incluso con un brazo y medio: “Lo que ha hecho es una salvajada”"
+2026-11-23T11:37:25Z,ES,7,cyberleek,200,2026-11-23T10:50:00Z,RockstarINTEL,Could This Major GTA VI Leak Make It Playable On PC?
+2026-11-23T11:37:25Z,ES,8,barco,2000,2026-11-23T10:40:00Z,EL PAÍS,Ucrania asume la autoría del ataque con drones que hundió en Libia un barco de guerra ruso
+2026-11-23T11:37:25Z,ES,9,ishowspeed,100,2026-11-23T10:40:00Z,Trinidad Express Newspapers,Ato prepping IShowSpeed for Olympics
+2026-11-23T11:37:25Z,ES,10,ibon navarro,500,2026-11-23T10:30:00Z,Diario AS,Serbia reprende a Ibon
+2026-11-23T11:37:25Z,NL,1,fouad l,200,2026-11-23T11:10:00Z,NU,Weer 30 jaar en tbs geëist tegen Erasmusschutter: 'Motief te treurig voor woorden'
+2026-11-23T11:37:25Z,NL,2,red bull racing,10000,2026-11-23T11:00:00Z,AD.nl,75 Formule 1-overwinningen van Max Verstappen: wat is volgens jou de allermooiste?
+2026-11-23T11:37:25Z,NL,3,william van wales,200,2026-11-23T10:40:00Z,RTL.nl,Prins William zou koninklijke titels willen beperken: gevolgen voor Harry
+2026-11-23T11:37:25Z,NL,4,patty brard,1000,2026-11-23T10:30:00Z,RTL.nl,Patty Brard moet rust nemen na hechting bloedige hoofdwond
+2026-11-23T11:37:25Z,NL,5,autoweek,200,2026-11-23T10:30:00Z,AutoWeek,"Toyota Starlet: in Nederland al 27 jaar geleden verdwenen, toch is er een vernieuwde!"
+2026-11-23T11:37:25Z,NL,6,wie is de mol,2000,2026-11-23T10:10:00Z,De Telegraaf,’Wie is de Mol?’ speelt zich af in Engeland: dit zijn de kandidaten van het nieuwe seizoen
+2026-11-23T11:37:25Z,NL,7,eenvandaag,200,2026-11-23T10:00:00Z,EenVandaag,Echt of nep? Waarom we nu al moeite hebben met het herkennen van AI-beelden
+2026-11-23T11:37:25Z,NL,8,rijden,5000,2026-11-23T09:40:00Z,AD.nl,"Rijbewijs straks direct kwijt, ook bij hoger beroep: nieuwe wet aangenomen"
+2026-11-23T11:37:25Z,NL,9,volodymyr zelensky,500,2026-11-23T08:40:00Z,BBC,"Russian warship hit by Ukrainian drones in Libya, Zelensky says"
+2026-11-23T11:37:25Z,NL,10,huur,500,2026-11-23T08:40:00Z,AD.nl,Bernheze schroeft bouwtempo voor sociale huur op: ‘Echt een inhaalslag’
+2026-11-23T11:37:25Z,BR,1,thanksgiving,100,2026-11-23T11:20:00Z,NBC News,"Rough weather expected to hit both coasts, may disrupt Thanksgiving travel"
+2026-11-23T11:37:25Z,BR,2,concurso miss universe brasil 2026,2000,2026-11-23T11:10:00Z,R7,"RecordPlus e R7.com transmitem desfile preliminar de traje de banho e gala neste domingo (22), a partir das 20h"
+2026-11-23T11:37:25Z,BR,3,saa,200,2026-11-23T11:10:00Z,Sportti.com,Britannia saa vihdoin jalkapallon MM-kisat järjestettäväkseen
+2026-11-23T11:37:25Z,BR,4,calendario dezembro 2026,200,2026-11-23T11:10:00Z,ISTOÉ DINHEIRO,Bolsa Família de dezembro: consulta está prevista para dia 1º
+2026-11-23T11:37:25Z,BR,5,resultado da lotofácil 3835,200,2026-11-23T11:10:00Z,ISTOÉ DINHEIRO,Resultado da Lotofácil 3835: duas apostas ganham R$ 969 mil cada
+2026-11-23T11:37:25Z,BR,6,infomoney,500,2026-11-23T10:50:00Z,InfoMoney,"Ibovespa Hoje Ao Vivo: Confira o que movimenta Bolsa, Dólar e Juros nesta segunda"
+2026-11-23T11:37:25Z,BR,7,flamengo campeonato brasileiro,2000,2026-11-23T10:50:00Z,ge,"Paquetá promete mais títulos, espera volta por cima em 2027 e se declara ao Flamengo: ""Queria me sentir acolhido"""
+2026-11-23T11:37:25Z,BR,8,dolar hoje real,1000,2026-11-23T10:50:00Z,Poder360,"Dólar digital chega a R$ 6,15 em negociação neste domingo"
+2026-11-23T11:37:25Z,BR,9,valor do dólar hoje,100,2026-11-23T10:50:00Z,UOL Economia,José Paulo Kupfer: Derrubada dos mercados nos EUA liga risco de 'segunda sangrenta' no Brasil
+2026-11-23T11:37:25Z,BR,10,sogro,500,2026-11-23T10:40:00Z,G1,"Influenciadora cearense Xsbel se despede do noivo Gabriel Félix, que morreu aos 29 anos: ‘prometo te amar até meu último suspiro’"
+2026-11-23T11:37:25Z,MX,1,china,100,2026-11-23T11:00:00Z,Euronews.com,Taiwan warns Canada against deeper China trade ties as Carney seeks to diversify
+2026-11-23T11:37:25Z,MX,2,2026,500,2026-11-23T10:40:00Z,CBS News,Democrats reach historic House majority not seen since 1992
+2026-11-23T11:37:25Z,MX,3,melate,100,2026-11-23T10:40:00Z,MARCA,Resultados Melate Retro 1688: números ganadores del sábado 21 de noviembre 2026
+2026-11-23T11:37:25Z,MX,4,granizo,500,2026-11-23T10:10:00Z,Meteored México,El tiempo en CDMX esta semana: lluvias y rachas de viento fuertes por aproximación de masa de aire del frente frío 8
+2026-11-23T11:37:25Z,MX,5,liga de campeones de la uefa,100,2026-11-23T10:00:00Z,Goal.com,"Cómo conseguir entradas para la Champions League 2026/27 del Arsenal: dónde comprarlas, precios, partidos de la fase de liga y más"
+2026-11-23T11:37:25Z,MX,6,posiciones de vancouver whitecaps contra real salt lake,2000,2026-11-23T09:30:00Z,MLSsoccer.com,Vancouver Whitecaps open playoffs in style with victory over Real Salt Lake
+2026-11-23T11:37:25Z,MX,7,temperatura monterrey,200,2026-11-23T07:10:00Z,Meteored México,"Lluvias de hasta 70 mm y fuertes rachas, así afecta el frente frío 8 y su aire ártico a México, este domingo 22"
+2026-11-23T11:37:25Z,MX,8,clima monterrey,2000,2026-11-23T07:00:00Z,El Informador,Clima en Monterrey hoy: el pronóstico para el lunes 23 de noviembre de 2026
+2026-11-23T11:37:25Z,MX,9,pronostico del tiempo,500,2026-11-23T07:00:00Z,MILENIO,¡Última semana de noviembre! Este será el pronóstico para Coahuila y Durango
+2026-11-23T11:37:25Z,MX,10,pronostico del tiempo monterrey,200,2026-11-23T07:00:00Z,MILENIO,Domingo de cambios en Monterrey: ingresará frente frío con lluvias por la noche
+2026-11-23T11:37:25Z,IN,1,bangladesh national cricket team vs south africa national cricket team match scorecard,10000,2026-11-23T11:20:00Z,Cricinfo,'It's quite a smooth transition'- Markram on stepping in for Bavuma
+2026-11-23T11:37:25Z,IN,2,సౌరవ్ గంగూలీ,500,2026-11-23T11:10:00Z,Eenadu,Sourav Ganguly: ఇదేం బౌలింగ్‌ ఎంపిక.. టీమ్‌ఇండియాను ప్రశ్నించిన సౌరభ్‌ గంగూలీ
+2026-11-23T11:37:25Z,IN,3,हेमा मालिनी,200,2026-11-23T11:10:00Z,News18 Hindi,"ईशा देओल की कमबैक फिल्म 'प्रताप' देख भावुक हुईं हेमा मालिनी, बेटी के साथ अमित साध की भी तारीफों के बांधे पु..."
+2026-11-23T11:37:25Z,IN,4,চাকরি,500,2026-11-23T10:50:00Z,Anandabazar Patrika,"বেকার ভাতা জানুয়ারি থেকেই! তবে টাকা আপাতত প্রতিশ্রুতি মতো নয়, কর্মহীনদের উদ্দেশে ‘সরি’ বললেন মুখ্যমন্ত্রী শুভেন্দু"
+2026-11-23T11:37:25Z,IN,5,एशिया,200,2026-11-23T10:40:00Z,AajTak,"एशिया पावर इंडेक्स में भारत तीसरे नंबर पर, जापान-रूस को पछाड़ा, पाकिस्तान 16वें नंबर पर"
+2026-11-23T11:37:25Z,IN,6,latest ott releases,1000,2026-11-23T10:30:00Z,Vogue India,"Latest OTT releases (November 23-November 29): 17 new movies and TV shows on Netflix, Prime Video, JioHotstar and more"
+2026-11-23T11:37:25Z,IN,7,ರಾಶಿ,500,2026-11-23T10:30:00Z,Asianet News Kannada,"ನವೆಂಬರ್ 23 ರ ಜಾತಕ: ಈ ನಾಲ್ಕು ರಾಶಿಗೆ ಹೊಸ ಕೆಲಸದ ಅವಕಾಶಗಳು ಸಿಗುತ್ತವೆ, ಅವರ ಅದೃಷ್ಟ ಬಲವಾಗಿರುತ್ತದೆ"
+2026-11-23T11:37:25Z,IN,8,bhagyathara lottery result today,1000,2026-11-23T10:30:00Z,Onmanorama,Kerala lottery Bhagyathara BT-81 result today 23/11/2026: ₹1 cr first prize for BE 573685 | Check complete list
+2026-11-23T11:37:25Z,IN,9,india to nepal train,1000,2026-11-23T10:20:00Z,The Hindu,Adityanath hails Ayodhya-Janakpur rail link as new chapter in India-Nepal cultural ties
+2026-11-23T11:37:25Z,IN,10,november december economic calendar gold,10000,2026-11-23T10:20:00Z,Yahoo Finance,Gold Rebounds as Traders Pare Bets on Near-Term Fed Rate Hikes
+2026-11-23T11:37:25Z,JP,1,ウルフアロン,500,2026-11-23T11:10:00Z,Yahoo!ニュース,【新日本】ボルチン＆ウルフが新合体技「マッドボム」でWTL白星発進「必ず優勝しましょう」（日刊スポーツ）
+2026-11-23T11:37:25Z,JP,2,広島カープ,200,2026-11-23T11:10:00Z,Yahoo!ニュース,【広島】森下暢仁、坂倉将吾とバッテリー「最後に組めて…あ、最後じゃないです」代打は床田寛樹で国内ＦＡ権行使の３選手が“共演” 仕掛け人はベテラン２人…ファン感謝デー（スポーツ報知）
+2026-11-23T11:37:25Z,JP,3,土屋太鳳,200,2026-11-23T11:10:00Z,西スポWEB OTTO!,〝我が子にほほ笑むママ〟片寄涼太が公開…快挙の土屋太鳳を〝お宝写真〟で祝福「ニヤニヤしちゃう」「大好きなんだろうなぁ」「感動もひとしおだよね」の声
+2026-11-23T11:37:25Z,JP,4,ネプリーグ,2000,2026-11-23T11:00:00Z,TVer,イモトアヤコ軍団vs船越英一郎軍団！
+2026-11-23T11:37:25Z,JP,5,プロジェクト4,500,2026-11-23T11:00:00Z,Mrs. GREEN APPLE OFFICIAL SITE,『プロジェクト4』Music Videoプレミア公開決定
+2026-11-23T11:37:25Z,JP,6,大乃国,500,2026-11-23T11:00:00Z,,
+2026-11-23T11:37:25Z,JP,7,福士蒼汰 ドラマ,200,2026-11-23T11:00:00Z,TVer,【解説放送版】第8話 国家機密と裏切りの連続
+2026-11-23T11:37:25Z,JP,8,競輪祭,500,2026-11-23T11:00:00Z,netkeirin,小倉競輪 朝日新聞社杯競輪祭 GI 2026年11月23日 5R 選 抜 出走表 | 競輪レース情報
+2026-11-23T11:37:25Z,JP,9,舞の海,200,2026-11-23T10:50:00Z,サンスポ,舞の海氏「石臼がじっとしてるんじゃなく前に出てきますから怖い」／九州場所
+2026-11-23T11:37:25Z,JP,10,内田一夫,200,2026-11-23T10:50:00Z,Yahoo!ニュース,【J2甲府】渋谷洋樹氏が監督退任へ 後任は元監督の内田一夫氏に 2010年にJ1昇格へ導く（YBS山梨放送）
+2026-11-23T11:37:25Z,BD,1,miss universe 2026 national costumes,200,2026-11-23T11:20:00Z,Metro.Style,The Best National Costumes at Miss Universe 2026
+2026-11-23T11:37:25Z,BD,2,"হযরত শাহ্জালাল আন্তর্জাতিক বিমানবন্দর, ঢাকা",100,2026-11-23T11:00:00Z,,
+2026-11-23T11:37:25Z,BD,3,তানজিন তিশা,100,2026-11-23T10:40:00Z,bdnews24.com,হুমকির মামলা: তানজিন তিশার বিরুদ্ধে গ্রেপ্তারি পরোয়ানা জারির আবেদন
+2026-11-23T11:37:25Z,BD,4,বেনাপোল,100,2026-11-23T10:30:00Z,প্রথম আলো,"বেনাপোল সীমান্তে অতিরিক্ত বিজিবি মোতায়েন, রাতে সার্চলাইটে নজরদারি"
+2026-11-23T11:37:25Z,BD,5,টেস্ট ক্রিকেট,100,2026-11-23T10:20:00Z,প্রথম আলো,"নিউজিল্যান্ডকে অলআউট করতে পারেনি ভারত, মেনে নিতে হলো ড্র"
+2026-11-23T11:37:25Z,BD,6,leonida github,100,2026-11-23T10:10:00Z,TweakTown,Cyberleek claims modders could get GTA 6 running on PC within a week after reported Xbox build leak
+2026-11-23T11:37:25Z,BD,7,bangladesh a vs sri lanka a,10000,2026-11-23T09:40:00Z,NDTV Profit,Sri Lanka A vs Bangladesh A Live Streaming: When And Where To Watch Asia Cup Rising Stars Match?
+2026-11-23T11:37:25Z,BD,8,scotland vs zimbabwe,500,2026-11-23T09:20:00Z,Cricbuzz,"ZIMW vs SCOW, 28th Match, Super Six (B3 v A2), ICC Women's Emerging Nations Trophy, 2026 - Commentary"
+2026-11-23T11:37:25Z,BD,9,ramayana movie,500,2026-11-23T09:10:00Z,Sacnilk,Ramayana Nineteenth Day Advance Booking Report
+2026-11-23T11:37:25Z,BD,10,non-performing loan,200,2026-11-23T08:50:00Z,The Daily Star,"Default loans swell by Tk 20,850cr in three months to Tk 6,27,400cr"
