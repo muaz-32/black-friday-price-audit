@@ -139,3 +139,143 @@ fetched_at,geo,rank,query,approx_traffic,published_at,news_source,news_title
 2026-11-24T00:37:26Z,BD,8,doomsday,500,2026-11-23T17:40:00Z,Yahoo,"'Avengers: Doomsday' final trailer reveals key X-Men moment and Hailee Steinfeld's return. Plus, 4 other things we spotted."
 2026-11-24T00:37:26Z,BD,9,glm 5.4,2000,2026-11-23T16:50:00Z,RuntimeWire,Z.ai launches GLM-5.4 in its Coding Plan with vision and 50% more weekly quota
 2026-11-24T00:37:26Z,BD,10,the riemann hypothesis,200,2026-11-23T16:40:00Z,The New York Times,Anthropic Mathematician Claims to Have Solved Math’s Most Famous Problem
+2026-11-24T01:17:48Z,US,1,joe buck,2000,2026-11-24T01:00:00Z,USA Today,"Clock ticking on ESPN to salvage Troy Aikman, Joe Buck feud before Super Bowl"
+2026-11-24T01:17:48Z,US,2,winthrop vs illinois,1000,2026-11-24T01:00:00Z,University of Illinois Athletics,No. 4 Illini Continue Homestand Monday vs. Winthrop
+2026-11-24T01:17:48Z,US,3,drew barrymore,1000,2026-11-24T01:00:00Z,People.com,Jennifer Lopez Reveals a Therapist’s Advice Following Ben Affleck Divorce
+2026-11-24T01:17:48Z,US,4,denver vs kansas,500,2026-11-24T01:00:00Z,Kansas City Star,"Denver Pioneers vs. KU Jayhawks basketball: Probable starters, tipoff time, TV"
+2026-11-24T01:17:48Z,US,5,joe burrow girlfriend,1000,2026-11-24T01:00:00Z,Yahoo,Joe Burrow's Model Girlfriend Posed for Sports Illustrated Swimsuit
+2026-11-24T01:17:48Z,US,6,the altruists cast,200,2026-11-24T01:00:00Z,CNBC,Netflix’s ‘The Altruists’ sparks FTX portrayal debate among crypto bigwigs from CZ to Star Xu
+2026-11-24T01:17:48Z,US,7,katie zacharia,200,2026-11-24T01:00:00Z,The Free Press,Two Drinks with . . . Our Shortest-Serving Press Secretary
+2026-11-24T01:17:48Z,US,8,deni avdija,2000,2026-11-24T00:50:00Z,Yahoo Sports,Deni Avdija cleared to return after missing last two games
+2026-11-24T01:17:48Z,US,9,alex ovechkin,500,2026-11-24T00:50:00Z,NHL.com,Ovechkin’s franchise-record assist overshadowed as Capitals’ struggles continue
+2026-11-24T01:17:48Z,US,10,mlv draft,500,2026-11-24T00:50:00Z,The Daily Collegian,"Penn State women's volleyball makes MLV Draft history, Las Vegas Thrill select Whitney Lauenstein"
+2026-11-24T01:17:48Z,GB,1,santos vs grêmio,200,2026-11-24T00:00:00Z,ge,"Santos x Grêmio: onde assistir ao vivo, horário e escalações"
+2026-11-24T01:17:48Z,GB,2,76ers vs trail blazers,500,2026-11-23T23:50:00Z,NBC Sports,"PHI starts Maxey, Edgecombe, Brown, James, Walker"
+2026-11-24T01:17:48Z,GB,3,amanda seyfried,200,2026-11-23T23:50:00Z,Deadline,‘Saturday Night Live’: Robert De Niro & Timothée Chalamet Will Close Out The Year As Hosts
+2026-11-24T01:17:48Z,GB,4,the ten doctors,200,2026-11-23T23:40:00Z,Doctor Who TV,"Babelcolour Talks Doctor Who: The Timeless Doctors, AI Controversy and 7 Years of Bringing His Vision to Life"
+2026-11-24T01:17:48Z,GB,5,transgender,200,2026-11-23T23:30:00Z,The New York Times,"As He Leaves Office, Ken Paxton Drops Suits Against Political Opponents"
+2026-11-24T01:17:48Z,GB,6,goldie hawn,200,2026-11-23T23:30:00Z,People.com,Goldie Hawn Has ‘No Idea’ What Kurt Russell Will Get for Her Birthday (Exclusive)
+2026-11-24T01:17:48Z,GB,7,billy evans,200,2026-11-23T23:30:00Z,The Hollywood Reporter,Billy Evans Secured a Cut of ‘You Can See Everything’ Profits After All — and Gave It to Charity (Exclusive)
+2026-11-24T01:17:48Z,GB,8,miss universe 2026,100,2026-11-23T23:30:00Z,Business Insider,Meet the 116 women competing to be Miss Universe 2026
+2026-11-24T01:17:48Z,GB,9,ralph fiennes,200,2026-11-23T23:10:00Z,IMDb,Ralph Fiennes Shades Robert Pattinson As New James Bond: ‘I’m Still In Love With Daniel Craig’
+2026-11-24T01:17:48Z,GB,10,nathan collins,100,2026-11-23T23:10:00Z,Spurs Web,Tottenham and Pochettino both want Nathan Collins but Brentford hold all the cards
+2026-11-24T01:17:48Z,CA,1,chef dumas,500,2026-11-24T01:00:00Z,Radio-Canada,"Le chef Michel Dumas, vedette du web, s’est éteint à 72 ans"
+2026-11-24T01:17:48Z,CA,2,cavaliers vs bulls,200,2026-11-24T01:00:00Z,Yahoo Sports,"Final Injury Report for Cavaliers-Bulls: Will Evan Mobley, Norman Powell Play?"
+2026-11-24T01:17:48Z,CA,3,clippers vs rockets,200,2026-11-24T01:00:00Z,Sports Illustrated,"Clippers vs. Rockets Prediction, Odds and Best NBA Prop Bets for Monday, Nov. 23"
+2026-11-24T01:17:48Z,CA,4,john tavares,200,2026-11-24T01:00:00Z,TSN,"Luszczyszyn on how the Leafs keep blowing leads, Tavares’ steep regression and why he likes the Larkin trade for both sides"
+2026-11-24T01:17:48Z,CA,5,adrian kempe,200,2026-11-24T01:00:00Z,ESPN,NHL Tonight: A seven-game Thanksgiving week appetizer on Monday
+2026-11-24T01:17:48Z,CA,6,iptv,100,2026-11-24T01:00:00Z,TechBullion,IPTV 4K at Home: Why Your Picture Isn’t Sharp Yet (and How to Fix It)
+2026-11-24T01:17:48Z,CA,7,trail blazers – 76ers,100,2026-11-24T01:00:00Z,ESPN,76ers rule out Joel Embiid (illness) for game vs. Trail Blazers
+2026-11-24T01:17:48Z,CA,8,queen camilla,100,2026-11-24T01:00:00Z,Marie Claire,Queen Camilla Borrows Queen Elizabeth's $6 Million Sapphires
+2026-11-24T01:17:48Z,CA,9,aatu raty,200,2026-11-24T00:50:00Z,Sportsnet.ca,'This is where I want to be': Aatu Raty excited for fresh start with Maple Leafs
+2026-11-24T01:17:48Z,CA,10,ontario provincial police,100,2026-11-24T00:50:00Z,CollingwoodToday.ca,"Police remind public to lock vehicles, protect deliveries"
+2026-11-24T01:17:48Z,AU,1,deni avdija,200,2026-11-24T01:00:00Z,Yahoo Sports,Deni Avdija cleared to return after missing last two games
+2026-11-24T01:17:48Z,AU,2,rockets vs clippers,200,2026-11-24T01:00:00Z,NBA.com,GAME PREVIEW: 5 Things You Should Know About Clippers vs. Rockets
+2026-11-24T01:17:48Z,AU,3,charles leclerc,500,2026-11-24T01:00:00Z,Formula 1,‘I'll accept the blame’ – Leclerc ‘embarrassed’ for Ferrari as he assesses latest Hamilton clash in Las Vegas
+2026-11-24T01:17:48Z,AU,4,gerard whateley,100,2026-11-24T01:00:00Z,Nine.com.au,Cummins call exposes harsh treatment of banned Aussie trio
+2026-11-24T01:17:48Z,AU,5,commanders vs bengals,200,2026-11-24T00:50:00Z,Yahoo Sports,"NFL Monday Night Football preview: Joe Burrow, Jayden Daniels meet in big game for Bengals and Commanders"
+2026-11-24T01:17:48Z,AU,6,bribery,200,2026-11-24T00:50:00Z,China Daily Global Edition,Former Zhejiang legislator handed death sentence with reprieve for bribery
+2026-11-24T01:17:48Z,AU,7,bulls vs cavaliers,500,2026-11-24T00:40:00Z,Squawka,"Cavaliers vs Bulls: Prediction, Team News and Powell Out"
+2026-11-24T01:17:48Z,AU,8,traffic enforcement camera,100,2026-11-24T00:30:00Z,Daily Press,New Kent OKs staffing for new traffic patrol unit; money comes from I-64 speed cameras
+2026-11-24T01:17:48Z,AU,9,pacers vs thunder,200,2026-11-24T00:20:00Z,NBA.com,Game Preview: Pacers at Defending Champion Knicks on Nov. 22
+2026-11-24T01:17:48Z,AU,10,molly meldrum yan wongngam,1000,2026-11-24T00:20:00Z,Nine.com.au,Sad truth about Molly Meldrum’s final years with longtime partner revealed
+2026-11-24T01:17:48Z,DE,1,bauer sucht frau tobias pankow,2000,2026-11-24T00:00:00Z,BILD,Grusel-Moment bei „Bauer sucht Frau“: „Wer von euch findet ausgestopfte Tiere schön?“
+2026-11-24T01:17:48Z,DE,2,wwe,100,2026-11-23T23:40:00Z,WWE,"Raw: Nov. 23, 2026"
+2026-11-24T01:17:48Z,DE,3,san francisco 49ers,500,2026-11-23T23:30:00Z,NFL.com,"Niners release WR Brandon Aiyuk, ending monthslong saga"
+2026-11-24T01:17:48Z,DE,4,patrice aminati,2000,2026-11-23T23:10:00Z,T-Online,Krebskranke Patrice Aminati nimmt Abschied von Freundinnen
+2026-11-24T01:17:48Z,DE,5,kaufland,1000,2026-11-23T22:50:00Z,SWR,Kaufland ruft bundesweit Speisekartoffeln zurück
+2026-11-24T01:17:48Z,DE,6,preis,200,2026-11-23T22:50:00Z,WELT,Mega-Deal: IT-Sicherheitsfirma Crowdstrike übernimmt Zscaler
+2026-11-24T01:17:48Z,DE,7,jeremy renner,200,2026-11-23T22:30:00Z,Variety,'Avengers: Doomsday' Adds Hailee Steinfeld as Kate Bishop to Cast
+2026-11-24T01:17:48Z,DE,8,beverly hills cop 2,200,2026-11-23T22:10:00Z,Filmstarts,Heute Abend im TV: Die Fortsetzung zu einem der größten Actionklassiker aller Zeiten
+2026-11-24T01:17:48Z,DE,9,uwe seeler,200,2026-11-23T22:10:00Z,ARD Mediathek,Hamburg Journal - Uwe-Seeler-Preis im Hamburger Rathaus verliehen - hier anschauen
+2026-11-24T01:17:48Z,DE,10,bauer sucht frau thomas,200,2026-11-23T21:30:00Z,n-tv.de,"""Bauer sucht Frau"": Annika nutzt bei Daniel die Gunst der Stunde"
+2026-11-24T01:17:48Z,FR,1,pleine lune castor,2000,2026-11-24T01:00:00Z,BFM,Super Lune du Castor: qu'est-ce que ce phénomène qui a lieu ce mardi et comment l'observer?
+2026-11-24T01:17:48Z,FR,2,santos – grêmio,200,2026-11-24T00:10:00Z,ge,"Santos x Grêmio: onde assistir ao vivo, horário e escalações"
+2026-11-24T01:17:48Z,FR,3,saint-nazaire,200,2026-11-24T00:10:00Z,Libération,A Saint-Nazaire avec les «spotteurs» de navires sur le pont pour la mise à flot du «MSC World Asia» : «J’ai déjà pleuré pour un départ»
+2026-11-24T01:17:48Z,FR,4,disney,100,2026-11-24T00:10:00Z,AllEars.Net,"Latest Disney World Construction: Disney, Are We Really Doing This AGAIN?!"
+2026-11-24T01:17:48Z,FR,5,76ers – trail blazers,500,2026-11-24T00:00:00Z,NBC Sports Philadelphia,Sixers' record-setting wait for the West ends against Trail Blazers
+2026-11-24T01:17:48Z,FR,6,fc nantes grenoble,5000,2026-11-23T23:30:00Z,L'Équipe,Nantes enchaîne contre Grenoble et s'éloigne de la zone rouge en Ligue 2
+2026-11-24T01:17:48Z,FR,7,pouzol,100,2026-11-23T23:20:00Z,La Montagne,"Violente collision sur une route départementale du Puy-de-Dôme : quatre blessés, dont une jeune fille de 14 ans héliportée"
+2026-11-24T01:17:48Z,FR,8,téléfilm disparition inquiétante,2000,2026-11-23T23:10:00Z,Télé-Loisirs,Disparition inquiétante : Faut-il regarder l'épisode inédit diffusé ce soir ?
+2026-11-24T01:17:48Z,FR,9,saint-nicolas-d'aliermont,200,2026-11-23T23:10:00Z,Ouest-France,"« Elle était très impliquée dans le comité des fêtes » : grave accident près de Dieppe, la deuxième piétonne est décédée"
+2026-11-24T01:17:48Z,FR,10,catherine clément,500,2026-11-23T22:50:00Z,Télérama,"Mort de Catherine Clément, philosophe passionnée de l’Inde"
+2026-11-24T01:17:48Z,IT,1,sixers - trail blazers,100,2026-11-24T00:50:00Z,RotoWire,Joel Embiid Injury: Late addition to injury report
+2026-11-24T01:17:48Z,IT,2,roncaccia grande fratello,100,2026-11-24T00:20:00Z,,
+2026-11-24T01:17:48Z,IT,3,pier ferdinando casini,1000,2026-11-24T00:10:00Z,Corriere della Sera,Il suicidio di Gianni De Gennaro. E un Paese feroce e senza verità
+2026-11-24T01:17:48Z,IT,4,corrado augias la7,10000,2026-11-24T00:00:00Z,la Repubblica,L’ultimo saluto di Corrado Augias in tv: “La vita non è il bip dell’ospedale”
+2026-11-24T01:17:48Z,IT,5,antonella clerici,500,2026-11-24T00:00:00Z,Il Fatto Quotidiano,"""In questi giorni sarà meno frizzante del solito, ognuno ha i suoi dispiaceri e abbracciamoci"": il dolore di Antonella Clerici per la morte dell'amica Tati"
+2026-11-24T01:17:48Z,IT,6,centallo,200,2026-11-23T23:50:00Z,La Fedeltà,"Addio a Maria Ada Epicoco, mancata a 58 anni"
+2026-11-24T01:17:48Z,IT,7,mediaset play,200,2026-11-23T23:50:00Z,,
+2026-11-24T01:17:48Z,IT,8,jamie lee curtis,200,2026-11-23T23:40:00Z,People.com,Jamie Lee Curtis Marks 68th Birthday as ‘Only Surviving Member’ of Immediate Family
+2026-11-24T01:17:48Z,IT,9,mediaset infinity,2000,2026-11-23T23:20:00Z,Mediaset Infinity,Love For Rent: Episodio 1 Video
+2026-11-24T01:17:48Z,IT,10,mediaset,200,2026-11-23T23:20:00Z,Mediaset Infinity,Promo: Mai più - Donne oltre la violenza Video
+2026-11-24T01:17:48Z,ES,1,en tierra lejana,100,2026-11-24T00:50:00Z,Diez Minutos ES,El futuro de Boran queda sellado en 'En tierra lejana': así será el capítulo 42 de la serie turca de Antena 3
+2026-11-24T01:17:48Z,ES,2,76ers - trail blazers,200,2026-11-24T00:20:00Z,NBC Sports Philadelphia,Sixers' record-setting wait for the West ends against Trail Blazers
+2026-11-24T01:17:48Z,ES,3,santos - grêmio,200,2026-11-24T00:20:00Z,ge,"Santos x Grêmio: onde assistir ao vivo, horário e escalações"
+2026-11-24T01:17:48Z,ES,4,túnel,100,2026-11-24T00:20:00Z,miGijón,Tres kilómetros y medio bajo Gijón y una pregunta pendiente desde 2006: ¿cuándo pasará el primer tren?
+2026-11-24T01:17:48Z,ES,5,adamuz,1000,2026-11-24T00:10:00Z,ABC,Adif pide a Renfe los acelerómetros de los trenes que circularon por Adamuz para investigar «posibles anomalías» en la vía
+2026-11-24T01:17:48Z,ES,6,avianca,100,2026-11-23T23:20:00Z,El Mundo,"Plus Ultra suspende todos sus vuelos, abre negociaciones con los acreedores, plantea un ERE a su plantilla y deja en el aire el cobro del rescate de la SEPI"
+2026-11-24T01:17:48Z,ES,7,euro stoxx 50,200,2026-11-23T23:20:00Z,finanzen.ch,STOXX-Handel: STOXX 50 liegt zum Ende des Montagshandels im Plus
+2026-11-24T01:17:48Z,ES,8,cyberpunk 2077,200,2026-11-23T23:10:00Z,Niche Gamer,Cyberpunk 2077 mod Cyber Sight adds third-person gunplay and melee combat
+2026-11-24T01:17:48Z,ES,9,pepa bueno,200,2026-11-23T22:50:00Z,Lecturas,"Pepa Bueno: “Yo llegué al periodismo en los años 80. Las redacciones estaban llenas de mujeres y los despachos, de hombres"""
+2026-11-24T01:17:48Z,ES,10,felipe vi de españa,200,2026-11-23T22:50:00Z,Diario de Sevilla,La conexión familiar que une a Felipe VI con Vlad el Empalador
+2026-11-24T01:17:48Z,NL,1,x,100,2026-11-24T00:50:00Z,The New York Times,SpaceX Sued By Oregon and Virginia Over A.I.-Generated Sexualized Images
+2026-11-24T01:17:48Z,NL,2,rs-28 sarmat,200,2026-11-24T00:00:00Z,Newsweek,Satellite Photos Reveal Russia’s ‘Satan II’ Nuke May Have Entered Service
+2026-11-24T01:17:48Z,NL,3,leonida,100,2026-11-23T23:30:00Z,"Take-Two Interactive Software, Inc.",Grand Theft Auto VI Shatters Entertainment Box Office Records with $3.79 Billion in Day One Retail Sales
+2026-11-24T01:17:48Z,NL,4,avengers doomsday,100,2026-11-23T23:30:00Z,Marvel.com,Watch the Final ‘Avengers: Doomsday’ Trailer
+2026-11-24T01:17:48Z,NL,5,nieuwegein,100,2026-11-23T23:20:00Z,AD.nl,Bewoners van Merwestein zitten urenlang gespannen binnen terwijl zwaarbewapende agenten de wijk afzetten en een man aanhouden
+2026-11-24T01:17:48Z,NL,6,toliver,1000,2026-11-23T23:20:00Z,CNN,Manchester Co-Op Live: Don Toliver concert evacuated as ‘unknown substance’ fills UK arena
+2026-11-24T01:17:48Z,NL,7,kruidvat,500,2026-11-23T23:10:00Z,BN DeStem,"Gewapende man overvalt Kruidvat in Putte, politie zoekt in wijde omgeving naar dief met opvallende tas"
+2026-11-24T01:17:48Z,NL,8,liefde,200,2026-11-23T23:00:00Z,De Telegraaf,"B&B vol liefde-Caroline (62) getekend door fataal ongeluk: ’Toen hun uitvaart was, vocht ik voor mijn leven’"
+2026-11-24T01:17:48Z,NL,9,jochem myjer,200,2026-11-23T22:30:00Z,AD.nl,Jochem Myjer is de nieuwe ambassadeur van Stichting Jade
+2026-11-24T01:17:48Z,NL,10,sneeuw,2000,2026-11-23T22:20:00Z,Skiinformatie.nl,Zoveel sneeuw valt er niet vaak op één dag: vandaag tot 85 cm in de Alpen
+2026-11-24T01:17:48Z,BR,1,classificações de brasileirão série a,50000,2026-11-24T01:00:00Z,ge,Palmeiras 1 x 1 Flamengo | Campeonato Brasileiro: melhores momentos
+2026-11-24T01:17:48Z,BR,2,jogos de brasileirão série a,20000,2026-11-24T01:00:00Z,ESPN Brasil,Classificação do Brasileirão: como ficou a tabela após jogos de domingo
+2026-11-24T01:17:48Z,BR,3,rockets x clippers,200,2026-11-24T01:00:00Z,Reuters Connect,NBA: Los Angeles Clippers at Houston Rockets
+2026-11-24T01:17:48Z,BR,4,jabari walker,200,2026-11-24T01:00:00Z,ESPN,76ers rule out Joel Embiid (illness) for game vs. Trail Blazers
+2026-11-24T01:17:48Z,BR,5,st. louis city sc x lafc,200,2026-11-24T01:00:00Z,WhoScored.com,"St. Louis City vs LAFC: Lineups, Prediction, Odds & Bet Builder Tip"
+2026-11-24T01:17:48Z,BR,6,deni avdija,200,2026-11-24T01:00:00Z,Yahoo Sports,Deni Avdija cleared to return after missing last two games
+2026-11-24T01:17:48Z,BR,7,andré mendonça,2000,2026-11-24T00:50:00Z,G1,"Em reunião com Lula, ministros do STF defendem diretor da PF e dizem que André Mendonça queria prendê-lo"
+2026-11-24T01:17:48Z,BR,8,campeonato brasileiro a,1000,2026-11-24T00:50:00Z,CNN Brasil,Brasileirão: veja os times rebaixados que vão jogar a Série B em 2027
+2026-11-24T01:17:48Z,BR,9,flashscore,500,2026-11-24T00:50:00Z,BBC,Paris FC vs Angers: French Ligue 1 stats & head-to-head
+2026-11-24T01:17:48Z,BR,10,rockstar games gta vi pc,200,2026-11-24T00:50:00Z,Estadão,Hacker vaza suposto arquivo executável de GTA 6
+2026-11-24T01:17:48Z,MX,1,pelicans - suns,200,2026-11-24T01:00:00Z,Yahoo Sports,The Suns have upgraded Ryan Dunn (right quadriceps …
+2026-11-24T01:17:48Z,MX,2,tyson fury,100,2026-11-24T01:00:00Z,CNN,Tyson Fury reveals schizophrenia diagnosis
+2026-11-24T01:17:48Z,MX,3,st. louis city sc - lafc,1000,2026-11-24T00:50:00Z,WhoScored.com,"St. Louis City vs LAFC: Lineups, Prediction, Odds & Bet Builder Tip"
+2026-11-24T01:17:48Z,MX,4,estadísticas de botafogo contra sao paulo fc,200,2026-11-24T00:50:00Z,Sportsgambler,"Botafogo vs São Paulo Prediction, Betting Tips, Lineups & Odds | 23 Nov 2026"
+2026-11-24T01:17:48Z,MX,5,el heraldo de juárez,100,2026-11-24T00:50:00Z,El Sol de México,Piden esperar el cambio de contenedores de Punto Limpio para evitar acumulación de basura en las calles
+2026-11-24T01:17:48Z,MX,6,washington - bengals,2000,2026-11-24T00:30:00Z,Bolavip US,Starting and backup QBs on Commanders vs Bengals depth charts today for 2026 NFL Week 11 MNF
+2026-11-24T01:17:48Z,MX,7,bulls - cavaliers,500,2026-11-24T00:30:00Z,Yahoo Sports,"Final Injury Report for Cavaliers-Bulls: Will Evan Mobley, Norman Powell Play?"
+2026-11-24T01:17:48Z,MX,8,pacers - thunder,500,2026-11-24T00:20:00Z,8 Points 9 Seconds,Thunder's ability to play through injuries is Pacers' ultimate learning experience
+2026-11-24T01:17:48Z,MX,9,raptors - bucks,500,2026-11-24T00:10:00Z,Yahoo Sports,"Final Injury Report for Bucks-Raptors: Will Kawhi Leonard, RJ Barrett Play?"
+2026-11-24T01:17:48Z,MX,10,timberwolves - nets,500,2026-11-24T00:10:00Z,NBA.com,Julius Randle returns to Minnesota as veteran leader for Nets
+2026-11-24T01:17:48Z,IN,1,ಹವಾಮಾನ,2000,2026-11-24T01:00:00Z,Vijay Karnataka,"Karnataka Weather: ರಾಜ್ಯದಲ್ಲಿ ಚಳಿ ಭಾರೀ ಹೆಚ್ಚಳ: ದಾವಣಗೆರೆ 8 ಡಿಗ್ರಿ, ಬೆಳಗಾವಿ 9.8 ಡಿಗ್ರಿಗೆ ಕುಸಿದ ತಾಪಮಾನ"
+2026-11-24T01:17:48Z,IN,2,বাবুল বোস,100,2026-11-24T01:00:00Z,Anandabazar Patrika,"প্রয়াত সঙ্গীত পরিচালক বাবুল বসু, ক্যানসারে থামল দীর্ঘদিনের লড়াই! বয়স হয়েছিল ৭৪"
+2026-11-24T01:17:48Z,IN,3,dario amodei,1000,2026-11-24T01:00:00Z,The Verge,Dario Amodei reportedly suggested video games could pacify the masses after AI took their jobs.
+2026-11-24T01:17:48Z,IN,4,వాతావరణం,20000,2026-11-24T00:50:00Z,Andhrajyothy,"దక్షిణ కోస్తా, సీమకు వర్షసూచన"
+2026-11-24T01:17:48Z,IN,5,வானிலை,20000,2026-11-24T00:50:00Z,Dinamani,வானிலை: சென்னையில் நாளை(நவ.23) கனமழைக்கு வாய்ப்பு!
+2026-11-24T01:17:48Z,IN,6,चंद्रशेखर बावनकुळे,200,2026-11-24T00:50:00Z,,
+2026-11-24T01:17:48Z,IN,7,76ers vs trail blazers,200,2026-11-24T00:50:00Z,NBC Sports,"PHI starts Maxey, Edgecombe, Brown, James, Walker"
+2026-11-24T01:17:48Z,IN,8,bail,100,2026-11-24T00:50:00Z,FOX 5 New York,Public reaction to ex-NYPD detective's bail being revoked
+2026-11-24T01:17:48Z,IN,9,série a,100,2026-11-24T00:50:00Z,Le Figaro,"Série A : la Lazio reste en tête, Da Cunha s’illustre avec Côme"
+2026-11-24T01:17:48Z,IN,10,accuweather,2000,2026-11-24T00:50:00Z,CNN,"Storms to hit both coasts, threatening Thanksgiving travel for millions and Macy’s 100th parade"
+2026-11-24T01:17:48Z,JP,1,金価格,1000,2026-11-24T01:00:00Z,Vietnam.vn,金価格の急落後の予測
+2026-11-24T01:17:48Z,JP,2,金相場,500,2026-11-24T01:00:00Z,朝日新聞,金の価格、今年の最安値水準に「有事の金買い」失速が意味するもの
+2026-11-24T01:17:48Z,JP,3,ストップ高,100,2026-11-24T01:00:00Z,Yahoo!ニュース,韓国サムスン・LG、ロボットの「作業能力」で競う…CES前に開発加速（KOREA WAVE）
+2026-11-24T01:17:48Z,JP,4,ロバート・スティーブンソン,200,2026-11-24T00:50:00Z,Yahoo!ニュース,ド軍、救援スティーブンソンと契約 エ軍と50億円契約も3年間で全休2度「興味深い」（Full-Count）
+2026-11-24T01:17:48Z,JP,5,ロケッツ 対 クリッパーズ,200,2026-11-24T00:40:00Z,The Dream Shake,Houston Rockets vs. Los Angeles Clippers game preview
+2026-11-24T01:17:48Z,JP,6,サンリオ 株価,500,2026-11-24T00:40:00Z,Yahoo!ニュース,"分割後に変わった「サンリオ（8136）の株主優待」100株からテーマパーク券1枚に。1,000円券は500株以上から（LIMO）"
+2026-11-24T01:17:48Z,JP,7,ソニーフィナンシャルグループ 株価,200,2026-11-24T00:40:00Z,Yahoo!ファイナンス,信用残ランキング【売り残増加】 日産自、ソニーＦＧ、東電ＨＤ(株探ニュース)
+2026-11-24T01:17:48Z,JP,8,加護 亜依,200,2026-11-24T00:40:00Z,文春オンライン,「こっそりノーパン・ノーブラで1週間……」2度の未成年喫煙で芸能界を追い出された加護亜依が、それでも前を向けた“意外すぎるキッカケ”
+2026-11-24T01:17:48Z,JP,9,データセクション 株価,200,2026-11-24T00:40:00Z,株探,今朝の注目ニュース！ ★データセク、ミタチ産業、大阪油化などに注目！
+2026-11-24T01:17:48Z,JP,10,ウルブズ 対 ネッツ,100,2026-11-24T00:40:00Z,NBA.com,Julius Randle returns to Minnesota as veteran leader for Nets
+2026-11-24T01:17:48Z,BD,1,santos fc vs grêmio lineups,100,2026-11-24T01:10:00Z,Sportsgambler,"Santos vs Grêmio Prediction, Betting Tips, Lineups & Odds | 23 Nov 2026"
+2026-11-24T01:17:48Z,BD,2,rockstar games gta vi,200,2026-11-24T01:00:00Z,Variety,Box Office: ‘Sunrise on the Reaping’ Reignites ‘Hunger Games’ Franchise With $120 Million Debut
+2026-11-24T01:17:48Z,BD,3,botafogo vs são paulo,100,2026-11-24T01:00:00Z,ESPN Brasil,Botafogo x São Paulo: onde assistir ao vivo e escalações do jogo do Brasileirão
+2026-11-24T01:17:48Z,BD,4,মাধ্যমিক স্কুল সার্টিফিকেট,100,2026-11-24T00:50:00Z,Dainik Shiksha,এসএসসি পরীক্ষার ফরম পূরণের সময় বাড়ল
+2026-11-24T01:17:48Z,BD,5,neymar,100,2026-11-24T00:20:00Z,365Scores,Gremio en el Brasileirao: qué necesita para salir del descenso vs Santos
+2026-11-24T01:17:48Z,BD,6,série a,200,2026-11-24T00:00:00Z,Le Figaro,"Série A : la Lazio reste en tête, Da Cunha s’illustre avec Côme"
+2026-11-24T01:17:48Z,BD,7,santos vs grêmio,10000,2026-11-23T23:40:00Z,ESPN Brasil,Santos x Grêmio: onde assistir ao vivo e escalações do jogo do Brasileirão
+2026-11-24T01:17:48Z,BD,8,brentford f.c. vs everton f.c. standings,2000,2026-11-23T23:00:00Z,BBC,Brentford 4-0 Everton - James Tarkowski sees red as Toffees thrashed
+2026-11-24T01:17:48Z,BD,9,levante vs elche,1000,2026-11-23T19:20:00Z,BBC,Levante vs Elche: Spanish La Liga stats & head-to-head
+2026-11-24T01:17:48Z,BD,10,monza vs fiorentina,2000,2026-11-23T19:00:00Z,Sports Mole,"Preview: Monza vs Fiorentina - prediction, team news, lineups"
