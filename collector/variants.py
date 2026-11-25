@@ -26,7 +26,7 @@ import argparse
 import sys
 from pathlib import Path
 
-import duckdb
+from . import workdb
 
 CENT = 0.005
 COLS = "store VARCHAR, product_id BIGINT, variant_id BIGINT, run_id VARCHAR, price DOUBLE, compare_at DOUBLE"
@@ -55,7 +55,11 @@ def main() -> int:
         print(f"missing {prices} or {runs}", file=sys.stderr)
         return 2
     args.state.mkdir(parents=True, exist_ok=True)
-    db = duckdb.connect()
+    with workdb.connect(args.state) as db:
+        return apply(args, db, prices, runs)
+
+
+def apply(args, db, prices: Path, runs: Path) -> int:
     seen = {v for (v,) in db.execute("SELECT DISTINCT vantage FROM read_parquet(?)", [str(runs)]).fetchall()}
     if seen != {args.vantage}:
         print(f"run {args.run} was taken from {sorted(seen)}, not {args.vantage}; not applied", file=sys.stderr)
