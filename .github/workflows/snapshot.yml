@@ -49,9 +49,14 @@ jobs:
           ref: main
 
       # Runs are started both by an external cron service and by GitHub's own
-      # (unreliable) scheduler. Whichever comes second finds a recent snapshot
-      # and stops here, so stores are not fetched twice for one slot. All shards
-      # share one run id and one catalogue mode, decided here.
+      # (unreliable) scheduler. Each run belongs to a 6-hour slot (00:12-06:12,
+      # 06:12-12:12, ... UTC; the triggers fire at :17 and :32), and a run whose
+      # slot already has a snapshot stops here, so stores are not fetched twice
+      # for one slot. GitHub's scheduler has fired up to six hours late; that
+      # run then counts for the slot it was meant for, not the next one (with
+      # "skip if under 4 hours old", late runs cost three slots from 22 to 25
+      # Nov). All shards share one run id and one catalogue mode, decided here:
+      # full in the slot after midnight, so a late run cannot skip it.
       - name: Decide whether and how to run
         id: plan
         env:
@@ -60,17 +65,18 @@ jobs:
         run: |
           python - <<'EOF' >> "$GITHUB_OUTPUT"
           import json, os
-          from datetime import datetime, timezone
+          from datetime import datetime, timedelta, timezone
           now = datetime.now(timezone.utc)
+          start = timedelta(minutes=12)
+          slot = now - (now - now.replace(hour=0, minute=0, second=0, microsecond=0) - start) % timedelta(hours=6)
           try:
-              last = json.load(open("status/latest.json"))["run_id"]
-              hours = (now - datetime.strptime(last, "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc)).total_seconds() / 3600
+              last = datetime.strptime(json.load(open("status/latest.json"))["run_id"], "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc)
           except (OSError, KeyError, ValueError):
-              hours = 99
+              last = None
           catalog = os.environ["CATALOG"]
           if catalog == "auto":
-              catalog = "full" if now.hour < 6 else "recent"
-          print(f"skip={'true' if hours < 4 and os.environ['FORCE'] != 'true' else 'false'}")
+              catalog = "full" if slot.hour == 0 else "recent"
+          print(f"skip={'true' if last and last >= slot and os.environ['FORCE'] != 'true' else 'false'}")
           print(f"run_id={now:%Y%m%dT%H%M%SZ}")
           print(f"catalog={catalog}")
           EOF
