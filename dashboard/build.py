@@ -287,6 +287,34 @@ def build_products(state: Path, out: Path) -> dict | None:
     return {"runs": len(runs), "last_run": runs[-1], "stores": counts}
 
 
+
+STORE_FIELDS = ["d", "m", "pl", "c", "v", "s", "md", "mp", "s0", "idx", "cuts", "rises", "infl", "n", "first", "last"]
+
+
+def write_store_table(path: Path, table: list[dict], products: dict[str, int]) -> int:
+    """{"fields": [...], "runs": [...], "rows": [[...], ...]}; first/last are indices into runs,
+    and the last field is the number of products with a price history (0: none)."""
+    runs = sorted({r for row in table for r in (row["first"], row["last"])})
+    at = {r: i for i, r in enumerate(runs)}
+    rows = [
+        [at[row[k]] if k in ("first", "last") else row.get(k) for k in STORE_FIELDS] + [products.get(row["d"], 0)]
+        for row in table
+    ]
+    path.write_text(json.dumps({"fields": STORE_FIELDS + ["np"], "runs": runs, "rows": rows}, separators=(",", ":")))
+    return path.stat().st_size
+
+
+def copy_validation(src: Path, dst: Path, repo: str) -> None:
+    """The validation coding page, its sample and the screenshot log, if drawn."""
+    if not (src / "index.html").exists():
+        return
+    dst.mkdir(parents=True, exist_ok=True)
+    for name in ("index.html", "sample.csv", "shots.csv"):
+        if (src / name).exists():
+            shutil.copy(src / name, dst / name)
+    (dst / "config.json").write_text(json.dumps({"repo": repo}))
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--summary", type=Path, default=Path("summary"))
@@ -294,18 +322,27 @@ def main() -> int:
     ap.add_argument("--stores", type=Path, default=Path("stores/stores.csv"))
     ap.add_argument("--state", type=Path, default=Path("state"), help="product history files; skipped if absent")
     ap.add_argument("--out", type=Path, default=Path("_site"))
+    ap.add_argument("--validation", type=Path, default=Path("research/validation"), help="coding page and sample")
     ap.add_argument("--repo", default="muaz-32/black-friday-price-audit")
     args = ap.parse_args()
 
     prices, details = build_prices(args.summary, args.stores)
     args.out.mkdir(parents=True, exist_ok=True)
     (args.out / "data").mkdir(exist_ok=True)
+    products = build_products(args.state, args.out)
+    # The store table goes in a file of its own, as columns rather than one
+    # object per store: the page shows its charts from overview.json first and
+    # fills the tables when this arrives (11 MB in one file made the first view
+    # slow, more so on slow connections).
+    table = prices.pop("stores")
+    counts = (products or {}).pop("stores", {})
+    stores_file = write_store_table(args.out / "data" / "stores.json", table, counts)
     data = {
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "repo": args.repo,
         "prices": prices,
         "trends": build_trends(args.trends),
-        "products": build_products(args.state, args.out),
+        "products": products,
     }
     store_dir = args.out / "data" / "store"
     if store_dir.exists():
@@ -315,9 +352,13 @@ def main() -> int:
     for store, series in details.items():
         (store_dir / f"{store}.json").write_text(json.dumps(series, separators=(",", ":")))
     shutil.copy(Path(__file__).parent / "index.html", args.out / "index.html")
+    copy_validation(args.validation, args.out / "validation", args.repo)
     (args.out / ".nojekyll").write_text("")
     size = (args.out / "data" / "overview.json").stat().st_size
-    print(f"built {args.out}: {len(prices['runs'])} runs in the series, {len(details)} stores, overview.json {size // 1024} KB")
+    print(
+        f"built {args.out}: {len(prices['runs'])} runs in the series, {len(details)} stores, "
+        f"overview.json {size // 1024} KB, stores.json {stores_file // 1024} KB"
+    )
     return 0
 
 

@@ -287,17 +287,24 @@ function init(data) {
     lineChart($("c-inflated"), { series: [{ name: "Discounts grown without a cut", color: "var(--s1)", points: col("inflated") }], zero: true, min: 1, empty: soon2, label: "Discounts grown without a price cut" });
   });
 
-  const current = P.stores.filter((s) => s.last === L.run_id);
-  const bins = ["0%", ...Array.from({ length: 10 }, (_, i) => (i ? i * 10 : 1) + "–" + (i + 1) * 10 + "%")].map((label) => ({ label, value: 0, items: 0 }));
-  for (const s of current) { const b = bins[s.s === 0 ? 0 : Math.min(10, Math.floor(s.s * 10 - 1e-9) + 1)]; b.value++; b.items += s.v; }
-  for (const b of bins) b.tip = `<div>${b.label} of the catalogue marked down</div><div><b>${int(b.value)}</b> stores (${pct(b.value / current.length)}) · ${int(b.items)} items</div>`;
-  redraw.push(() => barChart($("c-hist"), { bars: bins, label: "Stores by share of catalogue marked down" }));
-
-  initStores(P.stores);
-  initProducts(data.products, P.stores);
   initTrends(data.trends);
   draw();
   let timer; window.addEventListener("resize", () => { clearTimeout(timer); timer = setTimeout(draw, 150); });
+  // The store table comes second (data/stores.json), so the charts above show first.
+  $("count").textContent = "Loading stores…";
+  fetch("data/stores.json").then((r) => r.json()).then((T) => initStoreTable(T, data, L)).catch((e) => { $("count").textContent = "Could not load the store list: " + e; });
+}
+function initStoreTable(T, data, L) {
+  const stores = T.rows.map((r) => { const o = {}; T.fields.forEach((f, i) => { o[f] = r[i]; }); o.first = T.runs[o.first]; o.last = T.runs[o.last]; return o; });
+  const current = stores.filter((s) => s.last === L.run_id);
+  const bins = ["0%", ...Array.from({ length: 10 }, (_, i) => (i ? i * 10 : 1) + "–" + (i + 1) * 10 + "%")].map((label) => ({ label, value: 0, items: 0 }));
+  for (const s of current) { const b = bins[s.s === 0 ? 0 : Math.min(10, Math.floor(s.s * 10 - 1e-9) + 1)]; b.value++; b.items += s.v; }
+  for (const b of bins) b.tip = `<div>${b.label} of the catalogue marked down</div><div><b>${int(b.value)}</b> stores (${pct(b.value / current.length)}) · ${int(b.items)} items</div>`;
+  const hist = () => barChart($("c-hist"), { bars: bins, label: "Stores by share of catalogue marked down" });
+  redraw.push(hist); hist();
+
+  initStores(stores);
+  initProducts(data.products, stores);
 }
 function draw() { for (const f of redraw) f(); }
 
@@ -381,9 +388,16 @@ function productUrl(store, p) {
 function initProducts(info, stores) {
   const currency = Object.fromEntries(stores.map((s) => [s.d, s.c]));
   for (const s of stores) PLATFORM[s.d] = s.pl;
+  const withProducts = new Set(stores.filter((s) => s.np > 0).map((s) => s.d)), names = [...withProducts].sort();
   const KINDS = [["cuts", "Price cuts"], ["rises", "Price rises"], ["inflated", '"Was" price raised, price not cut']];
   if (!info) { $("pcount").textContent = "Product histories have not been built yet."; $("pstore").disabled = true; return; }
-  $("pstores").innerHTML = Object.keys(info.stores).sort().map((d) => `<option value="${esc(d)}">`).join("");
+  // A list of all ~46,000 stores made typing slow; offer the best dozen matches instead.
+  function suggest() {
+    const q = $("pstore").value.trim().toLowerCase(); if (!q) { $("pstores").innerHTML = ""; return; }
+    const starts = [], has = [];
+    for (const d of names) { if (d.startsWith(q) || d.startsWith("www." + q)) starts.push(d); else if (has.length < 12 && d.includes(q)) has.push(d); if (starts.length >= 12) break; }
+    $("pstores").innerHTML = starts.concat(has).slice(0, 12).map((d) => `<option value="${esc(d)}">`).join("");
+  }
   const state = { store: "", runs: [], rows: [], page: 0, per: 25 };
   const head = $("products").querySelector("thead"), body = $("products").querySelector("tbody");
   const SORT = { cut: (a, b) => (a.cut ?? 9) - (b.cut ?? 9), rise: (a, b) => (b.cut ?? -9) - (a.cut ?? -9), was: (a, b) => (b.wasUp ?? -9) - (a.wasUp ?? -9), changes: (a, b) => b.changes - a.changes, name: () => 0 };
@@ -400,14 +414,14 @@ function initProducts(info, stores) {
   }
   function choose() {
     const store = $("pstore").value.trim().toLowerCase();
-    if (!(store in info.stores) || store === state.store) return;
+    if (!withProducts.has(store) || store === state.store) return;
     $("pcount").textContent = "Loading…";
     loadProducts(store).then((file) => {
       state.store = store; state.runs = file.runs; state.rows = file.products.map(productStats); state.page = 0;
       $("pq").disabled = $("psort").disabled = false; $("pq").value = ""; render();
     }).catch((e) => { $("pcount").textContent = "Could not load this store's products (" + e.message + ")."; });
   }
-  $("pstore").addEventListener("change", choose); $("pstore").addEventListener("input", choose);
+  $("pstore").addEventListener("change", choose); $("pstore").addEventListener("input", () => { suggest(); choose(); });
   $("pq").addEventListener("input", () => { state.page = 0; render(); });
   $("psort").addEventListener("change", () => { state.page = 0; render(); });
   $("pprev").addEventListener("click", () => { state.page--; render(); });
