@@ -218,6 +218,25 @@ window, threshold and seed is a flag that defaults to its pre-registered
 value; a report run with any other value opens with a warning that it is not
 the pre-registered analysis.
 
+The measure is checked by hand on a sample
+([`research/validation.py`](research/validation.py)). Once the first Black
+Friday snapshot is in, the `validation` workflow draws 200 flagged variants
+(50 each from the EU, UK, US and AU/CA, seed 20261127). It screenshots their
+pages while the sale prices are live, puts the screenshots in the `validation`
+release and commits `research/validation/sample.csv`. Each page is then coded
+on the dashboard site's [validation page](https://muaz-32.github.io/black-friday-price-audit/validation/):
+is the was-price shown as one, is it labelled an RRP, and is there a 30-day-low
+statement. The page downloads the answers as `coding.csv`, which goes in
+`research/validation/`. Then:
+
+```bash
+python -m research.validation summarize   # shares by stratum, and rrp-stores.txt
+python -m research.analysis ... --rrp-stores research/validation/rrp-stores.txt
+```
+
+A trial on the latest snapshot (nothing published) is `gh workflow run
+validation.yml`; its output is kept as a workflow artifact for 7 days.
+
 ### Large retailers: the tracked basket
 
 Large retailers on their own platforms (Target, John Lewis, MediaMarkt and so

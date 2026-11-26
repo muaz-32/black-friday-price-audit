@@ -1,0 +1,128 @@
+name: validation
+
+# The pre-registered measurement validation: once the first Black Friday
+# snapshot is in the price histories, draw the stratified sample of 200 flagged
+# variants (seed 20261127) and screenshot their pages while the Black Friday
+# prices are live. Runs once; later snapshots find the sample and stop. The
+# hand coding is done on the dashboard site (/validation/).
+on:
+  workflow_run:
+    workflows: [snapshot]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      trial:
+        description: "Trial on the latest snapshot: nothing is committed or published"
+        type: boolean
+        default: true
+      run_id:
+        description: "Snapshot to draw from (default: the latest)"
+        default: ""
+      limit:
+        description: "Screenshots to take in a trial (0: all)"
+        default: "10"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: validation
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TRIAL: ${{ github.event_name == 'workflow_dispatch' && inputs.trial && 'true' || 'false' }}
+      OUT: ${{ github.event_name == 'workflow_dispatch' && inputs.trial && 'trial' || 'research/validation' }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0 # the store list at the cut-off is read from git history
+
+      - name: Decide whether to draw
+        id: plan
+        env:
+          RUN_INPUT: ${{ inputs.run_id }}
+        run: |
+          python3 - <<'EOF' >> "$GITHUB_OUTPUT"
+          import json, os
+          run = os.environ.get("RUN_INPUT") or json.load(open("status/latest.json"))["run_id"]
+          trial = os.environ["TRIAL"] == "true"
+          drawn = os.path.exists("research/validation/sample.csv")
+          in_window = "20261127T000000Z" <= run <= "20261130T235959Z"  # the pre-registered Black Friday window
+          go = trial or (in_window and not drawn)
+          print(f"go={'true' if go else 'false'}")
+          print(f"run={run}")
+          EOF
+          cat "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-python@v6
+        if: steps.plan.outputs.go == 'true'
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install
+        if: steps.plan.outputs.go == 'true'
+        run: |
+          pip install -r research/requirements.txt playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Fetch the histories and the snapshot's runs file
+        if: steps.plan.outputs.go == 'true'
+        env:
+          RUN: ${{ steps.plan.outputs.run }}
+        run: |
+          mkdir -p state data
+          names=$(gh release view state --json assets --jq '.assets[].name')
+          for prefix in variant-history product-info; do
+            newest=$(echo "$names" | grep "^$prefix-" | sort | tail -1)
+            gh release download state --dir state -p "$newest"
+          done
+          gh release download "data-${RUN:0:4}-${RUN:4:2}" --dir data -p "runs-$RUN.parquet"
+
+      - name: Draw the sample
+        if: steps.plan.outputs.go == 'true'
+        env:
+          RUN: ${{ steps.plan.outputs.run }}
+        run: |
+          python -m research.validation --out "$OUT" draw --run "$RUN" --runs data \
+            --history "$(ls state/variant-history-*.parquet)" --info "$(ls state/product-info-*.parquet)" \
+            $([ "$TRIAL" = true ] && echo --test)
+
+      - name: Screenshot the pages
+        if: steps.plan.outputs.go == 'true'
+        env:
+          LIMIT: ${{ env.TRIAL == 'true' && inputs.limit || '0' }}
+        run: python -m research.validation --out "$OUT" shoot --shots "$OUT/screenshots" --limit "$LIMIT"
+
+      - name: Keep the trial's output
+        if: always() && steps.plan.outputs.go == 'true' && env.TRIAL == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-trial
+          path: trial
+          retention-days: 7
+
+      - name: Publish the screenshots and commit the sample
+        if: steps.plan.outputs.go == 'true' && env.TRIAL != 'true'
+        run: |
+          gh release view validation >/dev/null 2>&1 || gh release create validation --latest=false \
+            --title "Validation screenshots" \
+            --notes "Screenshots of the pre-registered validation sample's product pages, taken during the Black Friday window. See research/validation/."
+          shopt -s nullglob
+          shots=("$OUT"/screenshots/*.jpg)
+          if [ ${#shots[@]} -gt 0 ]; then gh release upload validation "${shots[@]}" --clobber; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$OUT/sample.csv" "$OUT/draw.json" "$OUT/shots.csv"
+          git commit -q -m "validation: sample drawn from snapshot ${{ steps.plan.outputs.run }}, ${#shots[@]} screenshots"
+          for attempt in 1 2 3 4; do
+            git pull -q --rebase && git push -q && exit 0
+            sleep $((attempt * 5))
+          done
+          exit 1

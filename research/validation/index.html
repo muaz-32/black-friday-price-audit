@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Validation coding</title>
+<meta name="description" content="Hand coding of the pre-registered validation sample: is each flagged was-price really shown as one?">
+<style>
+:root {
+  color-scheme: light;
+  --page: #f4f3ef; --surface: #fcfcfb; --border: #e2e0da;
+  --text: #0b0b0b; --text2: #52514e; --muted: #86857f;
+  --accent: #2a78d6; --ok: #1baf7a; --warn: #eda100;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #121211; --surface: #1a1a19; --border: #32322e;
+    --text: #f0efec; --text2: #c3c2b7; --muted: #8f8e86;
+    --accent: #3987e5; --ok: #199e70; --warn: #c98500;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #121211; --surface: #1a1a19; --border: #32322e;
+  --text: #f0efec; --text2: #c3c2b7; --muted: #8f8e86;
+  --accent: #3987e5; --ok: #199e70; --warn: #c98500;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--text); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 1240px; margin: 0 auto; padding: 20px 16px 64px; }
+h1 { font-size: 22px; margin: 0 0 2px; }
+a { color: var(--accent); }
+.lede { color: var(--text2); font-size: 14px; max-width: 820px; margin: 0 0 12px; }
+.bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 12px 0; }
+.bar .grow { flex: 1; }
+input, select, button, textarea { font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 7px; padding: 6px 10px; }
+button { cursor: pointer; } button:disabled { opacity: .45; cursor: default; }
+.progress { color: var(--text2); font-size: 13px; font-variant-numeric: tabular-nums; }
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 14px; align-items: start; }
+@media (max-width: 860px) { .layout { grid-template-columns: 1fr; } }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
+.shot { max-height: 78vh; overflow: auto; border-radius: 8px; border: 1px solid var(--border); background: var(--page); }
+.shot img { display: block; width: 100%; height: auto; }
+.shot .none { padding: 40px 16px; color: var(--muted); text-align: center; }
+dl { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; margin: 0 0 10px; font-size: 13px; }
+dt { color: var(--muted); } dd { margin: 0; overflow-wrap: anywhere; }
+.price { font-variant-numeric: tabular-nums; }
+fieldset { border: 0; padding: 0; margin: 0 0 12px; }
+legend { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+.opts { display: flex; gap: 6px; }
+.opts label { flex: 1; text-align: center; border: 1px solid var(--border); border-radius: 7px; padding: 6px 0; cursor: pointer; font-size: 14px; }
+.opts input { position: absolute; opacity: 0; pointer-events: none; }
+.opts label:has(input:checked) { background: var(--text); color: var(--surface); border-color: var(--text); }
+.opts label:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
+textarea { width: 100%; min-height: 64px; resize: vertical; }
+.keys { color: var(--muted); font-size: 12px; margin-top: 8px; }
+.list { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 12px; }
+.list button { width: 38px; padding: 3px 0; font-size: 12px; font-variant-numeric: tabular-nums; }
+.list button.done { border-color: var(--ok); color: var(--ok); }
+.list button.partial { border-color: var(--warn); color: var(--warn); }
+.list button[aria-current=true] { background: var(--text); color: var(--surface); }
+.msg { color: var(--muted); padding: 40px 0; text-align: center; }
+.note { color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Validation coding</h1>
+  <p class="lede">The pre-registered check of the measure: for each sampled variant flagged as shown above its 30-day low, look at the page as it was on Black Friday (the screenshot) and answer three questions. If there is no screenshot, open the live page. Your answers are kept in this browser until you download them.</p>
+  <div class="bar">
+    <label>Coder <input id="coder" placeholder="your initials" size="10" autocomplete="off"></label>
+    <select id="filter" aria-label="Show"><option value="all">All variants</option><option value="todo">Not finished</option><option value="EU">EU</option><option value="UK">UK</option><option value="US">US</option><option value="AU/CA">AU/CA</option></select>
+    <span class="grow"></span>
+    <span class="progress" id="progress"></span>
+    <label class="note" for="import">Resume from a file</label>
+    <input type="file" id="import" accept=".csv,text/csv" aria-label="Import coding CSV">
+    <button id="export">Download coding.csv</button>
+  </div>
+  <div id="app"><p class="msg">Loading the sample…</p></div>
+</main>
+<script>
+"use strict";
+const Q = [
+  ["was_display", "Is the compare-at price shown as a struck-through or “was” price?"],
+  ["rrp_label", "Is it labelled as a recommended retail price (RRP, UVP or similar)?"],
+  ["low_30d", "Does the page show a separate “lowest price in 30 days” statement?"],
+];
+const ANS = ["yes", "no", "unclear"];
+const KEY = "bf-validation-coding";
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+
+function parseCSV(text) {
+  const rows = []; let row = [], f = "", q = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (q) { if (c === '"') { if (text[i + 1] === '"') { f += '"'; i++; } else q = false; } else f += c; }
+    else if (c === '"') q = true;
+    else if (c === ",") { row.push(f); f = ""; }
+    else if (c === "\n" || c === "\r") { if (c === "\r" && text[i + 1] === "\n") i++; row.push(f); rows.push(row); row = []; f = ""; }
+    else f += c;
+  }
+  if (f !== "" || row.length) { row.push(f); rows.push(row); }
+  const head = rows.shift() || [];
+  return rows.filter((r) => r.length > 1 || r[0]).map((r) => Object.fromEntries(head.map((h, i) => [h, r[i] ?? ""])));
+}
+const csvCell = (v) => /[",\n\r]/.test(String(v ?? "")) ? `"${String(v).replace(/"/g, '""')}"` : String(v ?? "");
+
+let store = {};
+try { store = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch { store = {}; }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(store)); } catch { /* private window: answers live until the tab closes */ } };
+try { $("coder").value = localStorage.getItem(KEY + "-coder") || ""; } catch {}
+$("coder").addEventListener("input", () => { try { localStorage.setItem(KEY + "-coder", $("coder").value.trim()); } catch {} });
+
+const state = { items: [], shots: {}, repo: "", idx: 0 };
+const status = (n) => { const c = store[n] || {}; const k = Q.filter(([q]) => c[q]).length; return k === Q.length ? "done" : k ? "partial" : ""; };
+const visible = () => {
+  const f = $("filter").value;
+  return state.items.filter((it) => f === "all" || (f === "todo" ? status(it.n) !== "done" : it.stratum === f));
+};
+
+function money(v, cur) { const x = Number(v); return Number.isFinite(x) && v !== "" ? `${x.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${esc(cur)}` : "–"; }
+
+function render() {
+  const list = visible();
+  const done = state.items.filter((it) => status(it.n) === "done").length;
+  $("progress").textContent = `${done} of ${state.items.length} coded`;
+  if (!list.length) { $("app").innerHTML = `<p class="msg">Nothing to show with this filter.</p>`; return; }
+  state.idx = Math.min(Math.max(state.idx, 0), list.length - 1);
+  const it = list[state.idx], c = store[it.n] || {}, shot = state.shots[it.n] || {};
+  const img = shot.screenshot ? `https://github.com/${state.repo}/releases/download/validation/${encodeURIComponent(shot.screenshot)}` : "";
+  $("app").innerHTML = `
+  <div class="layout">
+    <div class="card">
+      <div class="shot">${img ? `<a href="${esc(img)}" target="_blank" rel="noopener"><img src="${esc(img)}" alt="Screenshot of ${esc(it.store)} product page, taken ${esc(shot.taken_at)}" loading="eager"></a>`
+        : `<div class="none">No screenshot${shot.note ? `: ${esc(shot.note)}` : ""}. Open the live page instead.</div>`}</div>
+      <p class="note">${shot.taken_at ? `Taken ${esc(shot.taken_at)} UTC from a US runner${it.platform === "shopify" ? `, shown in the store's home market (${esc(it.country)})` : ""}.` : ""}</p>
+    </div>
+    <div class="card">
+      <dl>
+        <dt>Variant</dt><dd>#${esc(it.n)} · ${esc(it.stratum)} · ${esc(it.platform)}</dd>
+        <dt>Store</dt><dd>${esc(it.store)}</dd>
+        <dt>Product</dt><dd>${esc(it.title || "(no title)")}</dd>
+        <dt>Price</dt><dd class="price">${money(it.price, it.currency)}</dd>
+        <dt>Was price</dt><dd class="price">${money(it.compare_at, it.currency)}</dd>
+        <dt>Page</dt><dd>${it.url ? `<a href="${esc(it.url)}" target="_blank" rel="noopener">Open the live page</a>` : "no link"}</dd>
+      </dl>
+      ${Q.map(([q, text], qi) => `<fieldset><legend>${qi + 1}. ${esc(text)}</legend><div class="opts">${ANS.map((a) =>
+        `<label><input type="radio" name="${q}" value="${a}" ${c[q] === a ? "checked" : ""}>${a}</label>`).join("")}</div></fieldset>`).join("")}
+      <label class="note" for="notes">Notes</label>
+      <textarea id="notes" placeholder="What the page shows, if unclear">${esc(c.notes || "")}</textarea>
+      <div class="bar"><button id="prev" ${state.idx ? "" : "disabled"}>Previous</button><span class="grow"></span><button id="next" ${state.idx < list.length - 1 ? "" : "disabled"}>Next</button></div>
+      <p class="keys">Keys: Y / N / U answer the first open question, ← → move.</p>
+      <div class="list">${list.map((x, i) => `<button class="${status(x.n)}" data-i="${i}" ${i === state.idx ? 'aria-current="true"' : ""} title="${esc(x.store)}">${esc(x.n)}</button>`).join("")}</div>
+    </div>
+  </div>`;
+  const set = (q, v) => { store[it.n] = { ...(store[it.n] || {}), [q]: v, coder: $("coder").value.trim(), coded_at: new Date().toISOString() }; save(); };
+  $("app").querySelectorAll("input[type=radio]").forEach((r) => r.addEventListener("change", () => { set(r.name, r.value); refreshStatus(); }));
+  $("notes").addEventListener("input", (e) => set("notes", e.target.value));
+  $("prev").addEventListener("click", () => { state.idx--; render(); });
+  $("next").addEventListener("click", () => { state.idx++; render(); });
+  $("app").querySelectorAll(".list button").forEach((b) => b.addEventListener("click", () => { state.idx = +b.dataset.i; render(); }));
+}
+function refreshStatus() {
+  const list = visible();
+  $("app").querySelectorAll(".list button").forEach((b) => { const s = status(list[+b.dataset.i].n); b.className = s; });
+  $("progress").textContent = `${state.items.filter((it) => status(it.n) === "done").length} of ${state.items.length} coded`;
+}
+
+document.addEventListener("keydown", (e) => {
+  if (!state.items.length || e.target.matches("input, textarea, select")) return;
+  const list = visible(); if (!list.length) return;
+  if (e.key === "ArrowRight" && state.idx < list.length - 1) { state.idx++; render(); }
+  else if (e.key === "ArrowLeft" && state.idx > 0) { state.idx--; render(); }
+  else {
+    const a = { y: "yes", n: "no", u: "unclear" }[e.key.toLowerCase()]; if (!a) return;
+    const it = list[state.idx], c = store[it.n] || {}, q = Q.find(([k]) => !c[k]); if (!q) return;
+    store[it.n] = { ...c, [q[0]]: a, coder: $("coder").value.trim(), coded_at: new Date().toISOString() }; save(); render();
+  }
+});
+$("filter").addEventListener("change", () => { state.idx = 0; render(); });
+$("export").addEventListener("click", () => {
+  const cols = ["n", "store", "variant_id", ...Q.map(([q]) => q), "notes", "coder", "coded_at"];
+  const lines = [cols.join(",")].concat(state.items.map((it) => { const c = store[it.n] || {}; return cols.map((k) => csvCell(k in it && !(k in c) ? it[k] : c[k] ?? (k === "n" ? it.n : ""))).join(","); }));
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([lines.join("\n") + "\n"], { type: "text/csv" }));
+  a.download = "coding.csv"; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+});
+$("import").addEventListener("change", async (e) => {
+  const f = e.target.files[0]; if (!f) return;
+  for (const r of parseCSV(await f.text())) if (r.n) store[r.n] = Object.fromEntries(["was_display", "rrp_label", "low_30d", "notes", "coder", "coded_at"].filter((k) => r[k]).map((k) => [k, r[k]]));
+  save(); render(); e.target.value = "";
+});
+
+Promise.all(["sample.csv", "shots.csv", "config.json"].map((f) => fetch(f, { cache: "no-cache" }).then((r) => r.ok ? r.text() : "")))
+  .then(([sample, shots, config]) => {
+    if (!sample) { $("app").innerHTML = `<p class="msg">The validation sample has not been drawn yet. It is drawn from the first Black Friday snapshot (27 Nov).</p>`; return; }
+    state.items = parseCSV(sample);
+    for (const s of parseCSV(shots || "")) state.shots[s.n] = s;
+    try { state.repo = JSON.parse(config || "{}").repo || ""; } catch {}
+    render();
+  })
+  .catch((e) => { $("app").innerHTML = `<p class="msg">Could not load the sample: ${esc(e.message)}</p>`; });
+</script>
+</body>
+</html>
