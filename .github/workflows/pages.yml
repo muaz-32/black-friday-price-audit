@@ -18,12 +18,15 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  # A newer trigger waits for the running deploy instead of cancelling it: every
+  # snapshot run, even one that skips, triggers a rebuild, and cancelling cost
+  # finished builds. A waiting run checks out main, so it still has the latest data.
+  cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25 # the build takes about 8 minutes, and a failed deploy is tried again a minute later
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url || steps.retry.outputs.page_url }}
