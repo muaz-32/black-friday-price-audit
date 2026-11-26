@@ -218,8 +218,8 @@ SELECT kind, store, product_id, title, handle, p0, p1, ref0, c1 FROM (
     UNION ALL SELECT 'rises', *, -ratio FROM scored WHERE ratio BETWEEN 1.03 AND 20
     UNION ALL SELECT 'inflated', *, -ref_ratio FROM scored WHERE c1 > p1 AND p1 >= p0 - 0.005 AND ref_ratio BETWEEN 1.03 AND 20
 )
-QUALIFY row_number() OVER (PARTITION BY kind, store ORDER BY score) <= 3
-ORDER BY kind, score
+QUALIFY row_number() OVER (PARTITION BY kind, store ORDER BY score, product_id) <= 3
+ORDER BY kind, score, store, product_id  -- ties broken the same way every time
 """
 
 
@@ -233,9 +233,15 @@ def build_products(state: Path, out: Path) -> dict | None:
     info = sorted(state.glob("product-info-*.parquet"))
     if not history or not info:
         return None
-    import duckdb  # only needed for this part, so the rest builds without it
+    from collector import workdb  # needs duckdb, which only this part uses
 
-    db = duckdb.connect()
+    # A database that spills to disk: joining and sorting 36 million history rows
+    # with 31 million titles in memory made the runner stop answering (26 Nov).
+    with workdb.connect(state) as db:
+        return _build_products(db, history, info, out)
+
+
+def _build_products(db, history: list[Path], info: list[Path], out: Path) -> dict:
     db.execute(f"CREATE VIEW history AS SELECT * FROM read_parquet('{history[-1]}')")
     db.execute(f"CREATE VIEW info AS SELECT * FROM read_parquet('{info[-1]}')")
     runs = [r for (r,) in db.execute("SELECT DISTINCT run_id FROM history ORDER BY 1").fetchall()]
