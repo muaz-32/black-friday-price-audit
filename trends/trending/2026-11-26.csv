@@ -1,0 +1,141 @@
+fetched_at,geo,rank,query,approx_traffic,published_at,news_source,news_title
+2026-11-26T00:37:27Z,US,1,nick foles,500,2026-11-26T00:20:00Z,The Guardian,'Something switched inside me': Nick Foles on his Super Bowl flow state and move behind the mic
+2026-11-26T00:37:27Z,US,2,dean wade,500,2026-11-26T00:20:00Z,Yahoo Sports,Dean Wade is AVAILABLE for tonight’s game against the …
+2026-11-26T00:37:27Z,US,3,toluca - atlas,10000,2026-11-26T00:10:00Z,ESPN Deportes,Atlas vs. Toluca: Un técnico debutante ante el de mayor experiencia
+2026-11-26T00:37:27Z,US,4,clippers vs grizzlies,2000,2026-11-26T00:10:00Z,FanDuel Sportsbook,Los Angeles Clippers @ Memphis Grizzlies Odds
+2026-11-26T00:37:27Z,US,5,nets vs bucks,2000,2026-11-26T00:10:00Z,NetsDaily,Nets vs. Bucks preview: Brooklyn looks to end five-game losing streak
+2026-11-26T00:37:27Z,US,6,predators vs stars,1000,2026-11-26T00:10:00Z,NHL.com,Game Preview | Predators at Stars
+2026-11-26T00:37:27Z,US,7,mammoth vs wild,1000,2026-11-26T00:10:00Z,NHL.com,Game Preview: Wild vs Mammoth
+2026-11-26T00:37:27Z,US,8,norfolk state vs nc state,500,2026-11-26T00:10:00Z,Liberty Ballers,Sixers-Heat: Game Discussion Thread
+2026-11-26T00:37:27Z,US,9,deadpool and wolverine,500,2026-11-26T00:10:00Z,IMDb,Update: Avengers: Secret Wars Will Make Lethal Use Of These Surprise Doomsday Characters - Spoilers
+2026-11-26T00:37:27Z,US,10,oregon state vs vanderbilt,200,2026-11-26T00:10:00Z,Vanderbilt Commodores,Jacksonville Stay Coming to an End
+2026-11-26T00:37:27Z,GB,1,hornets vs bulls,100,2026-11-26T00:20:00Z,Sports Illustrated,Game Preview: Hornets Homestand Continues vs. Bulls
+2026-11-26T00:37:27Z,GB,2,lebron james,200,2026-11-26T00:20:00Z,Bleacher Report,"LeBron James' 'Brilliance' Praised by Erik Spoelstra, 'He's Giving Father Time Hell' with 76ers"
+2026-11-26T00:37:27Z,GB,3,bill murray,100,2026-11-26T00:20:00Z,The Telegraph,Bill Murray: ‘I’m not always a good guy. My friends probably suffer a great deal’
+2026-11-26T00:37:27Z,GB,4,76ers vs miami heat match player stats,100,2026-11-26T00:10:00Z,ESPN,"76ers' Joel Embiid out vs. Heat, misses second straight game due to illness"
+2026-11-26T00:37:27Z,GB,5,nathan fielder,200,2026-11-26T00:10:00Z,The Guardian,You Can See Everything in Elizabeth Holmes’s unblinking eyes. Or can you? | Jason Okundaye
+2026-11-26T00:37:27Z,GB,6,night sky,100,2026-11-26T00:10:00Z,CNN,How and when to watch November’s beaver moon
+2026-11-26T00:37:27Z,GB,7,jesse baird,100,2026-11-26T00:00:00Z,BBC,The CCTV that helped convict a Sydney policeman of double murder
+2026-11-26T00:37:27Z,GB,8,zlatan ibrahimovic mobland,200,2026-11-25T23:50:00Z,Esquire,'MobLand' Has Reportedly Cast Football’s Biggest Pantomime Villain As a Season 3 Crime Boss
+2026-11-26T00:37:27Z,GB,9,skiing,100,2026-11-25T23:50:00Z,ESPN,Lack of snow forces cancellation of World Cup skiing races in Canada next month
+2026-11-26T00:37:27Z,GB,10,atlético-mg vs corinthians,100,2026-11-25T23:50:00Z,ge,"Atlético-MG x Corinthians: onde assistir ao vivo, horário e escalações"
+2026-11-26T00:37:27Z,CA,1,mammoth vs wild,200,2026-11-26T00:30:00Z,NHL.com,Mammoth at Wild projected lineups
+2026-11-26T00:37:27Z,CA,2,morsure,100,2026-11-26T00:30:00Z,Radio-Canada,Fillette mordue à Chertsey : le chien et son maître ont été retrouvés
+2026-11-26T00:37:27Z,CA,3,giannis antetokounmpo,200,2026-11-26T00:20:00Z,Yahoo,Told that Giannis Antetokounmpo did most of everything …
+2026-11-26T00:37:27Z,CA,4,médicament,100,2026-11-26T00:10:00Z,Radio-Canada,Controverse entourant un traitement contre la ménopause
+2026-11-26T00:37:27Z,CA,5,cliff booth,200,2026-11-26T00:10:00Z,The Atlantic,A Bizarre Sequel to One of Tarantino’s Best Movies
+2026-11-26T00:37:27Z,CA,6,inflation targeting,100,2026-11-26T00:10:00Z,Global News,"Bank of Canada expected to hike interest rate next month, economists say"
+2026-11-26T00:37:27Z,CA,7,focker in law cast,100,2026-11-26T00:10:00Z,The New York Times,‘Focker In-Law’ Review: Ariana Grande Steals the Show
+2026-11-26T00:37:27Z,CA,8,flyers – capitals,200,2026-11-26T00:00:00Z,DAZN,"The Washington Capitals face an early-season, must-win game against the Flyers"
+2026-11-26T00:37:27Z,CA,9,lebron james,500,2026-11-26T00:00:00Z,Bleacher Report,"LeBron James' 'Brilliance' Praised by Erik Spoelstra, 'He's Giving Father Time Hell' with 76ers"
+2026-11-26T00:37:27Z,CA,10,blues vs islanders,200,2026-11-26T00:00:00Z,NHL.com,Blues at Islanders projected lineups
+2026-11-26T00:37:27Z,AU,1,rams vs packers,200,2026-11-26T00:10:00Z,Green Bay Packers – packers.com,"Packers vs. Rams | How to watch, stream & listen | Week 12"
+2026-11-26T00:37:27Z,AU,2,76ers vs miami heat match player stats,100,2026-11-26T00:10:00Z,ESPN,"76ers' Joel Embiid out vs. Heat, misses second straight game due to illness"
+2026-11-26T00:37:27Z,AU,3,lendlease,100,2026-11-26T00:10:00Z,AFR,Lendlease has torched $6b in value since 2021. Where to from here?
+2026-11-26T00:37:27Z,AU,4,knicks vs cavaliers,500,2026-11-26T00:00:00Z,Cleveland.com,"Cavs at Knicks: preview, odds, injury report, TV"
+2026-11-26T00:37:27Z,AU,5,thunder vs timberwolves,200,2026-11-26T00:00:00Z,ESPN,The Thunder look to get back in the win column as they take on the Timberwolves
+2026-11-26T00:37:27Z,AU,6,alpine fault,200,2026-11-25T23:50:00Z,Stuff,Why scientists say a magnitude 8 Alpine Fault mega-quake is likely
+2026-11-26T00:37:27Z,AU,7,davion mitchell,100,2026-11-25T23:50:00Z,ESPN,Davion Mitchell drains a buzzer-beater to close the first quarter
+2026-11-26T00:37:27Z,AU,8,giannis antetokounmpo,100,2026-11-25T23:50:00Z,Reuters Connect,Licensable picture: NBA: Oklahoma City Thunder at Miami Heat
+2026-11-26T00:37:27Z,AU,9,hornets vs bulls,1000,2026-11-25T23:20:00Z,Yahoo Sports,"Bulls vs. Hornets Preview: How to Watch, Injury Report & Odds"
+2026-11-26T00:37:27Z,AU,10,lebron james,500,2026-11-25T23:20:00Z,Yahoo Sports,"76ers’ LeBron James ‘giving Father Time hell,’ per Heat coach Erik Spoelstra"
+2026-11-26T00:37:27Z,DE,1,russland ukraine krieg,20000,2026-11-25T23:50:00Z,DIE ZEIT,Ukraine-Krieg: Selenskyj: USA machen Ukraine Druck auf Frieden bis Januar
+2026-11-26T00:37:27Z,DE,2,sandisk aktie,500,2026-11-25T23:20:00Z,wallstreetONLINE,Sandisk-Aktie minus 70 %: Mit diesem Trade sind über 180 % Rendite möglich
+2026-11-26T00:37:27Z,DE,3,hm,500,2026-11-25T23:20:00Z,WWD,H&M: Advancing an Already Mature Business in North America
+2026-11-26T00:37:27Z,DE,4,sandra maischberger heute gäste,200,2026-11-25T23:20:00Z,ARD Mediathek,maischberger - maischberger am 24.11.2026 - hier anschauen
+2026-11-26T00:37:27Z,DE,5,nasdaq plug,100,2026-11-25T23:10:00Z,Investing.com,Exclusive: Plug Power CEO sees demand rebound as turnaround remains in focus
+2026-11-26T00:37:27Z,DE,6,jessica alba,100,2026-11-25T23:00:00Z,InStyle,"Jessica Alba’s Daughter Haven, 15, Looks Just Like Her in Sweet New Photo"
+2026-11-26T00:37:27Z,DE,7,kalkbuster,1000,2026-11-25T22:50:00Z,1&1,Nach 20 Jahren: Sonya Kraus kehrt in alten Job zurück
+2026-11-26T00:37:27Z,DE,8,zdf live,2000,2026-11-25T22:40:00Z,ZDF,Bares für Rares - Der Uhren-Unfall von Pulheim
+2026-11-26T00:37:27Z,DE,9,opus 5.6,100,2026-11-25T22:40:00Z,TestingCatalog AI News,Early outputs: Anthropic is A/B testing Claude Opus 5.6
+2026-11-26T00:37:27Z,DE,10,beşiktaş,500,2026-11-25T22:30:00Z,Cumhuriyet,Beşiktaş'a hava muhalefeti engeli! Gürcistan'a iniş yapamadı...
+2026-11-26T00:37:27Z,FR,1,joseph zada,200,2026-11-26T00:10:00Z,Yahoo,"I Get Why Red Rising Fans Want Joseph Zada To Play A Certain Gold, But Wait A Second"
+2026-11-26T00:37:27Z,FR,2,pre epidemie grippe,1000,2026-11-25T23:50:00Z,Le Monde.fr,"La grippe s’installe en France, où la majorité des régions de l’Hexagone sont passées en pré-épidémie"
+2026-11-26T00:37:27Z,FR,3,lebron james,100,2026-11-25T23:40:00Z,شبكة تواصل الإخبارية,“Don’t Get It Twisted”: Erik Spoelstra Warns Heat Not to Take LeBron James Lightly Despite Reduced 76ers Role
+2026-11-26T00:37:27Z,FR,4,hm,200,2026-11-25T23:40:00Z,Zonebourse Suisse,"Morgan Stanley relève son objectif de cours sur H&M à 123 couronnes (120), réitère sa recommandation de sous-pondérer – Bloomberg News (BN)"
+2026-11-26T00:37:27Z,FR,5,assurance vie,100,2026-11-25T23:30:00Z,Le Figaro,"Les pièges de l’assurance-vie luxembourgeoise, nouvel eldorado des Français qui ont de l’épargne"
+2026-11-26T00:37:27Z,FR,6,aurore bergé,100,2026-11-25T23:20:00Z,La Provence,"Aurore Bergé, ministre déléguée chargée de l'Égalité entre les femmes et les hommes : ""Nous avons changé la carte de France depuis dix ans"""
+2026-11-26T00:37:27Z,FR,7,maxime raynaud,200,2026-11-25T23:10:00Z,CBS Sports,Kings' Maxime Raynaud: Recalled to NBA
+2026-11-26T00:37:27Z,FR,8,sofia vergara,200,2026-11-25T23:10:00Z,Yahoo,Sofia Vergara returns to native Colombia to see larger-than-life statue — and fans have thoughts
+2026-11-26T00:37:27Z,FR,9,siya kolisi,200,2026-11-25T23:00:00Z,RFI,Three talking points from the Nations Championship
+2026-11-26T00:37:27Z,FR,10,losc lille vs bayern munich standings,200,2026-11-25T23:00:00Z,beIN SPORTS,"Bayern must find solutions in Olise and Kane's absence, says Kompany"
+2026-11-26T00:37:27Z,IT,1,tesla,200,2026-11-25T23:50:00Z,Reuters,EU postpones discussion to approve Tesla's self-driving tech
+2026-11-26T00:37:27Z,IT,2,stellantis azioni,200,2026-11-25T23:30:00Z,Morningstar,Il titolo Stellantis può ripartire in Borsa?
+2026-11-26T00:37:27Z,IT,3,playstation plus giochi mensili,100,2026-11-25T23:30:00Z,PlayStation,"Giochi mensili PlayStation Plus per dicembre: Tony Hawk’s Pro Skater 3+4, Dragon Ball Xenoverse 2, Amnesia: The Bunker"
+2026-11-26T00:37:27Z,IT,4,contratto,500,2026-11-25T23:20:00Z,Orizzonte Scuola Notizie,"Un contratto specifico per la scuola, risorse strutturali e stop ai tagli: le proposte UIL Scuola al CNEL"
+2026-11-26T00:37:27Z,IT,5,luca ciriani,100,2026-11-25T23:20:00Z,Sky TG24,"Meloni richiama la maggioranza in Cdm: “Troppe assenze in Aula, me ne ricorderò”"
+2026-11-26T00:37:27Z,IT,6,emergenza,500,2026-11-25T23:10:00Z,La Provincia di Cremona,"Dichiarato lo stato di emergenza: in arrivo 9,4 milioni di euro"
+2026-11-26T00:37:27Z,IT,7,morto andy taylor,200,2026-11-25T23:10:00Z,Corriere della Sera,Andy Taylor morto: il chitarrista dei Duran Duran aveva 65 anni
+2026-11-26T00:37:27Z,IT,8,gianmarco saurino,200,2026-11-25T23:10:00Z,GORIZIA.news,Anna Valle e Gianmarco Saurino in scena a Cormons con “Scandalo”
+2026-11-26T00:37:27Z,IT,9,hm,500,2026-11-25T23:00:00Z,Businessonline.it,"Jeans e tendenze 2026: si va da 19,95 euro di H&M ai 39,95 euro di Zara senza dimentica i Levi’s 501 o i costosi Fendi"
+2026-11-26T00:37:27Z,IT,10,coppa italia,200,2026-11-25T22:50:00Z,L'Unione Sarda,"Coppa Italia Eccellenza, l’Iglesias torna in finale: contro la Nuorese basta Arzu"
+2026-11-26T00:37:27Z,ES,1,1password,100,2026-11-26T00:20:00Z,TechCrunch,"1Password said hackers broke into its internal systems, but customer passwords are safe"
+2026-11-26T00:37:27Z,ES,2,grand theft auto vi,1000,2026-11-26T00:00:00Z,Push Square,GTA 6: Randy's Wish List Vehicle Locations (WIP)
+2026-11-26T00:37:27Z,ES,3,boca juniors - independiente rivadavia,500,2026-11-25T23:50:00Z,Betfair,Boca vs Independiente Pronóstico
+2026-11-26T00:37:27Z,ES,4,sara carbonero,200,2026-11-25T23:50:00Z,Vanitatis,"El plan de Sara Carbonero con ""los mejores"" en este restaurante de Madrid: su plato estrella y precio por persona"
+2026-11-26T00:37:27Z,ES,5,oscar matute,200,2026-11-25T23:40:00Z,El Confidencial,"Oskar Matute (EH Bildu), sobre la violencia: ""Qué triste tener siempre a ETA en la boca; nuestra solidaridad a las víctimas, justicia y reparación"""
+2026-11-26T00:37:27Z,ES,6,puñetazo,100,2026-11-25T23:40:00Z,Diari de Tarragona,Cuatro años de cárcel por darle un puñetazo en la boca a la encargada de una tienda de Tarragona
+2026-11-26T00:37:27Z,ES,7,herencia,500,2026-11-25T23:30:00Z,El Debate,Los tres errores más comunes al tramitar una herencia que pueden salir muy caros y cómo evitarlos
+2026-11-26T00:37:27Z,ES,8,nacho duato,500,2026-11-25T23:20:00Z,LaSexta,"Nacho Duato presenta su libro ""Habla como un hombre"": ""Ser gay en una familia en la que no puedes expresarte tal y como eres marca mucho"""
+2026-11-26T00:37:27Z,ES,9,turquía,200,2026-11-25T23:20:00Z,CNN,The world is heating up catastrophically yet climate action is in chaos. What happened?
+2026-11-26T00:37:27Z,ES,10,vapers sabores,1000,2026-11-25T23:20:00Z,EL PAÍS,El Gobierno prohíbe los sabores de los vapeadores y limita la cantidad de nicotina de las bolsitas
+2026-11-26T00:37:27Z,NL,1,corona rioolwater,1000,2026-11-26T00:00:00Z,NU,"Coronadeeltjes in riool op hoogste niveau na pandemie, maar ziektebeeld mild"
+2026-11-26T00:37:27Z,NL,2,black friday deals,100,2026-11-25T23:20:00Z,FOX 17 West Michigan News,Black Friday deals offer college sports tickets for as little as $2
+2026-11-26T00:37:27Z,NL,3,spotify wrapped 2026,100,2026-11-25T23:20:00Z,El Constitucional,When Spotify Wrapped 2026 is published: date and how to check your musical summary of the year
+2026-11-26T00:37:27Z,NL,4,rockstar games gta vi pc,100,2026-11-25T23:10:00Z,80 Level,Leaker Cyberleek Releases The Xbox Build Executable for GTA 6
+2026-11-26T00:37:27Z,NL,5,coach,200,2026-11-25T23:10:00Z,ESPN,Sources corroborate Aaron Rodgers' allegations about Steelers HC Mike McCarthy
+2026-11-26T00:37:27Z,NL,6,tamara elbaz,200,2026-11-25T23:00:00Z,RTL.nl,Tamara Elbaz schakelt advocaat in na conflict met BOOS: 'Haal mij eruit'
+2026-11-26T00:37:27Z,NL,7,boeing 777,200,2026-11-25T22:50:00Z,Air Cargo News,Reports: IAI to convert Boeing 777-300s for EVA Air
+2026-11-26T00:37:27Z,NL,8,hart van nederland,200,2026-11-25T22:50:00Z,AD.nl,Liever 50 of 30 kilometer per uur binnen de bebouwde kom? Chamenaren reageren
+2026-11-26T00:37:27Z,NL,9,mark rutte,200,2026-11-25T22:30:00Z,NOS,Wekdienst 25/11: NAVO-chef Rutte praat met Trump • Strafeis mishandeling Plein Den Haag
+2026-11-26T00:37:27Z,NL,10,koudste november,200,2026-11-25T22:30:00Z,De Standaard,Koudste november van de eeuw zet zachte winter op losse schroeven: “De poolwervel heeft de kaarten opnieuw geschud”
+2026-11-26T00:37:27Z,BR,1,atlético,1000,2026-11-26T00:20:00Z,MARCA,"Dos partidos de sanción a Fermín, que no podrá jugar ante el Atlético"
+2026-11-26T00:37:27Z,BR,2,raniele,200,2026-11-26T00:20:00Z,Meu Timão,Comentário de Marcelo em 'Jogo do Corinthians ao vivo'
+2026-11-26T00:37:27Z,BR,3,gustavo gayer,500,2026-11-26T00:10:00Z,G1,PGR denuncia deputado Gustavo Gayer ao STF por esquema de desvio de cota parlamentar na Câmara
+2026-11-26T00:37:27Z,BR,4,boca rosa,500,2026-11-26T00:10:00Z,Globo,"Após especulações de affair com Bianca Andrade, Giovana Cordeiro se pronuncia: 'Fofoca com meu nome'"
+2026-11-26T00:37:27Z,BR,5,guarda municipal,100,2026-11-26T00:10:00Z,REDE BRASIL DE TELEVISÃO,Guarda Municipal de Caruaru recupera motocicleta furtada
+2026-11-26T00:37:27Z,BR,6,lotofacil 3838,2000,2026-11-26T00:00:00Z,ISTOÉ DINHEIRO,"Resultado da Lotofácil 3837: aposta de Goiás ganha R$ 3,7 milhões"
+2026-11-26T00:37:27Z,BR,7,rams x packers,500,2026-11-26T00:00:00Z,O GLOBO,‘Carnaval de Luz’: U2 faz hoje show do intervalo na NFL que deve dar dicas de turnê que vem ao Brasil
+2026-11-26T00:37:27Z,BR,8,superliga masculina,200,2026-11-26T00:00:00Z,ge,Ao vivo: Montes Claros x Campinas | Rodada 10 | Superliga Masculina de Vôlei
+2026-11-26T00:37:27Z,BR,9,jato executivo,1000,2026-11-25T23:50:00Z,NSC Total,Aeronave de luxo de bilionário russo fica 43 dias em Florianópolis e estadia pode custar até R$ 430 mil no aeroporto
+2026-11-26T00:37:27Z,BR,10,renda familiar,500,2026-11-25T23:50:00Z,G1,MEI no Bolsa Família: saiba quais são os critérios para receber o benefício
+2026-11-26T00:37:27Z,MX,1,santiago giménez,1000,2026-11-26T00:30:00Z,Récord,"¡Futuro incierto! Santiago Giménez no continuará en Porto y no tiene destino definido, aseguran desde Italia"
+2026-11-26T00:37:27Z,MX,2,knicks - cavaliers,200,2026-11-26T00:30:00Z,Reuters Connect,NBA: Cleveland Cavaliers at New York Knicks
+2026-11-26T00:37:27Z,MX,3,lebron james,200,2026-11-26T00:30:00Z,شبكة تواصل الإخبارية,“Don’t Get It Twisted”: Erik Spoelstra Warns Heat Not to Take LeBron James Lightly Despite Reduced 76ers Role
+2026-11-26T00:37:27Z,MX,4,giannis antetokounmpo,100,2026-11-26T00:30:00Z,HoopsHype,Giannis Antetokounmpo has been upgraded to probable
+2026-11-26T00:37:27Z,MX,5,ejército de el salvador,200,2026-11-26T00:20:00Z,Yahoo Finanzas,La apuesta de Bukele en Haití tiene poco futuro: JP Spinetto
+2026-11-26T00:37:27Z,MX,6,copa mundial de fútbol sub-17,100,2026-11-26T00:20:00Z,Olympics,"Mundial masculino Sub 17 de fútbol 2026: Equipos calificados 16vos de Final, cuándo son y horarios"
+2026-11-26T00:37:27Z,MX,7,martha firestone ford,100,2026-11-26T00:20:00Z,ESPN,Longtime Lions owner Martha Firestone Ford dies at age 101
+2026-11-26T00:37:27Z,MX,8,toluca - atlas,50000,2026-11-26T00:10:00Z,ESPN México,Atlas y su poderío como visitante que 'amenaza' al Toluca
+2026-11-26T00:37:27Z,MX,9,rams - packers,10000,2026-11-26T00:10:00Z,Rams,"Los Angeles Rams vs. Green Bay Packers: How to watch, listen to and live stream Week 12"
+2026-11-26T00:37:27Z,MX,10,1password,200,2026-11-26T00:10:00Z,TechCrunch,"1Password said hackers broke into its internal systems, but customer passwords are safe"
+2026-11-26T00:37:27Z,IN,1,కూతురు,200,2026-11-26T00:20:00Z,Eenadu,కూతురు పరీక్షకు.. ఇన్విజిలేటర్‌గా తండ్రి
+2026-11-26T00:37:27Z,IN,2,ಬಿ. ನಾಗೇಂದ್ರ,200,2026-11-26T00:20:00Z,Asianet News Kannada,b Nagendra: ಮಾಜಿ ಸಚಿವ ನಾಗೇಂದ್ರನಿಗೆ ಬಿಗ್‌ ರಿಲೀಫ್‌; ಸಿಐಡಿ ಚಾರ್ಜ್ ಶೀಟ್‌ನಲ್ಲಿ ಏನಿದೆ?
+2026-11-26T00:37:27Z,IN,3,બારડોલી,100,2026-11-26T00:20:00Z,BBC,"બારડોલી : આખા પરિવારને કૅનાલમાં ફેંકી દીધો, ત્રણનાં મોત, આખો મામલો શું છે?"
+2026-11-26T00:37:27Z,IN,4,ముంబై ఇండియన్స్,2000,2026-11-26T00:20:00Z,Sakshi,కెప్టెన్సీపై కీలక సంకేతమిచ్చిన ముంబై ఇండియన్స్‌
+2026-11-26T00:37:27Z,IN,5,गीता बसरा,1000,2026-11-26T00:20:00Z,AajTak,"गुरु पूरब पर गुरुद्वारे पहुंचीं भज्जी की पत्नी गीता बसरा, सिर पर दुपट्टा ओढ़ लिया आशीर्वाद, ब्लू सूट में दिखीं खूबसूरत; PHOTOS"
+2026-11-26T00:37:27Z,IN,6,പ്രിയാന്ഷ് ആര്യ,100,2026-11-26T00:20:00Z,Manorama Online,"ട്വന്റി20 ക്രിക്കറ്റിലെ ഏറ്റവും ഉയർന്ന രണ്ടാമത്തെ വ്യക്തിഗത സ്കോർ, ഈ റെക്കോർഡ് വൈഭവിന്റേതല്ല, മറ്റൊരു കത്തിക്കൽ!"
+2026-11-26T00:37:27Z,IN,7,streaming media,100,2026-11-26T00:20:00Z,PWTorch,RADICAN’S TAKE: The rise of streaming and digital media has killed off the Black Friday tradition that brought wrestling fans together
+2026-11-26T00:37:27Z,IN,8,నవంబర్ 26,1000,2026-11-26T00:10:00Z,Eenadu,Today Horoscope in Telugu: నేటి రాశి ఫలాలు.. 12 రాశుల ఫలితాలు ఇలా... (26/11/2026)
+2026-11-26T00:37:27Z,IN,9,ஆசிரியர்,200,2026-11-26T00:10:00Z,Makkal Kural,ஆசிரியர்களுக்கான திறன் மேம்பாட்டுப் பயிற்சி: அமைச்சர் ராஜ்மோகன் துவக்கி வைத்தார்
+2026-11-26T00:37:27Z,IN,10,హార్దిక్ పాండ్యా,200,2026-11-26T00:10:00Z,NTV Telugu,"Hardik Pandya: 'చివరికి, ఆమె నాది'.. మహికా శర్మకు రింగ్ తొడిగిన హార్దిక్ పాండ్యా?.. నిశ్చితార్థంపై జోరుగా ప్రచారం"
+2026-11-26T00:37:27Z,JP,1,ウクライナ軍,200,2026-11-26T00:20:00Z,Yahoo!ニュース,ウクライナが北アフリカでロシア船撃沈 国際法的に問題のある第三国での作戦はなぜリビアで行われたか #エキスパートトピ
+2026-11-26T00:37:27Z,JP,2,ホーネッツ 対 ブルズ,100,2026-11-26T00:20:00Z,Yahoo Sports,"Bulls vs. Hornets Preview: How to Watch, Injury Report & Odds"
+2026-11-26T00:37:27Z,JP,3,再放送,1000,2026-11-26T00:10:00Z,,
+2026-11-26T00:37:27Z,JP,4,海洋汚染,500,2026-11-26T00:10:00Z,KSBニュース,「処分費用を節約したかった」プレジャーボートを不法投棄した疑い ブロック38個船に積み沈める 岡山
+2026-11-26T00:37:27Z,JP,5,杉山一樹,200,2026-11-26T00:00:00Z,Yahoo!ニュース,【ソフトバンク】セーブ王・杉山一樹「僕のせいでタイトルを逃した」…松本裕樹への謝罪と後悔（東スポWEB）
+2026-11-26T00:37:27Z,JP,6,レブロン・ジェームズ,100,2026-11-26T00:00:00Z,Yahoo!ニュース,ヒーロー50得点もバックスは13連敗…幻の同点シュートに「あと0.5秒あれば」（バスケットボールキング）
+2026-11-26T00:37:27Z,JP,7,東京箱根間往復大学駅伝競走,200,2026-11-26T00:00:00Z,Yahoo!ニュース,飯國新太と吉田蔵之介が区間賞、それでも届かなかった頂点 國學院大「3大会連続2位」の悔しさを箱根初制覇へ（4years.）
+2026-11-26T00:37:27Z,JP,8,corinthians,200,2026-11-26T00:00:00Z,ge,"Atlético-MG x Corinthians: onde assistir ao vivo, horário e escalações"
+2026-11-26T00:37:27Z,JP,9,お笑いタレント,5000,2026-11-25T23:50:00Z,Yahoo!ニュース,「病気12個もってるんですよ」東大卒のインテリ芸人（26）が急逝 最後のX投稿は亡くなるわずか2日前（女性自身）
+2026-11-26T00:37:27Z,JP,10,唐津競艇,200,2026-11-25T23:50:00Z,Yahoo!ニュース,からつフレッシュルーキー・富永夏哉人が大暴れの予感/ボートレース唐津（マクール）
+2026-11-26T00:37:27Z,BD,1,boca vs independiente rivadavia,200,2026-11-26T00:30:00Z,DSports,EN VIVO: Boca Juniors gana 1 a 0 en la Bombonera
+2026-11-26T00:37:27Z,BD,2,sporting cp vs manchester united f.c. standings,10000,2026-11-25T22:20:00Z,BBC,Sporting CP vs Manchester United: UEFA Champions League stats & head-to-head
+2026-11-26T00:37:27Z,BD,3,club brugge vs liverpool f.c. standings,10000,2026-11-25T22:20:00Z,BBC,Club Brugge 0-3 Liverpool: Alexander Isak and Florian Wirtz score in Champions League win
+2026-11-26T00:37:27Z,BD,4,inter milan vs vfb stuttgart standings,5000,2026-11-25T22:20:00Z,BBC,Inter Milan 2-0 Stuttgart: Lautaro Martinez scores as hosts boost Champions League knockout hopes
+2026-11-26T00:37:27Z,BD,5,psg vs as roma standings,20000,2026-11-25T22:10:00Z,BBC,Paris St-Germain 2-2 Roma: Donyell Malen penalty earns visitors a point at Parc des Princes
+2026-11-26T00:37:27Z,BD,6,atlético madrid vs viking fk standings,5000,2026-11-25T22:10:00Z,BBC,Alvarez scores as Atletico cruise to victory over Viking
+2026-11-26T00:37:27Z,BD,7,losc lille vs bayern munich standings,2000,2026-11-25T22:10:00Z,Transfermarkt,Loan or permanent? Five potential Harry Kane replacement options for Bayern Munich
+2026-11-26T00:37:27Z,BD,8,nvidia ceo jensen huang,200,2026-11-25T21:40:00Z,The Guardian,Schumer accuses Huang of violating US export control laws amid shipments of chips to China | Jensen Huang
+2026-11-26T00:37:27Z,BD,9,ethan mbappé,100,2026-11-25T21:30:00Z,OneFootball,"Davide Ancelotti respalda a Ethan Mbappé: ""Estamos aquí para acompañarle y ayudarle"""
+2026-11-26T00:37:27Z,BD,10,ferran torres,100,2026-11-25T20:50:00Z,Lecturas,"Los negocios de Ferran Torres: se gasta 7 millones de euros para comprar las oficinas del Mestalla, estadio del Valencia"
