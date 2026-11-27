@@ -227,12 +227,19 @@ release and commits `research/validation/sample.csv`. Each page is then coded
 on the dashboard site's [validation page](https://muaz-32.github.io/black-friday-price-audit/validation/):
 is the was-price shown as one, is it labelled an RRP, and is there a 30-day-low
 statement. The page downloads the answers as `coding.csv`, which goes in
-`research/validation/`. Then:
+`research/validation/`. A second coder can code the same pages on their own
+device, without seeing the first coder's answers, and save theirs as
+`coding-2.csv`. Then:
 
 ```bash
 python -m research.validation summarize   # shares by stratum, and rrp-stores.txt
+python -m research.validation summarize --second research/validation/coding-2.csv  # also agreement and disagreements.csv
 python -m research.analysis ... --rrp-stores research/validation/rrp-stores.txt
 ```
+
+The results are always the primary coder's (`coding.csv`). The second coding
+only measures agreement: the share of pages both coders answered the same, and
+Cohen's kappa with a 95% interval from a bootstrap over stores.
 
 A trial on the latest snapshot (nothing published) is `gh workflow run
 validation.yml`; its output is kept as a workflow artifact for 7 days.

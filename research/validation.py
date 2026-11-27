@@ -20,7 +20,11 @@ shoot      One full-page screenshot per drawn page, taken while the Black
 summarize  Reads coding.csv (exported from the coding page on the dashboard
            site): the share of confirmed was-price displays, RRP labels and
            30-day-low statements, by stratum, with Wilson 95% intervals; and
-           rrp-stores.txt for `research.analysis --rrp-stores`.
+           rrp-stores.txt for `research.analysis --rrp-stores`. With
+           --second, a second coder's independent coding of the same pages:
+           agreement per question (share agreeing, Cohen's kappa with a 95%
+           interval from a bootstrap over stores) and disagreements.csv. The
+           results stay those of --coding, the primary coder.
 """
 
 from __future__ import annotations
@@ -235,13 +239,95 @@ def wilson(k: int, n: int, z: float = 1.959964) -> list[float | None]:
     return [round(c - h, 4), round(c + h, 4)]
 
 
-def cmd_summarize(args) -> int:
-    sample = pd.read_csv(args.out / "sample.csv", dtype=str, keep_default_na=False)
-    coding = pd.read_csv(args.coding, dtype=str, keep_default_na=False)
+def read_coding(path: Path, sample: pd.DataFrame) -> pd.DataFrame:
+    """One row per drawn variant with its answers ("" where not coded) and coder."""
+    coding = pd.read_csv(path, dtype=str, keep_default_na=False)
     bad = [c for c in QUESTIONS if c not in coding.columns]
     if bad:
-        sys.exit(f"{args.coding} lacks the columns {bad}")
-    df = sample[["n", "stratum", "store"]].merge(coding[["n", *QUESTIONS]], on="n", how="left").fillna("")
+        sys.exit(f"{path} lacks the columns {bad}")
+    if "coder" not in coding.columns:
+        coding["coder"] = ""
+    odd = sorted({v for q in QUESTIONS for v in coding[q]} - {*ANSWERS, ""})
+    if odd:
+        sys.exit(f"{path} has answers other than {ANSWERS}: {odd}")
+    if coding.n.duplicated().any():
+        sys.exit(f"{path} has variants coded twice: {sorted(coding.n[coding.n.duplicated()], key=int)}")
+    df = sample[["n", "stratum", "store"]].merge(coding[["n", *QUESTIONS, "coder"]], on="n", how="left")
+    return df.fillna("")
+
+
+def kappa(a: pd.Series, b: pd.Series) -> float | None:
+    """Cohen's kappa over yes/no/unclear; None when chance agreement is 1 (one answer throughout)."""
+    if len(a) == 0:
+        return None
+    po = float((a.values == b.values).mean())
+    pe = sum(float((a == c).mean()) * float((b == c).mean()) for c in ANSWERS)
+    return None if pe >= 1 else (po - pe) / (1 - pe)
+
+
+def kappa_ci(both: pd.DataFrame, q: str, reps: int = 2000) -> list[float | None]:
+    """95% percentile interval for kappa, resampling stores (the sample clusters by store)."""
+    groups = [g for _, g in both.groupby("store")]
+    if len(groups) < 2:
+        return [None, None]
+    rng = np.random.default_rng(SEED)
+    ks = []
+    for _ in range(reps):
+        r = pd.concat([groups[i] for i in rng.integers(0, len(groups), len(groups))])
+        k = kappa(r[q + "_1"], r[q + "_2"])
+        if k is not None:
+            ks.append(k)
+    if len(ks) < reps / 2:  # mostly undefined: no interval worth reporting
+        return [None, None]
+    return [round(float(np.percentile(ks, 2.5)), 4), round(float(np.percentile(ks, 97.5)), 4)]
+
+
+def agreement(first: pd.DataFrame, second: pd.DataFrame, args) -> tuple[dict, list[str]]:
+    both = first.merge(second[["n", *QUESTIONS, "coder"]], on="n", suffixes=("_1", "_2"))
+    c1 = sorted(set(first.coder) - {""})
+    c2 = sorted(set(second.coder) - {""})
+    out: dict = {"coders": [c1, c2], "questions": {}}
+    lines = ["## Agreement between two coders", ""]
+    lines.append(f"Primary coder: {', '.join(c1) or 'not named'}. Second coder: {', '.join(c2) or 'not named'}.")
+    if set(c1) & set(c2):
+        lines.append(f"**Warning:** the same coder appears in both files ({', '.join(sorted(set(c1) & set(c2)))}); the codings should be independent.")
+    lines += [
+        "",
+        "Kappa is Cohen's over yes/no/unclear, with a 95% interval from 2,000 bootstrap resamples of stores.",
+        "When almost every answer is the same, kappa can be low even with high agreement; read it next to the share agreeing.",
+        "",
+        "| Question | Coded by both | Agree | Share agreeing | Kappa | 95% interval |",
+        "|---|---:|---:|---:|---:|---|",
+    ]
+    rows = []
+    for q, text in QUESTIONS.items():
+        b = both[(both[q + "_1"] != "") & (both[q + "_2"] != "")]
+        agree = int((b[q + "_1"] == b[q + "_2"]).sum())
+        k = kappa(b[q + "_1"], b[q + "_2"])
+        ci = kappa_ci(b, q)
+        out["questions"][q] = {
+            "both": len(b), "agree": agree, "share_agree": round(agree / len(b), 4) if len(b) else None,
+            "kappa": None if k is None else round(k, 4), "kappa_ci95": ci,
+        }  # fmt: skip
+        share = "–" if not len(b) else f"{agree / len(b):.1%}"
+        kf = "–" if k is None else f"{k:.2f}"
+        cif = "–" if ci[0] is None else f"{ci[0]:.2f} to {ci[1]:.2f}"
+        lines.append(f"| {q} | {len(b)} | {agree} | {share} | {kf} | {cif} |")
+        for _, r in b[b[q + "_1"] != b[q + "_2"]].iterrows():
+            rows.append({"n": r.n, "stratum": r.stratum, "store": r.store, "question": q, "first": r[q + "_1"], "second": r[q + "_2"]})
+    rows.sort(key=lambda r: (int(r["n"]), list(QUESTIONS).index(r["question"])))
+    with open(args.out / "disagreements.csv", "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=["n", "stratum", "store", "question", "first", "second"])
+        w.writeheader()
+        w.writerows(rows)
+    out["disagreements"] = len(rows)
+    lines += ["", f"{len(rows)} disagreements, listed in `disagreements.csv`. The results above are the primary coder's.", ""]
+    return out, lines
+
+
+def cmd_summarize(args) -> int:
+    sample = pd.read_csv(args.out / "sample.csv", dtype=str, keep_default_na=False)
+    df = read_coding(args.coding, sample)
     out: dict = {"coded": int((df[list(QUESTIONS)] != "").all(axis=1).sum()), "drawn": len(df), "questions": QUESTIONS}
     lines = ["# Measurement validation", "", f"{out['coded']} of {out['drawn']} drawn variants coded.", ""]
     for q, text in QUESTIONS.items():
@@ -261,6 +347,9 @@ def cmd_summarize(args) -> int:
     out["rrp_stores"] = rrp
     (args.out / "rrp-stores.txt").write_text("".join(f"{s}\n" for s in rrp))
     lines += [f"Stores whose pages show RRP labels: {len(rrp)} (`rrp-stores.txt`, for `research.analysis --rrp-stores`).", ""]
+    if args.second:
+        out["agreement"], more = agreement(df, read_coding(args.second, sample), args)
+        lines += more
     (args.out / "summary.json").write_text(json.dumps(out, indent=2) + "\n")
     (args.out / "summary.md").write_text("\n".join(lines))
     print("\n".join(lines))
@@ -286,7 +375,8 @@ def main() -> int:
     s.add_argument("--limit", type=int, default=0)
     s.add_argument("--pause", type=float, default=2.0, help="seconds between pages")
     m = sub.add_parser("summarize")
-    m.add_argument("--coding", type=Path, default=OUT / "coding.csv")
+    m.add_argument("--coding", type=Path, default=OUT / "coding.csv", help="the primary coder's answers")
+    m.add_argument("--second", type=Path, help="a second coder's independent answers, for agreement")
     args = ap.parse_args()
     return {"draw": cmd_draw, "shoot": cmd_shoot, "summarize": cmd_summarize}[args.cmd](args)
 
